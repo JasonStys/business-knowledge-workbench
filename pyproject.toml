@@ -1,0 +1,24 @@
+[project]
+name = "business-knowledge-workbench"
+version = "1.0.0"
+description = "Configurable, HTML-first business knowledge and data workspace"
+requires-python = ">=3.12"
+dependencies = ["fastapi", "uvicorn", "python-multipart", "pydantic", "httpx", "nh3", "beautifulsoup4", "markdown-it-py", "python-docx", "openpyxl", "pypdf", "pdfplumber", "pillow", "reportlab", "defusedxml"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "pip-audit", "httpx2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/python"]
+addopts = "--cov=server --cov-report=term-missing --cov-report=json:docs/reports/python-coverage.json --cov-fail-under=80"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "B008"]
+
+[tool.setuptools]
+packages = ["server"]

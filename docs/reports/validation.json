@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-29",
+  "environment": {"os": "Windows", "python": "3.14.6", "node": "24.18.1"},
+  "python": {"passed": 77, "coverage_percent": 95.89},
+  "browser": {"passed": 24, "failed": 0, "targets": ["Chromium", "Firefox", "WebKit", "mobile Chromium viewport"]},
+  "checks": {"ruff": "passed", "typescript": "passed", "prettier": "passed", "code_index": "passed", "npm_audit": "no known vulnerabilities", "pip_audit": "no known vulnerabilities", "docx_schema": "passed", "pdf_visual": "reviewed"},
+  "limitations": ["No physical mobile installation", "No signed native binaries", "No live external model/quality validation", "No universal file/OCR/semantic guarantees", "Local container requires a running Docker daemon; CI supplies container verification"],
+  "github_ci": "pending publication"
+}

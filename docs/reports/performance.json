@@ -1,0 +1,20 @@
+{
+  "workload": {
+    "csv_rows": 500,
+    "search_documents": 189,
+    "search_iterations": 100
+  },
+  "runtime": "3.14.6",
+  "import": {
+    "median_ms": 28.192,
+    "p95_ms": 41.87
+  },
+  "search": {
+    "median_ms": 2.703,
+    "p95_ms": 3.271
+  },
+  "budgets": {
+    "import_p95_ms": 2000,
+    "search_p95_ms": 500
+  }
+}

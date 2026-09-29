@@ -1,0 +1,31 @@
+{
+  "name": "business-knowledge-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "format": "prettier --write web tests/browser scripts/*.mjs public/*.js public/*.html *.json *.ts *.html",
+    "format:check": "prettier --check web tests/browser scripts/*.mjs public/*.js public/*.html *.json *.ts *.html",
+    "docs": "python scripts/code_index.py",
+    "docs:check": "python scripts/code_index.py --check",
+    "verify": "npm run typecheck && npm run build && npm run test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.2",
+    "vite": "8.3.1",
+    "typescript": "6.0.3",
+    "prettier": "3.9.8",
+    "docx": "9.5.1"
+  }
+}

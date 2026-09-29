@@ -1,0 +1,4 @@
+product,customer,month,quantity,revenue_cents
+MC-240,north,2026-01,32,2396800
+IO-16,north,2026-01,45,1300500
+PS-24,south,2026-01,60,534000
