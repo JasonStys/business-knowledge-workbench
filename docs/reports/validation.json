@@ -1,9 +1,15 @@
 {
   "date": "2026-09-29",
   "environment": {"os": "Windows", "python": "3.14.6", "node": "24.18.1"},
-  "python": {"passed": 77, "coverage_percent": 95.89},
+  "python": {"passed": 77, "coverage_percent": 95.91},
   "browser": {"passed": 24, "failed": 0, "targets": ["Chromium", "Firefox", "WebKit", "mobile Chromium viewport"]},
-  "checks": {"ruff": "passed", "typescript": "passed", "prettier": "passed", "code_index": "passed", "npm_audit": "no known vulnerabilities", "pip_audit": "no known vulnerabilities", "docx_schema": "passed", "pdf_visual": "reviewed"},
+  "checks": {"ruff": "passed", "typescript": "passed", "prettier": "passed", "code_index": "passed", "file_catalog": "passed", "npm_audit": "no known vulnerabilities", "pip_audit": "no known vulnerabilities", "docx_schema": "passed", "pdf_visual": "reviewed"},
   "limitations": ["No physical mobile installation", "No signed native binaries", "No live external model/quality validation", "No universal file/OCR/semantic guarantees", "Local container requires a running Docker daemon; CI supplies container verification"],
-  "github_ci": "pending publication"
+  "github_ci": {
+    "verified_code_commit": "d66c3c3864d21c1e56e35cd02ded9d5dc040ddf2",
+    "validation": {"status": "success", "run": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/36642728344", "jobs_passed": 6},
+    "codeql": {"status": "success", "run": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/36642728359", "languages": ["python", "javascript-typescript"], "open_alerts": 0, "initial_alerts_fixed": 2, "alerts_dismissed": 0},
+    "checked_on": "2026-09-29",
+    "scope": "Implementation revision; later Actions runs and alerts remain authoritative."
+  }
 }

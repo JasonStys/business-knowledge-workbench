@@ -5,7 +5,7 @@ No software can promise to interpret every arbitrary file and all its semantics.
 | Input | Extracted / retained | Explicit limits |
 | --- | --- | --- |
 | TXT | UTF-8 paragraphs, explicit measurements | No arbitrary legacy encodings or binary text; 200,000 characters. |
-| MD | CommonMark headings/lists/tables supported by renderer output | Raw embedded HTML is disabled; unsupported Markdown extensions are plain text. |
+| MD | CommonMark headings, lists and prose | Raw embedded HTML is disabled; pipe tables and other unsupported Markdown extensions remain plain text. |
 | HTML/HTM | Sanitized headings, prose, tables and HTTPS links | Scripts/styles/objects/remote assets removed. Original remains downloadable. |
 | CSV/TSV | Ordered table strings and explicit unit cells | 2,000 rows, 40 columns; formulas are not executed. |
 | JSON | Object text or an array-of-records table | Valid JSON only; nonfinite numeric constants rejected. Nested structures remain text. |
