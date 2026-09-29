@@ -1,83 +1,86 @@
 /* @index-begin
- * @symbol type: View L97
- * @symbol variable/parameter: state L98
- * @symbol variable/parameter: app L112
- * @symbol variable/parameter: cents L114
- * @symbol variable/parameter: money L114
- * @symbol function/class: esc L122
- * @symbol variable/parameter: value L122
- * @symbol variable/parameter: character L125
- * @symbol function/class: api L133
- * @symbol variable/parameter: init L133
- * @symbol variable/parameter: path L133
- * @symbol variable/parameter: headers L134
- * @symbol variable/parameter: response L139
- * @symbol variable/parameter: error L145
- * @symbol variable/parameter: message L158
- * @symbol function/class: notice L158
- * @symbol variable/parameter: node L159
- * @symbol function/class: action L165
- * @symbol variable/parameter: work L165
- * @symbol function/class: shell L174
- * @symbol variable/parameter: workspace L175
- * @symbol variable/parameter: item L176
- * @symbol variable/parameter: [view, label, index] L185
- * @symbol variable/parameter: button L193
- * @symbol variable/parameter: event L206
- * @symbol function/class: loginView L231
- * @symbol variable/parameter: data L236
- * @symbol function/class: catalog L255
- * @symbol variable/parameter: content L256
- * @symbol variable/parameter: unit L262
- * @symbol variable/parameter: products L274
- * @symbol variable/parameter: update L277
- * @symbol variable/parameter: query L278
- * @symbol variable/parameter: filtered L281
- * @symbol variable/parameter: product L281
- * @symbol variable/parameter: spec L290
- * @symbol variable/parameter: result L301
- * @symbol function/class: chart L313
- * @symbol variable/parameter: report L313
- * @symbol variable/parameter: max L314
- * @symbol variable/parameter: point L314
- * @symbol function/class: dashboard L319
- * @symbol variable/parameter: employee L320
- * @symbol variable/parameter: format L323
- * @symbol variable/parameter: options L325
- * @symbol variable/parameter: customerOptions L326
- * @symbol variable/parameter: [id, label] L327
- * @symbol variable/parameter: form L341
- * @symbol variable/parameter: body L367
- * @symbol variable/parameter: title L396
- * @symbol variable/parameter: answer L414
- * @symbol function/class: documentList L429
- * @symbol variable/parameter: id L430
- * @symbol variable/parameter: params L432
- * @symbol variable/parameter: docs L438
- * @symbol variable/parameter: staff L439
- * @symbol variable/parameter: doc L441
- * @symbol variable/parameter: input L452
- * @symbol function/class: preview L461
- * @symbol variable/parameter: block L470
- * @symbol variable/parameter: index L470
- * @symbol variable/parameter: warning L470
- * @symbol function/class: download L490
- * @symbol variable/parameter: filename L490
- * @symbol variable/parameter: type L490
- * @symbol variable/parameter: url L491
- * @symbol variable/parameter: link L492
- * @symbol function/class: studio L500
- * @symbol variable/parameter: config L503
- * @symbol variable/parameter: audit L504
- * @symbol variable/parameter: [dimension, units] L513
- * @symbol variable/parameter: [key, alias] L522
- * @symbol variable/parameter: units L538
- * @symbol variable/parameter: key L540
- * @symbol variable/parameter: [, unit] L541
- * @symbol variable/parameter: columns L543
- * @symbol variable/parameter: section L559
- * @symbol function/class: render L574
- * @symbol function/class: start L595
+ * @symbol type: View L100
+ * @symbol variable/parameter: state L101
+ * @symbol variable/parameter: app L115
+ * @symbol variable/parameter: cents L117
+ * @symbol variable/parameter: money L117
+ * @symbol function/class: esc L125
+ * @symbol variable/parameter: value L125
+ * @symbol variable/parameter: character L128
+ * @symbol function/class: api L136
+ * @symbol variable/parameter: init L136
+ * @symbol variable/parameter: path L136
+ * @symbol variable/parameter: headers L137
+ * @symbol variable/parameter: response L142
+ * @symbol variable/parameter: error L148
+ * @symbol variable/parameter: message L161
+ * @symbol function/class: notice L161
+ * @symbol variable/parameter: node L162
+ * @symbol function/class: action L168
+ * @symbol variable/parameter: work L168
+ * @symbol function/class: shell L177
+ * @symbol variable/parameter: workspace L178
+ * @symbol variable/parameter: item L179
+ * @symbol variable/parameter: [view, label, index] L188
+ * @symbol variable/parameter: button L196
+ * @symbol variable/parameter: event L209
+ * @symbol variable/parameter: selected L211
+ * @symbol function/class: loginView L237
+ * @symbol variable/parameter: data L242
+ * @symbol function/class: catalog L261
+ * @symbol variable/parameter: content L262
+ * @symbol variable/parameter: unit L268
+ * @symbol variable/parameter: products L280
+ * @symbol variable/parameter: update L283
+ * @symbol variable/parameter: query L284
+ * @symbol variable/parameter: filtered L287
+ * @symbol variable/parameter: product L287
+ * @symbol variable/parameter: spec L296
+ * @symbol variable/parameter: result L307
+ * @symbol function/class: chart L319
+ * @symbol variable/parameter: report L319
+ * @symbol variable/parameter: max L320
+ * @symbol variable/parameter: point L320
+ * @symbol function/class: dashboard L325
+ * @symbol variable/parameter: employee L326
+ * @symbol variable/parameter: format L329
+ * @symbol variable/parameter: options L331
+ * @symbol variable/parameter: customerOptions L332
+ * @symbol variable/parameter: [id, label] L333
+ * @symbol variable/parameter: form L347
+ * @symbol variable/parameter: body L373
+ * @symbol variable/parameter: title L402
+ * @symbol variable/parameter: answer L420
+ * @symbol function/class: documentList L435
+ * @symbol variable/parameter: id L436
+ * @symbol variable/parameter: params L438
+ * @symbol variable/parameter: docs L444
+ * @symbol variable/parameter: staff L445
+ * @symbol variable/parameter: doc L447
+ * @symbol variable/parameter: input L458
+ * @symbol function/class: preview L467
+ * @symbol variable/parameter: block L476
+ * @symbol variable/parameter: index L476
+ * @symbol variable/parameter: warning L476
+ * @symbol variable/parameter: exports L480
+ * @symbol variable/parameter: link L482
+ * @symbol variable/parameter: suffix L483
+ * @symbol variable/parameter: url L485
+ * @symbol function/class: download L518
+ * @symbol variable/parameter: filename L518
+ * @symbol variable/parameter: type L518
+ * @symbol function/class: studio L528
+ * @symbol variable/parameter: config L531
+ * @symbol variable/parameter: audit L532
+ * @symbol variable/parameter: [dimension, units] L541
+ * @symbol variable/parameter: [key, alias] L550
+ * @symbol variable/parameter: units L566
+ * @symbol variable/parameter: key L568
+ * @symbol variable/parameter: [, unit] L569
+ * @symbol variable/parameter: columns L571
+ * @symbol variable/parameter: section L587
+ * @symbol function/class: render L602
+ * @symbol function/class: start L623
 @index-end */
 /** Accessible workspace UI and explicit API actions. Function/state lines: docs/code-index.md.
  * All user/source values are escaped. Canonical documents render inside scriptless sandbox frames.
@@ -175,7 +178,7 @@ function shell(): void {
   const workspace = state.bootstrap?.workspaces.find(
     (item) => item.id === state.workspace,
   );
-  app.innerHTML = `<aside class="sidebar"><a class="brand" href="/" aria-label="Workbench home"><span class="brand-mark">W</span><span>Workbench<small>BUSINESS KNOWLEDGE</small></span></a><div class="sidebar-label">YOUR WORKSPACE</div><label class="scenario-label" for="workspace">Business scenario</label><select id="workspace">${state.bootstrap?.workspaces.map((item) => `<option value="${item.id}" ${item.id === state.workspace ? "selected" : ""}>${esc(item.title)}</option>`).join("")}</select><nav aria-label="Workspace views">${[
+  app.innerHTML = `<aside class="sidebar"><a class="brand" href="/" aria-label="Workbench home"><span class="brand-mark">W</span><span>Workbench<small>BUSINESS KNOWLEDGE</small></span></a><div class="sidebar-label">YOUR WORKSPACE</div><label class="scenario-label" for="workspace">Business scenario</label><select id="workspace">${state.bootstrap?.workspaces.map((item) => `<option value="${esc(item.id)}" ${item.id === state.workspace ? "selected" : ""}>${esc(item.title)}</option>`).join("")}</select><nav aria-label="Workspace views">${[
     ["catalog", "Product catalog", "01"],
     ["customer", "Customer portal", "02"],
     ["employee", "Business workspace", "03"],
@@ -205,9 +208,12 @@ function shell(): void {
     "change",
     (event) =>
       void action(async () => {
+        const selected = (event.target as HTMLSelectElement).value;
+        if (!state.bootstrap?.workspaces.some((item) => item.id === selected))
+          throw new Error("Unknown workspace selection.");
         if (state.session) await api("logout", { method: "POST" });
         state.session = null;
-        state.workspace = (event.target as HTMLSelectElement).value;
+        state.workspace = selected;
         state.selected.clear();
         await render();
       }),
@@ -272,7 +278,7 @@ async function catalog(): Promise<void> {
       "",
     )}</select></label><button class="primary">Convert</button><output id="unit-result" aria-live="polite">1 in = 25.4 mm</output></form></section><div class="section-heading"><h2>Public documentation</h2></div><div id="documents"></div><div id="preview"></div>`;
   const products = await api<Product[]>(
-    `products?workspace=${state.workspace}`,
+    `products?workspace=${encodeURIComponent(state.workspace)}`,
   );
   const update = (): void => {
     const query = (
@@ -460,14 +466,36 @@ async function documentList(): Promise<void> {
 /** Preview canonical HTML in a sandbox, expose uncertainty, and offer HTML-first exports. */
 async function preview(id: string): Promise<void> {
   const result = await api<DocumentResult>(
-    `documents/${encodeURIComponent(id)}?workspace=${state.workspace}`,
+    `documents/${encodeURIComponent(id)}?workspace=${encodeURIComponent(state.workspace)}`,
   );
   if (state.previewUrl) URL.revokeObjectURL(state.previewUrl);
   state.previewUrl = URL.createObjectURL(
     new Blob([result.html], { type: "text/html" }),
   );
   document.querySelector("#preview")!.innerHTML =
-    `<section class="document-preview"><div class="section-heading"><h3>${esc(result.title)}</h3><span class="pill">${esc(result.review_status)}</span></div>${result.warnings.length ? `<div class="warning"><strong>Review extraction fidelity</strong><ul>${result.warnings.map((warning) => `<li>${esc(warning)}</li>`).join("")}</ul></div>` : ""}<iframe title="Canonical document preview" sandbox="" src="${state.previewUrl}"></iframe><div class="exports">${state.bootstrap!.exports.map((format) => `<a class="quiet" href="/api/documents/${encodeURIComponent(id)}/export/${format}?workspace=${state.workspace}" download>Export ${format.toUpperCase()}</a>`).join("")}<a class="quiet" href="/api/documents/${encodeURIComponent(id)}/source?workspace=${state.workspace}" download>Original source</a></div><details><summary>Machine-readable provenance and unit conversions</summary><pre>${esc(JSON.stringify({ provenance: result.provenance, measurements: result.measurements }, null, 2))}</pre></details>${state.session?.role !== "customer" && state.session ? result.blocks.map((block, index) => (block.kind === "figure" ? `<button class="quiet" data-vision="${index}">Request unverified vision analysis: figure ${index + 1}</button>` : "")).join("") : ""}<div id="vision-answer" class="answer"></div></section>`;
+    `<section class="document-preview"><div class="section-heading"><h3>${esc(result.title)}</h3><span class="pill">${esc(result.review_status)}</span></div>${result.warnings.length ? `<div class="warning"><strong>Review extraction fidelity</strong><ul>${result.warnings.map((warning) => `<li>${esc(warning)}</li>`).join("")}</ul></div>` : ""}<iframe title="Canonical document preview" sandbox=""></iframe><div class="exports"></div><details><summary>Machine-readable provenance and unit conversions</summary><pre>${esc(JSON.stringify({ provenance: result.provenance, measurements: result.measurements }, null, 2))}</pre></details>${state.session?.role !== "customer" && state.session ? result.blocks.map((block, index) => (block.kind === "figure" ? `<button class="quiet" data-vision="${index}">Request unverified vision analysis: figure ${index + 1}</button>` : "")).join("") : ""}<div id="vision-answer" class="answer"></div></section>`;
+  // URL values stay in DOM properties, never reinterpreted as HTML attribute syntax.
+  document.querySelector<HTMLIFrameElement>("#preview iframe")!.src =
+    state.previewUrl;
+  const exports = document.querySelector("#preview .exports")!;
+  for (const format of [...state.bootstrap!.exports, "source"]) {
+    const link = document.createElement("a");
+    const suffix =
+      format === "source" ? "source" : `export/${encodeURIComponent(format)}`;
+    const url = new URL(
+      `/api/documents/${encodeURIComponent(id)}/${suffix}`,
+      location.origin,
+    );
+    url.searchParams.set("workspace", state.workspace);
+    link.href = url.href;
+    link.className = "quiet";
+    link.download = "";
+    link.textContent =
+      format === "source"
+        ? "Original source"
+        : `Export ${format.toUpperCase()}`;
+    exports.append(link);
+  }
   document
     .querySelectorAll<HTMLButtonElement>("[data-vision]")
     .forEach((button) =>

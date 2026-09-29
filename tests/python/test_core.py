@@ -1,37 +1,38 @@
 # @index-begin
-# @symbol variable/parameter: EXAMPLES L54
-# @symbol variable/parameter: expected L72
-# @symbol variable/parameter: source L72
-# @symbol variable/parameter: target L72
-# @symbol function/class: test_units L72
-# @symbol variable/parameter: value L72
-# @symbol function/class: test_bad_units L90
-# @symbol function/class: test_provenance_and_ambiguity L96
-# @symbol variable/parameter: records L98
-# @symbol variable/parameter: text L98
-# @symbol variable/parameter: settings L115
-# @symbol function/class: test_config_rejection L115
-# @symbol variable/parameter: filename L135
-# @symbol function/class: test_fixtures L135
-# @symbol variable/parameter: result L137
-# @symbol variable/parameter: block L146
-# @symbol variable/parameter: data L166
-# @symbol variable/parameter: name L166
-# @symbol function/class: test_text_types L166
-# @symbol function/class: test_reject_bad_files L186
-# @symbol function/class: test_zip_and_table_limits L192
-# @symbol variable/parameter: output L194
-# @symbol variable/parameter: archive L195
-# @symbol variable/parameter: format_name L205
-# @symbol function/class: test_exports L205
-# @symbol variable/parameter: payload L212
-# @symbol function/class: test_rich_exports L224
-# @symbol function/class: test_ai_contracts L237
-# @symbol variable/parameter: context L239
-# @symbol variable/parameter: adapter L240
-# @symbol variable/parameter: answer L241
-# @symbol variable/parameter: endpoint L251
-# @symbol function/class: test_large_image L262
+# @symbol variable/parameter: EXAMPLES L55
+# @symbol variable/parameter: expected L73
+# @symbol variable/parameter: source L73
+# @symbol variable/parameter: target L73
+# @symbol function/class: test_units L73
+# @symbol variable/parameter: value L73
+# @symbol function/class: test_bad_units L91
+# @symbol function/class: test_provenance_and_ambiguity L97
+# @symbol variable/parameter: records L99
+# @symbol variable/parameter: text L99
+# @symbol variable/parameter: spaced L105
+# @symbol variable/parameter: settings L121
+# @symbol function/class: test_config_rejection L121
+# @symbol variable/parameter: filename L141
+# @symbol function/class: test_fixtures L141
+# @symbol variable/parameter: result L143
+# @symbol variable/parameter: block L152
+# @symbol variable/parameter: data L172
+# @symbol variable/parameter: name L172
+# @symbol function/class: test_text_types L172
+# @symbol function/class: test_reject_bad_files L192
+# @symbol function/class: test_zip_and_table_limits L198
+# @symbol variable/parameter: output L200
+# @symbol variable/parameter: archive L201
+# @symbol variable/parameter: format_name L211
+# @symbol function/class: test_exports L211
+# @symbol variable/parameter: payload L218
+# @symbol function/class: test_rich_exports L230
+# @symbol function/class: test_ai_contracts L243
+# @symbol variable/parameter: context L245
+# @symbol variable/parameter: adapter L246
+# @symbol variable/parameter: answer L247
+# @symbol variable/parameter: endpoint L257
+# @symbol function/class: test_large_image L268
 # @index-end
 """Conversion, unit, export and AI contract regression coverage. Index: docs/code-index.md."""
 
@@ -100,6 +101,11 @@ def test_provenance_and_ambiguity():
     assert records[0]["original"] == "2 in"
     assert records[0]["source_start"] == 6
     assert normalize("There are 2 in stock", {"length": "mm"}) == ("There are 2 in stock", [])
+    # Adversarial long whitespace must be scanned once, not regex-backtracked.
+    spaced = "2 in" + " " * 150000 + "stock"
+    assert normalize(spaced, {"length": "mm"}) == (spaced, [])
+    assert normalize("2 in 3 cm", {"length": "mm"})[0] == "50.8 mm 30 mm"
+    assert normalize("2 in\t ", {"length": "mm"})[0] == "50.8 mm\t "
 
 
 @pytest.mark.parametrize(

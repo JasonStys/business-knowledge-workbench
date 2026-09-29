@@ -71,8 +71,8 @@ def main():
         ["PS-24", "south", "2026-01", 60, 534000],
     ]
     output = io.StringIO(newline="")
-    csv.writer(output).writerows(rows)
-    (folder / "industrial-sales.csv").write_text(output.getvalue(), encoding="utf-8")
+    csv.writer(output, lineterminator="\n").writerows(rows)
+    (folder / "industrial-sales.csv").write_text(output.getvalue(), encoding="utf-8", newline="\n")
     (folder / "mixed-measurements.csv").write_text(
         "component,width,mass\nCabinet,4.25 in,2.5 lb\nBracket,8.2 cm,450 g\n", encoding="utf-8"
     )

@@ -58,6 +58,7 @@ python -m ruff check server scripts tests/python
 python -m ruff format --check server scripts tests/python
 npm run format:check
 python scripts/code_index.py --check
+python scripts/file_catalog.py --check
 python -m pytest -q
 python scripts/benchmark.py
 npm run build
@@ -91,7 +92,7 @@ Linux browser CI installs system packages with `npx playwright install --with-de
 
 TypeScript fits browser interaction and typed contracts; Python fits heterogeneous extraction and model integration; SQL provides transactional integrity; HTML/CSS provide portable, inspectable output; JavaScript handles the browser service worker and document fixture tools; Bash coordinates verification. Extra languages are not inserted into hot paths without a demonstrated need.
 
-Every authored code file has a descriptive header and generated exact symbol/variable line map. Function/class contracts explain purpose and parameter use. [The complete code index](docs/code-index.md) records local bindings; regenerate it after code changes. [Architecture and ADR](docs/architecture.md) explain complexity, performance, safety and alternatives. [Extension guide](docs/extensions.md) shows how to add formats, data schemas and models.
+Every authored code file has a descriptive header and generated exact symbol/variable line map. Function/class contracts explain purpose and parameter use. [The complete code index](docs/code-index.md) records local bindings; regenerate it after code changes. [The file catalog](docs/file-catalog.md) summarizes every tracked file; regenerate with `python scripts/file_catalog.py` after adding files. [Architecture and ADR](docs/architecture.md) explain complexity, performance, safety and alternatives. [Extension guide](docs/extensions.md) shows how to add formats, data schemas and models.
 
 ## Important boundaries
 

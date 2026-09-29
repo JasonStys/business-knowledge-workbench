@@ -122,6 +122,26 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `value` | 36 |
 | variable/parameter | `document` | 46 |
 
+## `scripts/file_catalog.py`
+
+[Source](../scripts/file_catalog.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `ROOT` | 22 |
+| variable/parameter | `DESCRIPTIONS` | 23 |
+| function/class | `description` | 45 |
+| variable/parameter | `path` | 45 |
+| variable/parameter | `text` | 56 |
+| variable/parameter | `tail` | 57 |
+| variable/parameter | `line` | 58 |
+| variable/parameter | `title` | 68 |
+| function/class | `main` | 81 |
+| variable/parameter | `output` | 83 |
+| variable/parameter | `paths` | 86 |
+| variable/parameter | `content` | 87 |
+| variable/parameter | `target` | 94 |
+
 ## `scripts/fixtures.py`
 
 [Source](../scripts/fixtures.py) — descriptive module header and function contracts are in this file.
@@ -633,26 +653,27 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `FACTORS` | 31 |
-| variable/parameter | `DIMENSIONS` | 49 |
-| variable/parameter | `dimension` | 49 |
-| variable/parameter | `unit` | 49 |
-| variable/parameter | `values` | 49 |
-| variable/parameter | `PATTERN` | 50 |
-| function/class | `convert` | 55 |
-| variable/parameter | `source` | 55 |
-| variable/parameter | `target` | 55 |
-| variable/parameter | `value` | 55 |
-| variable/parameter | `number` | 60 |
-| variable/parameter | `context` | 65 |
-| variable/parameter | `kelvin` | 68 |
-| function/class | `normalize` | 89 |
-| variable/parameter | `targets` | 89 |
-| variable/parameter | `text` | 89 |
-| variable/parameter | `records` | 91 |
-| variable/parameter | `match` | 93 |
-| function/class | `replacement` | 93 |
-| variable/parameter | `result` | 100 |
+| variable/parameter | `FACTORS` | 32 |
+| variable/parameter | `DIMENSIONS` | 50 |
+| variable/parameter | `dimension` | 50 |
+| variable/parameter | `unit` | 50 |
+| variable/parameter | `values` | 50 |
+| variable/parameter | `PATTERN` | 51 |
+| function/class | `convert` | 56 |
+| variable/parameter | `source` | 56 |
+| variable/parameter | `target` | 56 |
+| variable/parameter | `value` | 56 |
+| variable/parameter | `number` | 61 |
+| variable/parameter | `context` | 66 |
+| variable/parameter | `kelvin` | 69 |
+| function/class | `normalize` | 90 |
+| variable/parameter | `targets` | 90 |
+| variable/parameter | `text` | 90 |
+| variable/parameter | `records` | 92 |
+| variable/parameter | `match` | 94 |
+| function/class | `replacement` | 94 |
+| variable/parameter | `cursor` | 100 |
+| variable/parameter | `result` | 110 |
 
 ## `server/worker.py`
 
@@ -670,23 +691,25 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| function/class | `login` | 25 |
-| variable/parameter | `page` | 25 |
-| variable/parameter | `role` | 25 |
-| variable/parameter | `{ page, }` | 43 |
-| variable/parameter | `download` | 74 |
-| variable/parameter | `denied` | 105 |
-| variable/parameter | `testInfo` | 111 |
-| variable/parameter | `name` | 114 |
-| variable/parameter | `{ page, browserName, }` | 187 |
-| variable/parameter | `results` | 193 |
-| variable/parameter | `{ page, request, }` | 222 |
-| variable/parameter | `manifest` | 227 |
-| variable/parameter | `body` | 228 |
-| variable/parameter | `cached` | 252 |
-| variable/parameter | `names` | 253 |
-| variable/parameter | `item` | 257 |
-| variable/parameter | `url` | 263 |
+| function/class | `login` | 27 |
+| variable/parameter | `page` | 27 |
+| variable/parameter | `role` | 27 |
+| variable/parameter | `{ page, }` | 45 |
+| variable/parameter | `download` | 76 |
+| variable/parameter | `denied` | 107 |
+| variable/parameter | `testInfo` | 113 |
+| variable/parameter | `name` | 116 |
+| variable/parameter | `{ page, browserName, }` | 189 |
+| variable/parameter | `results` | 195 |
+| variable/parameter | `{ page, request, }` | 224 |
+| variable/parameter | `manifest` | 229 |
+| variable/parameter | `body` | 230 |
+| variable/parameter | `select` | 250 |
+| variable/parameter | `option` | 251 |
+| variable/parameter | `cached` | 269 |
+| variable/parameter | `names` | 270 |
+| variable/parameter | `item` | 274 |
+| variable/parameter | `url` | 280 |
 
 ## `tests/python/test_adapters.py`
 
@@ -786,39 +809,40 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `EXAMPLES` | 54 |
-| variable/parameter | `expected` | 72 |
-| variable/parameter | `source` | 72 |
-| variable/parameter | `target` | 72 |
-| function/class | `test_units` | 72 |
-| variable/parameter | `value` | 72 |
-| function/class | `test_bad_units` | 90 |
-| function/class | `test_provenance_and_ambiguity` | 96 |
-| variable/parameter | `records` | 98 |
-| variable/parameter | `text` | 98 |
-| variable/parameter | `settings` | 115 |
-| function/class | `test_config_rejection` | 115 |
-| variable/parameter | `filename` | 135 |
-| function/class | `test_fixtures` | 135 |
-| variable/parameter | `result` | 137 |
-| variable/parameter | `block` | 146 |
-| variable/parameter | `data` | 166 |
-| variable/parameter | `name` | 166 |
-| function/class | `test_text_types` | 166 |
-| function/class | `test_reject_bad_files` | 186 |
-| function/class | `test_zip_and_table_limits` | 192 |
-| variable/parameter | `output` | 194 |
-| variable/parameter | `archive` | 195 |
-| variable/parameter | `format_name` | 205 |
-| function/class | `test_exports` | 205 |
-| variable/parameter | `payload` | 212 |
-| function/class | `test_rich_exports` | 224 |
-| function/class | `test_ai_contracts` | 237 |
-| variable/parameter | `context` | 239 |
-| variable/parameter | `adapter` | 240 |
-| variable/parameter | `answer` | 241 |
-| variable/parameter | `endpoint` | 251 |
-| function/class | `test_large_image` | 262 |
+| variable/parameter | `EXAMPLES` | 55 |
+| variable/parameter | `expected` | 73 |
+| variable/parameter | `source` | 73 |
+| variable/parameter | `target` | 73 |
+| function/class | `test_units` | 73 |
+| variable/parameter | `value` | 73 |
+| function/class | `test_bad_units` | 91 |
+| function/class | `test_provenance_and_ambiguity` | 97 |
+| variable/parameter | `records` | 99 |
+| variable/parameter | `text` | 99 |
+| variable/parameter | `spaced` | 105 |
+| variable/parameter | `settings` | 121 |
+| function/class | `test_config_rejection` | 121 |
+| variable/parameter | `filename` | 141 |
+| function/class | `test_fixtures` | 141 |
+| variable/parameter | `result` | 143 |
+| variable/parameter | `block` | 152 |
+| variable/parameter | `data` | 172 |
+| variable/parameter | `name` | 172 |
+| function/class | `test_text_types` | 172 |
+| function/class | `test_reject_bad_files` | 192 |
+| function/class | `test_zip_and_table_limits` | 198 |
+| variable/parameter | `output` | 200 |
+| variable/parameter | `archive` | 201 |
+| variable/parameter | `format_name` | 211 |
+| function/class | `test_exports` | 211 |
+| variable/parameter | `payload` | 218 |
+| function/class | `test_rich_exports` | 230 |
+| function/class | `test_ai_contracts` | 243 |
+| variable/parameter | `context` | 245 |
+| variable/parameter | `adapter` | 246 |
+| variable/parameter | `answer` | 247 |
+| variable/parameter | `endpoint` | 257 |
+| function/class | `test_large_image` | 268 |
 
 ## `web/main.ts`
 
@@ -826,85 +850,88 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| type | `View` | 97 |
-| variable/parameter | `state` | 98 |
-| variable/parameter | `app` | 112 |
-| variable/parameter | `cents` | 114 |
-| variable/parameter | `money` | 114 |
-| function/class | `esc` | 122 |
-| variable/parameter | `value` | 122 |
-| variable/parameter | `character` | 125 |
-| function/class | `api` | 133 |
-| variable/parameter | `init` | 133 |
-| variable/parameter | `path` | 133 |
-| variable/parameter | `headers` | 134 |
-| variable/parameter | `response` | 139 |
-| variable/parameter | `error` | 145 |
-| variable/parameter | `message` | 158 |
-| function/class | `notice` | 158 |
-| variable/parameter | `node` | 159 |
-| function/class | `action` | 165 |
-| variable/parameter | `work` | 165 |
-| function/class | `shell` | 174 |
-| variable/parameter | `workspace` | 175 |
-| variable/parameter | `item` | 176 |
-| variable/parameter | `[view, label, index]` | 185 |
-| variable/parameter | `button` | 193 |
-| variable/parameter | `event` | 206 |
-| function/class | `loginView` | 231 |
-| variable/parameter | `data` | 236 |
-| function/class | `catalog` | 255 |
-| variable/parameter | `content` | 256 |
-| variable/parameter | `unit` | 262 |
-| variable/parameter | `products` | 274 |
-| variable/parameter | `update` | 277 |
-| variable/parameter | `query` | 278 |
-| variable/parameter | `filtered` | 281 |
-| variable/parameter | `product` | 281 |
-| variable/parameter | `spec` | 290 |
-| variable/parameter | `result` | 301 |
-| function/class | `chart` | 313 |
-| variable/parameter | `report` | 313 |
-| variable/parameter | `max` | 314 |
-| variable/parameter | `point` | 314 |
-| function/class | `dashboard` | 319 |
-| variable/parameter | `employee` | 320 |
-| variable/parameter | `format` | 323 |
-| variable/parameter | `options` | 325 |
-| variable/parameter | `customerOptions` | 326 |
-| variable/parameter | `[id, label]` | 327 |
-| variable/parameter | `form` | 341 |
-| variable/parameter | `body` | 367 |
-| variable/parameter | `title` | 396 |
-| variable/parameter | `answer` | 414 |
-| function/class | `documentList` | 429 |
-| variable/parameter | `id` | 430 |
-| variable/parameter | `params` | 432 |
-| variable/parameter | `docs` | 438 |
-| variable/parameter | `staff` | 439 |
-| variable/parameter | `doc` | 441 |
-| variable/parameter | `input` | 452 |
-| function/class | `preview` | 461 |
-| variable/parameter | `block` | 470 |
-| variable/parameter | `index` | 470 |
-| variable/parameter | `warning` | 470 |
-| function/class | `download` | 490 |
-| variable/parameter | `filename` | 490 |
-| variable/parameter | `type` | 490 |
-| variable/parameter | `url` | 491 |
-| variable/parameter | `link` | 492 |
-| function/class | `studio` | 500 |
-| variable/parameter | `config` | 503 |
-| variable/parameter | `audit` | 504 |
-| variable/parameter | `[dimension, units]` | 513 |
-| variable/parameter | `[key, alias]` | 522 |
-| variable/parameter | `units` | 538 |
-| variable/parameter | `key` | 540 |
-| variable/parameter | `[, unit]` | 541 |
-| variable/parameter | `columns` | 543 |
-| variable/parameter | `section` | 559 |
-| function/class | `render` | 574 |
-| function/class | `start` | 595 |
+| type | `View` | 100 |
+| variable/parameter | `state` | 101 |
+| variable/parameter | `app` | 115 |
+| variable/parameter | `cents` | 117 |
+| variable/parameter | `money` | 117 |
+| function/class | `esc` | 125 |
+| variable/parameter | `value` | 125 |
+| variable/parameter | `character` | 128 |
+| function/class | `api` | 136 |
+| variable/parameter | `init` | 136 |
+| variable/parameter | `path` | 136 |
+| variable/parameter | `headers` | 137 |
+| variable/parameter | `response` | 142 |
+| variable/parameter | `error` | 148 |
+| variable/parameter | `message` | 161 |
+| function/class | `notice` | 161 |
+| variable/parameter | `node` | 162 |
+| function/class | `action` | 168 |
+| variable/parameter | `work` | 168 |
+| function/class | `shell` | 177 |
+| variable/parameter | `workspace` | 178 |
+| variable/parameter | `item` | 179 |
+| variable/parameter | `[view, label, index]` | 188 |
+| variable/parameter | `button` | 196 |
+| variable/parameter | `event` | 209 |
+| variable/parameter | `selected` | 211 |
+| function/class | `loginView` | 237 |
+| variable/parameter | `data` | 242 |
+| function/class | `catalog` | 261 |
+| variable/parameter | `content` | 262 |
+| variable/parameter | `unit` | 268 |
+| variable/parameter | `products` | 280 |
+| variable/parameter | `update` | 283 |
+| variable/parameter | `query` | 284 |
+| variable/parameter | `filtered` | 287 |
+| variable/parameter | `product` | 287 |
+| variable/parameter | `spec` | 296 |
+| variable/parameter | `result` | 307 |
+| function/class | `chart` | 319 |
+| variable/parameter | `report` | 319 |
+| variable/parameter | `max` | 320 |
+| variable/parameter | `point` | 320 |
+| function/class | `dashboard` | 325 |
+| variable/parameter | `employee` | 326 |
+| variable/parameter | `format` | 329 |
+| variable/parameter | `options` | 331 |
+| variable/parameter | `customerOptions` | 332 |
+| variable/parameter | `[id, label]` | 333 |
+| variable/parameter | `form` | 347 |
+| variable/parameter | `body` | 373 |
+| variable/parameter | `title` | 402 |
+| variable/parameter | `answer` | 420 |
+| function/class | `documentList` | 435 |
+| variable/parameter | `id` | 436 |
+| variable/parameter | `params` | 438 |
+| variable/parameter | `docs` | 444 |
+| variable/parameter | `staff` | 445 |
+| variable/parameter | `doc` | 447 |
+| variable/parameter | `input` | 458 |
+| function/class | `preview` | 467 |
+| variable/parameter | `block` | 476 |
+| variable/parameter | `index` | 476 |
+| variable/parameter | `warning` | 476 |
+| variable/parameter | `exports` | 480 |
+| variable/parameter | `link` | 482 |
+| variable/parameter | `suffix` | 483 |
+| variable/parameter | `url` | 485 |
+| function/class | `download` | 518 |
+| variable/parameter | `filename` | 518 |
+| variable/parameter | `type` | 518 |
+| function/class | `studio` | 528 |
+| variable/parameter | `config` | 531 |
+| variable/parameter | `audit` | 532 |
+| variable/parameter | `[dimension, units]` | 541 |
+| variable/parameter | `[key, alias]` | 550 |
+| variable/parameter | `units` | 566 |
+| variable/parameter | `key` | 568 |
+| variable/parameter | `[, unit]` | 569 |
+| variable/parameter | `columns` | 571 |
+| variable/parameter | `section` | 587 |
+| function/class | `render` | 602 |
+| function/class | `start` | 623 |
 
 ## `web/style.css`
 

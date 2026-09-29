@@ -1,24 +1,25 @@
 # @index-begin
-# @symbol variable/parameter: FACTORS L31
-# @symbol variable/parameter: DIMENSIONS L49
-# @symbol variable/parameter: dimension L49
-# @symbol variable/parameter: unit L49
-# @symbol variable/parameter: values L49
-# @symbol variable/parameter: PATTERN L50
-# @symbol function/class: convert L55
-# @symbol variable/parameter: source L55
-# @symbol variable/parameter: target L55
-# @symbol variable/parameter: value L55
-# @symbol variable/parameter: number L60
-# @symbol variable/parameter: context L65
-# @symbol variable/parameter: kelvin L68
-# @symbol function/class: normalize L89
-# @symbol variable/parameter: targets L89
-# @symbol variable/parameter: text L89
-# @symbol variable/parameter: records L91
-# @symbol variable/parameter: match L93
-# @symbol function/class: replacement L93
-# @symbol variable/parameter: result L100
+# @symbol variable/parameter: FACTORS L32
+# @symbol variable/parameter: DIMENSIONS L50
+# @symbol variable/parameter: dimension L50
+# @symbol variable/parameter: unit L50
+# @symbol variable/parameter: values L50
+# @symbol variable/parameter: PATTERN L51
+# @symbol function/class: convert L56
+# @symbol variable/parameter: source L56
+# @symbol variable/parameter: target L56
+# @symbol variable/parameter: value L56
+# @symbol variable/parameter: number L61
+# @symbol variable/parameter: context L66
+# @symbol variable/parameter: kelvin L69
+# @symbol function/class: normalize L90
+# @symbol variable/parameter: targets L90
+# @symbol variable/parameter: text L90
+# @symbol variable/parameter: records L92
+# @symbol variable/parameter: match L94
+# @symbol function/class: replacement L94
+# @symbol variable/parameter: cursor L100
+# @symbol variable/parameter: result L110
 # @index-end
 """Decimal, dimension-aware measurements with provenance. Symbols: docs/code-index.md."""
 
@@ -94,8 +95,17 @@ def normalize(text: str, targets: dict[str, str]) -> tuple[str, list[dict]]:
         """Convert one unambiguous unit match and retain its source character offsets."""
         value, source = match.groups()
         # "in" is also an English preposition. Without a clause boundary, leave it for review.
-        if source == "in" and re.match(r"\s+[A-Za-z]", text[match.end() :]):
-            return match.group()
+        if source == "in":
+            # Scan only the following whitespace run, without regex backtracking or suffix copies.
+            cursor = match.end()
+            while cursor < len(text) and text[cursor].isspace():
+                cursor += 1
+            if (
+                cursor > match.end()
+                and cursor < len(text)
+                and ("A" <= text[cursor] <= "Z" or "a" <= text[cursor] <= "z")
+            ):
+                return match.group()
         target = targets.get(DIMENSIONS[source], source)
         result = convert(value, source, target)
         records.append(

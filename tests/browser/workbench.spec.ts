@@ -1,21 +1,23 @@
 /* @index-begin
- * @symbol function/class: login L25
- * @symbol variable/parameter: page L25
- * @symbol variable/parameter: role L25
- * @symbol variable/parameter: { page, } L43
- * @symbol variable/parameter: download L74
- * @symbol variable/parameter: denied L105
- * @symbol variable/parameter: testInfo L111
- * @symbol variable/parameter: name L114
- * @symbol variable/parameter: { page, browserName, } L187
- * @symbol variable/parameter: results L193
- * @symbol variable/parameter: { page, request, } L222
- * @symbol variable/parameter: manifest L227
- * @symbol variable/parameter: body L228
- * @symbol variable/parameter: cached L252
- * @symbol variable/parameter: names L253
- * @symbol variable/parameter: item L257
- * @symbol variable/parameter: url L263
+ * @symbol function/class: login L27
+ * @symbol variable/parameter: page L27
+ * @symbol variable/parameter: role L27
+ * @symbol variable/parameter: { page, } L45
+ * @symbol variable/parameter: download L76
+ * @symbol variable/parameter: denied L107
+ * @symbol variable/parameter: testInfo L113
+ * @symbol variable/parameter: name L116
+ * @symbol variable/parameter: { page, browserName, } L189
+ * @symbol variable/parameter: results L195
+ * @symbol variable/parameter: { page, request, } L224
+ * @symbol variable/parameter: manifest L229
+ * @symbol variable/parameter: body L230
+ * @symbol variable/parameter: select L250
+ * @symbol variable/parameter: option L251
+ * @symbol variable/parameter: cached L269
+ * @symbol variable/parameter: names L270
+ * @symbol variable/parameter: item L274
+ * @symbol variable/parameter: url L280
 @index-end */
 /** Cross-browser workflow, accessibility, hostile input and PWA checks. Index: docs/code-index.md. */
 import { test, expect, type Page } from "@playwright/test";
@@ -241,6 +243,21 @@ test("sandbox blocks source scripting and app manifest is installable", async ({
     page.frameLocator("iframe").getByText("Safe 50.8 mm", { exact: true }),
   ).toBeVisible();
   await expect(page.locator("iframe")).toHaveAttribute("sandbox", "");
+  expect(await page.locator(".exports a").count()).toBe(7);
+  expect(await page.locator(".exports [onclick]").count()).toBe(0);
+  // DOM tampering cannot turn a workspace value into markup or invalidate the existing session.
+  await page.evaluate(() => {
+    const select = document.querySelector<HTMLSelectElement>("#workspace")!;
+    const option = document.createElement("option");
+    option.value = 'industrial" onclick="alert(1)';
+    select.append(option);
+    select.value = option.value;
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+  await expect(page.getByRole("status")).toHaveText(
+    "Unknown workspace selection.",
+  );
+  await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Your knowledge, connected." }),
   ).toBeVisible();

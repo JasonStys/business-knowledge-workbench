@@ -49,6 +49,7 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm run format:check
       - run: python scripts/code_index.py --check
+      - run: python scripts/file_catalog.py --check
       - run: npm run build
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm test

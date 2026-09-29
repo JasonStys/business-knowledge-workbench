@@ -7,6 +7,7 @@ python -m ruff check server scripts tests/python
 python -m ruff format --check server scripts tests/python
 npm run format:check
 python scripts/code_index.py --check
+python scripts/file_catalog.py --check
 python -m pytest -q
 python scripts/benchmark.py
 npm run build
