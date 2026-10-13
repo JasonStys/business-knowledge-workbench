@@ -16,3 +16,9 @@ Reviewed 2026-09-29. Primary references informed implementation decisions; examp
 | [Playwright testing](https://playwright.dev/docs/intro) | Real browser workflows, accessible locators, multiple engines and retained traces. |
 
 Self-documentation means meaningful names, cohesive functions, strong types/schema contracts and visible data invariants—not comments repeating every assignment. Comments explain trust boundaries, uncertainty, idempotency, dimensional offsets and design intent. Per-function docstrings and generated exact line maps satisfy navigability without hand-maintained stale line references. Big O describes growth under assumptions; measured workloads and resource budgets are the performance evidence. Language choice follows ecosystem/deployment strengths rather than broad speed rankings.
+# Version 1.1 security references
+
+Checked 2026-10-12. Design choices use [OWASP password storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) for the scrypt configuration, [OWASP file-upload guidance](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html) for format/size/permission boundaries and its isolation gap, and [Electron's security checklist](https://www.electronjs.org/docs/latest/tutorial/security) for sandbox/context isolation/CSP/navigation/permission restrictions. This is implementation guidance, not certification.
+
+Official [chat-completion request reference](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create) and [OpenAI data controls](https://developers.openai.com/api/docs/guides/your-data) explain optional API transmission/storage. Official chat requests set store=false; provider-side abuse monitoring and other retention conditions still apply. No zero-retention claim or live paid provider validation is made. Only mock contract fixtures and the genuine offline extractive reference are tested by default.
+

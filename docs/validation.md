@@ -1,5 +1,8 @@
 # Validation and evidence
 
+> Legacy business-engine/demo reference. Version 1.1 installs the private local account wrapper described in [private-accounts.md](private-accounts.md) and [private-api.md](private-api.md). Old plaintext demo data is separate and is not migrated. Legacy source serving needs explicit `KB_LEGACY_MODE=1`; never expose demo credentials to real records.
+
+
 Local release evaluation: 2026-09-29, Windows, Python 3.14.6, Node 24.18.1. All examples are synthetic. These checks exercise implemented behavior; they do not certify production readiness, semantic truth of extracted content, or native installation on every OS.
 
 | Gate | Local result / evidence |

@@ -1,123 +1,126 @@
 # @index-begin
-# @symbol variable/parameter: ROOT L168
-# @symbol variable/parameter: CONVERSION_SLOTS L169
-# @symbol function/class: BodyLimit L172
-# @symbol function/class: __init__ L175
-# @symbol variable/parameter: self L175
-# @symbol function/class: __call__ L179
-# @symbol variable/parameter: receive L179
-# @symbol variable/parameter: scope L179
-# @symbol variable/parameter: send L179
-# @symbol variable/parameter: chunks L183
-# @symbol variable/parameter: total L184
-# @symbol variable/parameter: message L186
-# @symbol function/class: replay L198
-# @symbol function/class: create_app L205
-# @symbol variable/parameter: demo L205
-# @symbol variable/parameter: path L205
-# @symbol variable/parameter: database_path L207
-# @symbol variable/parameter: secure L209
-# @symbol variable/parameter: ai_adapter L211
-# @symbol variable/parameter: login_attempts L212
-# @symbol variable/parameter: attempts_lock L213
-# @symbol variable/parameter: application L216
-# @symbol function/class: lifespan L216
-# @symbol variable/parameter: call_next L224
-# @symbol variable/parameter: request L224
-# @symbol function/class: security_headers L224
-# @symbol variable/parameter: origin L226
-# @symbol variable/parameter: allowed L227
-# @symbol variable/parameter: response L234
-# @symbol function/class: current L249
-# @symbol variable/parameter: required L249
-# @symbol variable/parameter: token L251
-# @symbol variable/parameter: database L252
-# @symbol variable/parameter: user L257
-# @symbol function/class: authorize L262
-# @symbol variable/parameter: mutate L262
-# @symbol variable/parameter: roles L262
-# @symbol function/class: configuration L273
-# @symbol variable/parameter: workspace L273
-# @symbol function/class: accessible L283
-# @symbol variable/parameter: identifier L283
-# @symbol variable/parameter: predicate L289
-# @symbol variable/parameter: values L289
-# @symbol function/class: health L299
-# @symbol function/class: bootstrap L306
-# @symbol variable/parameter: configs L309
-# @symbol function/class: staff_options L332
-# @symbol function/class: add_product L338
-# @symbol variable/parameter: body L338
-# @symbol variable/parameter: config L341
-# @symbol variable/parameter: text L344
-# @symbol function/class: login L384
-# @symbol variable/parameter: address L386
-# @symbol variable/parameter: now L387
-# @symbol variable/parameter: recent L391
-# @symbol variable/parameter: stamp L391
-# @symbol variable/parameter: encoded L401
-# @symbol variable/parameter: valid L402
-# @symbol variable/parameter: csrf L405
-# @symbol function/class: session L425
-# @symbol variable/parameter: key L429
-# @symbol function/class: logout L433
-# @symbol function/class: products L446
-# @symbol variable/parameter: q L447
-# @symbol variable/parameter: rows L458
-# @symbol function/class: list_documents L471
-# @symbol variable/parameter: category L475
-# @symbol variable/parameter: sort L476
-# @symbol function/class: document L490
-# @symbol variable/parameter: _ L492
-# @symbol function/class: export L496
-# @symbol variable/parameter: format_name L496
-# @symbol variable/parameter: payload L501
-# @symbol function/class: source L516
-# @symbol variable/parameter: suffix L521
-# @symbol function/class: upload L529
-# @symbol variable/parameter: file L531
-# @symbol variable/parameter: visibility L532
-# @symbol variable/parameter: customer L533
-# @symbol variable/parameter: dataset L535
-# @symbol variable/parameter: name L546
-# @symbol variable/parameter: data L552
-# @symbol variable/parameter: digest L555
-# @symbol variable/parameter: scope_customer L556
-# @symbol variable/parameter: existing L558
-# @symbol variable/parameter: worker_env L581
-# @symbol variable/parameter: value L583
-# @symbol variable/parameter: converted L586
-# @symbol variable/parameter: block L632
-# @symbol variable/parameter: tables L632
-# @symbol variable/parameter: headers L638
-# @symbol variable/parameter: alias L639
-# @symbol variable/parameter: mapped L641
-# @symbol variable/parameter: record L645
-# @symbol variable/parameter: product L655
-# @symbol function/class: merge L696
-# @symbol variable/parameter: sources L701
-# @symbol variable/parameter: measurements L703
-# @symbol variable/parameter: warnings L703
-# @symbol variable/parameter: source_row L704
-# @symbol variable/parameter: provenance L710
-# @symbol variable/parameter: html L716
-# @symbol variable/parameter: result L721
-# @symbol function/class: get_config L749
-# @symbol function/class: save_config L759
-# @symbol variable/parameter: previous L765
-# @symbol variable/parameter: used L772
-# @symbol function/class: sales_report L793
-# @symbol function/class: measurement L800
-# @symbol function/class: audit_log L808
-# @symbol function/class: context_for L820
-# @symbol variable/parameter: context L824
-# @symbol variable/parameter: budget L825
-# @symbol variable/parameter: row L826
-# @symbol function/class: ask L843
-# @symbol variable/parameter: index L855
-# @symbol function/class: vision L855
-# @symbol variable/parameter: blocks L861
-# @symbol variable/parameter: app L882
+# @symbol variable/parameter: ROOT L171
+# @symbol variable/parameter: CONVERSION_SLOTS L172
+# @symbol function/class: BodyLimit L175
+# @symbol function/class: __init__ L178
+# @symbol variable/parameter: self L178
+# @symbol function/class: __call__ L182
+# @symbol variable/parameter: receive L182
+# @symbol variable/parameter: scope L182
+# @symbol variable/parameter: send L182
+# @symbol variable/parameter: chunks L186
+# @symbol variable/parameter: total L187
+# @symbol variable/parameter: message L189
+# @symbol function/class: replay L201
+# @symbol function/class: create_app L208
+# @symbol variable/parameter: demo L209
+# @symbol variable/parameter: path L209
+# @symbol variable/parameter: private_mode L209
+# @symbol variable/parameter: database_path L212
+# @symbol variable/parameter: secure L214
+# @symbol variable/parameter: ai_adapter L216
+# @symbol variable/parameter: login_attempts L217
+# @symbol variable/parameter: attempts_lock L218
+# @symbol variable/parameter: application L221
+# @symbol function/class: lifespan L221
+# @symbol variable/parameter: call_next L230
+# @symbol variable/parameter: request L230
+# @symbol function/class: security_headers L230
+# @symbol variable/parameter: origin L232
+# @symbol variable/parameter: allowed L233
+# @symbol variable/parameter: response L241
+# @symbol function/class: current L256
+# @symbol variable/parameter: required L256
+# @symbol variable/parameter: token L265
+# @symbol variable/parameter: database L266
+# @symbol variable/parameter: user L271
+# @symbol function/class: authorize L276
+# @symbol variable/parameter: mutate L276
+# @symbol variable/parameter: roles L276
+# @symbol function/class: configuration L287
+# @symbol variable/parameter: workspace L287
+# @symbol function/class: accessible L297
+# @symbol variable/parameter: identifier L297
+# @symbol variable/parameter: predicate L303
+# @symbol variable/parameter: values L303
+# @symbol function/class: health L313
+# @symbol function/class: bootstrap L320
+# @symbol variable/parameter: configs L323
+# @symbol function/class: staff_options L346
+# @symbol function/class: add_product L352
+# @symbol variable/parameter: body L352
+# @symbol variable/parameter: config L355
+# @symbol variable/parameter: text L358
+# @symbol function/class: login L398
+# @symbol variable/parameter: address L402
+# @symbol variable/parameter: now L403
+# @symbol variable/parameter: recent L407
+# @symbol variable/parameter: stamp L407
+# @symbol variable/parameter: encoded L417
+# @symbol variable/parameter: valid L418
+# @symbol variable/parameter: csrf L421
+# @symbol function/class: session L441
+# @symbol variable/parameter: key L445
+# @symbol function/class: logout L449
+# @symbol function/class: products L462
+# @symbol variable/parameter: q L463
+# @symbol variable/parameter: rows L474
+# @symbol function/class: list_documents L487
+# @symbol variable/parameter: category L491
+# @symbol variable/parameter: sort L492
+# @symbol function/class: document L506
+# @symbol variable/parameter: _ L508
+# @symbol function/class: document_preview L512
+# @symbol function/class: export L524
+# @symbol variable/parameter: format_name L524
+# @symbol variable/parameter: payload L529
+# @symbol function/class: source L544
+# @symbol variable/parameter: suffix L549
+# @symbol function/class: upload L557
+# @symbol variable/parameter: file L559
+# @symbol variable/parameter: visibility L560
+# @symbol variable/parameter: customer L561
+# @symbol variable/parameter: dataset L563
+# @symbol variable/parameter: name L574
+# @symbol variable/parameter: data L580
+# @symbol variable/parameter: digest L583
+# @symbol variable/parameter: scope_customer L584
+# @symbol variable/parameter: existing L586
+# @symbol variable/parameter: worker_env L609
+# @symbol variable/parameter: value L611
+# @symbol variable/parameter: command L614
+# @symbol variable/parameter: converted L619
+# @symbol variable/parameter: block L666
+# @symbol variable/parameter: tables L666
+# @symbol variable/parameter: headers L672
+# @symbol variable/parameter: alias L673
+# @symbol variable/parameter: mapped L675
+# @symbol variable/parameter: record L679
+# @symbol variable/parameter: product L689
+# @symbol function/class: merge L730
+# @symbol variable/parameter: sources L735
+# @symbol variable/parameter: measurements L737
+# @symbol variable/parameter: warnings L737
+# @symbol variable/parameter: source_row L738
+# @symbol variable/parameter: provenance L744
+# @symbol variable/parameter: html L750
+# @symbol variable/parameter: result L755
+# @symbol function/class: get_config L783
+# @symbol function/class: save_config L793
+# @symbol variable/parameter: previous L799
+# @symbol variable/parameter: used L806
+# @symbol function/class: sales_report L827
+# @symbol function/class: measurement L834
+# @symbol function/class: audit_log L842
+# @symbol function/class: context_for L854
+# @symbol variable/parameter: context L858
+# @symbol variable/parameter: budget L859
+# @symbol variable/parameter: row L860
+# @symbol function/class: ask L877
+# @symbol variable/parameter: index L889
+# @symbol function/class: vision L889
+# @symbol variable/parameter: blocks L895
+# @symbol variable/parameter: app L917
 # @index-end
 """Same-origin application, authentication, role gates and API orchestration. Index: docs/code-index.md.
 
@@ -202,13 +205,15 @@ class BodyLimit:
         await self.app(scope, replay, send)
 
 
-def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
+def create_app(
+    path: Path | None = None, demo: bool | None = None, private_mode: bool = False
+) -> FastAPI:
     """Application factory supports isolated test databases and explicit demo enrollment."""
     database_path = path or Path(os.environ.get("KB_DB", ROOT / "data/workbench.sqlite"))
     demo = os.environ.get("KB_DEMO", "0") == "1" if demo is None else demo
     secure = os.environ.get("KB_SECURE_COOKIE", "0" if demo else "1") == "1"
     initialize(database_path, demo)
-    ai_adapter = adapter()
+    ai_adapter = adapter() if not private_mode else None
     login_attempts: dict[str, list[float]] = {}
     attempts_lock = threading.Lock()
 
@@ -218,6 +223,7 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
         yield
 
     app = FastAPI(title="Business Knowledge Workbench", version="1.0.0", lifespan=lifespan)
+    app.state.ai_adapter = ai_adapter
     app.add_middleware(BodyLimit)
 
     @app.middleware("http")
@@ -228,6 +234,7 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
         if (
             request.method in {"POST", "PUT", "PATCH", "DELETE"}
             and origin
+            and not private_mode
             and origin not in {allowed, "http://127.0.0.1:5173" if demo else allowed}
         ):
             return JSONResponse({"detail": "Origin not allowed"}, status_code=403)
@@ -248,6 +255,13 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
 
     def current(request: Request, required: bool = True) -> dict | None:
         """Resolve a hashed, expiring opaque session; never accept roles from request data."""
+        if private_mode:
+            user = getattr(request.state, "private_user", None)
+            if user and user.get("visitor"):
+                user = None
+            if required and not user:
+                raise HTTPException(401, "Sign in required")
+            return user
         token = request.cookies.get("kb_session", "")
         with connect(database_path) as database:
             row = database.execute(
@@ -383,6 +397,8 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
     @app.post("/api/login")
     def login(body: Login, request: Request):
         """Rate-limit login, verify credentials, and create an expiring opaque cookie session."""
+        if private_mode:
+            raise HTTPException(403, "Use private account login")
         address = request.client.host if request.client else "unknown"
         now = time.monotonic()
         with attempts_lock:
@@ -492,6 +508,18 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
         row, _ = accessible(request, identifier)
         return json.loads(row["result"])
 
+    @app.get("/api/documents/{identifier}/preview")
+    def document_preview(request: Request, identifier: str):
+        """Serve sanitized canonical HTML for a scriptless same-origin frame; never raw uploads."""
+        row, _ = accessible(request, identifier)
+        return Response(
+            json.loads(row["result"])["html"],
+            media_type="text/html",
+            headers={
+                "Content-Security-Policy": "sandbox; default-src 'none'; img-src data:; style-src 'unsafe-inline'; frame-ancestors 'self'"
+            },
+        )
+
     @app.get("/api/documents/{identifier}/export/{format_name}")
     def export(request: Request, identifier: str, format_name: str):
         """Download a conversion generated from persisted canonical HTML."""
@@ -583,14 +611,20 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
                 for key, value in os.environ.items()
                 if key in {"PATH", "SystemRoot", "SYSTEMROOT", "TEMP", "TMP", "LANG"}
             }
+            command = (
+                [sys.executable, "--convert"]
+                if getattr(sys, "frozen", False)
+                else [sys.executable, "-m", "server.worker"]
+            )
             converted = subprocess.run(
-                [sys.executable, "-m", "server.worker", name, config.model_dump_json()],
+                [*command, name, config.model_dump_json()],
                 input=data,
                 capture_output=True,
                 timeout=25,
                 cwd=ROOT,
                 env=worker_env,
                 check=False,
+                creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
             )
             payload = json.loads(converted.stdout)
             if converted.returncode or "result" not in payload:
@@ -751,7 +785,7 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
         user = authorize(request, {"admin"})
         return {
             "config": configuration(user["workspace"]).model_dump(),
-            "ai_adapter": type(ai_adapter).__name__,
+            "ai_adapter": type(app.state.ai_adapter).__name__,
             "units": UNITS,
         }
 
@@ -847,7 +881,7 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
             raise HTTPException(409, "AI disabled; an administrator must explicitly enable it")
         context = context_for(user)
         try:
-            return validate_answer(ai_adapter.answer(body.question, context), context)
+            return validate_answer(app.state.ai_adapter.answer(body.question, context), context)
         except Exception as error:
             raise HTTPException(502, "AI adapter failed safely; no changes were made") from error
 
@@ -864,7 +898,7 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
         context = [{"id": row["id"], "title": row["title"], "text": blocks[index]["text"]}]
         try:
             return validate_answer(
-                ai_adapter.answer(
+                app.state.ai_adapter.answer(
                     "Describe the figure, axes, table or equation. Clearly mark uncertainty. Do not invent precise values.",
                     context,
                     blocks[index]["image"],
@@ -879,4 +913,5 @@ def create_app(path: Path | None = None, demo: bool | None = None) -> FastAPI:
     return app
 
 
-app = create_app()
+# The legacy demo is opt-in; importing the private service never opens old runtime data.
+app = create_app() if os.environ.get("KB_LEGACY_MODE") == "1" else FastAPI(docs_url=None)

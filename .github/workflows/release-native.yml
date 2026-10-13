@@ -1,0 +1,112 @@
+name: Release private-account applications
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Exact validated source commit
+        required: true
+        default: main
+permissions:
+  contents: read
+concurrency:
+  group: business-knowledge-workbench-release-v1.1.0
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    outputs:
+      sha: ${{ steps.gate.outputs.sha }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ inputs.commit }}
+          persist-credentials: false
+      - id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          sha=$(git rev-parse HEAD)
+          test "$(gh run list --workflow ci.yml --commit "$sha" --limit 1 --json conclusion --jq '.[0].conclusion')" = success
+          test "$(gh run list --workflow packages.yml --commit "$sha" --limit 1 --json conclusion --jq '.[0].conclusion')" = success
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          if gh release view v1.1.0 --json isDraft,targetCommitish > /tmp/cfs-release.json 2>/dev/null; then
+            test "$(jq -r '.isDraft' /tmp/cfs-release.json)" = true
+            test "$(jq -r '.targetCommitish' /tmp/cfs-release.json)" = "$sha"
+          else
+            gh release create v1.1.0 --draft --target "$sha" --title "Business Knowledge Workbench 1.1.0 — private local accounts" --notes-file docs/releases/v1.1.0.md
+          fi
+  build:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    permissions:
+      contents: write
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ needs.prepare.outputs.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '24'
+      - run: python -m pip install --upgrade pip
+      - run: pip install -r requirements.lock -e '.[dev]'
+      - run: pip check
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - run: npm run build
+      - run: python scripts/license_bundle.py
+      - run: python -m PyInstaller --noconfirm --onefile --name business-knowledge-workbench-service --distpath release/service --paths . --add-data "server/schema.sql:server" --add-data "dist:ui" scripts/frozen_entry.py
+      - run: npm run package -- --publish never
+      - name: Verify actual packaged app and create checksummed archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$RUNNER_OS" = Windows ]; then
+            export KBW_INSTALLED_APP="$PWD/release/installers/win-unpacked/Business Knowledge Workbench.exe"
+          elif [ "$RUNNER_OS" = macOS ]; then
+            export KBW_INSTALLED_APP="$PWD/release/installers/mac-arm64/Business Knowledge Workbench.app/Contents/MacOS/Business Knowledge Workbench"
+          else
+            export KBW_INSTALLED_APP="$PWD/release/installers/linux-unpacked/business-knowledge-workbench-studio"
+          fi
+          if [ "$RUNNER_OS" = Linux ]; then xvfb-run -a npm run test:desktop; else npm run test:desktop; fi
+          python scripts/release_archive.py
+      - name: Upload only tested binaries to draft Release, not Actions storage
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release upload v1.1.0 release/installers/*.sha256 --clobber
+          if [ "$RUNNER_OS" = Windows ]; then
+            gh release upload v1.1.0 release/installers/*.exe release/installers/*.zip --clobber
+          elif [ "$RUNNER_OS" = macOS ]; then
+            gh release upload v1.1.0 release/installers/*.dmg release/installers/*.tar.gz --clobber
+          else
+            gh release upload v1.1.0 release/installers/*.AppImage release/installers/*.tar.gz --clobber
+          fi
+  publish:
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release edit v1.1.0 --draft=false
+
+

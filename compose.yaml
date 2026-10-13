@@ -4,6 +4,7 @@ services:
     build: .
     ports: ["127.0.0.1:8000:8000"]
     environment:
+      KB_LEGACY_MODE: "1"
       KB_DEMO: "1"
       KB_ORIGIN: "http://127.0.0.1:8000"
     volumes: ["workbench-data:/app/data"]

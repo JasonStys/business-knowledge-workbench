@@ -10,6 +10,7 @@ const python = existsSync(".venv/Scripts/python.exe")
   : "python";
 export default defineConfig({
   testDir: "tests/browser",
+  testMatch: "workbench.spec.ts",
   timeout: 45000,
   expect: { timeout: 10000 },
   fullyParallel: false,
@@ -41,6 +42,7 @@ export default defineConfig({
     timeout: 45000,
     env: {
       KB_DEMO: "1",
+      KB_LEGACY_MODE: "1",
       KB_DB: `data/browser-${Date.now()}.sqlite`,
       KB_LOGIN_LIMIT: "100",
     },

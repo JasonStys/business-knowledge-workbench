@@ -1,5 +1,8 @@
 # Runbook, installation and release checklist
 
+> Legacy business-engine/demo reference. Version 1.1 installs the private local account wrapper described in [private-accounts.md](private-accounts.md) and [private-api.md](private-api.md). Old plaintext demo data is separate and is not migrated. Legacy source serving needs explicit `KB_LEGACY_MODE=1`; never expose demo credentials to real records.
+
+
 ## Local demo versus real business setup
 
 `KB_DEMO=1` explicitly seeds synthetic accounts/products/docs/sales. Default normal mode does not create demo users or sample sales. A fresh database is the clean boundary; turning off demo mode does not delete previously seeded accounts. Never promote an existing demo database to real use.

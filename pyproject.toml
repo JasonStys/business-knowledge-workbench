@@ -1,12 +1,12 @@
 [project]
 name = "business-knowledge-workbench"
-version = "1.0.0"
+version = "1.1.0"
 description = "Configurable, HTML-first business knowledge and data workspace"
 requires-python = ">=3.12"
-dependencies = ["fastapi", "uvicorn", "python-multipart", "pydantic", "httpx", "nh3", "beautifulsoup4", "markdown-it-py", "python-docx", "openpyxl", "pypdf", "pdfplumber", "pillow", "reportlab", "defusedxml"]
+dependencies = ["fastapi", "uvicorn", "python-multipart", "pydantic", "httpx", "nh3", "beautifulsoup4", "markdown-it-py", "python-docx", "openpyxl", "pypdf", "pdfplumber", "pillow", "reportlab", "defusedxml", "cryptography", "psutil"]
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-cov", "ruff", "pip-audit", "httpx2"]
+dev = ["pytest", "pytest-cov", "ruff", "pip-audit", "httpx2", "pyinstaller"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests/python"]

@@ -13,6 +13,11 @@ test-results/
 playwright-report/
 .env
 *.log
+release/
+artifacts/
+*.sqlite*
+*.kbwvault
+*.spec
 docs/reports/local-*.json
 docs/reports/python-coverage.json
 docs/reports/browser-results.json

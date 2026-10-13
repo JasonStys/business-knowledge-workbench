@@ -2,6 +2,52 @@
 
 Generated from AST/compiler declarations. Each code header repeats exact function/class/type and variable/parameter locations. Local variables are indexed at their first binding; callbacks share their enclosing function's description. Run `python scripts/code_index.py` after code changes.
 
+## `desktop/main.cjs`
+
+[Source](../desktop/main.cjs) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `{ app, BrowserWindow, dialog, Menu, session, shell, }` | 43 |
+| variable/parameter | `{ spawn }` | 51 |
+| variable/parameter | `{ randomBytes }` | 52 |
+| variable/parameter | `{ join }` | 53 |
+| variable/parameter | `net` | 54 |
+| variable/parameter | `fs` | 55 |
+| variable/parameter | `service` | 56 |
+| variable/parameter | `serviceOrigin` | 56 |
+| variable/parameter | `serviceToken` | 56 |
+| variable/parameter | `closing` | 57 |
+| function/class | `port` | 60 |
+| variable/parameter | `server` | 61 |
+| variable/parameter | `reject` | 62 |
+| variable/parameter | `resolve` | 62 |
+| variable/parameter | `selected` | 65 |
+| function/class | `launch` | 71 |
+| variable/parameter | `nonce` | 74 |
+| variable/parameter | `resources` | 75 |
+| variable/parameter | `executable` | 78 |
+| variable/parameter | `ui` | 85 |
+| variable/parameter | `log` | 89 |
+| variable/parameter | `env` | 94 |
+| variable/parameter | `exited` | 112 |
+| variable/parameter | `origin` | 120 |
+| variable/parameter | `ready` | 122 |
+| variable/parameter | `attempt` | 123 |
+| variable/parameter | `response` | 125 |
+| variable/parameter | `health` | 128 |
+| variable/parameter | `isolated` | 142 |
+| variable/parameter | `_permission` | 148 |
+| variable/parameter | `_webContents` | 148 |
+| variable/parameter | `callback` | 148 |
+| variable/parameter | `details` | 152 |
+| variable/parameter | `allowed` | 153 |
+| variable/parameter | `window` | 161 |
+| variable/parameter | `event` | 177 |
+| variable/parameter | `url` | 177 |
+| variable/parameter | `stopped` | 241 |
+| variable/parameter | `error` | 281 |
+
 ## `examples/custom_ai.py`
 
 [Source](../examples/custom_ai.py) — descriptive module header and function contracts are in this file.
@@ -138,9 +184,9 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `title` | 68 |
 | function/class | `main` | 81 |
 | variable/parameter | `output` | 83 |
-| variable/parameter | `paths` | 86 |
-| variable/parameter | `content` | 87 |
-| variable/parameter | `target` | 94 |
+| variable/parameter | `paths` | 91 |
+| variable/parameter | `content` | 92 |
+| variable/parameter | `target` | 99 |
 
 ## `scripts/fixtures.py`
 
@@ -169,6 +215,49 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `table` | 112 |
 | variable/parameter | `flow` | 129 |
 
+## `scripts/frozen_entry.py`
+
+[Source](../scripts/frozen_entry.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+
+## `scripts/license_bundle.py`
+
+[Source](../scripts/license_bundle.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| function/class | `main` | 25 |
+| variable/parameter | `root` | 27 |
+| variable/parameter | `output` | 28 |
+| variable/parameter | `records` | 31 |
+| variable/parameter | `distribution` | 32 |
+| variable/parameter | `name` | 33 |
+| variable/parameter | `file` | 42 |
+| variable/parameter | `target` | 48 |
+| variable/parameter | `python_license` | 51 |
+| variable/parameter | `candidates` | 58 |
+| variable/parameter | `candidate` | 59 |
+| variable/parameter | `folder` | 69 |
+| variable/parameter | `path` | 76 |
+
+## `scripts/release_archive.py`
+
+[Source](../scripts/release_archive.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `path` | 20 |
+| function/class | `write_release_checksum` | 20 |
+| variable/parameter | `stream` | 22 |
+| variable/parameter | `digest` | 23 |
+| function/class | `main` | 29 |
+| variable/parameter | `root` | 31 |
+| variable/parameter | `platform` | 32 |
+| variable/parameter | `folder` | 33 |
+| variable/parameter | `base` | 42 |
+
 ## `scripts/symbols.mjs`
 
 [Source](../scripts/symbols.mjs) — descriptive module header and function contracts are in this file.
@@ -196,6 +285,60 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | Kind | Name | Line |
 | --- | --- | ---: |
 
+## `server/accounts.py`
+
+[Source](../server/accounts.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `SESSION_SECONDS` | 66 |
+| variable/parameter | `IDLE_SECONDS` | 67 |
+| variable/parameter | `HASH_SLOTS` | 68 |
+| function/class | `digest` | 71 |
+| variable/parameter | `value` | 71 |
+| variable/parameter | `password` | 76 |
+| function/class | `password_hash` | 76 |
+| variable/parameter | `salt` | 76 |
+| variable/parameter | `key` | 80 |
+| function/class | `password_matches` | 86 |
+| variable/parameter | `stored` | 86 |
+| variable/parameter | `_` | 89 |
+| variable/parameter | `version` | 89 |
+| function/class | `Accounts` | 97 |
+| function/class | `__init__` | 100 |
+| variable/parameter | `path` | 100 |
+| variable/parameter | `self` | 100 |
+| function/class | `connection` | 122 |
+| variable/parameter | `db` | 124 |
+| function/class | `throttle` | 133 |
+| variable/parameter | `window` | 133 |
+| variable/parameter | `now` | 135 |
+| variable/parameter | `row` | 139 |
+| variable/parameter | `count` | 140 |
+| function/class | `register` | 147 |
+| variable/parameter | `username` | 147 |
+| variable/parameter | `hashed` | 150 |
+| function/class | `login` | 160 |
+| variable/parameter | `valid` | 164 |
+| variable/parameter | `owner` | 167 |
+| function/class | `session` | 167 |
+| function/class | `owner` | 184 |
+| variable/parameter | `token` | 184 |
+| function/class | `revoke` | 196 |
+| function/class | `vault` | 201 |
+| variable/parameter | `envelope` | 213 |
+| variable/parameter | `revision` | 213 |
+| function/class | `save` | 213 |
+| variable/parameter | `recovery` | 226 |
+| function/class | `reset` | 226 |
+| variable/parameter | `fresh` | 234 |
+| variable/parameter | `updated` | 236 |
+| function/class | `delete` | 245 |
+| function/class | `decode_field` | 259 |
+| variable/parameter | `maximum` | 259 |
+| variable/parameter | `minimum` | 259 |
+| variable/parameter | `result` | 262 |
+
 ## `server/ai.py`
 
 [Source](../server/ai.py) — descriptive module header and function contracts are in this file.
@@ -222,22 +365,22 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `content` | 107 |
 | variable/parameter | `headers` | 112 |
 | variable/parameter | `client` | 113 |
-| variable/parameter | `response` | 127 |
-| variable/parameter | `chunks` | 129 |
-| variable/parameter | `chunk` | 130 |
-| variable/parameter | `payload` | 134 |
-| function/class | `adapter` | 139 |
-| variable/parameter | `factory` | 141 |
-| variable/parameter | `function` | 143 |
-| variable/parameter | `module` | 143 |
-| variable/parameter | `context` | 154 |
-| variable/parameter | `result` | 154 |
-| function/class | `validate_answer` | 154 |
-| variable/parameter | `allowed` | 156 |
-| variable/parameter | `document` | 156 |
-| variable/parameter | `answer` | 157 |
-| variable/parameter | `citations` | 157 |
-| variable/parameter | `citation` | 165 |
+| variable/parameter | `response` | 132 |
+| variable/parameter | `chunks` | 134 |
+| variable/parameter | `chunk` | 135 |
+| variable/parameter | `payload` | 139 |
+| function/class | `adapter` | 144 |
+| variable/parameter | `factory` | 146 |
+| variable/parameter | `function` | 148 |
+| variable/parameter | `module` | 148 |
+| variable/parameter | `context` | 159 |
+| variable/parameter | `result` | 159 |
+| function/class | `validate_answer` | 159 |
+| variable/parameter | `allowed` | 161 |
+| variable/parameter | `document` | 161 |
+| variable/parameter | `answer` | 162 |
+| variable/parameter | `citations` | 162 |
+| variable/parameter | `citation` | 170 |
 
 ## `server/analytics.py`
 
@@ -274,125 +417,128 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `ROOT` | 168 |
-| variable/parameter | `CONVERSION_SLOTS` | 169 |
-| function/class | `BodyLimit` | 172 |
-| function/class | `__init__` | 175 |
-| variable/parameter | `self` | 175 |
-| function/class | `__call__` | 179 |
-| variable/parameter | `receive` | 179 |
-| variable/parameter | `scope` | 179 |
-| variable/parameter | `send` | 179 |
-| variable/parameter | `chunks` | 183 |
-| variable/parameter | `total` | 184 |
-| variable/parameter | `message` | 186 |
-| function/class | `replay` | 198 |
-| function/class | `create_app` | 205 |
-| variable/parameter | `demo` | 205 |
-| variable/parameter | `path` | 205 |
-| variable/parameter | `database_path` | 207 |
-| variable/parameter | `secure` | 209 |
-| variable/parameter | `ai_adapter` | 211 |
-| variable/parameter | `login_attempts` | 212 |
-| variable/parameter | `attempts_lock` | 213 |
-| variable/parameter | `application` | 216 |
-| function/class | `lifespan` | 216 |
-| variable/parameter | `call_next` | 224 |
-| variable/parameter | `request` | 224 |
-| function/class | `security_headers` | 224 |
-| variable/parameter | `origin` | 226 |
-| variable/parameter | `allowed` | 227 |
-| variable/parameter | `response` | 234 |
-| function/class | `current` | 249 |
-| variable/parameter | `required` | 249 |
-| variable/parameter | `token` | 251 |
-| variable/parameter | `database` | 252 |
-| variable/parameter | `user` | 257 |
-| function/class | `authorize` | 262 |
-| variable/parameter | `mutate` | 262 |
-| variable/parameter | `roles` | 262 |
-| function/class | `configuration` | 273 |
-| variable/parameter | `workspace` | 273 |
-| function/class | `accessible` | 283 |
-| variable/parameter | `identifier` | 283 |
-| variable/parameter | `predicate` | 289 |
-| variable/parameter | `values` | 289 |
-| function/class | `health` | 299 |
-| function/class | `bootstrap` | 306 |
-| variable/parameter | `configs` | 309 |
-| function/class | `staff_options` | 332 |
-| function/class | `add_product` | 338 |
-| variable/parameter | `body` | 338 |
-| variable/parameter | `config` | 341 |
-| variable/parameter | `text` | 344 |
-| function/class | `login` | 384 |
-| variable/parameter | `address` | 386 |
-| variable/parameter | `now` | 387 |
-| variable/parameter | `recent` | 391 |
-| variable/parameter | `stamp` | 391 |
-| variable/parameter | `encoded` | 401 |
-| variable/parameter | `valid` | 402 |
-| variable/parameter | `csrf` | 405 |
-| function/class | `session` | 425 |
-| variable/parameter | `key` | 429 |
-| function/class | `logout` | 433 |
-| function/class | `products` | 446 |
-| variable/parameter | `q` | 447 |
-| variable/parameter | `rows` | 458 |
-| function/class | `list_documents` | 471 |
-| variable/parameter | `category` | 475 |
-| variable/parameter | `sort` | 476 |
-| function/class | `document` | 490 |
-| variable/parameter | `_` | 492 |
-| function/class | `export` | 496 |
-| variable/parameter | `format_name` | 496 |
-| variable/parameter | `payload` | 501 |
-| function/class | `source` | 516 |
-| variable/parameter | `suffix` | 521 |
-| function/class | `upload` | 529 |
-| variable/parameter | `file` | 531 |
-| variable/parameter | `visibility` | 532 |
-| variable/parameter | `customer` | 533 |
-| variable/parameter | `dataset` | 535 |
-| variable/parameter | `name` | 546 |
-| variable/parameter | `data` | 552 |
-| variable/parameter | `digest` | 555 |
-| variable/parameter | `scope_customer` | 556 |
-| variable/parameter | `existing` | 558 |
-| variable/parameter | `worker_env` | 581 |
-| variable/parameter | `value` | 583 |
-| variable/parameter | `converted` | 586 |
-| variable/parameter | `block` | 632 |
-| variable/parameter | `tables` | 632 |
-| variable/parameter | `headers` | 638 |
-| variable/parameter | `alias` | 639 |
-| variable/parameter | `mapped` | 641 |
-| variable/parameter | `record` | 645 |
-| variable/parameter | `product` | 655 |
-| function/class | `merge` | 696 |
-| variable/parameter | `sources` | 701 |
-| variable/parameter | `measurements` | 703 |
-| variable/parameter | `warnings` | 703 |
-| variable/parameter | `source_row` | 704 |
-| variable/parameter | `provenance` | 710 |
-| variable/parameter | `html` | 716 |
-| variable/parameter | `result` | 721 |
-| function/class | `get_config` | 749 |
-| function/class | `save_config` | 759 |
-| variable/parameter | `previous` | 765 |
-| variable/parameter | `used` | 772 |
-| function/class | `sales_report` | 793 |
-| function/class | `measurement` | 800 |
-| function/class | `audit_log` | 808 |
-| function/class | `context_for` | 820 |
-| variable/parameter | `context` | 824 |
-| variable/parameter | `budget` | 825 |
-| variable/parameter | `row` | 826 |
-| function/class | `ask` | 843 |
-| variable/parameter | `index` | 855 |
-| function/class | `vision` | 855 |
-| variable/parameter | `blocks` | 861 |
-| variable/parameter | `app` | 882 |
+| variable/parameter | `ROOT` | 171 |
+| variable/parameter | `CONVERSION_SLOTS` | 172 |
+| function/class | `BodyLimit` | 175 |
+| function/class | `__init__` | 178 |
+| variable/parameter | `self` | 178 |
+| function/class | `__call__` | 182 |
+| variable/parameter | `receive` | 182 |
+| variable/parameter | `scope` | 182 |
+| variable/parameter | `send` | 182 |
+| variable/parameter | `chunks` | 186 |
+| variable/parameter | `total` | 187 |
+| variable/parameter | `message` | 189 |
+| function/class | `replay` | 201 |
+| function/class | `create_app` | 208 |
+| variable/parameter | `demo` | 209 |
+| variable/parameter | `path` | 209 |
+| variable/parameter | `private_mode` | 209 |
+| variable/parameter | `database_path` | 212 |
+| variable/parameter | `secure` | 214 |
+| variable/parameter | `ai_adapter` | 216 |
+| variable/parameter | `login_attempts` | 217 |
+| variable/parameter | `attempts_lock` | 218 |
+| variable/parameter | `application` | 221 |
+| function/class | `lifespan` | 221 |
+| variable/parameter | `call_next` | 230 |
+| variable/parameter | `request` | 230 |
+| function/class | `security_headers` | 230 |
+| variable/parameter | `origin` | 232 |
+| variable/parameter | `allowed` | 233 |
+| variable/parameter | `response` | 241 |
+| function/class | `current` | 256 |
+| variable/parameter | `required` | 256 |
+| variable/parameter | `token` | 265 |
+| variable/parameter | `database` | 266 |
+| variable/parameter | `user` | 271 |
+| function/class | `authorize` | 276 |
+| variable/parameter | `mutate` | 276 |
+| variable/parameter | `roles` | 276 |
+| function/class | `configuration` | 287 |
+| variable/parameter | `workspace` | 287 |
+| function/class | `accessible` | 297 |
+| variable/parameter | `identifier` | 297 |
+| variable/parameter | `predicate` | 303 |
+| variable/parameter | `values` | 303 |
+| function/class | `health` | 313 |
+| function/class | `bootstrap` | 320 |
+| variable/parameter | `configs` | 323 |
+| function/class | `staff_options` | 346 |
+| function/class | `add_product` | 352 |
+| variable/parameter | `body` | 352 |
+| variable/parameter | `config` | 355 |
+| variable/parameter | `text` | 358 |
+| function/class | `login` | 398 |
+| variable/parameter | `address` | 402 |
+| variable/parameter | `now` | 403 |
+| variable/parameter | `recent` | 407 |
+| variable/parameter | `stamp` | 407 |
+| variable/parameter | `encoded` | 417 |
+| variable/parameter | `valid` | 418 |
+| variable/parameter | `csrf` | 421 |
+| function/class | `session` | 441 |
+| variable/parameter | `key` | 445 |
+| function/class | `logout` | 449 |
+| function/class | `products` | 462 |
+| variable/parameter | `q` | 463 |
+| variable/parameter | `rows` | 474 |
+| function/class | `list_documents` | 487 |
+| variable/parameter | `category` | 491 |
+| variable/parameter | `sort` | 492 |
+| function/class | `document` | 506 |
+| variable/parameter | `_` | 508 |
+| function/class | `document_preview` | 512 |
+| function/class | `export` | 524 |
+| variable/parameter | `format_name` | 524 |
+| variable/parameter | `payload` | 529 |
+| function/class | `source` | 544 |
+| variable/parameter | `suffix` | 549 |
+| function/class | `upload` | 557 |
+| variable/parameter | `file` | 559 |
+| variable/parameter | `visibility` | 560 |
+| variable/parameter | `customer` | 561 |
+| variable/parameter | `dataset` | 563 |
+| variable/parameter | `name` | 574 |
+| variable/parameter | `data` | 580 |
+| variable/parameter | `digest` | 583 |
+| variable/parameter | `scope_customer` | 584 |
+| variable/parameter | `existing` | 586 |
+| variable/parameter | `worker_env` | 609 |
+| variable/parameter | `value` | 611 |
+| variable/parameter | `command` | 614 |
+| variable/parameter | `converted` | 619 |
+| variable/parameter | `block` | 666 |
+| variable/parameter | `tables` | 666 |
+| variable/parameter | `headers` | 672 |
+| variable/parameter | `alias` | 673 |
+| variable/parameter | `mapped` | 675 |
+| variable/parameter | `record` | 679 |
+| variable/parameter | `product` | 689 |
+| function/class | `merge` | 730 |
+| variable/parameter | `sources` | 735 |
+| variable/parameter | `measurements` | 737 |
+| variable/parameter | `warnings` | 737 |
+| variable/parameter | `source_row` | 738 |
+| variable/parameter | `provenance` | 744 |
+| variable/parameter | `html` | 750 |
+| variable/parameter | `result` | 755 |
+| function/class | `get_config` | 783 |
+| function/class | `save_config` | 793 |
+| variable/parameter | `previous` | 799 |
+| variable/parameter | `used` | 806 |
+| function/class | `sales_report` | 827 |
+| function/class | `measurement` | 834 |
+| function/class | `audit_log` | 842 |
+| function/class | `context_for` | 854 |
+| variable/parameter | `context` | 858 |
+| variable/parameter | `budget` | 859 |
+| variable/parameter | `row` | 860 |
+| function/class | `ask` | 877 |
+| variable/parameter | `index` | 889 |
+| function/class | `vision` | 889 |
+| variable/parameter | `blocks` | 895 |
+| variable/parameter | `app` | 917 |
 
 ## `server/conversion.py`
 
@@ -575,6 +721,195 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `customer` | 172 |
 | variable/parameter | `specifications` | 173 |
 
+## `server/permissions.py`
+
+[Source](../server/permissions.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| function/class | `protect_directory` | 18 |
+| variable/parameter | `root` | 18 |
+| variable/parameter | `system` | 31 |
+| variable/parameter | `flags` | 32 |
+| variable/parameter | `identity` | 33 |
+| variable/parameter | `rows` | 40 |
+
+## `server/private_api.py`
+
+[Source](../server/private_api.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `CSP` | 130 |
+| variable/parameter | `HISTORY_STOP_BYTES` | 131 |
+| function/class | `Boundary` | 134 |
+| function/class | `__init__` | 137 |
+| variable/parameter | `self` | 137 |
+| function/class | `__call__` | 143 |
+| variable/parameter | `receive` | 143 |
+| variable/parameter | `scope` | 143 |
+| variable/parameter | `send` | 143 |
+| variable/parameter | `raw` | 147 |
+| variable/parameter | `headers` | 148 |
+| variable/parameter | `k` | 148 |
+| variable/parameter | `v` | 148 |
+| function/class | `guarded` | 150 |
+| variable/parameter | `message` | 150 |
+| function/class | `deny` | 189 |
+| variable/parameter | `detail` | 189 |
+| variable/parameter | `status` | 189 |
+| variable/parameter | `cookies` | 220 |
+| variable/parameter | `token` | 225 |
+| variable/parameter | `account` | 226 |
+| variable/parameter | `chunks` | 234 |
+| variable/parameter | `length` | 234 |
+| variable/parameter | `delivered` | 246 |
+| function/class | `replay` | 248 |
+| function/class | `Closed` | 259 |
+| variable/parameter | `model_config` | 262 |
+| function/class | `Credentials` | 265 |
+| variable/parameter | `alias` | 268 |
+| variable/parameter | `password` | 269 |
+| function/class | `Recovery` | 272 |
+| variable/parameter | `recovery` | 275 |
+| function/class | `Unlock` | 278 |
+| variable/parameter | `key` | 281 |
+| variable/parameter | `salt` | 282 |
+| function/class | `Activity` | 285 |
+| variable/parameter | `idle_seconds` | 288 |
+| function/class | `Delete` | 291 |
+| variable/parameter | `confirm` | 295 |
+| function/class | `Settings` | 298 |
+| variable/parameter | `endpoint` | 301 |
+| variable/parameter | `model` | 302 |
+| variable/parameter | `retain_key` | 304 |
+| function/class | `destination` | 307 |
+| variable/parameter | `parsed` | 310 |
+| variable/parameter | `manager` | 331 |
+| function/class | `public_settings` | 331 |
+| variable/parameter | `path` | 333 |
+| variable/parameter | `data` | 334 |
+| function/class | `Proxy` | 342 |
+| variable/parameter | `query` | 366 |
+| variable/parameter | `workspace` | 367 |
+| variable/parameter | `view` | 373 |
+| variable/parameter | `db` | 378 |
+| variable/parameter | `current` | 389 |
+| variable/parameter | `forwarded` | 397 |
+| function/class | `create_private_app` | 419 |
+| variable/parameter | `launcher_token` | 420 |
+| variable/parameter | `nonce` | 420 |
+| variable/parameter | `port` | 420 |
+| variable/parameter | `root` | 420 |
+| variable/parameter | `ui` | 420 |
+| function/class | `lifespan` | 427 |
+| function/class | `idle` | 430 |
+| variable/parameter | `task` | 444 |
+| variable/parameter | `app` | 454 |
+| variable/parameter | `error` | 466 |
+| function/class | `invalid` | 466 |
+| variable/parameter | `request` | 466 |
+| function/class | `bad_value` | 471 |
+| function/class | `bad_disk` | 476 |
+| function/class | `identify` | 485 |
+| variable/parameter | `owner` | 489 |
+| function/class | `signed` | 489 |
+| variable/parameter | `response` | 491 |
+| function/class | `auth_limit` | 502 |
+| function/class | `health` | 510 |
+| function/class | `shutdown` | 521 |
+| variable/parameter | `callback` | 527 |
+| function/class | `register` | 534 |
+| function/class | `login` | 546 |
+| function/class | `reset` | 555 |
+| variable/parameter | `row` | 560 |
+| variable/parameter | `fresh` | 566 |
+| function/class | `account` | 574 |
+| variable/parameter | `session` | 576 |
+| function/class | `unlock` | 584 |
+| function/class | `activity` | 595 |
+| function/class | `save` | 603 |
+| function/class | `lock` | 610 |
+| function/class | `logout` | 618 |
+| function/class | `delete` | 630 |
+| function/class | `backup` | 646 |
+| variable/parameter | `_` | 648 |
+| function/class | `get_providers` | 659 |
+| function/class | `seed` | 666 |
+| function/class | `providers` | 681 |
+| variable/parameter | `old` | 686 |
+| variable/parameter | `config` | 692 |
+
+## `server/private_cli.py`
+
+[Source](../server/private_cli.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| function/class | `data_directory` | 39 |
+| variable/parameter | `base` | 44 |
+| function/class | `parent_guard` | 52 |
+| variable/parameter | `server` | 52 |
+| variable/parameter | `pid` | 54 |
+| variable/parameter | `started` | 55 |
+| variable/parameter | `parent` | 59 |
+| function/class | `main` | 73 |
+| variable/parameter | `parser` | 75 |
+| variable/parameter | `args` | 80 |
+| variable/parameter | `bundle` | 83 |
+| variable/parameter | `ui` | 84 |
+| variable/parameter | `listener` | 85 |
+| variable/parameter | `port` | 88 |
+| variable/parameter | `app` | 89 |
+| variable/parameter | `thread` | 109 |
+| variable/parameter | `deadline` | 113 |
+| variable/parameter | `url` | 118 |
+
+## `server/private_workspace.py`
+
+[Source](../server/private_workspace.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `HISTORY_RECOVERY_BYTES` | 65 |
+| function/class | `atomic_json` | 68 |
+| variable/parameter | `path` | 68 |
+| variable/parameter | `value` | 68 |
+| variable/parameter | `descriptor` | 70 |
+| variable/parameter | `name` | 70 |
+| variable/parameter | `stream` | 72 |
+| function/class | `InstanceLock` | 81 |
+| function/class | `__init__` | 84 |
+| variable/parameter | `self` | 84 |
+| function/class | `close` | 106 |
+| function/class | `Workspaces` | 111 |
+| variable/parameter | `root` | 114 |
+| variable/parameter | `allowed` | 120 |
+| variable/parameter | `p` | 129 |
+| function/class | `archive` | 149 |
+| variable/parameter | `owner` | 149 |
+| variable/parameter | `c` | 153 |
+| variable/parameter | `session` | 158 |
+| function/class | `status` | 158 |
+| variable/parameter | `config` | 160 |
+| variable/parameter | `encoded` | 170 |
+| variable/parameter | `salt` | 170 |
+| function/class | `unlock` | 170 |
+| variable/parameter | `key` | 174 |
+| variable/parameter | `current` | 175 |
+| variable/parameter | `proof` | 179 |
+| variable/parameter | `nonce` | 192 |
+| variable/parameter | `provider_path` | 230 |
+| variable/parameter | `settings` | 234 |
+| variable/parameter | `k` | 238 |
+| variable/parameter | `v` | 238 |
+| function/class | `require` | 247 |
+| variable/parameter | `force` | 253 |
+| function/class | `save` | 253 |
+| function/class | `remove_active` | 264 |
+| function/class | `lock` | 276 |
+| function/class | `delete` | 290 |
+
 ## `server/schema.sql`
 
 [Source](../server/schema.sql) — descriptive module header and function contracts are in this file.
@@ -598,54 +933,55 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `SCENARIOS` | 63 |
-| variable/parameter | `password` | 160 |
-| function/class | `password_hash` | 160 |
-| variable/parameter | `salt` | 160 |
-| variable/parameter | `digest` | 163 |
-| variable/parameter | `encoded` | 167 |
-| function/class | `verify_password` | 167 |
-| function/class | `connect` | 174 |
-| variable/parameter | `path` | 174 |
-| variable/parameter | `database` | 176 |
-| variable/parameter | `demo` | 186 |
-| function/class | `initialize` | 186 |
-| variable/parameter | `version` | 190 |
-| variable/parameter | `scenario` | 194 |
-| variable/parameter | `config` | 195 |
-| variable/parameter | `role` | 201 |
-| variable/parameter | `username` | 201 |
-| variable/parameter | `customer` | 218 |
-| variable/parameter | `description` | 218 |
-| variable/parameter | `name` | 218 |
-| variable/parameter | `price` | 218 |
-| variable/parameter | `product_id` | 218 |
-| variable/parameter | `specifications` | 218 |
-| variable/parameter | `normalized` | 221 |
-| variable/parameter | `month` | 237 |
-| variable/parameter | `quantity` | 238 |
-| variable/parameter | `suffix` | 250 |
-| variable/parameter | `text` | 250 |
-| variable/parameter | `visibility` | 250 |
-| variable/parameter | `name_file` | 267 |
-| variable/parameter | `content` | 268 |
-| variable/parameter | `result` | 269 |
-| function/class | `acl` | 287 |
-| variable/parameter | `user` | 287 |
-| variable/parameter | `workspace` | 287 |
-| function/class | `documents` | 301 |
-| variable/parameter | `query` | 305 |
-| variable/parameter | `category` | 306 |
-| variable/parameter | `sort` | 307 |
-| variable/parameter | `predicate` | 310 |
-| variable/parameter | `values` | 310 |
-| variable/parameter | `pattern` | 315 |
-| variable/parameter | `order` | 321 |
-| variable/parameter | `rows` | 328 |
-| variable/parameter | `row` | 336 |
-| function/class | `audit` | 339 |
-| variable/parameter | `detail` | 339 |
-| variable/parameter | `event` | 339 |
+| variable/parameter | `SCENARIOS` | 64 |
+| variable/parameter | `password` | 161 |
+| function/class | `password_hash` | 161 |
+| variable/parameter | `salt` | 161 |
+| variable/parameter | `digest` | 164 |
+| variable/parameter | `encoded` | 168 |
+| function/class | `verify_password` | 168 |
+| function/class | `connect` | 175 |
+| variable/parameter | `path` | 175 |
+| variable/parameter | `database` | 177 |
+| variable/parameter | `demo` | 187 |
+| function/class | `initialize` | 187 |
+| variable/parameter | `samples` | 187 |
+| variable/parameter | `version` | 191 |
+| variable/parameter | `scenario` | 195 |
+| variable/parameter | `config` | 196 |
+| variable/parameter | `role` | 202 |
+| variable/parameter | `username` | 202 |
+| variable/parameter | `customer` | 219 |
+| variable/parameter | `description` | 219 |
+| variable/parameter | `name` | 219 |
+| variable/parameter | `price` | 219 |
+| variable/parameter | `product_id` | 219 |
+| variable/parameter | `specifications` | 219 |
+| variable/parameter | `normalized` | 222 |
+| variable/parameter | `month` | 238 |
+| variable/parameter | `quantity` | 239 |
+| variable/parameter | `suffix` | 251 |
+| variable/parameter | `text` | 251 |
+| variable/parameter | `visibility` | 251 |
+| variable/parameter | `name_file` | 268 |
+| variable/parameter | `content` | 269 |
+| variable/parameter | `result` | 270 |
+| function/class | `acl` | 288 |
+| variable/parameter | `user` | 288 |
+| variable/parameter | `workspace` | 288 |
+| function/class | `documents` | 302 |
+| variable/parameter | `query` | 306 |
+| variable/parameter | `category` | 307 |
+| variable/parameter | `sort` | 308 |
+| variable/parameter | `predicate` | 311 |
+| variable/parameter | `values` | 311 |
+| variable/parameter | `pattern` | 316 |
+| variable/parameter | `order` | 322 |
+| variable/parameter | `rows` | 329 |
+| variable/parameter | `row` | 337 |
+| function/class | `audit` | 340 |
+| variable/parameter | `detail` | 340 |
+| variable/parameter | `event` | 340 |
 
 ## `server/units.py`
 
@@ -675,6 +1011,65 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `cursor` | 100 |
 | variable/parameter | `result` | 110 |
 
+## `server/vault.py`
+
+[Source](../server/vault.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `MAGIC` | 75 |
+| variable/parameter | `AAD` | 76 |
+| variable/parameter | `MAX_BYTES` | 77 |
+| variable/parameter | `MAX_FILES` | 78 |
+| variable/parameter | `CHUNK` | 79 |
+| variable/parameter | `name` | 82 |
+| function/class | `safe_name` | 82 |
+| variable/parameter | `path` | 84 |
+| variable/parameter | `devices` | 85 |
+| variable/parameter | `i` | 90 |
+| variable/parameter | `c` | 98 |
+| function/class | `members` | 109 |
+| variable/parameter | `root` | 109 |
+| variable/parameter | `found` | 111 |
+| variable/parameter | `names` | 111 |
+| variable/parameter | `total` | 111 |
+| function/class | `signature` | 130 |
+| variable/parameter | `p` | 134 |
+| function/class | `EncryptedWriter` | 138 |
+| function/class | `__init__` | 141 |
+| variable/parameter | `encryptor` | 141 |
+| variable/parameter | `self` | 141 |
+| variable/parameter | `stream` | 141 |
+| function/class | `writable` | 145 |
+| variable/parameter | `data` | 149 |
+| function/class | `write` | 149 |
+| function/class | `tell` | 155 |
+| variable/parameter | `destination` | 160 |
+| function/class | `encrypt_workspace` | 160 |
+| variable/parameter | `key` | 160 |
+| variable/parameter | `paths` | 162 |
+| variable/parameter | `descriptor` | 168 |
+| variable/parameter | `temporary` | 168 |
+| variable/parameter | `scratch` | 169 |
+| variable/parameter | `nonce` | 171 |
+| variable/parameter | `writer` | 176 |
+| variable/parameter | `copied` | 189 |
+| variable/parameter | `content` | 193 |
+| function/class | `decrypt_workspace` | 210 |
+| variable/parameter | `source` | 210 |
+| variable/parameter | `plain` | 216 |
+| variable/parameter | `tag` | 221 |
+| variable/parameter | `remaining` | 223 |
+| variable/parameter | `decryptor` | 224 |
+| variable/parameter | `chunk` | 227 |
+| variable/parameter | `archive` | 233 |
+| variable/parameter | `entries` | 234 |
+| variable/parameter | `entry` | 238 |
+| variable/parameter | `metadata` | 251 |
+| variable/parameter | `original` | 254 |
+| variable/parameter | `target` | 268 |
+| variable/parameter | `output` | 270 |
+
 ## `server/worker.py`
 
 [Source](../server/worker.py) — descriptive module header and function contracts are in this file.
@@ -684,6 +1079,55 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | function/class | `main` | 15 |
 | variable/parameter | `data` | 18 |
 | variable/parameter | `result` | 19 |
+
+## `tests/browser/account-session.ts`
+
+[Source](../tests/browser/account-session.ts) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `phrase` | 13 |
+| variable/parameter | `alias` | 15 |
+| function/class | `createSession` | 15 |
+| variable/parameter | `page` | 15 |
+| function/class | `documentJourney` | 43 |
+| variable/parameter | `verifyNativeDownload` | 45 |
+| variable/parameter | `downloaded` | 66 |
+
+## `tests/browser/desktop.spec.ts`
+
+[Source](../tests/browser/desktop.spec.ts) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `temporary` | 24 |
+| variable/parameter | `app` | 25 |
+| variable/parameter | `page` | 35 |
+| variable/parameter | `destination` | 39 |
+| variable/parameter | `completed` | 40 |
+| variable/parameter | `target` | 41 |
+| variable/parameter | `{ BrowserWindow }` | 41 |
+| variable/parameter | `reject` | 43 |
+| variable/parameter | `resolve` | 43 |
+| variable/parameter | `timer` | 44 |
+| variable/parameter | `_event` | 50 |
+| variable/parameter | `item` | 50 |
+| variable/parameter | `state` | 52 |
+| variable/parameter | `data` | 66 |
+
+## `tests/browser/private.spec.ts`
+
+[Source](../tests/browser/private.spec.ts) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `{ page }` | 14 |
+| variable/parameter | `{ page, }` | 26 |
+| variable/parameter | `info` | 28 |
+| variable/parameter | `external` | 29 |
+| variable/parameter | `request` | 30 |
+| variable/parameter | `{ page, request, }` | 68 |
+| variable/parameter | `denied` | 81 |
 
 ## `tests/browser/workbench.spec.ts`
 
@@ -844,94 +1288,230 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `endpoint` | 257 |
 | function/class | `test_large_image` | 268 |
 
+## `tests/python/test_private.py`
+
+[Source](../tests/python/test_private.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `PASSWORD` | 86 |
+| variable/parameter | `KEY` | 87 |
+| variable/parameter | `SALT` | 88 |
+| variable/parameter | `HEADERS` | 89 |
+| function/class | `client` | 93 |
+| variable/parameter | `tmp_path` | 93 |
+| variable/parameter | `app` | 95 |
+| variable/parameter | `session` | 96 |
+| variable/parameter | `alias` | 100 |
+| variable/parameter | `client` | 100 |
+| function/class | `register` | 100 |
+| variable/parameter | `response` | 102 |
+| variable/parameter | `key` | 107 |
+| function/class | `unlock` | 107 |
+| function/class | `test_registration_private_headers_and_zero_secret_echo` | 113 |
+| variable/parameter | `invalid` | 128 |
+| variable/parameter | `db` | 132 |
+| variable/parameter | `row` | 133 |
+| variable/parameter | `headers` | 147 |
+| function/class | `test_request_origin_host_mutation_rejected` | 147 |
+| function/class | `test_recovery_logout_expiry_delete` | 159 |
+| variable/parameter | `recovery` | 161 |
+| variable/parameter | `body` | 163 |
+| variable/parameter | `changed` | 164 |
+| function/class | `test_expiry_and_human_idle` | 188 |
+| variable/parameter | `manager` | 192 |
+| variable/parameter | `human` | 193 |
+| variable/parameter | `monkeypatch` | 203 |
+| function/class | `test_recovery_save_failure_preserves_code` | 203 |
+| variable/parameter | `original` | 210 |
+| variable/parameter | `args` | 212 |
+| function/class | `unavailable` | 212 |
+| variable/parameter | `name` | 228 |
+| function/class | `test_archive_paths` | 228 |
+| function/class | `test_archive_authentication_before_extract` | 234 |
+| variable/parameter | `root` | 236 |
+| variable/parameter | `path` | 239 |
+| variable/parameter | `damaged` | 242 |
+| function/class | `test_single_instance_and_launcher_not_browser` | 250 |
+| variable/parameter | `content` | 257 |
+| function/class | `imported` | 257 |
+| function/class | `test_document_encryption_export_reopen` | 266 |
+| variable/parameter | `identity` | 270 |
+| variable/parameter | `document` | 271 |
+| variable/parameter | `fmt` | 274 |
+| function/class | `test_accounts_and_session_specific_unlock` | 297 |
+| variable/parameter | `suffix` | 324 |
+| function/class | `test_private_rich_imports` | 341 |
+| variable/parameter | `payload` | 345 |
+| variable/parameter | `result` | 347 |
+| function/class | `test_role_previews_and_seed_own_only` | 351 |
+| function/class | `test_provider_privacy_consent_and_offline_ai` | 377 |
+| variable/parameter | `config` | 382 |
+| variable/parameter | `offline` | 385 |
+| variable/parameter | `settings` | 387 |
+| variable/parameter | `saved` | 392 |
+| variable/parameter | `context` | 404 |
+| variable/parameter | `image` | 404 |
+| variable/parameter | `question` | 404 |
+| variable/parameter | `self` | 404 |
+| variable/parameter | `owner` | 425 |
+| function/class | `test_model_endpoint_rejections` | 443 |
+| variable/parameter | `url` | 443 |
+| function/class | `test_soft_quota_preserves_recovery` | 451 |
+| function/class | `test_body_and_auth_limits` | 467 |
+| variable/parameter | `_` | 477 |
+
 ## `web/main.ts`
 
 [Source](../web/main.ts) — descriptive module header and function contracts are in this file.
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| type | `View` | 100 |
-| variable/parameter | `state` | 101 |
-| variable/parameter | `app` | 115 |
-| variable/parameter | `cents` | 117 |
-| variable/parameter | `money` | 117 |
-| function/class | `esc` | 125 |
-| variable/parameter | `value` | 125 |
-| variable/parameter | `character` | 128 |
-| function/class | `api` | 136 |
-| variable/parameter | `init` | 136 |
-| variable/parameter | `path` | 136 |
-| variable/parameter | `headers` | 137 |
-| variable/parameter | `response` | 142 |
-| variable/parameter | `error` | 148 |
-| variable/parameter | `message` | 161 |
-| function/class | `notice` | 161 |
-| variable/parameter | `node` | 162 |
-| function/class | `action` | 168 |
-| variable/parameter | `work` | 168 |
-| function/class | `shell` | 177 |
-| variable/parameter | `workspace` | 178 |
-| variable/parameter | `item` | 179 |
-| variable/parameter | `[view, label, index]` | 188 |
-| variable/parameter | `button` | 196 |
-| variable/parameter | `event` | 209 |
-| variable/parameter | `selected` | 211 |
-| function/class | `loginView` | 237 |
-| variable/parameter | `data` | 242 |
-| function/class | `catalog` | 261 |
-| variable/parameter | `content` | 262 |
-| variable/parameter | `unit` | 268 |
-| variable/parameter | `products` | 280 |
-| variable/parameter | `update` | 283 |
-| variable/parameter | `query` | 284 |
-| variable/parameter | `filtered` | 287 |
-| variable/parameter | `product` | 287 |
-| variable/parameter | `spec` | 296 |
-| variable/parameter | `result` | 307 |
-| function/class | `chart` | 319 |
-| variable/parameter | `report` | 319 |
-| variable/parameter | `max` | 320 |
-| variable/parameter | `point` | 320 |
-| function/class | `dashboard` | 325 |
-| variable/parameter | `employee` | 326 |
-| variable/parameter | `format` | 329 |
-| variable/parameter | `options` | 331 |
-| variable/parameter | `customerOptions` | 332 |
-| variable/parameter | `[id, label]` | 333 |
-| variable/parameter | `form` | 347 |
-| variable/parameter | `body` | 373 |
-| variable/parameter | `title` | 402 |
-| variable/parameter | `answer` | 420 |
-| function/class | `documentList` | 435 |
-| variable/parameter | `id` | 436 |
-| variable/parameter | `params` | 438 |
-| variable/parameter | `docs` | 444 |
-| variable/parameter | `staff` | 445 |
-| variable/parameter | `doc` | 447 |
-| variable/parameter | `input` | 458 |
-| function/class | `preview` | 467 |
-| variable/parameter | `block` | 476 |
-| variable/parameter | `index` | 476 |
-| variable/parameter | `warning` | 476 |
-| variable/parameter | `exports` | 480 |
-| variable/parameter | `link` | 482 |
-| variable/parameter | `suffix` | 483 |
-| variable/parameter | `url` | 485 |
-| function/class | `download` | 518 |
-| variable/parameter | `filename` | 518 |
-| variable/parameter | `type` | 518 |
-| function/class | `studio` | 528 |
-| variable/parameter | `config` | 531 |
-| variable/parameter | `audit` | 532 |
-| variable/parameter | `[dimension, units]` | 541 |
-| variable/parameter | `[key, alias]` | 550 |
-| variable/parameter | `units` | 566 |
-| variable/parameter | `key` | 568 |
-| variable/parameter | `[, unit]` | 569 |
-| variable/parameter | `columns` | 571 |
-| variable/parameter | `section` | 587 |
-| function/class | `render` | 602 |
-| function/class | `start` | 623 |
+| type | `View` | 110 |
+| variable/parameter | `state` | 111 |
+| variable/parameter | `app` | 125 |
+| variable/parameter | `cents` | 127 |
+| variable/parameter | `money` | 127 |
+| function/class | `esc` | 135 |
+| variable/parameter | `value` | 135 |
+| variable/parameter | `character` | 138 |
+| function/class | `api` | 146 |
+| variable/parameter | `init` | 146 |
+| variable/parameter | `path` | 146 |
+| variable/parameter | `headers` | 147 |
+| variable/parameter | `[key, value]` | 158 |
+| variable/parameter | `separator` | 165 |
+| variable/parameter | `response` | 166 |
+| variable/parameter | `error` | 177 |
+| variable/parameter | `message` | 190 |
+| function/class | `notice` | 190 |
+| variable/parameter | `node` | 191 |
+| function/class | `action` | 197 |
+| variable/parameter | `work` | 197 |
+| function/class | `shell` | 206 |
+| variable/parameter | `workspace` | 207 |
+| variable/parameter | `item` | 208 |
+| variable/parameter | `[view, label, index]` | 217 |
+| variable/parameter | `button` | 225 |
+| variable/parameter | `event` | 238 |
+| variable/parameter | `selected` | 240 |
+| function/class | `loginView` | 269 |
+| variable/parameter | `data` | 274 |
+| function/class | `catalog` | 293 |
+| variable/parameter | `content` | 294 |
+| variable/parameter | `unit` | 300 |
+| variable/parameter | `products` | 312 |
+| variable/parameter | `update` | 315 |
+| variable/parameter | `query` | 316 |
+| variable/parameter | `filtered` | 319 |
+| variable/parameter | `product` | 319 |
+| variable/parameter | `spec` | 328 |
+| variable/parameter | `result` | 339 |
+| function/class | `chart` | 351 |
+| variable/parameter | `report` | 351 |
+| variable/parameter | `max` | 352 |
+| variable/parameter | `point` | 352 |
+| function/class | `dashboard` | 357 |
+| variable/parameter | `employee` | 358 |
+| variable/parameter | `format` | 361 |
+| variable/parameter | `options` | 363 |
+| variable/parameter | `customerOptions` | 364 |
+| variable/parameter | `[id, label]` | 365 |
+| variable/parameter | `form` | 379 |
+| variable/parameter | `body` | 405 |
+| variable/parameter | `title` | 434 |
+| variable/parameter | `answer` | 452 |
+| function/class | `documentList` | 467 |
+| variable/parameter | `id` | 468 |
+| variable/parameter | `params` | 470 |
+| variable/parameter | `docs` | 476 |
+| variable/parameter | `staff` | 477 |
+| variable/parameter | `doc` | 479 |
+| variable/parameter | `input` | 490 |
+| function/class | `preview` | 499 |
+| variable/parameter | `block` | 508 |
+| variable/parameter | `index` | 508 |
+| variable/parameter | `warning` | 508 |
+| variable/parameter | `exports` | 513 |
+| variable/parameter | `link` | 515 |
+| variable/parameter | `suffix` | 516 |
+| variable/parameter | `url` | 518 |
+| function/class | `download` | 551 |
+| variable/parameter | `filename` | 551 |
+| variable/parameter | `type` | 551 |
+| function/class | `studio` | 561 |
+| variable/parameter | `config` | 564 |
+| variable/parameter | `audit` | 565 |
+| variable/parameter | `[dimension, units]` | 574 |
+| variable/parameter | `[key, alias]` | 583 |
+| variable/parameter | `units` | 599 |
+| variable/parameter | `key` | 601 |
+| variable/parameter | `[, unit]` | 602 |
+| variable/parameter | `columns` | 604 |
+| variable/parameter | `section` | 620 |
+| function/class | `render` | 635 |
+| function/class | `start` | 656 |
+| variable/parameter | `privateMode` | 675 |
+
+## `web/private.ts`
+
+[Source](../web/private.ts) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| type | `Account` | 59 |
+| type | `Provider` | 68 |
+| variable/parameter | `isPrivate` | 74 |
+| variable/parameter | `current` | 75 |
+| variable/parameter | `revision` | 76 |
+| variable/parameter | `consent` | 77 |
+| variable/parameter | `lastActivity` | 78 |
+| variable/parameter | `idleSeconds` | 79 |
+| variable/parameter | `poll` | 80 |
+| variable/parameter | `root` | 81 |
+| function/class | `escape` | 84 |
+| variable/parameter | `value` | 84 |
+| variable/parameter | `c` | 87 |
+| function/class | `privateApi` | 95 |
+| variable/parameter | `path` | 96 |
+| variable/parameter | `data` | 97 |
+| variable/parameter | `method` | 98 |
+| variable/parameter | `response` | 100 |
+| variable/parameter | `body` | 109 |
+| variable/parameter | `bytes` | 120 |
+| function/class | `encoded` | 120 |
+| function/class | `derive` | 125 |
+| variable/parameter | `phrase` | 125 |
+| variable/parameter | `salt` | 125 |
+| variable/parameter | `material` | 128 |
+| function/class | `task` | 152 |
+| variable/parameter | `work` | 152 |
+| variable/parameter | `error` | 155 |
+| variable/parameter | `node` | 156 |
+| function/class | `heading` | 164 |
+| function/class | `auth` | 169 |
+| variable/parameter | `mode` | 169 |
+| variable/parameter | `button` | 174 |
+| variable/parameter | `event` | 177 |
+| variable/parameter | `form` | 179 |
+| variable/parameter | `result` | 182 |
+| variable/parameter | `panel` | 185 |
+| function/class | `help` | 198 |
+| function/class | `gate` | 203 |
+| variable/parameter | `key` | 231 |
+| variable/parameter | `onReady` | 239 |
+| function/class | `privateGate` | 241 |
+| variable/parameter | `callback` | 242 |
+| variable/parameter | `next` | 256 |
+| variable/parameter | `notice` | 273 |
+| function/class | `activity` | 295 |
+| function/class | `ready` | 303 |
+| variable/parameter | `settings` | 304 |
+| function/class | `logout` | 312 |
+| function/class | `decorateWorkbench` | 318 |
+| variable/parameter | `footer` | 320 |
+| function/class | `tools` | 333 |
+| function/class | `modelHeaders` | 399 |
 
 ## `web/style.css`
 
@@ -939,144 +1519,153 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| selector | `:root` | 142 |
-| selector | `body` | 155 |
-| selector | `select` | 160 |
-| selector | `summary` | 167 |
-| selector | `a` | 171 |
-| selector | `button` | 174 |
-| selector | `button:disabled` | 177 |
-| selector | `p` | 187 |
-| selector | `h1` | 190 |
-| selector | `h2` | 196 |
-| selector | `h3` | 200 |
-| selector | `small` | 207 |
-| selector | `textarea` | 220 |
-| selector | `label` | 232 |
-| selector | `summary:focus-visible` | 243 |
-| selector | `.skip` | 247 |
-| selector | `.skip:focus` | 254 |
-| selector | `#app` | 257 |
-| selector | `.sidebar` | 261 |
-| selector | `.brand` | 272 |
-| selector | `.brand small` | 281 |
-| selector | `.brand-mark` | 288 |
-| selector | `.sidebar-label` | 298 |
-| selector | `.scenario-label` | 304 |
-| selector | `.sidebar select` | 308 |
-| selector | `.sidebar nav` | 316 |
-| selector | `.sidebar nav button` | 322 |
-| selector | `.sidebar nav button[aria-current]` | 333 |
-| selector | `.nav-number` | 338 |
-| selector | `.sidebar-bottom` | 343 |
-| selector | `.sidebar-bottom p` | 348 |
-| selector | `.status-dot` | 353 |
-| selector | `.version` | 361 |
-| selector | `.layout` | 366 |
-| selector | `header` | 370 |
-| selector | `.breadcrumb` | 380 |
-| selector | `.breadcrumb span` | 384 |
-| selector | `.account` | 388 |
-| selector | `main` | 395 |
-| selector | `.eyebrow` | 401 |
-| selector | `.page-title` | 408 |
-| selector | `.page-title p` | 415 |
-| selector | `.pill` | 420 |
-| selector | `.hero-strip` | 430 |
-| selector | `.hero-label` | 440 |
-| selector | `.hero-strip h2` | 445 |
-| selector | `.hero-strip p` | 450 |
-| selector | `.hero-flow` | 454 |
-| selector | `.hero-flow span` | 461 |
-| selector | `.section-heading` | 469 |
-| selector | `.section-heading > span` | 476 |
-| selector | `.search-label` | 480 |
-| selector | `.search-label input` | 484 |
-| selector | `.product-grid` | 488 |
-| selector | `.product-card` | 494 |
-| selector | `.product-code` | 501 |
-| selector | `.product-code span` | 508 |
-| selector | `.product-illustration` | 511 |
-| selector | `.device` | 518 |
-| selector | `.device span` | 532 |
-| selector | `.category` | 538 |
-| selector | `.product-card h3` | 544 |
-| selector | `.product-card p` | 547 |
-| selector | `.product-card dl` | 551 |
-| selector | `.product-card dl div` | 555 |
-| selector | `.product-card dt` | 561 |
-| selector | `.product-card dd` | 565 |
-| selector | `.card-bottom` | 569 |
-| selector | `.card-bottom span:first-child` | 577 |
-| selector | `.card-bottom span:last-child` | 580 |
-| selector | `.panel` | 584 |
-| selector | `.panel > p` | 591 |
-| selector | `.units-panel` | 595 |
-| selector | `.units-panel p` | 601 |
-| selector | `.units-panel form` | 605 |
-| selector | `.units-panel label` | 611 |
-| selector | `.units-panel output` | 615 |
-| selector | `.quiet` | 625 |
-| selector | `.primary:hover` | 644 |
-| selector | `.quiet:hover` | 647 |
-| selector | `.metrics` | 650 |
-| selector | `.metrics > div` | 656 |
-| selector | `.metrics span` | 662 |
-| selector | `.metrics strong` | 666 |
-| selector | `.metrics small` | 673 |
-| selector | `.chart` | 677 |
-| selector | `.chart > div` | 684 |
-| selector | `.bar` | 694 |
-| selector | `.forecast` | 702 |
-| selector | `.forecast h3` | 710 |
-| selector | `.forecast > div` | 714 |
-| selector | `.forecast strong` | 721 |
-| selector | `.forecast small` | 726 |
-| selector | `.muted` | 730 |
-| selector | `.merge-tools` | 738 |
-| selector | `.import-form label` | 745 |
-| selector | `.import-form label:first-child` | 749 |
-| selector | `.check` | 752 |
-| selector | `.check input` | 758 |
-| selector | `.library-tools label` | 764 |
-| selector | `.merge-tools label` | 768 |
-| selector | `.table-scroll` | 771 |
-| selector | `table` | 775 |
-| selector | `caption` | 781 |
-| selector | `th` | 787 |
-| selector | `td input` | 799 |
-| selector | `.tag` | 803 |
-| selector | `.link-button` | 809 |
-| selector | `.document-preview` | 817 |
-| selector | `.document-preview iframe` | 822 |
-| selector | `.warning` | 830 |
-| selector | `.warning ul` | 838 |
-| selector | `.exports` | 842 |
-| selector | `.exports a` | 847 |
-| selector | `details` | 850 |
-| selector | `.ask-row` | 859 |
-| selector | `.ask-row input` | 863 |
-| selector | `.answer` | 866 |
-| selector | `.answer p` | 871 |
-| selector | `.answer small` | 874 |
-| selector | `.config-layout` | 880 |
-| selector | `.config-layout form > label` | 885 |
-| selector | `.config-units` | 888 |
-| selector | `.config-layout h3` | 894 |
-| selector | `pre` | 898 |
-| selector | `.login` | 909 |
-| selector | `.login h1` | 913 |
-| selector | `.login label` | 916 |
-| selector | `.login button` | 919 |
-| selector | `.demo-note` | 922 |
-| selector | `.notice:not(:empty)` | 929 |
-| selector | `.notice.error` | 938 |
-| selector | `.empty` | 943 |
-| selector | `footer` | 947 |
-| selector | `footer span` | 957 |
-| selector | `@media (min-width: 1550px)` | 960 |
-| selector | `@media (max-width: 1100px)` | 968 |
-| selector | `@media (max-width: 760px)` | 1006 |
+| selector | `:root` | 151 |
+| selector | `body` | 164 |
+| selector | `select` | 169 |
+| selector | `summary` | 176 |
+| selector | `a` | 180 |
+| selector | `button` | 183 |
+| selector | `button:disabled` | 186 |
+| selector | `p` | 196 |
+| selector | `h1` | 199 |
+| selector | `h2` | 205 |
+| selector | `h3` | 209 |
+| selector | `small` | 216 |
+| selector | `textarea` | 229 |
+| selector | `label` | 241 |
+| selector | `summary:focus-visible` | 252 |
+| selector | `.skip` | 256 |
+| selector | `.skip:focus` | 263 |
+| selector | `#app` | 266 |
+| selector | `.sidebar` | 270 |
+| selector | `.brand` | 281 |
+| selector | `.brand small` | 290 |
+| selector | `.brand-mark` | 297 |
+| selector | `.sidebar-label` | 307 |
+| selector | `.scenario-label` | 313 |
+| selector | `.sidebar select` | 317 |
+| selector | `.sidebar nav` | 325 |
+| selector | `.sidebar nav button` | 331 |
+| selector | `.sidebar nav button[aria-current]` | 342 |
+| selector | `.nav-number` | 347 |
+| selector | `.sidebar-bottom` | 352 |
+| selector | `.sidebar-bottom p` | 357 |
+| selector | `.status-dot` | 362 |
+| selector | `.version` | 370 |
+| selector | `.layout` | 375 |
+| selector | `header` | 379 |
+| selector | `.breadcrumb` | 389 |
+| selector | `.breadcrumb span` | 393 |
+| selector | `.account` | 397 |
+| selector | `main` | 404 |
+| selector | `.eyebrow` | 410 |
+| selector | `.page-title` | 417 |
+| selector | `.page-title p` | 424 |
+| selector | `.pill` | 429 |
+| selector | `.hero-strip` | 439 |
+| selector | `.hero-label` | 449 |
+| selector | `.hero-strip h2` | 454 |
+| selector | `.hero-strip p` | 459 |
+| selector | `.hero-flow` | 463 |
+| selector | `.hero-flow span` | 470 |
+| selector | `.section-heading` | 478 |
+| selector | `.section-heading > span` | 485 |
+| selector | `.search-label` | 489 |
+| selector | `.search-label input` | 493 |
+| selector | `.product-grid` | 497 |
+| selector | `.product-card` | 503 |
+| selector | `.product-code` | 510 |
+| selector | `.product-code span` | 517 |
+| selector | `.product-illustration` | 520 |
+| selector | `.device` | 527 |
+| selector | `.device span` | 541 |
+| selector | `.category` | 547 |
+| selector | `.product-card h3` | 553 |
+| selector | `.product-card p` | 556 |
+| selector | `.product-card dl` | 560 |
+| selector | `.product-card dl div` | 564 |
+| selector | `.product-card dt` | 570 |
+| selector | `.product-card dd` | 574 |
+| selector | `.card-bottom` | 578 |
+| selector | `.card-bottom span:first-child` | 586 |
+| selector | `.card-bottom span:last-child` | 589 |
+| selector | `.panel` | 593 |
+| selector | `.panel > p` | 600 |
+| selector | `.units-panel` | 604 |
+| selector | `.units-panel p` | 610 |
+| selector | `.units-panel form` | 614 |
+| selector | `.units-panel label` | 620 |
+| selector | `.units-panel output` | 624 |
+| selector | `.quiet` | 634 |
+| selector | `.primary:hover` | 653 |
+| selector | `.quiet:hover` | 656 |
+| selector | `.metrics` | 659 |
+| selector | `.metrics > div` | 665 |
+| selector | `.metrics span` | 671 |
+| selector | `.metrics strong` | 675 |
+| selector | `.metrics small` | 682 |
+| selector | `.chart` | 686 |
+| selector | `.chart > div` | 693 |
+| selector | `.bar` | 703 |
+| selector | `.forecast` | 711 |
+| selector | `.forecast h3` | 719 |
+| selector | `.forecast > div` | 723 |
+| selector | `.forecast strong` | 730 |
+| selector | `.forecast small` | 735 |
+| selector | `.muted` | 739 |
+| selector | `.merge-tools` | 747 |
+| selector | `.import-form label` | 754 |
+| selector | `.import-form label:first-child` | 758 |
+| selector | `.check` | 761 |
+| selector | `.check input` | 767 |
+| selector | `.library-tools label` | 773 |
+| selector | `.merge-tools label` | 777 |
+| selector | `.table-scroll` | 780 |
+| selector | `table` | 784 |
+| selector | `caption` | 790 |
+| selector | `th` | 796 |
+| selector | `td input` | 808 |
+| selector | `.tag` | 812 |
+| selector | `.link-button` | 818 |
+| selector | `.document-preview` | 826 |
+| selector | `.document-preview iframe` | 831 |
+| selector | `.warning` | 839 |
+| selector | `.warning ul` | 847 |
+| selector | `.exports` | 851 |
+| selector | `.exports a` | 856 |
+| selector | `details` | 859 |
+| selector | `.ask-row` | 868 |
+| selector | `.ask-row input` | 872 |
+| selector | `.answer` | 875 |
+| selector | `.answer p` | 880 |
+| selector | `.answer small` | 883 |
+| selector | `.config-layout` | 889 |
+| selector | `.config-layout form > label` | 894 |
+| selector | `.config-units` | 897 |
+| selector | `.config-layout h3` | 903 |
+| selector | `pre` | 907 |
+| selector | `.login` | 918 |
+| selector | `.login h1` | 922 |
+| selector | `.login label` | 925 |
+| selector | `.login button` | 928 |
+| selector | `.demo-note` | 931 |
+| selector | `.notice:not(:empty)` | 938 |
+| selector | `.notice.error` | 947 |
+| selector | `.empty` | 952 |
+| selector | `footer` | 956 |
+| selector | `footer span` | 966 |
+| selector | `@media (min-width: 1550px)` | 969 |
+| selector | `@media (max-width: 1100px)` | 977 |
+| selector | `@media (max-width: 760px)` | 1015 |
+| selector | `.private-home` | 1176 |
+| selector | `.private-heading` | 1185 |
+| selector | `#app.private-entry` | 1188 |
+| selector | `.account-panel` | 1191 |
+| selector | `#delete-form` | 1196 |
+| selector | `.account-options` | 1201 |
+| selector | `#seed` | 1209 |
+| selector | `#account-status` | 1217 |
+| selector | `#recovery-code` | 1222 |
 
 ## `web/types.ts`
 
@@ -1102,6 +1691,21 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | Kind | Name | Line |
 | --- | --- | ---: |
 | variable/parameter | `python` | 8 |
+
+## `playwright.desktop.config.ts`
+
+[Source](../playwright.desktop.config.ts) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+
+## `playwright.private.config.ts`
+
+[Source](../playwright.private.config.ts) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `python` | 9 |
 
 ## `vite.config.ts`
 

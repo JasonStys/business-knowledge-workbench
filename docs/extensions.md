@@ -1,5 +1,8 @@
 # Adapting the skeleton and connecting models
 
+> Legacy business-engine/demo reference. Version 1.1 installs the private local account wrapper described in [private-accounts.md](private-accounts.md) and [private-api.md](private-api.md). Old plaintext demo data is separate and is not migrated. Legacy source serving needs explicit `KB_LEGACY_MODE=1`; never expose demo credentials to real records.
+
+
 ## Configuration without code changes
 
 Create a workspace with `python -m server.manage workspace my-business "My business"`, provision an admin, then edit title, account labels, unit targets, document sections, sales header aliases, forecasting and AI enablement in Configuration studio. Account IDs are authorization attributes: removal is blocked while referenced. Use additive changes or migrate references deliberately. Config revisions reject concurrent lost updates. Historical conversions do not silently change; reimport to apply current rules.

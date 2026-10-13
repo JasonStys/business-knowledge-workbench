@@ -1,5 +1,8 @@
 # Architecture and ADR 001: portable, HTML-centered business knowledge
 
+> Legacy business-engine/demo reference. Version 1.1 installs the private local account wrapper described in [private-accounts.md](private-accounts.md) and [private-api.md](private-api.md). Old plaintext demo data is separate and is not migrated. Legacy source serving needs explicit `KB_LEGACY_MODE=1`; never expose demo credentials to real records.
+
+
 Status: accepted for reference application v1. Audience: developers adapting a small business workspace. Revisit for high-volume ingestion, multi-customer inventory relationships, SSO requirements or native store distribution.
 
 ## Requirements and assumptions

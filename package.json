@@ -1,6 +1,6 @@
 {
   "name": "business-knowledge-workbench",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -16,7 +16,11 @@
     "format:check": "prettier --check web tests/browser scripts/*.mjs public/*.js public/*.html *.json *.ts *.html",
     "docs": "python scripts/code_index.py",
     "docs:check": "python scripts/code_index.py --check",
-    "verify": "npm run typecheck && npm run build && npm run test"
+    "verify": "npm run typecheck && npm run build && npm run test",
+    "desktop": "electron .",
+    "package": "electron-builder",
+    "test:private": "playwright test --config playwright.private.config.ts",
+    "test:desktop": "playwright test --config playwright.desktop.config.ts"
   },
   "dependencies": {},
   "devDependencies": {
@@ -26,6 +30,65 @@
     "vite": "8.3.1",
     "typescript": "6.0.3",
     "prettier": "3.9.8",
-    "docx": "9.5.1"
+    "docx": "9.5.1",
+    "electron": "44.5.0",
+    "electron-builder": "26.15.3"
+  },
+  "author": "Jason Stys",
+  "description": "Private local business documents, product evidence and reporting workspace",
+  "main": "desktop/main.cjs",
+  "overrides": {
+    "http-cache-semantics": "4.3.0",
+    "source-map-js": "1.2.2",
+    "global-agent": "4.1.3"
+  },
+  "build": {
+    "appId": "dev.jasonstys.businessknowledge",
+    "productName": "Business Knowledge Workbench",
+    "directories": {
+      "output": "release/installers"
+    },
+    "files": [
+      "desktop/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "dist",
+        "to": "ui"
+      },
+      {
+        "from": "release/service",
+        "to": "service"
+      },
+      {
+        "from": "release/notices",
+        "to": "notices"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "deleteAppDataOnUninstall": false
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Office"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.business"
+    }
   }
 }

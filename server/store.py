@@ -1,52 +1,53 @@
 # @index-begin
-# @symbol variable/parameter: SCENARIOS L63
-# @symbol variable/parameter: password L160
-# @symbol function/class: password_hash L160
-# @symbol variable/parameter: salt L160
-# @symbol variable/parameter: digest L163
-# @symbol variable/parameter: encoded L167
-# @symbol function/class: verify_password L167
-# @symbol function/class: connect L174
-# @symbol variable/parameter: path L174
-# @symbol variable/parameter: database L176
-# @symbol variable/parameter: demo L186
-# @symbol function/class: initialize L186
-# @symbol variable/parameter: version L190
-# @symbol variable/parameter: scenario L194
-# @symbol variable/parameter: config L195
-# @symbol variable/parameter: role L201
-# @symbol variable/parameter: username L201
-# @symbol variable/parameter: customer L218
-# @symbol variable/parameter: description L218
-# @symbol variable/parameter: name L218
-# @symbol variable/parameter: price L218
-# @symbol variable/parameter: product_id L218
-# @symbol variable/parameter: specifications L218
-# @symbol variable/parameter: normalized L221
-# @symbol variable/parameter: month L237
-# @symbol variable/parameter: quantity L238
-# @symbol variable/parameter: suffix L250
-# @symbol variable/parameter: text L250
-# @symbol variable/parameter: visibility L250
-# @symbol variable/parameter: name_file L267
-# @symbol variable/parameter: content L268
-# @symbol variable/parameter: result L269
-# @symbol function/class: acl L287
-# @symbol variable/parameter: user L287
-# @symbol variable/parameter: workspace L287
-# @symbol function/class: documents L301
-# @symbol variable/parameter: query L305
-# @symbol variable/parameter: category L306
-# @symbol variable/parameter: sort L307
-# @symbol variable/parameter: predicate L310
-# @symbol variable/parameter: values L310
-# @symbol variable/parameter: pattern L315
-# @symbol variable/parameter: order L321
-# @symbol variable/parameter: rows L328
-# @symbol variable/parameter: row L336
-# @symbol function/class: audit L339
-# @symbol variable/parameter: detail L339
-# @symbol variable/parameter: event L339
+# @symbol variable/parameter: SCENARIOS L64
+# @symbol variable/parameter: password L161
+# @symbol function/class: password_hash L161
+# @symbol variable/parameter: salt L161
+# @symbol variable/parameter: digest L164
+# @symbol variable/parameter: encoded L168
+# @symbol function/class: verify_password L168
+# @symbol function/class: connect L175
+# @symbol variable/parameter: path L175
+# @symbol variable/parameter: database L177
+# @symbol variable/parameter: demo L187
+# @symbol function/class: initialize L187
+# @symbol variable/parameter: samples L187
+# @symbol variable/parameter: version L191
+# @symbol variable/parameter: scenario L195
+# @symbol variable/parameter: config L196
+# @symbol variable/parameter: role L202
+# @symbol variable/parameter: username L202
+# @symbol variable/parameter: customer L219
+# @symbol variable/parameter: description L219
+# @symbol variable/parameter: name L219
+# @symbol variable/parameter: price L219
+# @symbol variable/parameter: product_id L219
+# @symbol variable/parameter: specifications L219
+# @symbol variable/parameter: normalized L222
+# @symbol variable/parameter: month L238
+# @symbol variable/parameter: quantity L239
+# @symbol variable/parameter: suffix L251
+# @symbol variable/parameter: text L251
+# @symbol variable/parameter: visibility L251
+# @symbol variable/parameter: name_file L268
+# @symbol variable/parameter: content L269
+# @symbol variable/parameter: result L270
+# @symbol function/class: acl L288
+# @symbol variable/parameter: user L288
+# @symbol variable/parameter: workspace L288
+# @symbol function/class: documents L302
+# @symbol variable/parameter: query L306
+# @symbol variable/parameter: category L307
+# @symbol variable/parameter: sort L308
+# @symbol variable/parameter: predicate L311
+# @symbol variable/parameter: values L311
+# @symbol variable/parameter: pattern L316
+# @symbol variable/parameter: order L322
+# @symbol variable/parameter: rows L329
+# @symbol variable/parameter: row L337
+# @symbol function/class: audit L340
+# @symbol variable/parameter: detail L340
+# @symbol variable/parameter: event L340
 # @index-end
 """SQLite lifecycle, deterministic synthetic scenarios and ACL queries. Index: docs/code-index.md."""
 
@@ -183,7 +184,7 @@ def connect(path: Path):
         database.close()
 
 
-def initialize(path: Path, demo: bool) -> None:
+def initialize(path: Path, demo: bool, samples: bool = False) -> None:
     """Create version-one schema and idempotently seed clearly labeled synthetic records."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with connect(path) as database:
@@ -209,7 +210,7 @@ def initialize(path: Path, demo: bool) -> None:
                         (workspace, username, password_hash("workbench-demo"), role, customer),
                     )
             if (
-                not demo
+                not (demo or samples)
                 or database.execute(
                     "SELECT 1 FROM products WHERE workspace=? LIMIT 1", (workspace,)
                 ).fetchone()

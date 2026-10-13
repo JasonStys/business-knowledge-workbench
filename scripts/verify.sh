@@ -12,5 +12,6 @@ python -m pytest -q
 python scripts/benchmark.py
 npm run build
 npm test
+npm run test:private
 npm audit --audit-level=high
 python -m pip_audit -r requirements.lock

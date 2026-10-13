@@ -50,7 +50,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SUFFIXES = {".py", ".ts", ".js", ".mjs", ".css", ".html", ".sql", ".sh"}
+SUFFIXES = {".py", ".ts", ".js", ".mjs", ".cjs", ".css", ".html", ".sql", ".sh"}
 BEGIN = "@index-begin"
 END = "@index-end"
 
@@ -68,7 +68,7 @@ def symbols(path: Path, text: str) -> list[dict]:
                 records.append(
                     {"kind": "variable/parameter", "name": node.arg, "line": node.lineno}
                 )
-    elif path.suffix in {".ts", ".js", ".mjs"}:
+    elif path.suffix in {".ts", ".js", ".mjs", ".cjs"}:
         output = subprocess.run(
             ["node", str(ROOT / "scripts/symbols.mjs"), str(path)],
             capture_output=True,
@@ -127,7 +127,7 @@ def main():
     check = "--check" in sys.argv
     files = sorted(
         path
-        for folder in ["server", "web", "scripts", "tests", "public", "examples"]
+        for folder in ["server", "web", "scripts", "tests", "public", "examples", "desktop"]
         for path in (ROOT / folder).rglob("*")
         if path.suffix in SUFFIXES and "__pycache__" not in path.parts
     )

@@ -19,22 +19,22 @@
 # @symbol variable/parameter: content L107
 # @symbol variable/parameter: headers L112
 # @symbol variable/parameter: client L113
-# @symbol variable/parameter: response L127
-# @symbol variable/parameter: chunks L129
-# @symbol variable/parameter: chunk L130
-# @symbol variable/parameter: payload L134
-# @symbol function/class: adapter L139
-# @symbol variable/parameter: factory L141
-# @symbol variable/parameter: function L143
-# @symbol variable/parameter: module L143
-# @symbol variable/parameter: context L154
-# @symbol variable/parameter: result L154
-# @symbol function/class: validate_answer L154
-# @symbol variable/parameter: allowed L156
-# @symbol variable/parameter: document L156
-# @symbol variable/parameter: answer L157
-# @symbol variable/parameter: citations L157
-# @symbol variable/parameter: citation L165
+# @symbol variable/parameter: response L132
+# @symbol variable/parameter: chunks L134
+# @symbol variable/parameter: chunk L135
+# @symbol variable/parameter: payload L139
+# @symbol function/class: adapter L144
+# @symbol variable/parameter: factory L146
+# @symbol variable/parameter: function L148
+# @symbol variable/parameter: module L148
+# @symbol variable/parameter: context L159
+# @symbol variable/parameter: result L159
+# @symbol function/class: validate_answer L159
+# @symbol variable/parameter: allowed L161
+# @symbol variable/parameter: document L161
+# @symbol variable/parameter: answer L162
+# @symbol variable/parameter: citations L162
+# @symbol variable/parameter: citation L170
 # @index-end
 """Swappable, read-only AI adapters with bounded authorized context. Index: docs/code-index.md."""
 
@@ -116,6 +116,11 @@ class CompatibleAdapter:
                 self.endpoint,
                 headers=headers,
                 json={
+                    **(
+                        {"store": False}
+                        if self.endpoint == "https://api.openai.com/v1/chat/completions"
+                        else {}
+                    ),
                     "model": self.model,
                     "messages": [
                         {"role": "system", "content": system},

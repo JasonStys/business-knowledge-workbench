@@ -1,0 +1,76 @@
+name: Desktop packages
+on:
+  push:
+    paths:
+      - 'server/**'
+      - 'scripts/**'
+      - 'web/**'
+      - 'desktop/**'
+      - 'runner/**'
+      - 'training/**'
+      - 'tests/**'
+      - '.github/workflows/**'
+      - 'docs/licenses/**'
+      - 'package*.json'
+      - 'pyproject.toml'
+      - '*config*'
+      - 'LICENSE'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+          cache: npm
+      - run: python -m pip install --upgrade pip
+      - run: pip install -r requirements.lock -e '.[dev]'
+      - run: npm ci
+      - run: npm run build
+      - run: python scripts/license_bundle.py
+      - run: python -m PyInstaller --noconfirm --onefile --name business-knowledge-workbench-service --distpath release/service --paths . --add-data "server/schema.sql:server" --add-data "dist:ui" scripts/frozen_entry.py
+      - run: npm run test:desktop
+        if: runner.os != 'Linux'
+      - run: xvfb-run -a npm run test:desktop
+        if: runner.os == 'Linux'
+      - run: npm run package -- --publish never
+      - name: Verify the actual packaged executable
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$RUNNER_OS" = Windows ]; then
+            export KBW_INSTALLED_APP="$PWD/release/installers/win-unpacked/Business Knowledge Workbench.exe"
+          elif [ "$RUNNER_OS" = macOS ]; then
+            export KBW_INSTALLED_APP="$PWD/release/installers/mac-arm64/Business Knowledge Workbench.app/Contents/MacOS/Business Knowledge Workbench"
+          else
+            export KBW_INSTALLED_APP="$PWD/release/installers/linux-unpacked/business-knowledge-workbench-studio"
+          fi
+          if [ "$RUNNER_OS" = Linux ]; then xvfb-run -a npm run test:desktop; else npm run test:desktop; fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always() && vars.KBW_UPLOAD_CI_ARTIFACTS == 'true'
+        with:
+          name: desktop-${{ matrix.os }}
+          path: |
+            release/installers/*.exe
+            release/installers/*.AppImage
+            release/installers/*.dmg
+            test-results/
+
+
+

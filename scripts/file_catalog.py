@@ -9,9 +9,9 @@
 # @symbol variable/parameter: title L68
 # @symbol function/class: main L81
 # @symbol variable/parameter: output L83
-# @symbol variable/parameter: paths L86
-# @symbol variable/parameter: content L87
-# @symbol variable/parameter: target L94
+# @symbol variable/parameter: paths L91
+# @symbol variable/parameter: content L92
+# @symbol variable/parameter: target L99
 # @index-end
 """Generate a one-row-per-tracked-file catalog with useful responsibility summaries. Index: docs/code-index.md."""
 
@@ -81,7 +81,12 @@ def description(path: str) -> str:
 def main():
     """Generate or compare a catalog of precisely tracked files, excluding local/private artifacts."""
     output = subprocess.run(
-        ["git", "ls-files"], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", check=True
+        ["git", "-c", f"safe.directory={ROOT.as_posix()}", "ls-files"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=True,
     ).stdout
     paths = sorted(set(output.splitlines()) | {"scripts/file_catalog.py", "docs/file-catalog.md"})
     content = "# Complete file catalog\n\nGenerated from tracked repository paths. Code declarations/parameters and exact lines are in [code-index.md](code-index.md). Runtime databases, credentials, dependencies and temporary test traces are not published.\n\n| File | Responsibility |\n| --- | --- |\n"
