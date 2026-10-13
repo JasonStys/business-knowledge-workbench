@@ -1092,9 +1092,9 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `alias` | 15 |
 | function/class | `createSession` | 15 |
 | variable/parameter | `page` | 15 |
-| function/class | `documentJourney` | 43 |
-| variable/parameter | `verifyNativeDownload` | 45 |
-| variable/parameter | `downloaded` | 66 |
+| function/class | `documentJourney` | 40 |
+| variable/parameter | `verifyNativeDownload` | 42 |
+| variable/parameter | `downloaded` | 63 |
 
 ## `tests/browser/desktop.spec.ts`
 

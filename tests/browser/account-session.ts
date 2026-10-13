@@ -3,9 +3,9 @@
  * @symbol variable/parameter: alias L15
  * @symbol function/class: createSession L15
  * @symbol variable/parameter: page L15
- * @symbol function/class: documentJourney L43
- * @symbol variable/parameter: verifyNativeDownload L45
- * @symbol variable/parameter: downloaded L66
+ * @symbol function/class: documentJourney L40
+ * @symbol variable/parameter: verifyNativeDownload L42
+ * @symbol variable/parameter: downloaded L63
 @index-end */
 /** Jason Stys: reusable genuine registration, encryption and rich import journey; fictional credentials only. */
 import { expect, type Page } from "@playwright/test";
@@ -13,11 +13,8 @@ import { expect, type Page } from "@playwright/test";
 export const phrase = "synthetic-only-independent-vault-phrase-2026";
 /** Drive visible account forms, never skipping authentication or WebCrypto. */
 export async function createSession(page: Page, alias: string): Promise<void> {
-  await page.goto(
-    page.url().startsWith("http://127.0.0.1:")
-      ? new URL("/", page.url()).href
-      : "/",
-  );
+  // A native window already navigates itself; interrupting loadURL can abort app startup.
+  if (!page.url().startsWith("http://127.0.0.1:")) await page.goto("/");
   await page.getByLabel("Account alias", { exact: true }).fill(alias);
   await page
     .getByLabel("Login password", { exact: true })
