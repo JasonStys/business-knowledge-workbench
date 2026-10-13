@@ -34,9 +34,11 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/releases/v1.1.0.md](../docs/releases/v1.1.0.md) | Business Knowledge Workbench 1.1.0. |
 | [docs/reports/pdf-preview.png](../docs/reports/pdf-preview.png) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/performance.json](../docs/reports/performance.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
+| [docs/reports/validation-v1.1.json](../docs/reports/validation-v1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation.json](../docs/reports/validation.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/research.md](../docs/research.md) | Research and coding decisions. |
 | [docs/scenarios.md](../docs/scenarios.md) | Synthetic business scenarios and acceptance walkthroughs. |
+| [docs/screenshots/accounts.png](../docs/screenshots/accounts.png) | Visually inspected synthetic responsive UI evidence. |
 | [docs/screenshots/catalog.png](../docs/screenshots/catalog.png) | Visually inspected synthetic responsive UI evidence. |
 | [docs/screenshots/mobile.png](../docs/screenshots/mobile.png) | Visually inspected synthetic responsive UI evidence. |
 | [docs/screenshots/workspace.png](../docs/screenshots/workspace.png) | Visually inspected synthetic responsive UI evidence. |

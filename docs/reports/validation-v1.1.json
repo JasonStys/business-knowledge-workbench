@@ -1,0 +1,15 @@
+{
+  "version": "1.1.0",
+  "author": "Jason Stys",
+  "mode": "private-local-accounts",
+  "release_source": "f3676bfb40cbff170bb22114715275af2b402c6d",
+  "local_python": {"runtime": "3.14.6", "passed": 114, "statement_coverage_percent": 88.65, "minimum_percent": 80},
+  "browser_ci": {"passed": 30, "legacy_cases": 24, "private_cases": 6, "engines": ["Chromium", "Firefox", "WebKit", "mobile Chromium viewport"]},
+  "native_ci": {"platforms": ["Windows x64", "macOS arm64", "Linux x64"], "frozen_service_and_packaged_app_tested": true},
+  "downloaded_windows": {"bytes": 205635687, "sha256": "0d041f72f25b321b3b80c1fefcad5015fd8a7fa5da0eda41d11faf6db1acb78d", "actual_native_cases_passed": 1, "duration_seconds": 9.1},
+  "ci": {"validate_run": 38355646906, "validate_attempt": 2, "packages_run": 38355646825, "codeql_run": 38355646811, "release_run": 38356820253, "all_conclusions": "success", "open_codeql_alerts": 0},
+  "audits": {"python": "no known vulnerabilities", "npm": "no known vulnerabilities", "gitleaks_release_source_commits": 6, "findings": 0},
+  "actions_storage": {"repo_artifacts": 5, "repo_artifact_bytes": 255402, "account_artifact_bytes": 564608894, "billing_included_storage_percent": 100, "deleted": false, "new_artifact_uploads_default": "off"},
+  "known_validation_history": ["Initial native Linux path mismatch fixed", "macOS startup navigation race in test fixed", "Final browser attempt 1: one Chromium preview timeout; unchanged-source attempt 2 passed"],
+  "limits": ["Local only, one unlocked account engine", "No shared-user invitations or public hosted service", "No signed/notarized native packages or native phone installer", "No paid/live API-provider or model-quality test", "Trusted OS/local service required while processing plaintext", "Parser child is bounded/timed, not a complete exploit sandbox"]
+}

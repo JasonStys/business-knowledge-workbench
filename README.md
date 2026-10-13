@@ -4,6 +4,8 @@ A private, local-first document and data application by **Jason Stys**. Import b
 
 [Source and Actions](https://github.com/JasonStys/business-knowledge-workbench) · [Downloads](https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.1.0) · [Contact Jason on LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/)
 
+![Installed private account website with blank credential fields](docs/screenshots/accounts.png)
+
 ## Install and start
 
 Download a release for your OS, verify its SHA-256 record and launch the app. The Windows per-user setup is one click; a portable ZIP is also provided. macOS arm64 and Linux x64 packages are available. Native packages include Python, the document service and the UI—no terminal setup is needed for normal use. Builds are **unsigned / not notarized**; no claim of store approval or universal hardware support.

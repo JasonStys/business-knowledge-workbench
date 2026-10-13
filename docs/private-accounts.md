@@ -14,6 +14,8 @@ Customer preview uses the North subset; catalog preview sees public-labeled docu
 
 Windows data: `%LOCALAPPDATA%/BusinessKnowledgeWorkbenchAccounts`. macOS: `~/Library/Application Support/BusinessKnowledgeWorkbenchAccounts`. Linux: `$XDG_DATA_HOME/BusinessKnowledgeWorkbenchAccounts` (or `~/.local/share`). Installation files and Git contain no accounts or runtime records. The dedicated root is restricted to the OS user (plus SYSTEM/administrators on Windows).
 
+Keep the default data location for real records. Developer root overrides are trusted operator choices for disposable tests; never put real accounts in a Git checkout or a cloud-synced/shared folder. A local model server can itself forward data elsewhere: trust its implementation and review its privacy policy too.
+
 Login passwords use salted scrypt N=2^17, r=8, p=1. Sessions and one-use login recovery codes are random secrets stored only as digests. Sessions expire after 8 hours or 30 minutes of request inactivity. Human-idle locking is separately 10 minutes by default, optionally 30 minutes/2 hours; background polling does not renew it. Each new session must prove its vault key even if another same-account session unlocked the engine.
 
 Lock/sign out seals an authenticated AES-256-GCM archive and removes only this account's checked temporary working directory. Disk failures preserve the working files, key and prior archive; do not manually erase recovery state. A crash may leave recoverable plaintext; only its account can reopen it. Normal app shutdown requests graceful sealing.

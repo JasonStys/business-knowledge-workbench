@@ -31,8 +31,11 @@ Unit tokens are not complete natural-language understanding. An `in` token follo
 | --- | --- | --- |
 | Windows/Linux/macOS browsers | Standards-based responsive TypeScript/HTML/CSS | Automated Chromium, Firefox and WebKit engines; server matrix on Windows and Linux. |
 | Android/iOS mobile browser layouts | Responsive interface and web manifest | Mobile Chromium viewport/touch emulation, not physical phone testing. |
-| Installed desktop/mobile app | PWA, standalone display, PNG icons, HTTPS/localhost service worker | Manifest/assets/offline/privacy checks automated. Installation UI varies by browser/platform. |
-| Offline | Connection-required screen | No confidential document/sales/API caching. This is not an offline private-data application. |
-| Native stores/binaries | Not generated | Signing, OS APIs and app-store distribution need a separate native wrapper/release pipeline. |
+| Native Windows x64 | Per-user setup and portable ZIP with bundled service | Real frozen-service and packaged-executable document journeys in CI; released ZIP independently tested on this PC. Unsigned. |
+| Native macOS arm64 | DMG and portable archive with bundled service | Real frozen-service and packaged-executable document journeys on macOS CI. Not notarized or developer-identity signed. |
+| Native Linux x64 | AppImage and portable archive with bundled service | Real frozen-service and packaged-executable document journeys on Linux CI. No universal distribution/architecture claim. |
+| Installed legacy desktop/mobile PWA | Separate demonstration manifest/shell worker | Manifest/assets/offline/privacy checks automated. Private mode does not register this worker; no native phone package. |
+| Offline private documents | Local Python/native service works without an external network | Own trusted local service must be running. AI reference is offline; external/local model connections are opt-in. No private browser caching. |
+| Native mobile/app stores | Not generated | Physical phone testing, store approval, signing/notarization and remote shared hosting remain separate work. |
 
-Use HTTPS for remote installation. Browser support and installation instructions evolve; consult [MDN's installation guidance](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing). This repository does not claim physical installation was tested on every operating system.
+The private account edition binds only to the same device's loopback address, not a public HTTPS host or another phone. Legacy PWA support is separate; browser installation instructions evolve—see [MDN's installation guidance](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing). This repository does not claim physical installation on every OS/device. See [private accounts](private-accounts.md) and [current validation](validation-v1.1.md).
