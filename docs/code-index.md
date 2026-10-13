@@ -1126,17 +1126,19 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `{ page }` | 18 |
-| variable/parameter | `{ page, }` | 30 |
-| variable/parameter | `info` | 32 |
-| variable/parameter | `external` | 33 |
-| variable/parameter | `request` | 34 |
-| variable/parameter | `{ page, request, }` | 72 |
-| variable/parameter | `denied` | 85 |
-| variable/parameter | `release` | 96 |
-| variable/parameter | `delayed` | 97 |
-| variable/parameter | `resolve` | 97 |
-| variable/parameter | `route` | 100 |
+| variable/parameter | `{ page }` | 20 |
+| variable/parameter | `{ page, }` | 32 |
+| variable/parameter | `info` | 34 |
+| variable/parameter | `external` | 35 |
+| variable/parameter | `request` | 36 |
+| variable/parameter | `{ page, request, }` | 74 |
+| variable/parameter | `denied` | 87 |
+| variable/parameter | `release` | 98 |
+| variable/parameter | `delayed` | 99 |
+| variable/parameter | `resolve` | 99 |
+| variable/parameter | `route` | 102 |
+| variable/parameter | `releaseLibrary` | 118 |
+| variable/parameter | `library` | 119 |
 
 ## `tests/browser/workbench.spec.ts`
 
@@ -1383,88 +1385,88 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `busy` | 133 |
 | function/class | `navigationLock` | 133 |
 | variable/parameter | `node` | 139 |
-| variable/parameter | `cents` | 144 |
-| variable/parameter | `money` | 144 |
-| function/class | `esc` | 152 |
-| variable/parameter | `value` | 152 |
-| variable/parameter | `character` | 155 |
-| function/class | `api` | 163 |
-| variable/parameter | `init` | 163 |
-| variable/parameter | `path` | 163 |
-| variable/parameter | `headers` | 164 |
-| variable/parameter | `[key, value]` | 175 |
-| variable/parameter | `separator` | 182 |
-| variable/parameter | `response` | 183 |
-| variable/parameter | `error` | 194 |
-| variable/parameter | `message` | 207 |
-| function/class | `notice` | 207 |
-| function/class | `action` | 214 |
-| variable/parameter | `work` | 214 |
-| function/class | `shell` | 227 |
-| variable/parameter | `workspace` | 228 |
-| variable/parameter | `item` | 229 |
-| variable/parameter | `[view, label, index]` | 238 |
-| variable/parameter | `button` | 246 |
-| variable/parameter | `event` | 259 |
-| variable/parameter | `selected` | 261 |
-| function/class | `loginView` | 291 |
-| variable/parameter | `data` | 296 |
-| function/class | `catalog` | 315 |
-| variable/parameter | `content` | 316 |
-| variable/parameter | `unit` | 322 |
-| variable/parameter | `products` | 334 |
-| variable/parameter | `update` | 337 |
-| variable/parameter | `query` | 338 |
-| variable/parameter | `filtered` | 341 |
-| variable/parameter | `product` | 341 |
-| variable/parameter | `spec` | 350 |
-| variable/parameter | `result` | 361 |
-| function/class | `chart` | 373 |
-| variable/parameter | `report` | 373 |
-| variable/parameter | `max` | 374 |
-| variable/parameter | `point` | 374 |
-| function/class | `dashboard` | 379 |
-| variable/parameter | `employee` | 380 |
-| variable/parameter | `format` | 383 |
-| variable/parameter | `options` | 385 |
-| variable/parameter | `customerOptions` | 386 |
-| variable/parameter | `[id, label]` | 387 |
-| variable/parameter | `form` | 401 |
-| variable/parameter | `body` | 427 |
-| variable/parameter | `title` | 456 |
-| variable/parameter | `answer` | 474 |
-| function/class | `documentList` | 489 |
-| variable/parameter | `id` | 490 |
-| variable/parameter | `params` | 492 |
-| variable/parameter | `docs` | 498 |
-| variable/parameter | `staff` | 499 |
-| variable/parameter | `doc` | 501 |
-| variable/parameter | `input` | 512 |
-| function/class | `preview` | 521 |
-| variable/parameter | `block` | 530 |
-| variable/parameter | `index` | 530 |
-| variable/parameter | `warning` | 530 |
-| variable/parameter | `exports` | 535 |
-| variable/parameter | `link` | 537 |
-| variable/parameter | `suffix` | 538 |
-| variable/parameter | `url` | 540 |
-| function/class | `download` | 573 |
-| variable/parameter | `filename` | 573 |
-| variable/parameter | `type` | 573 |
-| function/class | `studio` | 583 |
-| variable/parameter | `config` | 586 |
-| variable/parameter | `audit` | 587 |
-| variable/parameter | `[dimension, units]` | 596 |
-| variable/parameter | `[key, alias]` | 605 |
-| variable/parameter | `units` | 621 |
-| variable/parameter | `key` | 623 |
-| variable/parameter | `[, unit]` | 624 |
-| variable/parameter | `columns` | 626 |
-| variable/parameter | `section` | 642 |
-| function/class | `render` | 657 |
-| variable/parameter | `previous` | 658 |
-| function/class | `start` | 684 |
-| variable/parameter | `privateMode` | 703 |
+| variable/parameter | `cents` | 149 |
+| variable/parameter | `money` | 149 |
+| function/class | `esc` | 157 |
+| variable/parameter | `value` | 157 |
+| variable/parameter | `character` | 160 |
+| function/class | `api` | 168 |
+| variable/parameter | `init` | 168 |
+| variable/parameter | `path` | 168 |
+| variable/parameter | `headers` | 169 |
+| variable/parameter | `[key, value]` | 180 |
+| variable/parameter | `separator` | 187 |
+| variable/parameter | `response` | 188 |
+| variable/parameter | `error` | 199 |
+| variable/parameter | `message` | 212 |
+| function/class | `notice` | 212 |
+| function/class | `action` | 220 |
+| variable/parameter | `work` | 220 |
+| function/class | `shell` | 233 |
+| variable/parameter | `workspace` | 234 |
+| variable/parameter | `item` | 235 |
+| variable/parameter | `[view, label, index]` | 244 |
+| variable/parameter | `button` | 252 |
+| variable/parameter | `event` | 265 |
+| variable/parameter | `selected` | 267 |
+| function/class | `loginView` | 303 |
+| variable/parameter | `data` | 308 |
+| function/class | `catalog` | 327 |
+| variable/parameter | `content` | 328 |
+| variable/parameter | `unit` | 334 |
+| variable/parameter | `products` | 346 |
+| variable/parameter | `update` | 349 |
+| variable/parameter | `query` | 350 |
+| variable/parameter | `filtered` | 353 |
+| variable/parameter | `product` | 353 |
+| variable/parameter | `spec` | 362 |
+| variable/parameter | `result` | 373 |
+| function/class | `chart` | 385 |
+| variable/parameter | `report` | 385 |
+| variable/parameter | `max` | 386 |
+| variable/parameter | `point` | 386 |
+| function/class | `dashboard` | 391 |
+| variable/parameter | `employee` | 392 |
+| variable/parameter | `format` | 395 |
+| variable/parameter | `options` | 397 |
+| variable/parameter | `customerOptions` | 398 |
+| variable/parameter | `[id, label]` | 399 |
+| variable/parameter | `form` | 413 |
+| variable/parameter | `body` | 439 |
+| variable/parameter | `title` | 468 |
+| variable/parameter | `answer` | 486 |
+| function/class | `documentList` | 501 |
+| variable/parameter | `id` | 502 |
+| variable/parameter | `params` | 504 |
+| variable/parameter | `docs` | 510 |
+| variable/parameter | `staff` | 511 |
+| variable/parameter | `doc` | 513 |
+| variable/parameter | `input` | 524 |
+| function/class | `preview` | 533 |
+| variable/parameter | `block` | 542 |
+| variable/parameter | `index` | 542 |
+| variable/parameter | `warning` | 542 |
+| variable/parameter | `exports` | 547 |
+| variable/parameter | `link` | 549 |
+| variable/parameter | `suffix` | 550 |
+| variable/parameter | `url` | 552 |
+| function/class | `download` | 585 |
+| variable/parameter | `filename` | 585 |
+| variable/parameter | `type` | 585 |
+| function/class | `studio` | 595 |
+| variable/parameter | `config` | 598 |
+| variable/parameter | `audit` | 599 |
+| variable/parameter | `[dimension, units]` | 608 |
+| variable/parameter | `[key, alias]` | 617 |
+| variable/parameter | `units` | 633 |
+| variable/parameter | `key` | 635 |
+| variable/parameter | `[, unit]` | 636 |
+| variable/parameter | `columns` | 638 |
+| variable/parameter | `section` | 654 |
+| function/class | `render` | 669 |
+| variable/parameter | `previous` | 670 |
+| function/class | `start` | 696 |
+| variable/parameter | `privateMode` | 715 |
 
 ## `web/private.ts`
 

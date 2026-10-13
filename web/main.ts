@@ -6,88 +6,88 @@
  * @symbol variable/parameter: busy L133
  * @symbol function/class: navigationLock L133
  * @symbol variable/parameter: node L139
- * @symbol variable/parameter: cents L144
- * @symbol variable/parameter: money L144
- * @symbol function/class: esc L152
- * @symbol variable/parameter: value L152
- * @symbol variable/parameter: character L155
- * @symbol function/class: api L163
- * @symbol variable/parameter: init L163
- * @symbol variable/parameter: path L163
- * @symbol variable/parameter: headers L164
- * @symbol variable/parameter: [key, value] L175
- * @symbol variable/parameter: separator L182
- * @symbol variable/parameter: response L183
- * @symbol variable/parameter: error L194
- * @symbol variable/parameter: message L207
- * @symbol function/class: notice L207
- * @symbol function/class: action L214
- * @symbol variable/parameter: work L214
- * @symbol function/class: shell L227
- * @symbol variable/parameter: workspace L228
- * @symbol variable/parameter: item L229
- * @symbol variable/parameter: [view, label, index] L238
- * @symbol variable/parameter: button L246
- * @symbol variable/parameter: event L259
- * @symbol variable/parameter: selected L261
- * @symbol function/class: loginView L291
- * @symbol variable/parameter: data L296
- * @symbol function/class: catalog L315
- * @symbol variable/parameter: content L316
- * @symbol variable/parameter: unit L322
- * @symbol variable/parameter: products L334
- * @symbol variable/parameter: update L337
- * @symbol variable/parameter: query L338
- * @symbol variable/parameter: filtered L341
- * @symbol variable/parameter: product L341
- * @symbol variable/parameter: spec L350
- * @symbol variable/parameter: result L361
- * @symbol function/class: chart L373
- * @symbol variable/parameter: report L373
- * @symbol variable/parameter: max L374
- * @symbol variable/parameter: point L374
- * @symbol function/class: dashboard L379
- * @symbol variable/parameter: employee L380
- * @symbol variable/parameter: format L383
- * @symbol variable/parameter: options L385
- * @symbol variable/parameter: customerOptions L386
- * @symbol variable/parameter: [id, label] L387
- * @symbol variable/parameter: form L401
- * @symbol variable/parameter: body L427
- * @symbol variable/parameter: title L456
- * @symbol variable/parameter: answer L474
- * @symbol function/class: documentList L489
- * @symbol variable/parameter: id L490
- * @symbol variable/parameter: params L492
- * @symbol variable/parameter: docs L498
- * @symbol variable/parameter: staff L499
- * @symbol variable/parameter: doc L501
- * @symbol variable/parameter: input L512
- * @symbol function/class: preview L521
- * @symbol variable/parameter: block L530
- * @symbol variable/parameter: index L530
- * @symbol variable/parameter: warning L530
- * @symbol variable/parameter: exports L535
- * @symbol variable/parameter: link L537
- * @symbol variable/parameter: suffix L538
- * @symbol variable/parameter: url L540
- * @symbol function/class: download L573
- * @symbol variable/parameter: filename L573
- * @symbol variable/parameter: type L573
- * @symbol function/class: studio L583
- * @symbol variable/parameter: config L586
- * @symbol variable/parameter: audit L587
- * @symbol variable/parameter: [dimension, units] L596
- * @symbol variable/parameter: [key, alias] L605
- * @symbol variable/parameter: units L621
- * @symbol variable/parameter: key L623
- * @symbol variable/parameter: [, unit] L624
- * @symbol variable/parameter: columns L626
- * @symbol variable/parameter: section L642
- * @symbol function/class: render L657
- * @symbol variable/parameter: previous L658
- * @symbol function/class: start L684
- * @symbol variable/parameter: privateMode L703
+ * @symbol variable/parameter: cents L149
+ * @symbol variable/parameter: money L149
+ * @symbol function/class: esc L157
+ * @symbol variable/parameter: value L157
+ * @symbol variable/parameter: character L160
+ * @symbol function/class: api L168
+ * @symbol variable/parameter: init L168
+ * @symbol variable/parameter: path L168
+ * @symbol variable/parameter: headers L169
+ * @symbol variable/parameter: [key, value] L180
+ * @symbol variable/parameter: separator L187
+ * @symbol variable/parameter: response L188
+ * @symbol variable/parameter: error L199
+ * @symbol variable/parameter: message L212
+ * @symbol function/class: notice L212
+ * @symbol function/class: action L220
+ * @symbol variable/parameter: work L220
+ * @symbol function/class: shell L233
+ * @symbol variable/parameter: workspace L234
+ * @symbol variable/parameter: item L235
+ * @symbol variable/parameter: [view, label, index] L244
+ * @symbol variable/parameter: button L252
+ * @symbol variable/parameter: event L265
+ * @symbol variable/parameter: selected L267
+ * @symbol function/class: loginView L303
+ * @symbol variable/parameter: data L308
+ * @symbol function/class: catalog L327
+ * @symbol variable/parameter: content L328
+ * @symbol variable/parameter: unit L334
+ * @symbol variable/parameter: products L346
+ * @symbol variable/parameter: update L349
+ * @symbol variable/parameter: query L350
+ * @symbol variable/parameter: filtered L353
+ * @symbol variable/parameter: product L353
+ * @symbol variable/parameter: spec L362
+ * @symbol variable/parameter: result L373
+ * @symbol function/class: chart L385
+ * @symbol variable/parameter: report L385
+ * @symbol variable/parameter: max L386
+ * @symbol variable/parameter: point L386
+ * @symbol function/class: dashboard L391
+ * @symbol variable/parameter: employee L392
+ * @symbol variable/parameter: format L395
+ * @symbol variable/parameter: options L397
+ * @symbol variable/parameter: customerOptions L398
+ * @symbol variable/parameter: [id, label] L399
+ * @symbol variable/parameter: form L413
+ * @symbol variable/parameter: body L439
+ * @symbol variable/parameter: title L468
+ * @symbol variable/parameter: answer L486
+ * @symbol function/class: documentList L501
+ * @symbol variable/parameter: id L502
+ * @symbol variable/parameter: params L504
+ * @symbol variable/parameter: docs L510
+ * @symbol variable/parameter: staff L511
+ * @symbol variable/parameter: doc L513
+ * @symbol variable/parameter: input L524
+ * @symbol function/class: preview L533
+ * @symbol variable/parameter: block L542
+ * @symbol variable/parameter: index L542
+ * @symbol variable/parameter: warning L542
+ * @symbol variable/parameter: exports L547
+ * @symbol variable/parameter: link L549
+ * @symbol variable/parameter: suffix L550
+ * @symbol variable/parameter: url L552
+ * @symbol function/class: download L585
+ * @symbol variable/parameter: filename L585
+ * @symbol variable/parameter: type L585
+ * @symbol function/class: studio L595
+ * @symbol variable/parameter: config L598
+ * @symbol variable/parameter: audit L599
+ * @symbol variable/parameter: [dimension, units] L608
+ * @symbol variable/parameter: [key, alias] L617
+ * @symbol variable/parameter: units L633
+ * @symbol variable/parameter: key L635
+ * @symbol variable/parameter: [, unit] L636
+ * @symbol variable/parameter: columns L638
+ * @symbol variable/parameter: section L654
+ * @symbol function/class: render L669
+ * @symbol variable/parameter: previous L670
+ * @symbol function/class: start L696
+ * @symbol variable/parameter: privateMode L715
 @index-end */
 /** Accessible workspace UI and explicit API actions. Function/state lines: docs/code-index.md.
  * All user/source values are escaped. Canonical documents render inside scriptless sandbox frames.
@@ -134,12 +134,17 @@ function navigationLock(busy: boolean): void {
   navigationBusy = busy;
   document
     .querySelectorAll<HTMLButtonElement | HTMLSelectElement>(
-      "[data-view], #workspace, #private-tools, #sign-in",
+      "[data-view], #workspace, #private-tools, #sign-in, #content button",
     )
     .forEach((node) => {
       node.disabled = busy;
     });
 }
+// Async views insert controls before their final API read completes. Disable those
+// newly inserted actions in the same microtask turn, rather than dropping a user's click.
+new MutationObserver(() => {
+  if (navigationBusy) navigationLock(true);
+}).observe(app, { childList: true, subtree: true });
 /** Format exact-cent values for cards; full exact cents remain available in reports. */
 const money = (cents: number): string =>
   new Intl.NumberFormat("en-US", {
@@ -206,6 +211,7 @@ async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
 /** Present errors and completion status without replacing the active user form. */
 function notice(message: string, error = false): void {
   const node = document.querySelector("#notice")!;
+  if (!node) return;
   node.textContent = message;
   node.className = error ? "notice error" : "notice";
 }
@@ -272,17 +278,23 @@ function shell(): void {
   document
     .querySelector("#sign-in")
     ?.addEventListener("click", () => loginView());
-  document.querySelector("#logout")?.addEventListener(
-    "click",
-    () =>
-      void action(async () => {
-        if (isPrivate) return logout();
-        await api("logout", { method: "POST" });
-        state.session = null;
-        state.view = "catalog";
-        await render();
-      }),
-  );
+  document.querySelector("#logout")?.addEventListener("click", () => {
+    if (isPrivate) {
+      void logout().catch((error) =>
+        notice(
+          error instanceof Error ? error.message : "Sign out failed",
+          true,
+        ),
+      );
+      return;
+    }
+    void action(async () => {
+      await api("logout", { method: "POST" });
+      state.session = null;
+      state.view = "catalog";
+      await render();
+    });
+  });
   decorateWorkbench();
   navigationLock(navigationBusy);
 }

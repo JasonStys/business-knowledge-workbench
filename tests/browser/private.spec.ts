@@ -1,15 +1,17 @@
 /* @index-begin
- * @symbol variable/parameter: { page } L18
- * @symbol variable/parameter: { page, } L30
- * @symbol variable/parameter: info L32
- * @symbol variable/parameter: external L33
- * @symbol variable/parameter: request L34
- * @symbol variable/parameter: { page, request, } L72
- * @symbol variable/parameter: denied L85
- * @symbol variable/parameter: release L96
- * @symbol variable/parameter: delayed L97
- * @symbol variable/parameter: resolve L97
- * @symbol variable/parameter: route L100
+ * @symbol variable/parameter: { page } L20
+ * @symbol variable/parameter: { page, } L32
+ * @symbol variable/parameter: info L34
+ * @symbol variable/parameter: external L35
+ * @symbol variable/parameter: request L36
+ * @symbol variable/parameter: { page, request, } L74
+ * @symbol variable/parameter: denied L87
+ * @symbol variable/parameter: release L98
+ * @symbol variable/parameter: delayed L99
+ * @symbol variable/parameter: resolve L99
+ * @symbol variable/parameter: route L102
+ * @symbol variable/parameter: releaseLibrary L118
+ * @symbol variable/parameter: library L119
 @index-end */
 /** Jason Stys: private website workflow, hostile origins, account isolation and responsive accessibility. */
 import { test, expect } from "@playwright/test";
@@ -112,6 +114,27 @@ test("delayed initial view cannot overwrite a newly selected workspace", async (
     release();
     await expect(
       page.getByRole("button", { name: "Business workspace", exact: true }),
+    ).toBeEnabled();
+    let releaseLibrary: () => void = () => {};
+    const library = new Promise<void>((resolve) => {
+      releaseLibrary = resolve;
+    });
+    await page.route(/\/private\/api\/documents\?/, async (route) => {
+      await library;
+      await route.continue();
+    });
+    try {
+      await page
+        .getByRole("button", { name: "Business workspace", exact: true })
+        .click();
+      await expect(
+        page.getByRole("button", { name: "Import & standardize", exact: true }),
+      ).toBeDisabled();
+    } finally {
+      releaseLibrary();
+    }
+    await expect(
+      page.getByRole("button", { name: "Import & standardize", exact: true }),
     ).toBeEnabled();
     await documentJourney(page);
     await page
