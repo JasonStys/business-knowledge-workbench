@@ -453,7 +453,7 @@ def create_private_app(
 
     app = FastAPI(
         title="Business Knowledge Workbench — Jason Stys",
-        version="1.1.0",
+        version="1.1.1",
         lifespan=lifespan,
         docs_url=None,
         redoc_url=None,
@@ -512,7 +512,7 @@ def create_private_app(
         return {
             "status": "ready",
             "mode": "private-local-accounts",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "author": "Jason Stys",
             "launcher_nonce": nonce,
         }

@@ -2,7 +2,9 @@
 
 A private, local-first document and data application by **Jason Stys**. Import business documentation, normalize units, search evidence, manage products, combine sources, export HTML-first documents, and review sales trends. Version **1.1.0** adds real local accounts, independently encrypted workspaces and native desktop downloads to the original reference application.
 
-[Source and Actions](https://github.com/JasonStys/business-knowledge-workbench) · [Downloads](https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.1.0) · [Contact Jason on LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/)
+[Source and Actions](https://github.com/JasonStys/business-knowledge-workbench) · [Downloads](https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.1.1) · [Contact Jason on LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/)
+
+Version **1.1.1** fixes asynchronous navigation/readiness: older view responses cannot overwrite a newer selection during initial loading or document actions. A deterministic delayed-response regression joins the existing real document journeys. Private data format and account roots are unchanged.
 
 ![Installed private account website with blank credential fields](docs/screenshots/accounts.png)
 

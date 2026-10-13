@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: business-knowledge-workbench-release-v1.1.0
+  group: business-knowledge-workbench-release-v1.1.1
   cancel-in-progress: false
 jobs:
   prepare:
@@ -33,11 +33,11 @@ jobs:
           test "$(gh run list --workflow ci.yml --commit "$sha" --limit 1 --json conclusion --jq '.[0].conclusion')" = success
           test "$(gh run list --workflow packages.yml --commit "$sha" --limit 1 --json conclusion --jq '.[0].conclusion')" = success
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
-          if gh release view v1.1.0 --json isDraft,targetCommitish > /tmp/cfs-release.json 2>/dev/null; then
+          if gh release view v1.1.1 --json isDraft,targetCommitish > /tmp/cfs-release.json 2>/dev/null; then
             test "$(jq -r '.isDraft' /tmp/cfs-release.json)" = true
             test "$(jq -r '.targetCommitish' /tmp/cfs-release.json)" = "$sha"
           else
-            gh release create v1.1.0 --draft --target "$sha" --title "Business Knowledge Workbench 1.1.0 — private local accounts" --notes-file docs/releases/v1.1.0.md
+            gh release create v1.1.1 --draft --target "$sha" --title "Business Knowledge Workbench 1.1.1 — private local accounts" --notes-file docs/releases/v1.1.1.md
           fi
   build:
     needs: prepare
@@ -90,13 +90,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          gh release upload v1.1.0 release/installers/*.sha256 --clobber
+          gh release upload v1.1.1 release/installers/*.sha256 --clobber
           if [ "$RUNNER_OS" = Windows ]; then
-            gh release upload v1.1.0 release/installers/*.exe release/installers/*.zip --clobber
+            gh release upload v1.1.1 release/installers/*.exe release/installers/*.zip --clobber
           elif [ "$RUNNER_OS" = macOS ]; then
-            gh release upload v1.1.0 release/installers/*.dmg release/installers/*.tar.gz --clobber
+            gh release upload v1.1.1 release/installers/*.dmg release/installers/*.tar.gz --clobber
           else
-            gh release upload v1.1.0 release/installers/*.AppImage release/installers/*.tar.gz --clobber
+            gh release upload v1.1.1 release/installers/*.AppImage release/installers/*.tar.gz --clobber
           fi
   publish:
     needs: [prepare, build]
@@ -107,4 +107,4 @@ jobs:
       - env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: gh release edit v1.1.0 --draft=false
+        run: gh release edit v1.1.1 --draft=false

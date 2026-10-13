@@ -20,6 +20,8 @@ Actions artifact uploads default off. Existing retained artifacts are preserved.
 
 ## Validated release source
 
+The following 1.1.0 evidence is retained as history. Patch 1.1.1 fixes the asynchronous-view race identified during final review; its new delayed-response regression passes locally in Chromium and WebKit. Patch release evidence is recorded below after the new immutable source and downloads are validated.
+
 Immutable release source: `f3676bfb40cbff170bb22114715275af2b402c6d`.
 
 | Gate | Verified result |

@@ -1,89 +1,93 @@
 /* @index-begin
- * @symbol type: View L110
- * @symbol variable/parameter: state L111
- * @symbol variable/parameter: app L125
- * @symbol variable/parameter: cents L127
- * @symbol variable/parameter: money L127
- * @symbol function/class: esc L135
- * @symbol variable/parameter: value L135
- * @symbol variable/parameter: character L138
- * @symbol function/class: api L146
- * @symbol variable/parameter: init L146
- * @symbol variable/parameter: path L146
- * @symbol variable/parameter: headers L147
- * @symbol variable/parameter: [key, value] L158
- * @symbol variable/parameter: separator L165
- * @symbol variable/parameter: response L166
- * @symbol variable/parameter: error L177
- * @symbol variable/parameter: message L190
- * @symbol function/class: notice L190
- * @symbol variable/parameter: node L191
- * @symbol function/class: action L197
- * @symbol variable/parameter: work L197
- * @symbol function/class: shell L206
- * @symbol variable/parameter: workspace L207
- * @symbol variable/parameter: item L208
- * @symbol variable/parameter: [view, label, index] L217
- * @symbol variable/parameter: button L225
- * @symbol variable/parameter: event L238
- * @symbol variable/parameter: selected L240
- * @symbol function/class: loginView L269
- * @symbol variable/parameter: data L274
- * @symbol function/class: catalog L293
- * @symbol variable/parameter: content L294
- * @symbol variable/parameter: unit L300
- * @symbol variable/parameter: products L312
- * @symbol variable/parameter: update L315
- * @symbol variable/parameter: query L316
- * @symbol variable/parameter: filtered L319
- * @symbol variable/parameter: product L319
- * @symbol variable/parameter: spec L328
- * @symbol variable/parameter: result L339
- * @symbol function/class: chart L351
- * @symbol variable/parameter: report L351
- * @symbol variable/parameter: max L352
- * @symbol variable/parameter: point L352
- * @symbol function/class: dashboard L357
- * @symbol variable/parameter: employee L358
- * @symbol variable/parameter: format L361
- * @symbol variable/parameter: options L363
- * @symbol variable/parameter: customerOptions L364
- * @symbol variable/parameter: [id, label] L365
- * @symbol variable/parameter: form L379
- * @symbol variable/parameter: body L405
- * @symbol variable/parameter: title L434
- * @symbol variable/parameter: answer L452
- * @symbol function/class: documentList L467
- * @symbol variable/parameter: id L468
- * @symbol variable/parameter: params L470
- * @symbol variable/parameter: docs L476
- * @symbol variable/parameter: staff L477
- * @symbol variable/parameter: doc L479
- * @symbol variable/parameter: input L490
- * @symbol function/class: preview L499
- * @symbol variable/parameter: block L508
- * @symbol variable/parameter: index L508
- * @symbol variable/parameter: warning L508
- * @symbol variable/parameter: exports L513
- * @symbol variable/parameter: link L515
- * @symbol variable/parameter: suffix L516
- * @symbol variable/parameter: url L518
- * @symbol function/class: download L551
- * @symbol variable/parameter: filename L551
- * @symbol variable/parameter: type L551
- * @symbol function/class: studio L561
- * @symbol variable/parameter: config L564
- * @symbol variable/parameter: audit L565
- * @symbol variable/parameter: [dimension, units] L574
- * @symbol variable/parameter: [key, alias] L583
- * @symbol variable/parameter: units L599
- * @symbol variable/parameter: key L601
- * @symbol variable/parameter: [, unit] L602
- * @symbol variable/parameter: columns L604
- * @symbol variable/parameter: section L620
- * @symbol function/class: render L635
- * @symbol function/class: start L656
- * @symbol variable/parameter: privateMode L675
+ * @symbol type: View L114
+ * @symbol variable/parameter: state L115
+ * @symbol variable/parameter: app L129
+ * @symbol variable/parameter: navigationBusy L130
+ * @symbol variable/parameter: busy L133
+ * @symbol function/class: navigationLock L133
+ * @symbol variable/parameter: node L139
+ * @symbol variable/parameter: cents L144
+ * @symbol variable/parameter: money L144
+ * @symbol function/class: esc L152
+ * @symbol variable/parameter: value L152
+ * @symbol variable/parameter: character L155
+ * @symbol function/class: api L163
+ * @symbol variable/parameter: init L163
+ * @symbol variable/parameter: path L163
+ * @symbol variable/parameter: headers L164
+ * @symbol variable/parameter: [key, value] L175
+ * @symbol variable/parameter: separator L182
+ * @symbol variable/parameter: response L183
+ * @symbol variable/parameter: error L194
+ * @symbol variable/parameter: message L207
+ * @symbol function/class: notice L207
+ * @symbol function/class: action L214
+ * @symbol variable/parameter: work L214
+ * @symbol function/class: shell L227
+ * @symbol variable/parameter: workspace L228
+ * @symbol variable/parameter: item L229
+ * @symbol variable/parameter: [view, label, index] L238
+ * @symbol variable/parameter: button L246
+ * @symbol variable/parameter: event L259
+ * @symbol variable/parameter: selected L261
+ * @symbol function/class: loginView L291
+ * @symbol variable/parameter: data L296
+ * @symbol function/class: catalog L315
+ * @symbol variable/parameter: content L316
+ * @symbol variable/parameter: unit L322
+ * @symbol variable/parameter: products L334
+ * @symbol variable/parameter: update L337
+ * @symbol variable/parameter: query L338
+ * @symbol variable/parameter: filtered L341
+ * @symbol variable/parameter: product L341
+ * @symbol variable/parameter: spec L350
+ * @symbol variable/parameter: result L361
+ * @symbol function/class: chart L373
+ * @symbol variable/parameter: report L373
+ * @symbol variable/parameter: max L374
+ * @symbol variable/parameter: point L374
+ * @symbol function/class: dashboard L379
+ * @symbol variable/parameter: employee L380
+ * @symbol variable/parameter: format L383
+ * @symbol variable/parameter: options L385
+ * @symbol variable/parameter: customerOptions L386
+ * @symbol variable/parameter: [id, label] L387
+ * @symbol variable/parameter: form L401
+ * @symbol variable/parameter: body L427
+ * @symbol variable/parameter: title L456
+ * @symbol variable/parameter: answer L474
+ * @symbol function/class: documentList L489
+ * @symbol variable/parameter: id L490
+ * @symbol variable/parameter: params L492
+ * @symbol variable/parameter: docs L498
+ * @symbol variable/parameter: staff L499
+ * @symbol variable/parameter: doc L501
+ * @symbol variable/parameter: input L512
+ * @symbol function/class: preview L521
+ * @symbol variable/parameter: block L530
+ * @symbol variable/parameter: index L530
+ * @symbol variable/parameter: warning L530
+ * @symbol variable/parameter: exports L535
+ * @symbol variable/parameter: link L537
+ * @symbol variable/parameter: suffix L538
+ * @symbol variable/parameter: url L540
+ * @symbol function/class: download L573
+ * @symbol variable/parameter: filename L573
+ * @symbol variable/parameter: type L573
+ * @symbol function/class: studio L583
+ * @symbol variable/parameter: config L586
+ * @symbol variable/parameter: audit L587
+ * @symbol variable/parameter: [dimension, units] L596
+ * @symbol variable/parameter: [key, alias] L605
+ * @symbol variable/parameter: units L621
+ * @symbol variable/parameter: key L623
+ * @symbol variable/parameter: [, unit] L624
+ * @symbol variable/parameter: columns L626
+ * @symbol variable/parameter: section L642
+ * @symbol function/class: render L657
+ * @symbol variable/parameter: previous L658
+ * @symbol function/class: start L684
+ * @symbol variable/parameter: privateMode L703
 @index-end */
 /** Accessible workspace UI and explicit API actions. Function/state lines: docs/code-index.md.
  * All user/source values are escaped. Canonical documents render inside scriptless sandbox frames.
@@ -123,6 +127,19 @@ const state: {
   selected: new Set(),
 };
 const app = document.querySelector<HTMLDivElement>("#app")!;
+let navigationBusy = false;
+
+/** Keep asynchronous views/actions from overwriting a newer navigation; the private lock remains available. */
+function navigationLock(busy: boolean): void {
+  navigationBusy = busy;
+  document
+    .querySelectorAll<HTMLButtonElement | HTMLSelectElement>(
+      "[data-view], #workspace, #private-tools, #sign-in",
+    )
+    .forEach((node) => {
+      node.disabled = busy;
+    });
+}
 /** Format exact-cent values for cards; full exact cents remain available in reports. */
 const money = (cents: number): string =>
   new Intl.NumberFormat("en-US", {
@@ -195,10 +212,14 @@ function notice(message: string, error = false): void {
 
 /** Route all async interaction failures to an accessible status region. */
 async function action(work: () => Promise<void>): Promise<void> {
+  if (navigationBusy) return;
+  navigationLock(true);
   try {
     await work();
   } catch (error) {
     notice(error instanceof Error ? error.message : "Unexpected failure", true);
+  } finally {
+    navigationLock(false);
   }
 }
 
@@ -263,6 +284,7 @@ function shell(): void {
       }),
   );
   decorateWorkbench();
+  navigationLock(navigationBusy);
 }
 
 /** Present real credential authentication with an explicit development-only demo shortcut. */
@@ -633,23 +655,29 @@ async function studio(): Promise<void> {
 
 /** Resolve view requirements and keep forbidden roles from misleadingly accessing admin UI. */
 async function render(): Promise<void> {
-  if (state.previewUrl) {
-    URL.revokeObjectURL(state.previewUrl);
-    delete state.previewUrl;
+  const previous = navigationBusy;
+  navigationLock(true);
+  try {
+    if (state.previewUrl) {
+      URL.revokeObjectURL(state.previewUrl);
+      delete state.previewUrl;
+    }
+    shell();
+    if (state.view === "catalog") return await catalog();
+    if (!state.session) return loginView();
+    if (
+      (state.view === "admin" && state.session.role !== "admin") ||
+      (state.view === "employee" && state.session.role === "customer")
+    ) {
+      document.querySelector("#content")!.innerHTML =
+        '<section class="panel"><h1>This view requires a different role.</h1><p>Sign out and sign in with an authorized staff or administrator account.</p></section>';
+      return;
+    }
+    if (state.view === "admin") return await studio();
+    return await dashboard();
+  } finally {
+    navigationLock(previous);
   }
-  shell();
-  if (state.view === "catalog") return catalog();
-  if (!state.session) return loginView();
-  if (
-    (state.view === "admin" && state.session.role !== "admin") ||
-    (state.view === "employee" && state.session.role === "customer")
-  ) {
-    document.querySelector("#content")!.innerHTML =
-      '<section class="panel"><h1>This view requires a different role.</h1><p>Sign out and sign in with an authorized staff or administrator account.</p></section>';
-    return;
-  }
-  if (state.view === "admin") return studio();
-  return dashboard();
 }
 
 /** Bootstrap the app and install a shell-only service worker that never caches API responses. */

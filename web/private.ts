@@ -1,57 +1,58 @@
 /* @index-begin
- * @symbol type: Account L59
- * @symbol type: Provider L68
- * @symbol variable/parameter: isPrivate L74
- * @symbol variable/parameter: current L75
- * @symbol variable/parameter: revision L76
- * @symbol variable/parameter: consent L77
- * @symbol variable/parameter: lastActivity L78
- * @symbol variable/parameter: idleSeconds L79
- * @symbol variable/parameter: poll L80
- * @symbol variable/parameter: root L81
- * @symbol function/class: escape L84
- * @symbol variable/parameter: value L84
- * @symbol variable/parameter: c L87
- * @symbol function/class: privateApi L95
- * @symbol variable/parameter: path L96
- * @symbol variable/parameter: data L97
- * @symbol variable/parameter: method L98
- * @symbol variable/parameter: response L100
- * @symbol variable/parameter: body L109
- * @symbol variable/parameter: bytes L120
- * @symbol function/class: encoded L120
- * @symbol function/class: derive L125
- * @symbol variable/parameter: phrase L125
- * @symbol variable/parameter: salt L125
- * @symbol variable/parameter: material L128
- * @symbol function/class: task L152
- * @symbol variable/parameter: work L152
- * @symbol variable/parameter: error L155
- * @symbol variable/parameter: node L156
- * @symbol function/class: heading L164
- * @symbol function/class: auth L169
- * @symbol variable/parameter: mode L169
- * @symbol variable/parameter: button L174
- * @symbol variable/parameter: event L177
- * @symbol variable/parameter: form L179
- * @symbol variable/parameter: result L182
- * @symbol variable/parameter: panel L185
- * @symbol function/class: help L198
- * @symbol function/class: gate L203
- * @symbol variable/parameter: key L231
- * @symbol variable/parameter: onReady L239
- * @symbol function/class: privateGate L241
- * @symbol variable/parameter: callback L242
- * @symbol variable/parameter: next L256
- * @symbol variable/parameter: notice L273
- * @symbol function/class: activity L295
- * @symbol function/class: ready L303
- * @symbol variable/parameter: settings L304
- * @symbol function/class: logout L312
- * @symbol function/class: decorateWorkbench L318
- * @symbol variable/parameter: footer L320
- * @symbol function/class: tools L333
- * @symbol function/class: modelHeaders L399
+ * @symbol type: Account L60
+ * @symbol type: Provider L69
+ * @symbol variable/parameter: isPrivate L75
+ * @symbol variable/parameter: current L76
+ * @symbol variable/parameter: revision L77
+ * @symbol variable/parameter: consent L78
+ * @symbol variable/parameter: lastActivity L79
+ * @symbol variable/parameter: idleSeconds L80
+ * @symbol variable/parameter: poll L81
+ * @symbol variable/parameter: root L82
+ * @symbol function/class: escape L85
+ * @symbol variable/parameter: value L85
+ * @symbol variable/parameter: c L88
+ * @symbol function/class: privateApi L96
+ * @symbol variable/parameter: path L97
+ * @symbol variable/parameter: data L98
+ * @symbol variable/parameter: method L99
+ * @symbol variable/parameter: response L101
+ * @symbol variable/parameter: body L110
+ * @symbol variable/parameter: bytes L121
+ * @symbol function/class: encoded L121
+ * @symbol function/class: derive L126
+ * @symbol variable/parameter: phrase L126
+ * @symbol variable/parameter: salt L126
+ * @symbol variable/parameter: material L129
+ * @symbol function/class: task L153
+ * @symbol variable/parameter: work L153
+ * @symbol variable/parameter: error L156
+ * @symbol variable/parameter: node L157
+ * @symbol function/class: heading L165
+ * @symbol function/class: auth L170
+ * @symbol variable/parameter: mode L170
+ * @symbol variable/parameter: button L175
+ * @symbol variable/parameter: event L178
+ * @symbol variable/parameter: form L180
+ * @symbol variable/parameter: result L183
+ * @symbol variable/parameter: panel L186
+ * @symbol function/class: help L199
+ * @symbol function/class: gate L204
+ * @symbol variable/parameter: key L232
+ * @symbol variable/parameter: onReady L240
+ * @symbol function/class: privateGate L242
+ * @symbol variable/parameter: callback L243
+ * @symbol variable/parameter: next L257
+ * @symbol variable/parameter: notice L274
+ * @symbol function/class: activity L296
+ * @symbol function/class: ready L304
+ * @symbol variable/parameter: settings L305
+ * @symbol function/class: logout L313
+ * @symbol function/class: decorateWorkbench L319
+ * @symbol variable/parameter: footer L321
+ * @symbol function/class: tools L334
+ * @symbol variable/parameter: target L335
+ * @symbol function/class: modelHeaders L401
 @index-end */
 /** Jason Stys: real local account UI, independent encryption phrase, help and explicit AI consent.
  * Keys/credentials stay in memory only; never use local/session storage or URL tokens.
@@ -331,11 +332,12 @@ export function decorateWorkbench(): void {
 
 /** Own local account management, snapshot, synthetic examples and destination-specific model configuration. */
 async function tools(): Promise<void> {
+  const target = document.querySelector("#content");
   const settings = await privateApi<Provider>("providers");
+  if (!target?.isConnected) return;
   if (settings.revision !== revision) consent = false;
   revision = settings.revision;
-  document.querySelector("#content")!.innerHTML =
-    `<section class="panel"><h1>Account, AI & help</h1><p>Local account ${escape(current!.alias)} · one unlocked account per device engine.</p><div id="account-status" role="status"></div><button id="save-snapshot" class="primary">Save encrypted snapshot</button> <a class="quiet" href="/private/backup" download>Download encrypted snapshot</a><label>Lock after inactivity<select id="idle"><option value="600">10 minutes</option><option value="1800">30 minutes</option><option value="7200">2 hours</option></select></label><h2>Learn with fictional examples</h2><p>Explicitly adds synthetic products, documents and sales to your own empty profiles. Never loads old demo accounts or other people’s data.</p><button id="seed">Load synthetic examples</button><h2>Optional model connection</h2><p>Offline extractive reference is the default. Connect an OpenAI-compatible model on literal 127.0.0.1 or the official HTTPS chat endpoint. No arbitrary remote URLs, scripts or model downloads. Your key is never returned or placed in source.</p><form id="provider-form"><label>Endpoint (blank for offline)<input name="endpoint" value="${escape(settings.endpoint)}" maxlength="2048" placeholder="http://127.0.0.1:11434/v1/chat/completions"></label><label>Model<input name="model" value="${escape(settings.model)}" maxlength="128" required></label><label>Own API key<input name="key" type="password" maxlength="4096" autocomplete="off" placeholder="${settings.has_key ? "Credential saved privately" : "Optional for local models"}"></label><label class="check"><input name="retain_key" type="checkbox">Keep saved key (same destination only)</label><button class="primary">Save model settings</button></form><label class="check"><input id="source-consent" type="checkbox" ${consent ? "checked" : ""}>I approve sending authorized document excerpts / selected figures to ${escape(settings.endpoint || "the offline local reference")} for this session.</label><p>Enable AI separately in Configuration studio. Changing the destination invalidates consent. Hosted providers may collect the data you deliberately send.</p><h2>Usage, privacy & recovery</h2>${help()}<details><summary>Delete my local account</summary><p>Irreversible deletion of this account and live encrypted archive only. External backups and exported files remain.</p><form id="delete-form"><label>Current login password<input name="password" type="password" minlength="15" maxlength="128" required></label><label class="check"><input name="confirm" type="checkbox" required>I confirm permanent deletion</label><button>Delete my account</button></form></details></section>`;
+  target.innerHTML = `<section class="panel"><h1>Account, AI & help</h1><p>Local account ${escape(current!.alias)} · one unlocked account per device engine.</p><div id="account-status" role="status"></div><button id="save-snapshot" class="primary">Save encrypted snapshot</button> <a class="quiet" href="/private/backup" download>Download encrypted snapshot</a><label>Lock after inactivity<select id="idle"><option value="600">10 minutes</option><option value="1800">30 minutes</option><option value="7200">2 hours</option></select></label><h2>Learn with fictional examples</h2><p>Explicitly adds synthetic products, documents and sales to your own empty profiles. Never loads old demo accounts or other people’s data.</p><button id="seed">Load synthetic examples</button><h2>Optional model connection</h2><p>Offline extractive reference is the default. Connect an OpenAI-compatible model on literal 127.0.0.1 or the official HTTPS chat endpoint. No arbitrary remote URLs, scripts or model downloads. Your key is never returned or placed in source.</p><form id="provider-form"><label>Endpoint (blank for offline)<input name="endpoint" value="${escape(settings.endpoint)}" maxlength="2048" placeholder="http://127.0.0.1:11434/v1/chat/completions"></label><label>Model<input name="model" value="${escape(settings.model)}" maxlength="128" required></label><label>Own API key<input name="key" type="password" maxlength="4096" autocomplete="off" placeholder="${settings.has_key ? "Credential saved privately" : "Optional for local models"}"></label><label class="check"><input name="retain_key" type="checkbox">Keep saved key (same destination only)</label><button class="primary">Save model settings</button></form><label class="check"><input id="source-consent" type="checkbox" ${consent ? "checked" : ""}>I approve sending authorized document excerpts / selected figures to ${escape(settings.endpoint || "the offline local reference")} for this session.</label><p>Enable AI separately in Configuration studio. Changing the destination invalidates consent. Hosted providers may collect the data you deliberately send.</p><h2>Usage, privacy & recovery</h2>${help()}<details><summary>Delete my local account</summary><p>Irreversible deletion of this account and live encrypted archive only. External backups and exported files remain.</p><form id="delete-form"><label>Current login password<input name="password" type="password" minlength="15" maxlength="128" required></label><label class="check"><input name="confirm" type="checkbox" required>I confirm permanent deletion</label><button>Delete my account</button></form></details></section>`;
   document.querySelector<HTMLSelectElement>("#idle")!.value =
     String(idleSeconds);
   document.querySelector<HTMLSelectElement>("#idle")!.onchange = (event) => {

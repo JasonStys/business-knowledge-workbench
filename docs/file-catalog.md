@@ -32,6 +32,7 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/private-api.md](../docs/private-api.md) | Private local API. |
 | [docs/release-checklist.md](../docs/release-checklist.md) | Private local application release checklist. |
 | [docs/releases/v1.1.0.md](../docs/releases/v1.1.0.md) | Business Knowledge Workbench 1.1.0. |
+| [docs/releases/v1.1.1.md](../docs/releases/v1.1.1.md) | Business Knowledge Workbench 1.1.1. |
 | [docs/reports/pdf-preview.png](../docs/reports/pdf-preview.png) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/performance.json](../docs/reports/performance.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation-v1.1.json](../docs/reports/validation-v1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
