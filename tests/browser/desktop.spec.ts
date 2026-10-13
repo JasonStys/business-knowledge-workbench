@@ -1,33 +1,39 @@
 /* @index-begin
- * @symbol variable/parameter: temporary L24
- * @symbol variable/parameter: app L25
- * @symbol variable/parameter: page L35
- * @symbol variable/parameter: destination L39
- * @symbol variable/parameter: completed L40
- * @symbol variable/parameter: target L41
- * @symbol variable/parameter: { BrowserWindow } L41
- * @symbol variable/parameter: reject L43
- * @symbol variable/parameter: resolve L43
- * @symbol variable/parameter: timer L44
- * @symbol variable/parameter: _event L50
- * @symbol variable/parameter: item L50
- * @symbol variable/parameter: state L52
- * @symbol variable/parameter: data L66
+ * @symbol variable/parameter: temporary L27
+ * @symbol variable/parameter: logs L28
+ * @symbol variable/parameter: app L30
+ * @symbol variable/parameter: page L41
+ * @symbol variable/parameter: destination L45
+ * @symbol variable/parameter: completed L46
+ * @symbol variable/parameter: target L47
+ * @symbol variable/parameter: { BrowserWindow } L47
+ * @symbol variable/parameter: reject L49
+ * @symbol variable/parameter: resolve L49
+ * @symbol variable/parameter: timer L50
+ * @symbol variable/parameter: _event L56
+ * @symbol variable/parameter: item L56
+ * @symbol variable/parameter: state L58
+ * @symbol variable/parameter: data L72
+ * @symbol variable/parameter: error L98
+ * @symbol variable/parameter: log L99
 @index-end */
 /** Jason Stys: genuine packaged native application conversion, encrypted lock and renderer sandbox checks. */
 import { test, expect, _electron as electron } from "@playwright/test";
-import { mkdtempSync, readFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { createSession, documentJourney } from "./account-session";
 test("native application imports rich documents with private accounts and no renderer privileges", async () => {
   const temporary = mkdtempSync(join(tmpdir(), "kbw-native-"));
+  const logs = join(temporary, "launcher");
+  mkdirSync(logs);
   const app = await electron.launch({
     executablePath: process.env.KBW_INSTALLED_APP,
     args: process.env.KBW_INSTALLED_APP ? [] : ["."],
     env: {
       ...process.env,
       KBW_DESKTOP_TEST: "1",
+      KBW_TEST_LAUNCHER_DATA: logs,
       KBW_ACCOUNT_DATA: join(temporary, "accounts"),
     },
   });
@@ -89,6 +95,14 @@ test("native application imports rich documents with private accounts and no ren
         name: "Unlock your private business workspace",
       }),
     ).toBeVisible();
+  } catch (error) {
+    const log = join(logs, "service.log");
+    if (existsSync(log))
+      console.error(
+        "Disposable native service diagnostic:",
+        readFileSync(log, "utf8").slice(-24000),
+      );
+    throw error;
   } finally {
     await app.close();
   }

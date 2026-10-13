@@ -2,19 +2,19 @@ name: Desktop packages
 on:
   push:
     paths:
-      - 'server/**'
-      - 'scripts/**'
-      - 'web/**'
-      - 'desktop/**'
-      - 'runner/**'
-      - 'training/**'
-      - 'tests/**'
-      - '.github/workflows/**'
-      - 'docs/licenses/**'
-      - 'package*.json'
-      - 'pyproject.toml'
-      - '*config*'
-      - 'LICENSE'
+      - "server/**"
+      - "scripts/**"
+      - "web/**"
+      - "desktop/**"
+      - "runner/**"
+      - "training/**"
+      - "tests/**"
+      - ".github/workflows/**"
+      - "docs/licenses/**"
+      - "package*.json"
+      - "pyproject.toml"
+      - "*config*"
+      - "LICENSE"
   workflow_dispatch:
 permissions:
   contents: read
@@ -27,17 +27,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 25
     env:
-      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      CSC_IDENTITY_AUTO_DISCOVERY: "false"
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
         with:
           persist-credentials: false
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
         with:
-          python-version: '3.12'
+          python-version: "3.12"
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
-          node-version: '24'
+          node-version: "24"
           cache: npm
       - run: python -m pip install --upgrade pip
       - run: pip install -r requirements.lock -e '.[dev]'
@@ -59,7 +59,7 @@ jobs:
           elif [ "$RUNNER_OS" = macOS ]; then
             export KBW_INSTALLED_APP="$PWD/release/installers/mac-arm64/Business Knowledge Workbench.app/Contents/MacOS/Business Knowledge Workbench"
           else
-            export KBW_INSTALLED_APP="$PWD/release/installers/linux-unpacked/business-knowledge-workbench-studio"
+            export KBW_INSTALLED_APP="$PWD/release/installers/linux-unpacked/business-knowledge-workbench"
           fi
           if [ "$RUNNER_OS" = Linux ]; then xvfb-run -a npm run test:desktop; else npm run test:desktop; fi
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -71,6 +71,3 @@ jobs:
             release/installers/*.AppImage
             release/installers/*.dmg
             test-results/
-
-
-

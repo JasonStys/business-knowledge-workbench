@@ -1,43 +1,45 @@
 /* @index-begin
- * @symbol variable/parameter: { app, BrowserWindow, dialog, Menu, session, shell, } L43
- * @symbol variable/parameter: { spawn } L51
- * @symbol variable/parameter: { randomBytes } L52
- * @symbol variable/parameter: { join } L53
- * @symbol variable/parameter: net L54
- * @symbol variable/parameter: fs L55
- * @symbol variable/parameter: service L56
- * @symbol variable/parameter: serviceOrigin L56
- * @symbol variable/parameter: serviceToken L56
- * @symbol variable/parameter: closing L57
- * @symbol function/class: port L60
- * @symbol variable/parameter: server L61
- * @symbol variable/parameter: reject L62
- * @symbol variable/parameter: resolve L62
- * @symbol variable/parameter: selected L65
- * @symbol function/class: launch L71
- * @symbol variable/parameter: nonce L74
- * @symbol variable/parameter: resources L75
- * @symbol variable/parameter: executable L78
- * @symbol variable/parameter: ui L85
- * @symbol variable/parameter: log L89
- * @symbol variable/parameter: env L94
- * @symbol variable/parameter: exited L112
- * @symbol variable/parameter: origin L120
- * @symbol variable/parameter: ready L122
- * @symbol variable/parameter: attempt L123
- * @symbol variable/parameter: response L125
- * @symbol variable/parameter: health L128
- * @symbol variable/parameter: isolated L142
- * @symbol variable/parameter: _permission L148
- * @symbol variable/parameter: _webContents L148
- * @symbol variable/parameter: callback L148
- * @symbol variable/parameter: details L152
- * @symbol variable/parameter: allowed L153
- * @symbol variable/parameter: window L161
- * @symbol variable/parameter: event L177
- * @symbol variable/parameter: url L177
- * @symbol variable/parameter: stopped L241
- * @symbol variable/parameter: error L281
+ * @symbol variable/parameter: { app, BrowserWindow, dialog, Menu, session, shell, } L45
+ * @symbol variable/parameter: { spawn } L53
+ * @symbol variable/parameter: { randomBytes } L54
+ * @symbol variable/parameter: { join } L55
+ * @symbol variable/parameter: net L56
+ * @symbol variable/parameter: fs L57
+ * @symbol variable/parameter: service L58
+ * @symbol variable/parameter: serviceOrigin L58
+ * @symbol variable/parameter: serviceToken L58
+ * @symbol variable/parameter: closing L59
+ * @symbol function/class: port L62
+ * @symbol variable/parameter: server L63
+ * @symbol variable/parameter: reject L64
+ * @symbol variable/parameter: resolve L64
+ * @symbol variable/parameter: selected L67
+ * @symbol function/class: launch L73
+ * @symbol variable/parameter: nonce L76
+ * @symbol variable/parameter: resources L77
+ * @symbol variable/parameter: executable L80
+ * @symbol variable/parameter: ui L87
+ * @symbol variable/parameter: log L91
+ * @symbol variable/parameter: env L96
+ * @symbol variable/parameter: exited L114
+ * @symbol variable/parameter: code L118
+ * @symbol variable/parameter: signal L118
+ * @symbol variable/parameter: origin L124
+ * @symbol variable/parameter: ready L126
+ * @symbol variable/parameter: attempt L127
+ * @symbol variable/parameter: response L129
+ * @symbol variable/parameter: health L132
+ * @symbol variable/parameter: isolated L146
+ * @symbol variable/parameter: _permission L152
+ * @symbol variable/parameter: _webContents L152
+ * @symbol variable/parameter: callback L152
+ * @symbol variable/parameter: details L156
+ * @symbol variable/parameter: allowed L157
+ * @symbol variable/parameter: window L165
+ * @symbol variable/parameter: event L181
+ * @symbol variable/parameter: url L181
+ * @symbol variable/parameter: stopped L245
+ * @symbol variable/parameter: error L286
 @index-end */
 /** Jason Stys: native private-account launcher. No renderer secrets, privileged preload or host code execution. */
 const {
@@ -113,7 +115,9 @@ async function launch() {
   service.once("error", () => {
     exited = true;
   });
-  service.once("exit", () => {
+  service.once("exit", (code, signal) => {
+    if (process.env.KBW_DESKTOP_TEST)
+      console.error("Private service exited", code, signal);
     exited = true;
     if (!closing) app.quit();
   });
@@ -264,7 +268,8 @@ app.on("before-quit", (event) => {
 app.on("window-all-closed", () => app.quit());
 app.setPath(
   "userData",
-  join(app.getPath("appData"), "BusinessKnowledgeWorkbenchLauncher"),
+  (process.env.KBW_DESKTOP_TEST && process.env.KBW_TEST_LAUNCHER_DATA) ||
+    join(app.getPath("appData"), "BusinessKnowledgeWorkbenchLauncher"),
 );
 if (!app.requestSingleInstanceLock()) app.quit();
 else {

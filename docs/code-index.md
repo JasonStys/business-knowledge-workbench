@@ -8,45 +8,47 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `{ app, BrowserWindow, dialog, Menu, session, shell, }` | 43 |
-| variable/parameter | `{ spawn }` | 51 |
-| variable/parameter | `{ randomBytes }` | 52 |
-| variable/parameter | `{ join }` | 53 |
-| variable/parameter | `net` | 54 |
-| variable/parameter | `fs` | 55 |
-| variable/parameter | `service` | 56 |
-| variable/parameter | `serviceOrigin` | 56 |
-| variable/parameter | `serviceToken` | 56 |
-| variable/parameter | `closing` | 57 |
-| function/class | `port` | 60 |
-| variable/parameter | `server` | 61 |
-| variable/parameter | `reject` | 62 |
-| variable/parameter | `resolve` | 62 |
-| variable/parameter | `selected` | 65 |
-| function/class | `launch` | 71 |
-| variable/parameter | `nonce` | 74 |
-| variable/parameter | `resources` | 75 |
-| variable/parameter | `executable` | 78 |
-| variable/parameter | `ui` | 85 |
-| variable/parameter | `log` | 89 |
-| variable/parameter | `env` | 94 |
-| variable/parameter | `exited` | 112 |
-| variable/parameter | `origin` | 120 |
-| variable/parameter | `ready` | 122 |
-| variable/parameter | `attempt` | 123 |
-| variable/parameter | `response` | 125 |
-| variable/parameter | `health` | 128 |
-| variable/parameter | `isolated` | 142 |
-| variable/parameter | `_permission` | 148 |
-| variable/parameter | `_webContents` | 148 |
-| variable/parameter | `callback` | 148 |
-| variable/parameter | `details` | 152 |
-| variable/parameter | `allowed` | 153 |
-| variable/parameter | `window` | 161 |
-| variable/parameter | `event` | 177 |
-| variable/parameter | `url` | 177 |
-| variable/parameter | `stopped` | 241 |
-| variable/parameter | `error` | 281 |
+| variable/parameter | `{ app, BrowserWindow, dialog, Menu, session, shell, }` | 45 |
+| variable/parameter | `{ spawn }` | 53 |
+| variable/parameter | `{ randomBytes }` | 54 |
+| variable/parameter | `{ join }` | 55 |
+| variable/parameter | `net` | 56 |
+| variable/parameter | `fs` | 57 |
+| variable/parameter | `service` | 58 |
+| variable/parameter | `serviceOrigin` | 58 |
+| variable/parameter | `serviceToken` | 58 |
+| variable/parameter | `closing` | 59 |
+| function/class | `port` | 62 |
+| variable/parameter | `server` | 63 |
+| variable/parameter | `reject` | 64 |
+| variable/parameter | `resolve` | 64 |
+| variable/parameter | `selected` | 67 |
+| function/class | `launch` | 73 |
+| variable/parameter | `nonce` | 76 |
+| variable/parameter | `resources` | 77 |
+| variable/parameter | `executable` | 80 |
+| variable/parameter | `ui` | 87 |
+| variable/parameter | `log` | 91 |
+| variable/parameter | `env` | 96 |
+| variable/parameter | `exited` | 114 |
+| variable/parameter | `code` | 118 |
+| variable/parameter | `signal` | 118 |
+| variable/parameter | `origin` | 124 |
+| variable/parameter | `ready` | 126 |
+| variable/parameter | `attempt` | 127 |
+| variable/parameter | `response` | 129 |
+| variable/parameter | `health` | 132 |
+| variable/parameter | `isolated` | 146 |
+| variable/parameter | `_permission` | 152 |
+| variable/parameter | `_webContents` | 152 |
+| variable/parameter | `callback` | 152 |
+| variable/parameter | `details` | 156 |
+| variable/parameter | `allowed` | 157 |
+| variable/parameter | `window` | 165 |
+| variable/parameter | `event` | 181 |
+| variable/parameter | `url` | 181 |
+| variable/parameter | `stopped` | 245 |
+| variable/parameter | `error` | 286 |
 
 ## `examples/custom_ai.py`
 
@@ -1100,20 +1102,23 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `temporary` | 24 |
-| variable/parameter | `app` | 25 |
-| variable/parameter | `page` | 35 |
-| variable/parameter | `destination` | 39 |
-| variable/parameter | `completed` | 40 |
-| variable/parameter | `target` | 41 |
-| variable/parameter | `{ BrowserWindow }` | 41 |
-| variable/parameter | `reject` | 43 |
-| variable/parameter | `resolve` | 43 |
-| variable/parameter | `timer` | 44 |
-| variable/parameter | `_event` | 50 |
-| variable/parameter | `item` | 50 |
-| variable/parameter | `state` | 52 |
-| variable/parameter | `data` | 66 |
+| variable/parameter | `temporary` | 27 |
+| variable/parameter | `logs` | 28 |
+| variable/parameter | `app` | 30 |
+| variable/parameter | `page` | 41 |
+| variable/parameter | `destination` | 45 |
+| variable/parameter | `completed` | 46 |
+| variable/parameter | `target` | 47 |
+| variable/parameter | `{ BrowserWindow }` | 47 |
+| variable/parameter | `reject` | 49 |
+| variable/parameter | `resolve` | 49 |
+| variable/parameter | `timer` | 50 |
+| variable/parameter | `_event` | 56 |
+| variable/parameter | `item` | 56 |
+| variable/parameter | `state` | 58 |
+| variable/parameter | `data` | 72 |
+| variable/parameter | `error` | 98 |
+| variable/parameter | `log` | 99 |
 
 ## `tests/browser/private.spec.ts`
 
