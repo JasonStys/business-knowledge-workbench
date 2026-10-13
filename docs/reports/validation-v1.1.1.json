@@ -1,0 +1,17 @@
+{
+  "version": "1.1.1",
+  "author": "Jason Stys",
+  "mode": "private-local-accounts",
+  "release_source": "fd07b73a77d4559c18c84f368050b9f06f4fc4f8",
+  "python_cases": 114,
+  "browser_cases": 33,
+  "browser_ci_attempt": 1,
+  "native_platforms": ["Windows x64", "macOS arm64", "Linux x64"],
+  "ci": {"validate_run": 38359644444, "packages_run": 38359644512, "codeql_run": 38359644481, "release_run": 38360416917, "all_conclusions": "success", "open_codeql_alerts": 0},
+  "downloaded_windows": {"bytes": 205635334, "sha256": "2a124428272fa1cce52cfafc7fdbfeb377b98f8bbb6a67f623b365389ecc6780", "complete_native_case_passed": true, "case_duration_seconds": 8.8, "embedded_image_decoded_natural_width": 640},
+  "checksums": {"six_release_records_match_github_binary_digests": true},
+  "readiness_regressions": ["Delayed initial audit disables navigation", "Delayed document library disables newly inserted import actions", "Real conversion/export/snapshot completes after reads resume"],
+  "privacy": {"real_user_credentials_created_by_tester": false, "account_data_in_git_or_installation": false, "legacy_runtime_migrated_or_deleted": false, "default_external_model_calls": false},
+  "actions_storage": {"repo_artifacts": 5, "repo_artifact_bytes": 255402, "billing_meter_last_verified_percent": 100, "deleted": false, "new_artifact_uploads_default": "off"},
+  "boundaries": ["Local only, one unlocked account engine", "Active plaintext requires trusted OS/service", "Unsigned/not notarized desktop downloads", "No native phone/public shared-host deployment", "No live paid model quality or adversarial-parser certification"]
+}

@@ -35,6 +35,7 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/releases/v1.1.1.md](../docs/releases/v1.1.1.md) | Business Knowledge Workbench 1.1.1. |
 | [docs/reports/pdf-preview.png](../docs/reports/pdf-preview.png) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/performance.json](../docs/reports/performance.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
+| [docs/reports/validation-v1.1.1.json](../docs/reports/validation-v1.1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation-v1.1.json](../docs/reports/validation-v1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation.json](../docs/reports/validation.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/research.md](../docs/research.md) | Research and coding decisions. |
