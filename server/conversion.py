@@ -1,71 +1,75 @@
 # @index-begin
-# @symbol variable/parameter: MAX_BYTES L98
-# @symbol variable/parameter: MAX_TEXT L99
-# @symbol variable/parameter: SUPPORTED L100
-# @symbol variable/parameter: SAFE_TAGS L117
-# @symbol function/class: clean_html L143
-# @symbol variable/parameter: value L143
-# @symbol function/class: archive_guard L154
-# @symbol variable/parameter: data L154
-# @symbol variable/parameter: required L154
-# @symbol variable/parameter: archive L156
-# @symbol variable/parameter: items L157
-# @symbol function/class: image_block L176
-# @symbol variable/parameter: label L176
-# @symbol variable/parameter: image L178
-# @symbol variable/parameter: output L182
-# @symbol variable/parameter: rows L192
-# @symbol function/class: table_block L192
-# @symbol variable/parameter: cell L198
-# @symbol function/class: extract_docx L202
-# @symbol variable/parameter: document L205
-# @symbol variable/parameter: blocks L206
-# @symbol variable/parameter: warnings L207
-# @symbol variable/parameter: item L210
-# @symbol variable/parameter: equation L223
-# @symbol variable/parameter: drawing L232
-# @symbol variable/parameter: relation L233
-# @symbol function/class: extract_pdf L245
-# @symbol variable/parameter: reader L249
-# @symbol variable/parameter: pdf L256
-# @symbol variable/parameter: number L257
-# @symbol variable/parameter: page L257
-# @symbol variable/parameter: content L258
-# @symbol variable/parameter: figure L268
-# @symbol function/class: extract L273
-# @symbol variable/parameter: name L273
-# @symbol variable/parameter: extension L275
-# @symbol variable/parameter: workbook L290
-# @symbol variable/parameter: sheet L297
-# @symbol variable/parameter: text L308
-# @symbol variable/parameter: _ L319
-# @symbol variable/parameter: key L322
-# @symbol variable/parameter: keys L322
-# @symbol variable/parameter: root L326
-# @symbol variable/parameter: safe L331
-# @symbol variable/parameter: part L337
-# @symbol function/class: render_document L340
-# @symbol variable/parameter: title L341
-# @symbol variable/parameter: measurements L343
-# @symbol variable/parameter: provenance L344
-# @symbol variable/parameter: config L345
-# @symbol variable/parameter: parts L349
-# @symbol variable/parameter: section L350
-# @symbol variable/parameter: warning L356
-# @symbol variable/parameter: kind L359
-# @symbol variable/parameter: tag L364
-# @symbol variable/parameter: style L394
-# @symbol function/class: ingest L398
-# @symbol variable/parameter: block L404
-# @symbol variable/parameter: index L404
-# @symbol variable/parameter: row L406
-# @symbol variable/parameter: column L407
-# @symbol variable/parameter: records L408
-# @symbol variable/parameter: record L409
-# @symbol variable/parameter: soup L412
-# @symbol variable/parameter: node L413
-# @symbol variable/parameter: normalized L414
-# @symbol variable/parameter: html L428
+# @symbol variable/parameter: MAX_BYTES L103
+# @symbol variable/parameter: MAX_TEXT L104
+# @symbol variable/parameter: SUPPORTED L105
+# @symbol variable/parameter: SAFE_TAGS L122
+# @symbol function/class: clean_html L148
+# @symbol variable/parameter: value L148
+# @symbol function/class: archive_guard L163
+# @symbol variable/parameter: data L163
+# @symbol variable/parameter: required L163
+# @symbol variable/parameter: archive L165
+# @symbol variable/parameter: items L166
+# @symbol function/class: image_block L185
+# @symbol variable/parameter: label L185
+# @symbol variable/parameter: image L187
+# @symbol variable/parameter: output L191
+# @symbol variable/parameter: rows L201
+# @symbol function/class: table_block L201
+# @symbol variable/parameter: cell L207
+# @symbol function/class: extract_docx L211
+# @symbol variable/parameter: document L214
+# @symbol variable/parameter: blocks L215
+# @symbol variable/parameter: warnings L216
+# @symbol variable/parameter: item L219
+# @symbol variable/parameter: equation L232
+# @symbol variable/parameter: drawing L241
+# @symbol variable/parameter: relation L242
+# @symbol function/class: extract_pdf L254
+# @symbol variable/parameter: reader L258
+# @symbol variable/parameter: pdf L265
+# @symbol variable/parameter: number L266
+# @symbol variable/parameter: page L266
+# @symbol variable/parameter: content L267
+# @symbol variable/parameter: figure L277
+# @symbol function/class: extract L282
+# @symbol variable/parameter: name L282
+# @symbol variable/parameter: extension L284
+# @symbol variable/parameter: workbook L299
+# @symbol variable/parameter: sheet L306
+# @symbol variable/parameter: text L317
+# @symbol variable/parameter: _ L328
+# @symbol variable/parameter: key L331
+# @symbol variable/parameter: keys L331
+# @symbol variable/parameter: root L335
+# @symbol variable/parameter: safe L340
+# @symbol variable/parameter: part L346
+# @symbol function/class: render_document L349
+# @symbol variable/parameter: title L350
+# @symbol variable/parameter: measurements L352
+# @symbol variable/parameter: provenance L353
+# @symbol variable/parameter: config L354
+# @symbol variable/parameter: standard L358
+# @symbol variable/parameter: parts L359
+# @symbol variable/parameter: section L363
+# @symbol variable/parameter: warning L369
+# @symbol variable/parameter: kind L372
+# @symbol variable/parameter: tag L377
+# @symbol variable/parameter: style L410
+# @symbol variable/parameter: fonts L411
+# @symbol function/class: ingest L416
+# @symbol function/class: assemble L430
+# @symbol variable/parameter: source_blocks L432
+# @symbol variable/parameter: block L448
+# @symbol variable/parameter: index L448
+# @symbol variable/parameter: row L450
+# @symbol variable/parameter: column L451
+# @symbol variable/parameter: records L452
+# @symbol variable/parameter: record L453
+# @symbol variable/parameter: soup L456
+# @symbol variable/parameter: node L457
+# @symbol variable/parameter: normalized L458
+# @symbol variable/parameter: html L470
 # @index-end
 """Bounded import adapters and canonical HTML generation. Symbols: docs/code-index.md.
 
@@ -93,6 +97,7 @@ from PIL import Image
 from pypdf import PdfReader
 
 from .models import WorkspaceConfig
+from .standards import identity, prepare_tables
 from .units import normalize
 
 MAX_BYTES = 4 * 1024 * 1024
@@ -145,7 +150,11 @@ def clean_html(value: str) -> str:
     return nh3.clean(
         value,
         tags=SAFE_TAGS,
-        attributes={"a": {"href", "title"}},
+        attributes={
+            "a": {"href", "title"},
+            "td": {"colspan", "rowspan"},
+            "th": {"colspan", "rowspan"},
+        },
         url_schemes={"https"},
         clean_content_tags={"script", "style", "iframe", "object"},
     )
@@ -346,9 +355,13 @@ def render_document(
     warnings: list[str],
 ) -> str:
     """Render all exports' canonical first stage using escaped text and trusted structure."""
-    parts = [f"<h1>{escape(title)}</h1>"]
+    standard = config.output_standard
+    parts = [
+        f"<h1>{escape(title)}</h1>",
+        f"<p>{escape(standard.name)} · Revision {config.revision}</p>",
+    ]
     for section in config.sections:
-        parts.append(f"<section><h2>{section.title()}</h2>")
+        parts.append(f"<section><h2>{escape(standard.section_titles[section])}</h2>")
         if section == "overview":
             parts.append(
                 "<p>Standardized document. Review source fidelity before operational use.</p>"
@@ -364,7 +377,10 @@ def render_document(
                         tag = "th" if index == 0 else "td"
                         parts.append(
                             "<tr>"
-                            + "".join(f"<{tag}>{escape(cell)}</{tag}>" for cell in row)
+                            + "".join(
+                                f"<{tag}>{escape(block.get('column_labels', {}).get(cell, cell) if index == 0 else cell)}</{tag}>"
+                                for cell in row
+                            )
                             + "</tr>"
                         )
                     parts.append("</table>")
@@ -392,6 +408,8 @@ def render_document(
             parts.append(f"<pre>{escape(json.dumps(provenance, indent=2))}</pre>")
         parts.append("</section>")
     style = "body{font:16px system-ui;max-width:900px;margin:auto;padding:24px;color:#18312c}table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:8px}img{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}"
+    fonts = {"sans": "Arial,sans-serif", "serif": "Georgia,serif", "mono": "monospace"}
+    style += f"body{{font-family:{fonts[standard.font]};font-size:{standard.font_size}pt}}h1,h2,h3{{color:{standard.accent}}}@page{{size:{standard.paper} {standard.orientation};margin:20mm}}"
     return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{escape(title)}</title><style>{style}</style></head><body>{"".join(parts)}</body></html>'
 
 
@@ -400,6 +418,32 @@ def ingest(name: str, data: bytes, config: WorkspaceConfig) -> dict:
     blocks, warnings = extract(name, data)
     if len(blocks) > 3000 or sum(len(json.dumps(block)) for block in blocks) > 5 * 1024 * 1024:
         raise ValueError("Extracted content exceeds budget")
+    provenance = {
+        "source_name": name,
+        "sha256": hashlib.sha256(data).hexdigest(),
+        "conversion_path": [name.rsplit(".", 1)[-1].lower(), "html"],
+        "schema_version": "1.0",
+    }
+    return assemble(name, blocks, provenance, config, warnings)
+
+
+def assemble(
+    title: str,
+    source_blocks: list[dict],
+    provenance: dict,
+    config: WorkspaceConfig,
+    warnings: list[str],
+) -> dict:
+    """Apply one complete standard to a copy of extracted evidence, never overwrite source blocks."""
+    import copy
+
+    if (
+        len(source_blocks) > 3000
+        or sum(len(json.dumps(block)) for block in source_blocks) > 5 * 1024 * 1024
+    ):
+        raise ValueError("Extracted content exceeds budget")
+    warnings = list(warnings)
+    blocks = prepare_tables(source_blocks, config, warnings)
     measurements: list[dict] = []
     for index, block in enumerate(blocks):
         if block["kind"] == "table":
@@ -419,17 +463,19 @@ def ingest(name: str, data: bytes, config: WorkspaceConfig) -> dict:
                 block["text"], records = normalize(block["text"], config.units)
                 measurements.extend({**record, "block": index} for record in records)
     provenance = {
-        "source_name": name,
-        "sha256": hashlib.sha256(data).hexdigest(),
+        **provenance,
         "config_revision": config.revision,
-        "conversion_path": [name.rsplit(".", 1)[-1].lower(), "html"],
-        "schema_version": "1.0",
+        "standard_sha256": identity(config)["sha256"],
     }
-    html = render_document(name, blocks, measurements, provenance, config, warnings)
+    html = render_document(title, blocks, measurements, provenance, config, warnings)
+    if len(html.encode()) > 8 * 1024 * 1024:
+        raise ValueError("Standardized output exceeds budget")
     text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
     return {
         "schema_version": "1.0",
-        "title": name,
+        "title": title,
+        "source_blocks": copy.deepcopy(source_blocks),
+        "standard": identity(config),
         "blocks": blocks,
         "measurements": measurements,
         "warnings": warnings,

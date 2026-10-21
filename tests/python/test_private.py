@@ -1,70 +1,75 @@
 # @index-begin
-# @symbol variable/parameter: PASSWORD L86
-# @symbol variable/parameter: KEY L87
-# @symbol variable/parameter: SALT L88
-# @symbol variable/parameter: HEADERS L89
-# @symbol function/class: client L93
-# @symbol variable/parameter: tmp_path L93
-# @symbol variable/parameter: app L95
-# @symbol variable/parameter: session L96
-# @symbol variable/parameter: alias L100
-# @symbol variable/parameter: client L100
-# @symbol function/class: register L100
-# @symbol variable/parameter: response L102
-# @symbol variable/parameter: key L107
-# @symbol function/class: unlock L107
-# @symbol function/class: test_registration_private_headers_and_zero_secret_echo L113
-# @symbol variable/parameter: invalid L128
-# @symbol variable/parameter: db L132
-# @symbol variable/parameter: row L133
-# @symbol variable/parameter: headers L147
-# @symbol function/class: test_request_origin_host_mutation_rejected L147
-# @symbol function/class: test_recovery_logout_expiry_delete L159
-# @symbol variable/parameter: recovery L161
-# @symbol variable/parameter: body L163
-# @symbol variable/parameter: changed L164
-# @symbol function/class: test_expiry_and_human_idle L188
-# @symbol variable/parameter: manager L192
-# @symbol variable/parameter: human L193
-# @symbol variable/parameter: monkeypatch L203
-# @symbol function/class: test_recovery_save_failure_preserves_code L203
-# @symbol variable/parameter: original L210
-# @symbol variable/parameter: args L212
-# @symbol function/class: unavailable L212
-# @symbol variable/parameter: name L228
-# @symbol function/class: test_archive_paths L228
-# @symbol function/class: test_archive_authentication_before_extract L234
-# @symbol variable/parameter: root L236
-# @symbol variable/parameter: path L239
-# @symbol variable/parameter: damaged L242
-# @symbol function/class: test_single_instance_and_launcher_not_browser L250
-# @symbol variable/parameter: content L257
-# @symbol function/class: imported L257
-# @symbol function/class: test_document_encryption_export_reopen L266
-# @symbol variable/parameter: identity L270
-# @symbol variable/parameter: document L271
-# @symbol variable/parameter: fmt L274
-# @symbol function/class: test_accounts_and_session_specific_unlock L297
-# @symbol variable/parameter: suffix L324
-# @symbol function/class: test_private_rich_imports L341
-# @symbol variable/parameter: payload L345
-# @symbol variable/parameter: result L347
-# @symbol function/class: test_role_previews_and_seed_own_only L351
-# @symbol function/class: test_provider_privacy_consent_and_offline_ai L377
-# @symbol variable/parameter: config L382
-# @symbol variable/parameter: offline L385
-# @symbol variable/parameter: settings L387
-# @symbol variable/parameter: saved L392
-# @symbol variable/parameter: context L404
-# @symbol variable/parameter: image L404
-# @symbol variable/parameter: question L404
-# @symbol variable/parameter: self L404
-# @symbol variable/parameter: owner L425
-# @symbol function/class: test_model_endpoint_rejections L443
-# @symbol variable/parameter: url L443
-# @symbol function/class: test_soft_quota_preserves_recovery L451
-# @symbol function/class: test_body_and_auth_limits L467
-# @symbol variable/parameter: _ L477
+# @symbol variable/parameter: PASSWORD L91
+# @symbol variable/parameter: KEY L92
+# @symbol variable/parameter: SALT L93
+# @symbol variable/parameter: HEADERS L94
+# @symbol function/class: client L98
+# @symbol variable/parameter: tmp_path L98
+# @symbol variable/parameter: app L100
+# @symbol variable/parameter: session L101
+# @symbol variable/parameter: alias L105
+# @symbol variable/parameter: client L105
+# @symbol function/class: register L105
+# @symbol variable/parameter: response L107
+# @symbol variable/parameter: key L112
+# @symbol function/class: unlock L112
+# @symbol function/class: test_registration_private_headers_and_zero_secret_echo L118
+# @symbol variable/parameter: invalid L133
+# @symbol variable/parameter: db L137
+# @symbol variable/parameter: row L138
+# @symbol function/class: test_standards_private_persistence_and_account_isolation L143
+# @symbol variable/parameter: config L147
+# @symbol variable/parameter: snapshot L157
+# @symbol function/class: test_current_copy_with_custom_customer_ids L182
+# @symbol variable/parameter: source L189
+# @symbol variable/parameter: copied L198
+# @symbol variable/parameter: headers L212
+# @symbol function/class: test_request_origin_host_mutation_rejected L212
+# @symbol function/class: test_recovery_logout_expiry_delete L224
+# @symbol variable/parameter: recovery L226
+# @symbol variable/parameter: body L228
+# @symbol variable/parameter: changed L229
+# @symbol function/class: test_expiry_and_human_idle L253
+# @symbol variable/parameter: manager L257
+# @symbol variable/parameter: human L258
+# @symbol variable/parameter: monkeypatch L268
+# @symbol function/class: test_recovery_save_failure_preserves_code L268
+# @symbol variable/parameter: original L275
+# @symbol variable/parameter: args L277
+# @symbol function/class: unavailable L277
+# @symbol variable/parameter: name L293
+# @symbol function/class: test_archive_paths L293
+# @symbol function/class: test_archive_authentication_before_extract L299
+# @symbol variable/parameter: root L301
+# @symbol variable/parameter: path L304
+# @symbol variable/parameter: damaged L307
+# @symbol function/class: test_single_instance_and_launcher_not_browser L315
+# @symbol variable/parameter: content L322
+# @symbol function/class: imported L322
+# @symbol function/class: test_document_encryption_export_reopen L331
+# @symbol variable/parameter: identity L335
+# @symbol variable/parameter: document L336
+# @symbol variable/parameter: fmt L339
+# @symbol function/class: test_accounts_and_session_specific_unlock L362
+# @symbol variable/parameter: suffix L389
+# @symbol function/class: test_private_rich_imports L406
+# @symbol variable/parameter: payload L410
+# @symbol variable/parameter: result L412
+# @symbol function/class: test_role_previews_and_seed_own_only L416
+# @symbol function/class: test_provider_privacy_consent_and_offline_ai L442
+# @symbol variable/parameter: offline L450
+# @symbol variable/parameter: settings L452
+# @symbol variable/parameter: saved L457
+# @symbol variable/parameter: context L469
+# @symbol variable/parameter: image L469
+# @symbol variable/parameter: question L469
+# @symbol variable/parameter: self L469
+# @symbol variable/parameter: owner L490
+# @symbol function/class: test_model_endpoint_rejections L508
+# @symbol variable/parameter: url L508
+# @symbol function/class: test_soft_quota_preserves_recovery L516
+# @symbol function/class: test_body_and_auth_limits L532
+# @symbol variable/parameter: _ L542
 # @index-end
 """Jason Stys: actual private-account, archive, provider, ownership and blocked-execution regression tests.
 
@@ -133,6 +138,66 @@ def test_registration_private_headers_and_zero_secret_echo(client):
         row = db.execute("SELECT password,recovery FROM accounts").fetchone()
         assert row[0].startswith("scrypt-v1$") and PASSWORD not in row[0]
         assert row[1] != response.json()["recovery"]
+
+
+def test_standards_private_persistence_and_account_isolation(client):
+    """Published standards/history are encrypted with their owner and invisible to another local account."""
+    register(client)
+    unlock(client)
+    config = client.get("/private/api/config").json()["config"]
+    config["output_standard"]["name"] = "Fictional private standard marker"
+    assert (
+        client.put(
+            "/private/api/config", json=config, headers={"X-KBW-View": "employee"}
+        ).status_code
+        == 403
+    )
+    assert client.put("/private/api/config", json=config).status_code == 200
+    assert client.post("/private/lock", json={}).status_code == 200
+    snapshot = client.get("/private/backup")
+    assert (
+        snapshot.status_code == 200 and b"Fictional private standard marker" not in snapshot.content
+    )
+    assert client.get("/private/api/standards/history").status_code == 423
+    register(client, "fictional_two")
+    unlock(client, base64.b64encode(b"b" * 32).decode())
+    assert (
+        "Fictional private standard marker" not in client.get("/private/api/standards/history").text
+    )
+    assert client.get("/private/api/config").json()["config"]["revision"] == 1
+    assert client.post("/private/logout", json={}).status_code == 200
+    assert (
+        client.post(
+            "/private/login", json={"alias": "fictional_one", "password": PASSWORD}
+        ).status_code
+        == 200
+    )
+    unlock(client)
+    assert (
+        client.get("/private/api/config").json()["config"]["output_standard"]["name"]
+        == "Fictional private standard marker"
+    )
+
+
+def test_current_copy_with_custom_customer_ids(client):
+    """An internal source copy does not depend on demo-only north/south customer identifiers."""
+    register(client)
+    unlock(client)
+    config = client.get("/private/api/config").json()["config"]
+    config["customers"] = {"acme": "Fictional ACME"}
+    assert client.put("/private/api/config", json=config).status_code == 200
+    source = client.post(
+        "/private/api/import",
+        files={"file": ("width.txt", b"Width 4.25 in")},
+        data={"customer": "acme"},
+    )
+    assert source.status_code == 200
+    config = client.get("/private/api/config").json()["config"]
+    config["units"]["length"] = "cm"
+    assert client.put("/private/api/config", json=config).status_code == 200
+    copied = client.post(f"/private/api/documents/{source.json()['id']}/standardize", json={})
+    assert copied.status_code == 200
+    assert "10.795 cm" in client.get("/private/api/documents/" + copied.json()["id"]).json()["html"]
 
 
 @pytest.mark.parametrize(

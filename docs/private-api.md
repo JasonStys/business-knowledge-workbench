@@ -1,5 +1,11 @@
 # Private local API
 
+Version 1.2 adds owner-authorized standards preview, history and restoration under
+`/private/api/standards/*`, current-standard document copies and scoped
+standard-format report downloads. See [standards API and contracts](standards.md#api).
+Mutations require the same-origin JSON request boundary even when the action has
+no meaningful payload; the UI sends `{}` rather than weakening that boundary.
+
 Author: Jason Stys. Use the exact loopback port printed by the CLI or launched by the installed app. No public hosting, CORS wildcard, URL bearer or operator-read API.
 
 All mutating requests need `X-KBW-Request: v1`, matching Origin if sent, and JSON (multipart only for `/private/api/import`). Bounds are checked before private handlers: 4 MiB + 64,000 bytes. Account cookies are HttpOnly, SameSite Strict, port-named and restricted to `/private`. Responses are no-store and no-referrer. Source scripts/external resources are removed; authenticated preview HTML alone can be framed by this same origin and remains scriptless sandboxed.

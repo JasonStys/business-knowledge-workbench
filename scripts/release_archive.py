@@ -39,7 +39,7 @@ def main():
     )
     if not folder.is_dir():
         raise ValueError("Expected packaged application is absent")
-    base = root / f"BusinessKnowledgeWorkbench-1.1.1-{platform}"
+    base = root / f"BusinessKnowledgeWorkbench-1.2.0-{platform}"
     shutil.make_archive(str(base), "zip" if sys.platform == "win32" else "gztar", root_dir=folder)
     for path in root.iterdir():
         if path.is_file() and path.name.endswith((".exe", ".dmg", ".AppImage", ".zip", ".tar.gz")):

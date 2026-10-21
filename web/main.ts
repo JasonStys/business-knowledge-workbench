@@ -1,93 +1,103 @@
 /* @index-begin
- * @symbol type: View L114
- * @symbol variable/parameter: state L115
- * @symbol variable/parameter: app L129
- * @symbol variable/parameter: navigationBusy L130
- * @symbol variable/parameter: busy L133
- * @symbol function/class: navigationLock L133
- * @symbol variable/parameter: node L139
- * @symbol variable/parameter: cents L149
- * @symbol variable/parameter: money L149
- * @symbol function/class: esc L157
- * @symbol variable/parameter: value L157
- * @symbol variable/parameter: character L160
- * @symbol function/class: api L168
- * @symbol variable/parameter: init L168
- * @symbol variable/parameter: path L168
- * @symbol variable/parameter: headers L169
- * @symbol variable/parameter: [key, value] L180
- * @symbol variable/parameter: separator L187
- * @symbol variable/parameter: response L188
- * @symbol variable/parameter: error L199
- * @symbol variable/parameter: message L212
- * @symbol function/class: notice L212
- * @symbol function/class: action L220
- * @symbol variable/parameter: work L220
- * @symbol function/class: shell L233
- * @symbol variable/parameter: workspace L234
- * @symbol variable/parameter: item L235
- * @symbol variable/parameter: [view, label, index] L244
- * @symbol variable/parameter: button L252
- * @symbol variable/parameter: event L265
- * @symbol variable/parameter: selected L267
- * @symbol function/class: loginView L303
- * @symbol variable/parameter: data L308
- * @symbol function/class: catalog L327
- * @symbol variable/parameter: content L328
- * @symbol variable/parameter: unit L334
- * @symbol variable/parameter: products L346
- * @symbol variable/parameter: update L349
- * @symbol variable/parameter: query L350
- * @symbol variable/parameter: filtered L353
- * @symbol variable/parameter: product L353
- * @symbol variable/parameter: spec L362
- * @symbol variable/parameter: result L373
- * @symbol function/class: chart L385
- * @symbol variable/parameter: report L385
- * @symbol variable/parameter: max L386
- * @symbol variable/parameter: point L386
- * @symbol function/class: dashboard L391
- * @symbol variable/parameter: employee L392
- * @symbol variable/parameter: format L395
- * @symbol variable/parameter: options L397
- * @symbol variable/parameter: customerOptions L398
- * @symbol variable/parameter: [id, label] L399
- * @symbol variable/parameter: form L413
- * @symbol variable/parameter: body L439
- * @symbol variable/parameter: title L468
- * @symbol variable/parameter: answer L486
- * @symbol function/class: documentList L501
- * @symbol variable/parameter: id L502
- * @symbol variable/parameter: params L504
- * @symbol variable/parameter: docs L510
- * @symbol variable/parameter: staff L511
- * @symbol variable/parameter: doc L513
- * @symbol variable/parameter: input L524
- * @symbol function/class: preview L533
- * @symbol variable/parameter: block L542
- * @symbol variable/parameter: index L542
- * @symbol variable/parameter: warning L542
- * @symbol variable/parameter: exports L547
- * @symbol variable/parameter: link L549
- * @symbol variable/parameter: suffix L550
- * @symbol variable/parameter: url L552
- * @symbol function/class: download L585
- * @symbol variable/parameter: filename L585
- * @symbol variable/parameter: type L585
- * @symbol function/class: studio L595
- * @symbol variable/parameter: config L598
- * @symbol variable/parameter: audit L599
- * @symbol variable/parameter: [dimension, units] L608
- * @symbol variable/parameter: [key, alias] L617
- * @symbol variable/parameter: units L633
- * @symbol variable/parameter: key L635
- * @symbol variable/parameter: [, unit] L636
- * @symbol variable/parameter: columns L638
- * @symbol variable/parameter: section L654
- * @symbol function/class: render L669
- * @symbol variable/parameter: previous L670
- * @symbol function/class: start L696
- * @symbol variable/parameter: privateMode L715
+ * @symbol type: View L124
+ * @symbol variable/parameter: state L126
+ * @symbol variable/parameter: app L140
+ * @symbol variable/parameter: navigationBusy L141
+ * @symbol variable/parameter: busy L144
+ * @symbol function/class: navigationLock L144
+ * @symbol variable/parameter: node L150
+ * @symbol variable/parameter: cents L160
+ * @symbol variable/parameter: money L160
+ * @symbol function/class: esc L168
+ * @symbol variable/parameter: value L168
+ * @symbol variable/parameter: character L171
+ * @symbol function/class: api L179
+ * @symbol variable/parameter: init L179
+ * @symbol variable/parameter: path L179
+ * @symbol variable/parameter: headers L180
+ * @symbol variable/parameter: [key, value] L191
+ * @symbol variable/parameter: mutation L196
+ * @symbol variable/parameter: separator L201
+ * @symbol variable/parameter: response L202
+ * @symbol variable/parameter: error L214
+ * @symbol variable/parameter: message L227
+ * @symbol function/class: notice L227
+ * @symbol function/class: action L235
+ * @symbol variable/parameter: work L235
+ * @symbol function/class: shell L248
+ * @symbol variable/parameter: workspace L249
+ * @symbol variable/parameter: item L250
+ * @symbol variable/parameter: [view, label, index] L259
+ * @symbol variable/parameter: button L267
+ * @symbol variable/parameter: event L280
+ * @symbol variable/parameter: selected L282
+ * @symbol function/class: loginView L318
+ * @symbol variable/parameter: data L323
+ * @symbol function/class: catalog L342
+ * @symbol variable/parameter: content L343
+ * @symbol variable/parameter: unit L349
+ * @symbol variable/parameter: products L361
+ * @symbol variable/parameter: update L364
+ * @symbol variable/parameter: query L365
+ * @symbol variable/parameter: filtered L368
+ * @symbol variable/parameter: product L368
+ * @symbol variable/parameter: spec L377
+ * @symbol variable/parameter: result L388
+ * @symbol function/class: chart L400
+ * @symbol variable/parameter: report L400
+ * @symbol variable/parameter: max L401
+ * @symbol variable/parameter: point L401
+ * @symbol function/class: dashboard L406
+ * @symbol variable/parameter: employee L407
+ * @symbol variable/parameter: format L410
+ * @symbol variable/parameter: reportLink L411
+ * @symbol variable/parameter: options L421
+ * @symbol variable/parameter: customerOptions L422
+ * @symbol variable/parameter: [id, label] L423
+ * @symbol variable/parameter: form L437
+ * @symbol variable/parameter: body L463
+ * @symbol variable/parameter: title L492
+ * @symbol variable/parameter: answer L510
+ * @symbol function/class: documentList L525
+ * @symbol variable/parameter: id L526
+ * @symbol variable/parameter: params L528
+ * @symbol variable/parameter: docs L534
+ * @symbol variable/parameter: staff L535
+ * @symbol variable/parameter: doc L537
+ * @symbol variable/parameter: input L548
+ * @symbol function/class: preview L557
+ * @symbol variable/parameter: block L566
+ * @symbol variable/parameter: index L566
+ * @symbol variable/parameter: warning L566
+ * @symbol variable/parameter: exports L571
+ * @symbol variable/parameter: preferred L572
+ * @symbol variable/parameter: available L573
+ * @symbol variable/parameter: link L578
+ * @symbol variable/parameter: suffix L579
+ * @symbol variable/parameter: url L581
+ * @symbol variable/parameter: note L596
+ * @symbol variable/parameter: standardLink L599
+ * @symbol variable/parameter: copy L614
+ * @symbol function/class: download L648
+ * @symbol variable/parameter: filename L648
+ * @symbol variable/parameter: type L648
+ * @symbol function/class: studio L658
+ * @symbol variable/parameter: config L661
+ * @symbol variable/parameter: history L662
+ * @symbol variable/parameter: audit L666
+ * @symbol variable/parameter: [dimension, units] L675
+ * @symbol variable/parameter: [key, alias] L684
+ * @symbol variable/parameter: readConfig L698
+ * @symbol variable/parameter: key L706
+ * @symbol variable/parameter: [, unit] L707
+ * @symbol variable/parameter: section L711
+ * @symbol variable/parameter: draft L730
+ * @symbol variable/parameter: frame L737
+ * @symbol variable/parameter: entry L750
+ * @symbol function/class: render L790
+ * @symbol variable/parameter: previous L791
+ * @symbol function/class: start L817
+ * @symbol variable/parameter: privateMode L836
 @index-end */
 /** Accessible workspace UI and explicit API actions. Function/state lines: docs/code-index.md.
  * All user/source values are escaped. Canonical documents render inside scriptless sandbox frames.
@@ -112,6 +122,7 @@ import type {
 } from "./types";
 
 type View = "catalog" | "customer" | "employee" | "admin";
+import { standardFields, readStandard, measurementExample } from "./standards";
 const state: {
   bootstrap?: Bootstrap;
   session: Session | null;
@@ -182,7 +193,10 @@ async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   }
   if (state.session && init.method && init.method !== "GET")
     headers.set("X-CSRF-Token", state.session.csrf);
-  if (init.body && !(init.body instanceof FormData))
+  const mutation = Boolean(
+    init.method && !["GET", "HEAD"].includes(init.method),
+  );
+  if ((init.body || mutation) && !(init.body instanceof FormData))
     headers.set("Content-Type", "application/json");
   const separator = path.includes("?") ? "&" : "?";
   const response = await fetch(
@@ -191,6 +205,7 @@ async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
       : `/api/${path}`,
     {
       ...init,
+      ...(mutation && !init.body ? { body: "{}" } : {}),
       headers,
       credentials: "same-origin",
     },
@@ -246,7 +261,7 @@ function shell(): void {
     )
     .join(
       "",
-    )}</nav><div class="sidebar-bottom"><span class="status-dot"></span> Modular by design<p>One structured source.<br>Many useful perspectives.</p><span class="version">${isPrivate ? "PRIVATE LOCAL EDITION · V1.1" : "REFERENCE APPLICATION · V1.0"}</span></div></aside><div class="layout"><header><span class="breadcrumb">${esc(workspace?.title)} <span>/ ${esc(state.view === "admin" ? "Configuration studio" : state.view === "catalog" ? "Product catalog" : "Knowledge workspace")}</span></span><div class="account">${state.session ? `<span>${esc(state.session.username)} · ${esc(state.session.role)}</span><button id="logout" class="quiet">Sign out</button>` : '<span>Visitor access</span><button id="sign-in" class="quiet">Sign in</button>'}</div></header><main id="main" tabindex="-1"><div class="eyebrow">STRUCTURE YOUR INFORMATION. MAKE IT USEFUL.</div><div id="notice" class="notice" role="status" aria-live="polite"></div><div id="content"></div></main><footer>Business Knowledge Workbench <span>All scenario records are synthetic. No operational or financial advice.</span></footer></div>`;
+    )}</nav><div class="sidebar-bottom"><span class="status-dot"></span> Modular by design<p>One structured source.<br>Many useful perspectives.</p><span class="version">${isPrivate ? "PRIVATE LOCAL EDITION · V1.2" : "LEGACY ROLE DEMO · V1.2"}</span></div></aside><div class="layout"><header><span class="breadcrumb">${esc(workspace?.title)} <span>/ ${esc(state.view === "admin" ? "Configuration studio" : state.view === "catalog" ? "Product catalog" : "Knowledge workspace")}</span></span><div class="account">${state.session ? `<span>${esc(state.session.username)} · ${esc(state.session.role)}</span><button id="logout" class="quiet">Sign out</button>` : '<span>Visitor access</span><button id="sign-in" class="quiet">Sign in</button>'}</div></header><main id="main" tabindex="-1"><div class="eyebrow">STRUCTURE YOUR INFORMATION. MAKE IT USEFUL.</div><div id="notice" class="notice" role="status" aria-live="polite"></div><div id="content"></div></main><footer>Business Knowledge Workbench <span>All scenario records are synthetic. No operational or financial advice.</span></footer></div>`;
   document
     .querySelectorAll<HTMLButtonElement>("[data-view]")
     .forEach((button) =>
@@ -393,6 +408,15 @@ async function dashboard(): Promise<void> {
   const data = await api<Report>("report");
   document.querySelector("#content")!.innerHTML =
     `<div class="page-title"><div><h1>${employee ? "Your knowledge, connected." : "Your products. Your perspective."}</h1><p>${employee ? "Organize evidence, normalize data, and turn information into something actionable." : "Sales, performance and documentation for your assigned customer account."}</p></div><span class="pill">${employee ? "STAFF WORKSPACE" : "CUSTOMER-SCOPED"}</span></div><div class="metrics"><div><span>Recorded revenue</span><strong>${money(data.revenue_cents)}</strong><small>USD · selected account scope</small></div><div><span>Units sold</span><strong>${data.quantity.toLocaleString()}</strong><small>${data.series.length} recorded months</small></div><div><span>Conversion standard</span><strong>HTML first</strong><small>Structured · traceable · portable</small></div></div><section class="panel"><div class="section-heading"><div><h2>Business performance</h2><p>Historical records, not live telemetry.</p></div><button id="report-download" class="quiet">Download report JSON</button></div>${chart(data)}${data.forecast.length ? `<div class="forecast"><h3>Three-month baseline projection</h3>${data.forecast.map((point) => `<div><span>Month +${point.month_offset}</span><strong>${money(point.revenue_cents)}</strong><small>${money(point.low_cents)} – ${money(point.high_cents)}</small></div>`).join("")}</div>` : ""}<p class="muted">${esc(data.method)}</p></section>${employee ? `<section class="panel"><h2>Bring information together</h2><p>Import supported documents or mapped sales data. Original sources and conversion evidence are retained.</p><form id="import" class="import-form"><label>Source file<input type="file" name="file" required accept="${state.bootstrap!.formats.map((format) => "." + format).join(",")}"></label><label>Visibility<select name="visibility"><option value="internal">Internal only</option><option value="customer">Customer account</option><option value="public">Public</option></select></label><label>Customer<select name="customer"><option value="north">North account</option><option value="south">South account</option></select></label><label>Category<input name="category" value="Imported" maxlength="40" required></label><label class="check"><input name="dataset" type="checkbox" value="true">Import sales rows into reporting</label><button class="primary">Import & standardize</button></form><p class="muted">4 MiB maximum. ${state.bootstrap!.formats.join(", ")}. Unsupported or uncertain content is not silently interpreted.</p></section>` : ""}<section class="panel"><div class="section-heading"><h2>Document library</h2><span>ACL enforced before search</span></div><div class="library-tools"><label>Search documents<input id="doc-search" type="search" placeholder="Part number, phrase, or title"></label><label>Category<input id="doc-category" placeholder="All categories"></label><label>Sort<select id="doc-sort"><option value="title">Title</option><option value="newest">Newest first</option><option value="category">Category</option></select></label><button id="filter" class="quiet">Apply filters</button></div>${employee ? '<div class="merge-tools"><label>Compilation title<input id="merge-title" value="Business evidence pack" maxlength="120"></label><button id="merge" class="quiet">Combine selected documents</button></div>' : ""}<div id="documents"></div><div id="preview"></div></section><section class="panel"><div class="section-heading"><div><h2>Ask your knowledge workspace</h2><p>Optional, read-only AI with authorized source citations. Disabled until an admin enables it.</p></div><span class="pill">HUMAN REVIEW REQUIRED</span></div><form id="ask"><label for="question">Question</label><div class="ask-row"><input id="question" required minlength="3" maxlength="800" placeholder="What do the controller specifications say about width?"><button class="primary">Ask sources</button></div></form><div id="answer" class="answer" aria-live="polite"></div></section>`;
+  const reportLink = document.createElement("a");
+  reportLink.className = "quiet";
+  reportLink.download = "";
+  reportLink.href = `${isPrivate ? "/private" : ""}/api/report/export/${encodeURIComponent(data.standard.default_export)}?workspace=${encodeURIComponent(state.workspace)}`;
+  reportLink.textContent = `Download standard report ${data.standard.default_export.toUpperCase()}`;
+  document.querySelector("#report-download")!.after(reportLink);
+  if (data.standard.enforce_export)
+    document.querySelector<HTMLButtonElement>("#report-download")!.hidden =
+      true;
   if (employee) {
     const options = await api<{ customers: Record<string, string> }>("options");
     const customerOptions = Object.entries(options.customers)
@@ -545,7 +569,12 @@ async function preview(id: string): Promise<void> {
     ? `/private/api/documents/${encodeURIComponent(id)}/preview?workspace=${encodeURIComponent(state.workspace)}`
     : state.previewUrl;
   const exports = document.querySelector("#preview .exports")!;
-  for (const format of [...state.bootstrap!.exports, "source"]) {
+  const preferred = result.standard?.output_standard.default_export;
+  const available =
+    result.standard?.output_standard.enforce_export && preferred
+      ? [preferred]
+      : state.bootstrap!.exports;
+  for (const format of [...available, "source"]) {
     const link = document.createElement("a");
     const suffix =
       format === "source" ? "source" : `export/${encodeURIComponent(format)}`;
@@ -562,6 +591,40 @@ async function preview(id: string): Promise<void> {
         ? "Original source"
         : `Export ${format.toUpperCase()}`;
     exports.append(link);
+  }
+  if (preferred) {
+    const note = document.createElement("p");
+    note.textContent = `${result.standard!.name} · Revision ${result.standard!.revision} · Standard file type: ${preferred.toUpperCase()}`;
+    exports.prepend(note);
+    const standardLink = document.createElement("a");
+    standardLink.href = `${isPrivate ? "/private" : ""}/api/documents/${encodeURIComponent(id)}/export/${encodeURIComponent(preferred)}?workspace=${encodeURIComponent(state.workspace)}`;
+    standardLink.className = "primary";
+    standardLink.download = "";
+    standardLink.textContent = `Download standard ${preferred.toUpperCase()}`;
+    exports.prepend(standardLink);
+  }
+  if (state.session && state.session.role !== "customer") {
+    const button = document.createElement("button");
+    button.className = "quiet";
+    button.textContent = "Create current-standard copy";
+    button.addEventListener(
+      "click",
+      () =>
+        void action(async () => {
+          const copy = await api<{ id: string; duplicate: boolean }>(
+            `documents/${encodeURIComponent(id)}/standardize`,
+            { method: "POST" },
+          );
+          await documentList();
+          await preview(copy.id);
+          notice(
+            copy.duplicate
+              ? "A matching current-standard document already exists; original unchanged."
+              : "Current-standard copy created; original evidence and sales unchanged.",
+          );
+        }),
+    );
+    exports.append(button);
   }
   document
     .querySelectorAll<HTMLButtonElement>("[data-vision]")
@@ -596,6 +659,10 @@ async function studio(): Promise<void> {
   const result = await api<{ config: Config; ai_adapter: string }>("config");
   state.config = result.config;
   const config = result.config;
+  const history =
+    await api<
+      { revision: number; actor: string; created: string; config: Config }[]
+    >("standards/history");
   const audit =
     await api<
       { actor: string; event: string; detail: string; created: string }[]
@@ -624,37 +691,91 @@ async function studio(): Promise<void> {
     .querySelector("#config button")!
     .insertAdjacentHTML(
       "beforebegin",
-      `<label>Customer accounts (JSON ID-to-label map)<textarea name="customers" rows="5" required>${esc(JSON.stringify(config.customers, null, 2))}</textarea></label>`,
+      standardFields(config) +
+        `<label>Customer accounts (JSON ID-to-label map)<textarea name="customers" rows="5" required>${esc(JSON.stringify(config.customers, null, 2))}</textarea></label>`,
     );
-  document.querySelector("#config")!.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const data = new FormData(event.target as HTMLFormElement);
-    void action(async () => {
-      const units = Object.fromEntries(
+  const form = document.querySelector<HTMLFormElement>("#config")!;
+  const readConfig = (): Config => {
+    const data = new FormData(form);
+    return {
+      ...config,
+      title: String(data.get("title")),
+      customers: JSON.parse(String(data.get("customers"))),
+      units: Object.fromEntries(
         Object.keys(state.bootstrap!.units)
           .map((key) => [key, String(data.get("unit-" + key))])
           .filter(([, unit]) => unit),
-      );
-      const columns = Object.fromEntries(
+      ),
+      sections: String(data.get("sections"))
+        .split(",")
+        .map((section) => section.trim()),
+      output_standard: readStandard(data, config),
+      data_columns: Object.fromEntries(
         Object.keys(config.data_columns).map((key) => [
           key,
           String(data.get("column-" + key)),
         ]),
-      );
+      ),
+      forecasting: data.has("forecasting"),
+      ai_enabled: data.has("ai_enabled"),
+    };
+  };
+  document
+    .querySelector("#standard-example")!
+    .addEventListener("click", measurementExample);
+  document.querySelector("#standard-preview")!.addEventListener(
+    "click",
+    () =>
+      void action(async () => {
+        const draft = await api<DocumentResult>("standards/preview", {
+          method: "POST",
+          body: JSON.stringify({
+            config: readConfig(),
+            sample: new FormData(form).get("std-sample"),
+          }),
+        });
+        const frame = document.querySelector<HTMLIFrameElement>(
+          "#standard-preview-frame",
+        )!;
+        frame.srcdoc = draft.html;
+        frame.hidden = false;
+        document.querySelector("#standard-preview-status")!.textContent =
+          "Draft preview only — not saved. " + draft.warnings.join(" ");
+      }),
+  );
+  document
+    .querySelector(".config-layout")!
+    .insertAdjacentHTML(
+      "afterend",
+      `<section class="panel"><h2>Standard revision history</h2><p>Restore creates a new revision, never rewrites a historical document. At most 250 saved revisions per business profile.</p><label>Revision to restore<select id="standard-history">${history.map((entry) => `<option value="${entry.revision}">${entry.revision} — ${esc(entry.config.output_standard.name)} — ${esc(entry.created)}</option>`).join("")}</select></label><button id="standard-restore" class="quiet">Restore as new revision</button></section>`,
+    );
+  document.querySelector("#standard-restore")!.addEventListener(
+    "click",
+    () =>
+      void action(async () => {
+        await api("standards/restore", {
+          method: "POST",
+          body: JSON.stringify({
+            revision: Number(
+              document.querySelector<HTMLSelectElement>("#standard-history")!
+                .value,
+            ),
+            expected_revision: config.revision,
+          }),
+        });
+        state.bootstrap = await api<Bootstrap>("bootstrap");
+        await render();
+        notice(
+          "Historical standard restored as a new revision. Existing documents were not changed.",
+        );
+      }),
+  );
+  document.querySelector("#config")!.addEventListener("submit", (event) => {
+    event.preventDefault();
+    void action(async () => {
       await api("config", {
         method: "PUT",
-        body: JSON.stringify({
-          ...config,
-          customers: JSON.parse(String(data.get("customers"))),
-          title: data.get("title"),
-          units,
-          data_columns: columns,
-          sections: String(data.get("sections"))
-            .split(",")
-            .map((section) => section.trim()),
-          forecasting: data.has("forecasting"),
-          ai_enabled: data.has("ai_enabled"),
-        }),
+        body: JSON.stringify(readConfig()),
       });
       state.bootstrap = await api<Bootstrap>("bootstrap");
       await render();

@@ -12,12 +12,12 @@
  * @symbol variable/parameter: { page, request, } L224
  * @symbol variable/parameter: manifest L229
  * @symbol variable/parameter: body L230
- * @symbol variable/parameter: select L250
- * @symbol variable/parameter: option L251
- * @symbol variable/parameter: cached L269
- * @symbol variable/parameter: names L270
- * @symbol variable/parameter: item L274
- * @symbol variable/parameter: url L280
+ * @symbol variable/parameter: select L253
+ * @symbol variable/parameter: option L254
+ * @symbol variable/parameter: cached L272
+ * @symbol variable/parameter: names L273
+ * @symbol variable/parameter: item L277
+ * @symbol variable/parameter: url L283
 @index-end */
 /** Cross-browser workflow, accessibility, hostile input and PWA checks. Index: docs/code-index.md. */
 import { test, expect, type Page } from "@playwright/test";
@@ -166,7 +166,7 @@ test("admin config revisions, section ordering and grounded AI", async ({
   await page
     .getByRole("button", { name: "Save validated configuration" })
     .click();
-  await expect(page.getByRole("status")).toContainText("Configuration saved");
+  await expect(page.locator("#notice")).toContainText("Configuration saved");
   await page
     .getByRole("button", { name: "Business workspace", exact: true })
     .click();
@@ -183,7 +183,7 @@ test("admin config revisions, section ordering and grounded AI", async ({
   await page
     .getByRole("button", { name: "Save validated configuration" })
     .click();
-  await expect(page.getByRole("status")).toContainText("Configuration saved");
+  await expect(page.locator("#notice")).toContainText("Configuration saved");
 });
 
 test("keyboard, accessibility, responsive overflow and scenario switching", async ({
@@ -243,7 +243,10 @@ test("sandbox blocks source scripting and app manifest is installable", async ({
     page.frameLocator("iframe").getByText("Safe 50.8 mm", { exact: true }),
   ).toBeVisible();
   await expect(page.locator("iframe")).toHaveAttribute("sandbox", "");
-  expect(await page.locator(".exports a").count()).toBe(7);
+  expect(await page.locator(".exports a").count()).toBe(8);
+  await expect(
+    page.getByRole("link", { name: "Download standard HTML", exact: true }),
+  ).toBeVisible();
   expect(await page.locator(".exports [onclick]").count()).toBe(0);
   // DOM tampering cannot turn a workspace value into markup or invalidate the existing session.
   await page.evaluate(() => {

@@ -1,12 +1,66 @@
 # Business Knowledge Workbench
 
-A private, local-first document and data application by **Jason Stys**. Import business documentation, normalize units, search evidence, manage products, combine sources, export HTML-first documents, and review sales trends. Version **1.1.0** adds real local accounts, independently encrypted workspaces and native desktop downloads to the original reference application.
+A private, local-first **document and data standardization application** by **Jason Stys**. Its main job is to turn supported business files from different sources into a consistent, inspectable representation: common measurement units, stable field names and order, a chosen document structure and layout, and a standard output file type. Search, product views and sales graphs make that standardized information useful; they are supporting features, not the main purpose.
 
-[Source and Actions](https://github.com/JasonStys/business-knowledge-workbench) · [Downloads](https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.1.1) · [Contact Jason on LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/)
+[Source and Actions](https://github.com/JasonStys/business-knowledge-workbench) · [Downloads](https://github.com/JasonStys/business-knowledge-workbench/releases/latest) · [Contact Jason on LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/)
 
-Version **1.1.1** fixes asynchronous navigation/readiness: older view responses cannot overwrite a newer selection during initial loading or document actions. A deterministic delayed-response regression joins the existing real document journeys. Private data format and account roots are unchanged.
+Version **1.2.0** adds owner-controlled output standards, draft previews, schema mapping, version history/restoration, current-standard copies and standardized report downloads. Login, independent vault encryption and the existing navigation-readiness regression are preserved. See [standards guide](docs/standards.md), [requirements review](docs/requirements-review-v1.2.md) and [validation](docs/validation-v1.2.md).
 
 ![Installed private account website with blank credential fields](docs/screenshots/accounts.png)
+
+## What “standardize” means
+
+Suppose supplier A sends a CSV field `length` containing `4.25 in`, supplier B
+sends JSON with `Width: "8.2 cm"`, and a technician sends a DOCX table. The owner
+defines canonical fields `item, width`, their displayed headings, order and a
+millimeter target. Recognized tables then share the same schema and measurements
+(`107.95 mm`, `82 mm`), even though the source files differ. Optional fields have
+explicit empty cells; missing required fields, incompatible dimensions and
+ambiguous duplicate headers are rejected. Extra columns are preserved and flagged
+or explicitly rejected, never silently discarded.
+
+For documents, the selected standard controls section order and headings, font,
+heading color, Letter/A4 paper, portrait/landscape orientation and preferred
+HTML/JSON/Markdown/CSV/DOCX/PDF delivery. An optional policy restricts document and
+report exports to that chosen type. Every conversion still goes through canonical
+HTML first. Original source bytes, pre-normalization blocks, warnings, the settings
+snapshot, revision and standard digest remain available for comparison.
+
+This is **normalization, not invention**: the app does not guess units on arbitrary
+bare numbers, equate unrelated fields automatically, translate currencies or
+certify that extracted facts are true. A declared table field may specify a source
+unit for bare numbers. Graphs, images and equations can be retained without their
+meaning being understood. See [format and fidelity limits](docs/formats.md).
+
+## Define your business standard
+
+1. Unlock your own private account and open **Configuration studio**.
+2. Set target units, document section order/headings, standard name, print layout
+   and default export type. Configure optional table keys, aliases and required
+   fields; the measurement-table example is an editable starting point.
+3. Use **Preview draft standard** with a small CSV sample. This does not publish
+   anything, call an AI provider or alter stored documents.
+4. **Save validated configuration** publishes a new revision. A stale editor gets
+   a conflict instead of overwriting someone else's newer revision.
+5. Import supported files or combine authorized documents. Open the result and
+   choose **Download standard…**. Reports also have a standard-format download.
+6. For an older document, choose **Create current-standard copy**. Originals and
+   sales remain unchanged. **Restore as new revision** recovers a saved standard
+   without rewriting its history or prior documents.
+
+![Owner-controlled output standard in a disposable fictional business account](docs/screenshots/standards.png)
+
+The screenshot shows a published PDF/A4/landscape standard and its saved schema;
+no real account credentials, documents or provider keys are included.
+
+Authority is enforced on the server, not just by hiding a button. In the installed
+private edition, the signed-in, vault-unlocked account owner is the standards
+authority for their own data. There are **no shared-business invitations or
+delegated coworker roles** yet. Customer/employee screens are own-account previews;
+in the separate legacy role demo, only the database-authenticated administrator
+may preview, publish, read history or restore standards. A client-supplied role
+header cannot promote a legacy employee or customer. A responsible standards
+manager would need a trusted shared-team authorization deployment, not a UI toggle.
 
 ## Install and start
 
@@ -21,6 +75,7 @@ Create an alias and login password, privately save the once-shown login recovery
 - Fifteen supported extensions: text, Markdown, sanitized HTML, CSV/TSV, JSON, XML, DOCX, XLSX, PDF and raster images. Original evidence, semantic blocks, extraction warnings and hashes are retained.
 - Canonical **HTML first**, then HTML, JSON, Markdown, CSV tables, DOCX or PDF export. Graphs/images are preserved where supported, not universally understood; read the [format limits](docs/formats.md).
 - Decimal-based measurement normalization with dimension validation; `4.25 in → 107.95 mm`, `104 F → 40 C`. Configuration revisions preserve provenance.
+- Named, data-only standards with field aliases/order, optional/required columns, explicit measurement dimensions, draft previews, immutable revision history and controlled export types. No executable user templates or arbitrary CSS.
 - Product catalog, customer subset preview, business reporting and administrator configuration views. These are previews within **your own** account, not a coworker invitation or shared-tenant permission system.
 - Explicit opt-in fictional industrial equipment, renewable energy and laboratory supply scenarios. New accounts start with **no products, sales, sources or demo users**.
 - Search, filtering, sort, ordered internal-only compilations, atomic sales imports with duplicate prevention, exact-cent reports, accessible graphs and labeled baseline forecasts.
@@ -69,7 +124,7 @@ npm audit --audit-level=high
 .venv\Scripts\python.exe -m pip_audit -r requirements.lock
 ```
 
-[Validation results](docs/validation-v1.1.md), [test plan](docs/test-plan-v1.1.md) and [private API](docs/private-api.md) distinguish actual conversions/browser/native tests from provider mocks and unsupported deployments. CI retains logs; large Actions artifacts are **opt-in** through `KBW_UPLOAD_CI_ARTIFACTS=true`. Tested downloads go to Releases instead of consuming Actions artifact quota.
+[Current validation](docs/validation-v1.2.md), [original validation](docs/validation-v1.1.md), [standards test plan](docs/standards.md#verification) and [private API](docs/private-api.md) distinguish actual conversions/browser/native tests from provider mocks and unsupported deployments. CI retains logs; large Actions artifacts are **opt-in** through `KBW_UPLOAD_CI_ARTIFACTS=true`. Tested downloads go to Releases instead of consuming Actions artifact quota.
 
 ## File responsibilities and language choices
 
@@ -81,6 +136,7 @@ npm audit --audit-level=high
 | `server/private_api.py`, `private_workspace.py`, `private_cli.py` | Exact-loopback boundary, account-isolated document engine, serial lifecycle/idle recovery and local launch. |
 | `server/app.py`, `models.py`, `store.py`, `schema.sql` | Preserved business API, validation, relational integrity, scoped searches and synthetic seeding. |
 | `server/conversion.py`, `worker.py`, `units.py` | Supported rich-format parsers, bounded child conversion and exact normalization. |
+| `server/standards.py`, `web/standards.ts` | Deterministic field/schema mapping, standard fingerprints and safe typed editor controls. |
 | `server/exports.py`, `analytics.py`, `ai.py` | HTML-derived exports, explainable reporting and read-only model contracts. |
 | `desktop/main.cjs` | Electron shell with an owned frozen service, denied external navigation/popups and graceful sealing. |
 | `scripts/` | Frozen entry, licenses/checksums, fixture/benchmark and exact line/file inventories. |

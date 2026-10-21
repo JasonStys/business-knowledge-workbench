@@ -23,6 +23,14 @@ The canonical HTML is generated before any output adapter. HTML includes documen
 
 Source → HTML and HTML → target paths are recorded in JSON provenance. Original files remain authoritative when layout or semantics matter. Source hashes demonstrate byte identity, not trustworthy business facts. Review labels (`extracted`, `needs-review`, `unverified`) are not approval signatures.
 
+Version 1.2 adds [governed output standards](standards.md): configured headings,
+section order, canonical table fields/aliases, required values, explicit source
+units and target units, print layout and optional output-type restriction. Schema
+mapping is shared by supported extracted tables, not a claim that every PDF table
+can be identified. CSV has no fonts/page layout and requires actual tabular
+content; a text-only document produces an explicit error, not a blank CSV. Earlier
+outputs keep their saved standard; applying a new one creates a separate copy.
+
 Unit tokens are not complete natural-language understanding. An `in` token followed by another word (e.g. `2 in stock`) is kept unchanged to avoid mistaking a preposition for inches. Missing/ambiguous units require domain review rather than automatic guessing.
 
 ## App portability
@@ -38,4 +46,4 @@ Unit tokens are not complete natural-language understanding. An `in` token follo
 | Offline private documents | Local Python/native service works without an external network | Own trusted local service must be running. AI reference is offline; external/local model connections are opt-in. No private browser caching. |
 | Native mobile/app stores | Not generated | Physical phone testing, store approval, signing/notarization and remote shared hosting remain separate work. |
 
-The private account edition binds only to the same device's loopback address, not a public HTTPS host or another phone. Legacy PWA support is separate; browser installation instructions evolve—see [MDN's installation guidance](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing). This repository does not claim physical installation on every OS/device. See [private accounts](private-accounts.md) and [current validation](validation-v1.1.md).
+The private account edition binds only to the same device's loopback address, not a public HTTPS host or another phone. Legacy PWA support is separate; browser installation instructions evolve—see [MDN's installation guidance](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing). This repository does not claim physical installation on every OS/device. See [private accounts](private-accounts.md) and [current validation](validation-v1.2.md).

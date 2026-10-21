@@ -1,5 +1,12 @@
 # Architecture and ADR 001: portable, HTML-centered business knowledge
 
+Version 1.2 adds [governed output standards](standards.md): validated configuration
+controls schema mapping and units before canonical HTML, then presentation and
+delivery policy in each exporter. Extracted source blocks remain separate from
+normalized output; result snapshots bind their exact revision and settings hash.
+Active settings, immutable configuration history and audit events publish in one
+SQLite immediate transaction. Existing encrypted account boundaries remain unchanged.
+
 > Legacy business-engine/demo reference. Version 1.1 installs the private local account wrapper described in [private-accounts.md](private-accounts.md) and [private-api.md](private-api.md). Old plaintext demo data is separate and is not migrated. Legacy source serving needs explicit `KB_LEGACY_MODE=1`; never expose demo credentials to real records.
 
 

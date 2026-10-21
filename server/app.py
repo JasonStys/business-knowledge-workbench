@@ -1,126 +1,135 @@
 # @index-begin
-# @symbol variable/parameter: ROOT L171
-# @symbol variable/parameter: CONVERSION_SLOTS L172
-# @symbol function/class: BodyLimit L175
-# @symbol function/class: __init__ L178
-# @symbol variable/parameter: self L178
-# @symbol function/class: __call__ L182
-# @symbol variable/parameter: receive L182
-# @symbol variable/parameter: scope L182
-# @symbol variable/parameter: send L182
-# @symbol variable/parameter: chunks L186
-# @symbol variable/parameter: total L187
-# @symbol variable/parameter: message L189
-# @symbol function/class: replay L201
-# @symbol function/class: create_app L208
-# @symbol variable/parameter: demo L209
-# @symbol variable/parameter: path L209
-# @symbol variable/parameter: private_mode L209
-# @symbol variable/parameter: database_path L212
-# @symbol variable/parameter: secure L214
-# @symbol variable/parameter: ai_adapter L216
-# @symbol variable/parameter: login_attempts L217
-# @symbol variable/parameter: attempts_lock L218
-# @symbol variable/parameter: application L221
-# @symbol function/class: lifespan L221
-# @symbol variable/parameter: call_next L230
-# @symbol variable/parameter: request L230
-# @symbol function/class: security_headers L230
-# @symbol variable/parameter: origin L232
-# @symbol variable/parameter: allowed L233
-# @symbol variable/parameter: response L241
-# @symbol function/class: current L256
-# @symbol variable/parameter: required L256
-# @symbol variable/parameter: token L265
-# @symbol variable/parameter: database L266
-# @symbol variable/parameter: user L271
-# @symbol function/class: authorize L276
-# @symbol variable/parameter: mutate L276
-# @symbol variable/parameter: roles L276
-# @symbol function/class: configuration L287
-# @symbol variable/parameter: workspace L287
-# @symbol function/class: accessible L297
-# @symbol variable/parameter: identifier L297
-# @symbol variable/parameter: predicate L303
-# @symbol variable/parameter: values L303
-# @symbol function/class: health L313
-# @symbol function/class: bootstrap L320
-# @symbol variable/parameter: configs L323
-# @symbol function/class: staff_options L346
-# @symbol function/class: add_product L352
-# @symbol variable/parameter: body L352
-# @symbol variable/parameter: config L355
-# @symbol variable/parameter: text L358
-# @symbol function/class: login L398
-# @symbol variable/parameter: address L402
-# @symbol variable/parameter: now L403
-# @symbol variable/parameter: recent L407
-# @symbol variable/parameter: stamp L407
-# @symbol variable/parameter: encoded L417
-# @symbol variable/parameter: valid L418
-# @symbol variable/parameter: csrf L421
-# @symbol function/class: session L441
-# @symbol variable/parameter: key L445
-# @symbol function/class: logout L449
-# @symbol function/class: products L462
-# @symbol variable/parameter: q L463
-# @symbol variable/parameter: rows L474
-# @symbol function/class: list_documents L487
-# @symbol variable/parameter: category L491
-# @symbol variable/parameter: sort L492
-# @symbol function/class: document L506
-# @symbol variable/parameter: _ L508
-# @symbol function/class: document_preview L512
-# @symbol function/class: export L524
-# @symbol variable/parameter: format_name L524
-# @symbol variable/parameter: payload L529
-# @symbol function/class: source L544
-# @symbol variable/parameter: suffix L549
-# @symbol function/class: upload L557
-# @symbol variable/parameter: file L559
-# @symbol variable/parameter: visibility L560
-# @symbol variable/parameter: customer L561
-# @symbol variable/parameter: dataset L563
-# @symbol variable/parameter: name L574
-# @symbol variable/parameter: data L580
-# @symbol variable/parameter: digest L583
-# @symbol variable/parameter: scope_customer L584
-# @symbol variable/parameter: existing L586
-# @symbol variable/parameter: worker_env L609
-# @symbol variable/parameter: value L611
-# @symbol variable/parameter: command L614
-# @symbol variable/parameter: converted L619
-# @symbol variable/parameter: block L666
-# @symbol variable/parameter: tables L666
-# @symbol variable/parameter: headers L672
-# @symbol variable/parameter: alias L673
-# @symbol variable/parameter: mapped L675
-# @symbol variable/parameter: record L679
-# @symbol variable/parameter: product L689
-# @symbol function/class: merge L730
-# @symbol variable/parameter: sources L735
-# @symbol variable/parameter: measurements L737
-# @symbol variable/parameter: warnings L737
-# @symbol variable/parameter: source_row L738
-# @symbol variable/parameter: provenance L744
-# @symbol variable/parameter: html L750
-# @symbol variable/parameter: result L755
-# @symbol function/class: get_config L783
-# @symbol function/class: save_config L793
-# @symbol variable/parameter: previous L799
-# @symbol variable/parameter: used L806
-# @symbol function/class: sales_report L827
-# @symbol function/class: measurement L834
-# @symbol function/class: audit_log L842
-# @symbol function/class: context_for L854
-# @symbol variable/parameter: context L858
-# @symbol variable/parameter: budget L859
-# @symbol variable/parameter: row L860
-# @symbol function/class: ask L877
-# @symbol variable/parameter: index L889
-# @symbol function/class: vision L889
-# @symbol variable/parameter: blocks L895
-# @symbol variable/parameter: app L917
+# @symbol variable/parameter: ROOT L183
+# @symbol variable/parameter: CONVERSION_SLOTS L184
+# @symbol function/class: BodyLimit L187
+# @symbol function/class: __init__ L190
+# @symbol variable/parameter: self L190
+# @symbol function/class: __call__ L194
+# @symbol variable/parameter: receive L194
+# @symbol variable/parameter: scope L194
+# @symbol variable/parameter: send L194
+# @symbol variable/parameter: chunks L198
+# @symbol variable/parameter: total L199
+# @symbol variable/parameter: message L201
+# @symbol function/class: replay L213
+# @symbol function/class: create_app L220
+# @symbol variable/parameter: demo L221
+# @symbol variable/parameter: path L221
+# @symbol variable/parameter: private_mode L221
+# @symbol variable/parameter: database_path L224
+# @symbol variable/parameter: secure L226
+# @symbol variable/parameter: ai_adapter L228
+# @symbol variable/parameter: login_attempts L229
+# @symbol variable/parameter: attempts_lock L230
+# @symbol variable/parameter: application L233
+# @symbol function/class: lifespan L233
+# @symbol variable/parameter: call_next L242
+# @symbol variable/parameter: request L242
+# @symbol function/class: security_headers L242
+# @symbol variable/parameter: origin L244
+# @symbol variable/parameter: allowed L245
+# @symbol variable/parameter: response L253
+# @symbol function/class: current L268
+# @symbol variable/parameter: required L268
+# @symbol variable/parameter: token L277
+# @symbol variable/parameter: user L283
+# @symbol function/class: authorize L288
+# @symbol variable/parameter: mutate L288
+# @symbol variable/parameter: roles L288
+# @symbol function/class: configuration L299
+# @symbol variable/parameter: workspace L299
+# @symbol variable/parameter: config L309
+# @symbol variable/parameter: database L309
+# @symbol function/class: ensure_revision L309
+# @symbol variable/parameter: active L311
+# @symbol function/class: accessible L319
+# @symbol variable/parameter: identifier L319
+# @symbol variable/parameter: predicate L325
+# @symbol variable/parameter: values L325
+# @symbol function/class: health L335
+# @symbol function/class: bootstrap L342
+# @symbol variable/parameter: configs L345
+# @symbol function/class: staff_options L368
+# @symbol function/class: add_product L374
+# @symbol variable/parameter: body L374
+# @symbol variable/parameter: text L380
+# @symbol function/class: login L420
+# @symbol variable/parameter: address L424
+# @symbol variable/parameter: now L425
+# @symbol variable/parameter: recent L429
+# @symbol variable/parameter: stamp L429
+# @symbol variable/parameter: encoded L439
+# @symbol variable/parameter: valid L440
+# @symbol variable/parameter: csrf L443
+# @symbol function/class: session L463
+# @symbol variable/parameter: key L467
+# @symbol function/class: logout L471
+# @symbol function/class: products L484
+# @symbol variable/parameter: q L485
+# @symbol function/class: list_documents L509
+# @symbol variable/parameter: category L513
+# @symbol variable/parameter: sort L514
+# @symbol function/class: document L528
+# @symbol variable/parameter: _ L530
+# @symbol function/class: document_preview L534
+# @symbol function/class: export L546
+# @symbol variable/parameter: format_name L546
+# @symbol variable/parameter: payload L552
+# @symbol function/class: source L569
+# @symbol variable/parameter: suffix L574
+# @symbol function/class: upload L582
+# @symbol variable/parameter: file L584
+# @symbol variable/parameter: visibility L585
+# @symbol variable/parameter: customer L586
+# @symbol variable/parameter: dataset L588
+# @symbol variable/parameter: name L599
+# @symbol variable/parameter: data L605
+# @symbol variable/parameter: digest L608
+# @symbol variable/parameter: scope_customer L609
+# @symbol variable/parameter: existing L611
+# @symbol variable/parameter: worker_env L635
+# @symbol variable/parameter: value L637
+# @symbol variable/parameter: command L640
+# @symbol variable/parameter: converted L645
+# @symbol variable/parameter: tables L701
+# @symbol variable/parameter: block L703
+# @symbol variable/parameter: headers L711
+# @symbol variable/parameter: alias L712
+# @symbol variable/parameter: mapped L714
+# @symbol variable/parameter: record L718
+# @symbol variable/parameter: product L728
+# @symbol function/class: merge L769
+# @symbol variable/parameter: sources L774
+# @symbol variable/parameter: source_row L777
+# @symbol variable/parameter: provenance L786
+# @symbol function/class: get_config L818
+# @symbol function/class: save_config L828
+# @symbol variable/parameter: previous L835
+# @symbol variable/parameter: used L852
+# @symbol function/class: preview_standard L877
+# @symbol function/class: standard_history L888
+# @symbol function/class: restore_standard L906
+# @symbol variable/parameter: restored L916
+# @symbol function/class: standardize_document L921
+# @symbol variable/parameter: old L929
+# @symbol variable/parameter: copied L932
+# @symbol variable/parameter: warnings L955
+# @symbol variable/parameter: new_id L970
+# @symbol function/class: sales_report L997
+# @symbol function/class: export_report L1012
+# @symbol variable/parameter: rows L1020
+# @symbol variable/parameter: blocks L1024
+# @symbol variable/parameter: result L1032
+# @symbol function/class: measurement L1053
+# @symbol function/class: audit_log L1061
+# @symbol function/class: context_for L1073
+# @symbol variable/parameter: context L1077
+# @symbol variable/parameter: budget L1078
+# @symbol variable/parameter: row L1079
+# @symbol function/class: ask L1096
+# @symbol variable/parameter: index L1108
+# @symbol function/class: vision L1108
+# @symbol variable/parameter: app L1136
 # @index-end
 """Same-origin application, authentication, role gates and API orchestration. Index: docs/code-index.md.
 
@@ -154,8 +163,11 @@ from .models import (
     MergeRequest,
     ProductRequest,
     Question,
+    StandardPreview,
+    StandardRestore,
     WorkspaceConfig,
 )
+from .standards import identity
 from .store import (
     SCENARIOS,
     acl,
@@ -293,6 +305,16 @@ def create_app(
         if not row:
             raise HTTPException(404, "Workspace not found")
         return WorkspaceConfig.model_validate_json(row["config"])
+
+    def ensure_revision(database, workspace: str, config: WorkspaceConfig):
+        """A write transaction must still match the standard read before potentially slow work."""
+        active = WorkspaceConfig.model_validate_json(
+            database.execute("SELECT config FROM workspaces WHERE id=?", (workspace,)).fetchone()[0]
+        )
+        if active.revision != config.revision:
+            raise HTTPException(
+                409, "Standard changed during conversion; retry with the current revision"
+            )
 
     def accessible(request: Request, identifier: str) -> tuple[dict, dict | None]:
         """Fetch one document using the session's scope, returning 404 for unauthorized IDs."""
@@ -526,7 +548,10 @@ def create_app(
         if format_name not in FORMATS:
             raise HTTPException(400, "Unsupported export format")
         row, _ = accessible(request, identifier)
-        payload = export_document(json.loads(row["result"]), format_name)
+        try:
+            payload = export_document(json.loads(row["result"]), format_name)
+        except ValueError as error:
+            raise HTTPException(422, str(error)) from error
         response = Response(
             payload,
             media_type=FORMATS[format_name],
@@ -584,10 +609,11 @@ def create_app(
         scope_customer = customer if visibility == "customer" else None
         with connect(database_path) as database:
             existing = database.execute(
-                "SELECT id FROM documents WHERE workspace=? AND source_hash=? AND visibility=? AND customer IS ? AND json_extract(result,'$.provenance.config_revision')=? AND COALESCE(json_extract(result,'$.provenance.sales_import'),0)=?",
+                "SELECT id FROM documents WHERE workspace=? AND source_hash=? AND json_extract(result,'$.provenance.conversion_path[0]')=? AND visibility=? AND customer IS ? AND json_extract(result,'$.provenance.config_revision')=? AND COALESCE(json_extract(result,'$.provenance.sales_import'),0)=?",
                 (
                     user["workspace"],
                     digest,
+                    name.rsplit(".", 1)[-1].lower(),
                     visibility,
                     scope_customer,
                     config.revision,
@@ -641,11 +667,13 @@ def create_app(
         with connect(database_path) as database:
             # Reserve the write lock and recheck after conversion to prevent racing duplicate imports.
             database.execute("BEGIN IMMEDIATE")
+            ensure_revision(database, user["workspace"], config)
             existing = database.execute(
-                "SELECT id FROM documents WHERE workspace=? AND source_hash=? AND visibility=? AND customer IS ? AND json_extract(result,'$.provenance.config_revision')=? AND COALESCE(json_extract(result,'$.provenance.sales_import'),0)=?",
+                "SELECT id FROM documents WHERE workspace=? AND source_hash=? AND json_extract(result,'$.provenance.conversion_path[0]')=? AND visibility=? AND customer IS ? AND json_extract(result,'$.provenance.config_revision')=? AND COALESCE(json_extract(result,'$.provenance.sales_import'),0)=?",
                 (
                     user["workspace"],
                     digest,
+                    name.rsplit(".", 1)[-1].lower(),
                     visibility,
                     scope_customer,
                     config.revision,
@@ -654,6 +682,13 @@ def create_app(
             ).fetchone()
             if existing:
                 return {"id": existing["id"], "duplicate": True}
+            if (
+                database.execute(
+                    "SELECT COUNT(*) FROM documents WHERE workspace=?", (user["workspace"],)
+                ).fetchone()[0]
+                >= 200
+            ):
+                raise HTTPException(409, "Workspace document limit reached")
             if dataset:
                 if database.execute(
                     "SELECT 1 FROM sales_imports WHERE workspace=? AND source_hash=?",
@@ -663,7 +698,11 @@ def create_app(
                         409,
                         "Sales source already applied; changing visibility or configuration cannot duplicate sales",
                     )
-                tables = [block for block in result["blocks"] if block["kind"] == "table"]
+                tables = [
+                    block
+                    for block in result.get("source_blocks", result["blocks"])
+                    if block["kind"] == "table"
+                ]
                 if len(tables) != 1 or len(tables[0]["rows"]) < 2:
                     raise HTTPException(
                         422, "Sales import requires one table with header and data rows"
@@ -734,12 +773,15 @@ def create_app(
             raise HTTPException(422, "Duplicate source identifiers")
         sources = [accessible(request, identifier)[0] for identifier in body.ids]
         config = configuration(user["workspace"])
-        blocks, measurements, warnings = [], [], []
+        blocks, warnings = [], []
         for source_row in sources:
             result = json.loads(source_row["result"])
             blocks.append({"kind": "heading", "text": source_row["title"]})
-            blocks.extend(result["blocks"])
-            measurements.extend(result["measurements"])
+            blocks.extend(result.get("source_blocks", result["blocks"]))
+            if "source_blocks" not in result:
+                warnings.append(
+                    "Legacy source uses previously normalized values; reimport originals for full precision."
+                )
             warnings.extend(result["warnings"])
         provenance = {
             "schema_version": "1.0",
@@ -747,24 +789,17 @@ def create_app(
             "config_revision": config.revision,
             "conversion_path": ["html", "combined-html"],
         }
-        html = render_document(body.title, blocks, measurements, provenance, config, warnings)
-        if len(html.encode()) > 8 * 1024 * 1024:
-            raise HTTPException(422, "Compilation exceeds output budget")
-        from bs4 import BeautifulSoup
+        from .conversion import assemble
 
-        result = {
-            "schema_version": "1.0",
-            "title": body.title,
-            "blocks": blocks,
-            "measurements": measurements,
-            "warnings": warnings,
-            "provenance": provenance,
-            "html": html,
-            "text": BeautifulSoup(html, "html.parser").get_text(" ", strip=True),
-            "review_status": "needs-review",
-        }
+        try:
+            result = assemble(body.title, blocks, provenance, config, warnings)
+        except ValueError as error:
+            raise HTTPException(422, str(error)) from error
+        result["review_status"] = "needs-review"
         identifier = str(uuid.uuid4())
         with connect(database_path) as database:
+            database.execute("BEGIN IMMEDIATE")
+            ensure_revision(database, user["workspace"], config)
             if (
                 database.execute(
                     "SELECT COUNT(*) FROM documents WHERE workspace=?", (user["workspace"],)
@@ -796,6 +831,7 @@ def create_app(
         if body.profile != user["workspace"]:
             raise HTTPException(422, "Profile must match workspace")
         with connect(database_path) as database:
+            database.execute("BEGIN IMMEDIATE")
             previous = WorkspaceConfig.model_validate_json(
                 database.execute(
                     "SELECT config FROM workspaces WHERE id=?", (user["workspace"],)
@@ -803,6 +839,16 @@ def create_app(
             )
             if body.revision != previous.revision:
                 raise HTTPException(409, "Configuration changed; reload before saving")
+            if (
+                database.execute(
+                    "SELECT COUNT(*) FROM config_history WHERE workspace=?", (user["workspace"],)
+                ).fetchone()[0]
+                >= 250
+            ):
+                raise HTTPException(
+                    409,
+                    "Standard history limit reached; preserve a backup and review a controlled history migration",
+                )
             used = {
                 row[0]
                 for row in database.execute(
@@ -821,14 +867,187 @@ def create_app(
                 (body.model_dump_json(), user["workspace"]),
             )
             audit(database, user, "configure", f"revision {body.revision}")
+            database.execute(
+                "INSERT INTO config_history(workspace,revision,config,actor) VALUES (?,?,?,?)",
+                (user["workspace"], body.revision, body.model_dump_json(), user["username"]),
+            )
         return body.model_dump()
+
+    @app.post("/api/standards/preview")
+    def preview_standard(body: StandardPreview, request: Request):
+        """Validate and render a local CSV draft only for the authenticated standards authority."""
+        user = authorize(request, {"admin"}, mutate=True)
+        if body.config.profile != user["workspace"]:
+            raise HTTPException(422, "Profile must match workspace")
+        try:
+            return ingest("standard-preview.csv", body.sample.encode(), body.config)
+        except ValueError as error:
+            raise HTTPException(422, str(error)) from error
+
+    @app.get("/api/standards/history")
+    def standard_history(request: Request):
+        """Return only this authorized workspace's immutable configuration revisions."""
+        user = authorize(request, {"admin"})
+        with connect(database_path) as database:
+            return [
+                {
+                    "revision": row["revision"],
+                    "actor": row["actor"],
+                    "created": row["created"],
+                    "config": WorkspaceConfig.model_validate_json(row["config"]).model_dump(),
+                }
+                for row in database.execute(
+                    "SELECT * FROM config_history WHERE workspace=? ORDER BY revision DESC LIMIT 250",
+                    (user["workspace"],),
+                )
+            ]
+
+    @app.post("/api/standards/restore")
+    def restore_standard(body: StandardRestore, request: Request):
+        """Publish a historical configuration as a new revision; never rewrite history."""
+        user = authorize(request, {"admin"}, mutate=True)
+        with connect(database_path) as database:
+            row = database.execute(
+                "SELECT config FROM config_history WHERE workspace=? AND revision=?",
+                (user["workspace"], body.revision),
+            ).fetchone()
+        if not row:
+            raise HTTPException(404, "Standard revision not found")
+        restored = WorkspaceConfig.model_validate_json(row[0])
+        restored.revision = body.expected_revision
+        return save_config(restored, request)
+
+    @app.post("/api/documents/{identifier}/standardize")
+    def standardize_document(request: Request, identifier: str):
+        """Make an explicitly requested current-standard copy; never replay sales or change access."""
+        import io
+
+        from .conversion import assemble
+
+        user = authorize(request, {"employee", "admin"}, mutate=True)
+        row, _ = accessible(request, identifier)
+        old = json.loads(row["result"])
+        config = configuration(user["workspace"])
+        if row["source"] is not None:
+            copied = upload(
+                request,
+                UploadFile(
+                    filename=old["provenance"]["source_name"], file=io.BytesIO(row["source"])
+                ),
+                row["visibility"],
+                row["customer"] or next(iter(config.customers)),
+                row["category"],
+                False,
+            )
+            if not copied["duplicate"]:
+                with connect(database_path) as database:
+                    database.execute(
+                        "UPDATE documents SET product=? WHERE id=? AND workspace=?",
+                        (row["product"], copied["id"], user["workspace"]),
+                    )
+                    audit(database, user, "standardize", identifier + " -> " + copied["id"])
+            return copied
+        if (
+            old.get("standard", {}).get("sha256") == identity(config)["sha256"]
+            and old.get("provenance", {}).get("config_revision") == config.revision
+        ):
+            return {"id": identifier, "duplicate": True}
+        warnings = list(old["warnings"])
+        if "source_blocks" not in old:
+            warnings.append(
+                "Legacy compilation values may already be rounded; reimport originals for full precision."
+            )
+        try:
+            result = assemble(
+                row["title"],
+                old.get("source_blocks", old["blocks"]),
+                {"source_ids": [identifier], "conversion_path": ["html", "standardized-html"]},
+                config,
+                warnings,
+            )
+        except ValueError as error:
+            raise HTTPException(422, str(error)) from error
+        new_id = str(uuid.uuid4())
+        with connect(database_path) as database:
+            database.execute("BEGIN IMMEDIATE")
+            ensure_revision(database, user["workspace"], config)
+            if (
+                database.execute(
+                    "SELECT COUNT(*) FROM documents WHERE workspace=?", (user["workspace"],)
+                ).fetchone()[0]
+                >= 200
+            ):
+                raise HTTPException(409, "Workspace document limit reached")
+            database.execute(
+                "INSERT INTO documents(id,workspace,title,visibility,customer,category,result) VALUES (?,?,?,?,?,?,?)",
+                (
+                    new_id,
+                    user["workspace"],
+                    row["title"],
+                    row["visibility"],
+                    row["customer"],
+                    row["category"],
+                    json.dumps(result),
+                ),
+            )
+            audit(database, user, "standardize", new_id)
+        return {"id": new_id, "duplicate": False}
 
     @app.get("/api/report")
     def sales_report(request: Request):
         """Customer-only sales subset or full employee/admin business reporting."""
         user = authorize(request)
         with connect(database_path) as database:
-            return report(database, user, configuration(user["workspace"]).forecasting)
+            config = configuration(user["workspace"])
+            return report(database, user, config.forecasting) | {
+                "standard": {
+                    "name": config.output_standard.name,
+                    "revision": config.revision,
+                    "default_export": config.output_standard.default_export,
+                    "enforce_export": config.output_standard.enforce_export,
+                }
+            }
+
+    @app.get("/api/report/export/{format_name}")
+    def export_report(request: Request, format_name: str):
+        """Apply the active presentation/delivery standard to the caller's scoped sales report."""
+        user = authorize(request)
+        config = configuration(user["workspace"])
+        if format_name not in FORMATS:
+            raise HTTPException(400, "Unsupported export format")
+        with connect(database_path) as database:
+            data = report(database, user, config.forecasting)
+        rows = [["Month", "Quantity", "Revenue (USD cents)"]] + [
+            [str(row[key]) for key in ["month", "quantity", "revenue_cents"]]
+            for row in data["series"]
+        ]
+        blocks = [{"kind": "table", "rows": rows}, {"kind": "paragraph", "text": data["method"]}]
+        provenance = {
+            "config_revision": config.revision,
+            "standard_sha256": identity(config)["sha256"],
+            "record_type": "scoped-sales-report",
+            "conversion_path": ["database", "html"],
+            "currency": "USD",
+        }
+        result = {
+            "html": render_document(
+                "Business performance report", blocks, [], provenance, config, []
+            ),
+            "blocks": blocks,
+            "provenance": provenance,
+            "standard": identity(config),
+        }
+        try:
+            payload = export_document(result, format_name)
+        except ValueError as error:
+            raise HTTPException(422, str(error)) from error
+        return Response(
+            payload,
+            media_type=FORMATS[format_name],
+            headers={
+                "Content-Disposition": f'attachment; filename="business-report.{format_name}"'
+            },
+        )
 
     @app.post("/api/units")
     def measurement(body: MeasurementRequest):

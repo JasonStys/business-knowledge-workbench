@@ -1,17 +1,17 @@
 # @index-begin
 # @symbol variable/parameter: ROOT L22
 # @symbol variable/parameter: DESCRIPTIONS L23
-# @symbol function/class: description L45
-# @symbol variable/parameter: path L45
-# @symbol variable/parameter: text L56
-# @symbol variable/parameter: tail L57
-# @symbol variable/parameter: line L58
-# @symbol variable/parameter: title L68
-# @symbol function/class: main L81
-# @symbol variable/parameter: output L83
-# @symbol variable/parameter: paths L91
-# @symbol variable/parameter: content L92
-# @symbol variable/parameter: target L99
+# @symbol function/class: description L49
+# @symbol variable/parameter: path L49
+# @symbol variable/parameter: text L60
+# @symbol variable/parameter: tail L61
+# @symbol variable/parameter: line L62
+# @symbol variable/parameter: title L72
+# @symbol function/class: main L85
+# @symbol variable/parameter: output L87
+# @symbol variable/parameter: paths L95
+# @symbol variable/parameter: content L96
+# @symbol variable/parameter: target L103
 # @index-end
 """Generate a one-row-per-tracked-file catalog with useful responsibility summaries. Index: docs/code-index.md."""
 
@@ -39,6 +39,10 @@ DESCRIPTIONS = {
     "playwright.config.ts": "Four browser targets, isolated database/server and retained test evidence.",
     "index.html": "Semantic browser entry, metadata, manifest reference and skip link.",
     "docs/file-catalog.md": "This generated responsibility catalog.",
+    ".github/workflows/ci.yml": "Python portability, browser, dependency, schema and isolated-container validation gates.",
+    ".github/workflows/codeql.yml": "Read-only Python and JavaScript/TypeScript semantic security analyses.",
+    ".github/workflows/packages.yml": "Three-OS frozen service, desktop packaging and actual packaged-executable workflow tests.",
+    ".github/workflows/release-native.yml": "Exact-source validation/CodeQL/package gate, tested three-OS draft binaries and release publication.",
 }
 
 

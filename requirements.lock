@@ -5,7 +5,7 @@ anyio==4.15.1
 beautifulsoup4==4.15.0
 boolean.py==5.0
 CacheControl==0.14.4
-certifi==2026.7.22
+certifi==2026.10.19
 cffi==2.1.1
 charset-normalizer==3.5.1
 click==8.5.0
@@ -37,7 +37,7 @@ packaging==26.3
 pdfminer.six==20260107
 pdfplumber==0.11.10
 pefile==2024.8.26
-pillow==12.3.0
+pillow==13.0.0
 pip-requirements-parser==32.0.1
 pip_api==0.0.35
 pip_audit==2.10.1
@@ -52,7 +52,7 @@ Pygments==2.21.0
 pyinstaller==6.22.3
 pyinstaller-hooks-contrib==2026.8
 pyparsing==3.3.3
-pypdf==6.19.0
+pypdf==6.21.2
 pypdfium2==5.13.0
 pytest==9.1.1
 pytest-cov==7.1.0

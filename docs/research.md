@@ -22,3 +22,19 @@ Self-documentation means meaningful names, cohesive functions, strong types/sche
 Checked 2026-10-12. Design choices use [OWASP password storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) for the scrypt configuration, [OWASP file-upload guidance](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html) for format/size/permission boundaries and its isolation gap, and [Electron's security checklist](https://www.electronjs.org/docs/latest/tutorial/security) for sandbox/context isolation/CSP/navigation/permission restrictions. This is implementation guidance, not certification.
 
 Official [chat-completion request reference](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create) and [OpenAI data controls](https://developers.openai.com/api/docs/guides/your-data) explain optional API transmission/storage. Official chat requests set store=false; provider-side abuse monitoring and other retention conditions still apply. No zero-retention claim or live paid provider validation is made. Only mock contract fixtures and the genuine offline extractive reference are tested by default.
+
+## Version 1.2 standards and maintenance references
+
+Reviewed 2026-10-21. [OWASP authorization guidance](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
+supports deny-by-default, server-side checks on each standards endpoint; an owner
+preview is not a shared-business membership system. [SQLite isolation](https://sqlite.org/isolation.html)
+informs immediate write transactions and revision rechecks after slow conversion.
+[Pydantic model validators](https://docs.pydantic.dev/latest/concepts/validators/)
+support bounded data-only settings and cross-field dimensional validation.
+
+The [Vite advisory](https://github.com/advisories/GHSA-698v-4r3x-3vcv),
+[Playwright 1.64 release](https://github.com/microsoft/playwright/releases/tag/v1.64.0)
+and [pypdf changelog](https://pypdf.readthedocs.io/en/stable/meta/CHANGELOG.html)
+informed dependency maintenance and browser-runtime replacement. Locked Python
+and npm dependencies are audited independently; a clean audit is point-in-time
+evidence, not proof that all vulnerabilities are absent.

@@ -53,51 +53,51 @@
 # @symbol variable/parameter: workspace L367
 # @symbol variable/parameter: view L373
 # @symbol variable/parameter: db L378
-# @symbol variable/parameter: current L389
-# @symbol variable/parameter: forwarded L397
-# @symbol function/class: create_private_app L419
-# @symbol variable/parameter: launcher_token L420
-# @symbol variable/parameter: nonce L420
-# @symbol variable/parameter: port L420
-# @symbol variable/parameter: root L420
-# @symbol variable/parameter: ui L420
-# @symbol function/class: lifespan L427
-# @symbol function/class: idle L430
-# @symbol variable/parameter: task L444
-# @symbol variable/parameter: app L454
-# @symbol variable/parameter: error L466
-# @symbol function/class: invalid L466
-# @symbol variable/parameter: request L466
-# @symbol function/class: bad_value L471
-# @symbol function/class: bad_disk L476
-# @symbol function/class: identify L485
-# @symbol variable/parameter: owner L489
-# @symbol function/class: signed L489
-# @symbol variable/parameter: response L491
-# @symbol function/class: auth_limit L502
-# @symbol function/class: health L510
-# @symbol function/class: shutdown L521
-# @symbol variable/parameter: callback L527
-# @symbol function/class: register L534
-# @symbol function/class: login L546
-# @symbol function/class: reset L555
-# @symbol variable/parameter: row L560
-# @symbol variable/parameter: fresh L566
-# @symbol function/class: account L574
-# @symbol variable/parameter: session L576
-# @symbol function/class: unlock L584
-# @symbol function/class: activity L595
-# @symbol function/class: save L603
-# @symbol function/class: lock L610
-# @symbol function/class: logout L618
-# @symbol function/class: delete L630
-# @symbol function/class: backup L646
-# @symbol variable/parameter: _ L648
-# @symbol function/class: get_providers L659
-# @symbol function/class: seed L666
-# @symbol function/class: providers L681
-# @symbol variable/parameter: old L686
-# @symbol variable/parameter: config L692
+# @symbol variable/parameter: current L392
+# @symbol variable/parameter: forwarded L400
+# @symbol function/class: create_private_app L422
+# @symbol variable/parameter: launcher_token L423
+# @symbol variable/parameter: nonce L423
+# @symbol variable/parameter: port L423
+# @symbol variable/parameter: root L423
+# @symbol variable/parameter: ui L423
+# @symbol function/class: lifespan L430
+# @symbol function/class: idle L433
+# @symbol variable/parameter: task L447
+# @symbol variable/parameter: app L457
+# @symbol variable/parameter: error L469
+# @symbol function/class: invalid L469
+# @symbol variable/parameter: request L469
+# @symbol function/class: bad_value L474
+# @symbol function/class: bad_disk L479
+# @symbol function/class: identify L488
+# @symbol variable/parameter: owner L492
+# @symbol function/class: signed L492
+# @symbol variable/parameter: response L494
+# @symbol function/class: auth_limit L505
+# @symbol function/class: health L513
+# @symbol function/class: shutdown L524
+# @symbol variable/parameter: callback L530
+# @symbol function/class: register L537
+# @symbol function/class: login L549
+# @symbol function/class: reset L558
+# @symbol variable/parameter: row L563
+# @symbol variable/parameter: fresh L569
+# @symbol function/class: account L577
+# @symbol variable/parameter: session L579
+# @symbol function/class: unlock L587
+# @symbol function/class: activity L598
+# @symbol function/class: save L606
+# @symbol function/class: lock L613
+# @symbol function/class: logout L621
+# @symbol function/class: delete L633
+# @symbol function/class: backup L649
+# @symbol variable/parameter: _ L651
+# @symbol function/class: get_providers L662
+# @symbol function/class: seed L669
+# @symbol function/class: providers L684
+# @symbol variable/parameter: old L689
+# @symbol variable/parameter: config L695
 # @index-end
 """Jason Stys: loopback-only real accounts, session-proven vaults, private AI settings and scoped controller.
 
@@ -378,7 +378,10 @@ class Proxy:
             db = manager.active / "workbench.sqlite"
             if (
                 scope["method"] in {"POST", "PUT"}
-                and path in {"/import", "/products", "/merge"}
+                and (
+                    path in {"/import", "/products", "/merge", "/config", "/standards/restore"}
+                    or path.endswith("/standardize")
+                )
                 and db.stat().st_size >= HISTORY_STOP_BYTES
             ):
                 return await JSONResponse(
@@ -453,7 +456,7 @@ def create_private_app(
 
     app = FastAPI(
         title="Business Knowledge Workbench — Jason Stys",
-        version="1.1.1",
+        version="1.2.0",
         lifespan=lifespan,
         docs_url=None,
         redoc_url=None,
@@ -512,7 +515,7 @@ def create_private_app(
         return {
             "status": "ready",
             "mode": "private-local-accounts",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "author": "Jason Stys",
             "launcher_nonce": nonce,
         }

@@ -1,14 +1,15 @@
 /* @index-begin
- * @symbol type: Role L14
- * @symbol type: Session L15
- * @symbol type: Bootstrap L21
- * @symbol type: Product L28
- * @symbol type: Measurement L36
- * @symbol type: Doc L42
- * @symbol type: DocumentResult L49
- * @symbol type: Report L59
- * @symbol type: Config L72
- * @symbol type: Answer L83
+ * @symbol type: Role L15
+ * @symbol type: Session L16
+ * @symbol type: Bootstrap L22
+ * @symbol type: Product L29
+ * @symbol type: Measurement L37
+ * @symbol type: Doc L43
+ * @symbol type: DocumentResult L50
+ * @symbol type: OutputStandard L66
+ * @symbol type: Report L87
+ * @symbol type: Config L106
+ * @symbol type: Answer L118
 @index-end */
 /** Shared browser API shapes. Functions/variables and exact lines: docs/code-index.md. */
 export type Role = "customer" | "employee" | "admin";
@@ -55,8 +56,41 @@ export interface DocumentResult {
   warnings: string[];
   provenance: Record<string, unknown>;
   review_status: string;
+  standard?: {
+    name: string;
+    revision: number;
+    sha256: string;
+    output_standard: OutputStandard;
+  };
+}
+export interface OutputStandard {
+  name: string;
+  section_titles: Record<string, string>;
+  default_export: "html" | "json" | "md" | "csv" | "docx" | "pdf";
+  enforce_export: boolean;
+  paper: "Letter" | "A4";
+  orientation: "portrait" | "landscape";
+  font: "sans" | "serif" | "mono";
+  font_size: number;
+  accent: string;
+  columns: {
+    key: string;
+    label: string;
+    aliases: string[];
+    dimension?: string | null;
+    source_unit?: string | null;
+    required: boolean;
+  }[];
+  extra_columns: "preserve" | "reject";
+  table_scope: "matching" | "all";
 }
 export interface Report {
+  standard: {
+    name: string;
+    revision: number;
+    default_export: string;
+    enforce_export: boolean;
+  };
   currency: string;
   series: { month: string; quantity: number; revenue_cents: number }[];
   revenue_cents: number;
@@ -70,6 +104,7 @@ export interface Report {
   method: string;
 }
 export interface Config {
+  output_standard: OutputStandard;
   title: string;
   profile: string;
   customers: Record<string, string>;

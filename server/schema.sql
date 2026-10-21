@@ -1,18 +1,24 @@
 -- @index-begin
--- @symbol schema: workspaces L15
--- @symbol schema: users L16
--- @symbol schema: sessions L21
--- @symbol schema: products L24
--- @symbol schema: sales L29
--- @symbol schema: sales_scope L34
--- @symbol schema: sales_imports L35
--- @symbol schema: documents L36
--- @symbol schema: documents_scope L42
--- @symbol schema: audit L43
+-- @symbol schema: workspaces L16
+-- @symbol schema: config_history L17
+-- @symbol schema: users L22
+-- @symbol schema: sessions L27
+-- @symbol schema: products L30
+-- @symbol schema: sales L35
+-- @symbol schema: sales_scope L40
+-- @symbol schema: sales_imports L41
+-- @symbol schema: documents L42
+-- @symbol schema: documents_scope L48
+-- @symbol schema: audit L49
 -- @index-end
 -- Relational records, scoped documents and auditable events. Index: docs/code-index.md.
 PRAGMA foreign_keys = ON;
 CREATE TABLE IF NOT EXISTS workspaces (id TEXT PRIMARY KEY, config TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS config_history (
+ workspace TEXT NOT NULL REFERENCES workspaces(id), revision INTEGER NOT NULL,
+ config TEXT NOT NULL, actor TEXT NOT NULL, created TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY(workspace,revision)
+);
 CREATE TABLE IF NOT EXISTS users (
  id INTEGER PRIMARY KEY, workspace TEXT NOT NULL REFERENCES workspaces(id),
  username TEXT NOT NULL, password TEXT NOT NULL, role TEXT NOT NULL CHECK(role IN ('customer','employee','admin')),

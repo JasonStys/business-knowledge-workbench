@@ -6,12 +6,12 @@
   },
   "runtime": "3.14.6",
   "import": {
-    "median_ms": 27.702,
-    "p95_ms": 41.327
+    "median_ms": 32.379,
+    "p95_ms": 42.079
   },
   "search": {
-    "median_ms": 2.924,
-    "p95_ms": 3.455
+    "median_ms": 5.938,
+    "p95_ms": 8.438
   },
   "budgets": {
     "import_p95_ms": 2000,

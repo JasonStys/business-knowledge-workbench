@@ -1,0 +1,12 @@
+{
+  "version": "1.2.0",
+  "checked_date": "2026-10-21",
+  "scope": "Local Windows verification using synthetic fixtures and disposable accounts",
+  "python": {"version": "3.14.6", "passed": 150, "duration_seconds": 127.39, "statement_coverage_percent": 88.82, "statements": 2129, "coverage_gate_percent": 80},
+  "browser": {"original_passed": 24, "private_passed": 12, "engines": ["chromium", "firefox", "webkit"], "mobile_width_pixels": 390},
+  "packaged_windows": {"passed": 1, "duration_seconds": 17.5, "real_frozen_service": true, "real_packaged_executable": true},
+  "known_dependency_advisories": {"npm": 0, "python_lockfile": 0},
+  "performance": {"import_p95_ms": 42.079, "search_p95_ms": 8.438, "import_budget_ms": 2000, "search_budget_ms": 500},
+  "remote_evidence": "Inspect exact-source workflow results; release requires validation, packages and CodeQL success for the same commit.",
+  "limitations": ["Local owner-only private edition; no shared-team delegation", "Bounded supported parsers; no universal OCR or semantic understanding", "Unsigned desktop packages", "No live paid model verification", "No local Docker changes"]
+}

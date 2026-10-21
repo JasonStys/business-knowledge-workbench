@@ -1,151 +1,154 @@
 /* @index-begin
- * @symbol selector: :root L151
- * @symbol selector: body L164
- * @symbol selector: select L169
- * @symbol selector: summary L176
- * @symbol selector: a L180
- * @symbol selector: button L183
- * @symbol selector: button:disabled L186
- * @symbol selector: p L196
- * @symbol selector: h1 L199
- * @symbol selector: h2 L205
- * @symbol selector: h3 L209
- * @symbol selector: small L216
- * @symbol selector: textarea L229
- * @symbol selector: label L241
- * @symbol selector: summary:focus-visible L252
- * @symbol selector: .skip L256
- * @symbol selector: .skip:focus L263
- * @symbol selector: #app L266
- * @symbol selector: .sidebar L270
- * @symbol selector: .brand L281
- * @symbol selector: .brand small L290
- * @symbol selector: .brand-mark L297
- * @symbol selector: .sidebar-label L307
- * @symbol selector: .scenario-label L313
- * @symbol selector: .sidebar select L317
- * @symbol selector: .sidebar nav L325
- * @symbol selector: .sidebar nav button L331
- * @symbol selector: .sidebar nav button[aria-current] L342
- * @symbol selector: .nav-number L347
- * @symbol selector: .sidebar-bottom L352
- * @symbol selector: .sidebar-bottom p L357
- * @symbol selector: .status-dot L362
- * @symbol selector: .version L370
- * @symbol selector: .layout L375
- * @symbol selector: header L379
- * @symbol selector: .breadcrumb L389
- * @symbol selector: .breadcrumb span L393
- * @symbol selector: .account L397
- * @symbol selector: main L404
- * @symbol selector: .eyebrow L410
- * @symbol selector: .page-title L417
- * @symbol selector: .page-title p L424
- * @symbol selector: .pill L429
- * @symbol selector: .hero-strip L439
- * @symbol selector: .hero-label L449
- * @symbol selector: .hero-strip h2 L454
- * @symbol selector: .hero-strip p L459
- * @symbol selector: .hero-flow L463
- * @symbol selector: .hero-flow span L470
- * @symbol selector: .section-heading L478
- * @symbol selector: .section-heading > span L485
- * @symbol selector: .search-label L489
- * @symbol selector: .search-label input L493
- * @symbol selector: .product-grid L497
- * @symbol selector: .product-card L503
- * @symbol selector: .product-code L510
- * @symbol selector: .product-code span L517
- * @symbol selector: .product-illustration L520
- * @symbol selector: .device L527
- * @symbol selector: .device span L541
- * @symbol selector: .category L547
- * @symbol selector: .product-card h3 L553
- * @symbol selector: .product-card p L556
- * @symbol selector: .product-card dl L560
- * @symbol selector: .product-card dl div L564
- * @symbol selector: .product-card dt L570
- * @symbol selector: .product-card dd L574
- * @symbol selector: .card-bottom L578
- * @symbol selector: .card-bottom span:first-child L586
- * @symbol selector: .card-bottom span:last-child L589
- * @symbol selector: .panel L593
- * @symbol selector: .panel > p L600
- * @symbol selector: .units-panel L604
- * @symbol selector: .units-panel p L610
- * @symbol selector: .units-panel form L614
- * @symbol selector: .units-panel label L620
- * @symbol selector: .units-panel output L624
- * @symbol selector: .quiet L634
- * @symbol selector: .primary:hover L653
- * @symbol selector: .quiet:hover L656
- * @symbol selector: .metrics L659
- * @symbol selector: .metrics > div L665
- * @symbol selector: .metrics span L671
- * @symbol selector: .metrics strong L675
- * @symbol selector: .metrics small L682
- * @symbol selector: .chart L686
- * @symbol selector: .chart > div L693
- * @symbol selector: .bar L703
- * @symbol selector: .forecast L711
- * @symbol selector: .forecast h3 L719
- * @symbol selector: .forecast > div L723
- * @symbol selector: .forecast strong L730
- * @symbol selector: .forecast small L735
- * @symbol selector: .muted L739
- * @symbol selector: .merge-tools L747
- * @symbol selector: .import-form label L754
- * @symbol selector: .import-form label:first-child L758
- * @symbol selector: .check L761
- * @symbol selector: .check input L767
- * @symbol selector: .library-tools label L773
- * @symbol selector: .merge-tools label L777
- * @symbol selector: .table-scroll L780
- * @symbol selector: table L784
- * @symbol selector: caption L790
- * @symbol selector: th L796
- * @symbol selector: td input L808
- * @symbol selector: .tag L812
- * @symbol selector: .link-button L818
- * @symbol selector: .document-preview L826
- * @symbol selector: .document-preview iframe L831
- * @symbol selector: .warning L839
- * @symbol selector: .warning ul L847
- * @symbol selector: .exports L851
- * @symbol selector: .exports a L856
- * @symbol selector: details L859
- * @symbol selector: .ask-row L868
- * @symbol selector: .ask-row input L872
- * @symbol selector: .answer L875
- * @symbol selector: .answer p L880
- * @symbol selector: .answer small L883
- * @symbol selector: .config-layout L889
- * @symbol selector: .config-layout form > label L894
- * @symbol selector: .config-units L897
- * @symbol selector: .config-layout h3 L903
- * @symbol selector: pre L907
- * @symbol selector: .login L918
- * @symbol selector: .login h1 L922
- * @symbol selector: .login label L925
- * @symbol selector: .login button L928
- * @symbol selector: .demo-note L931
- * @symbol selector: .notice:not(:empty) L938
- * @symbol selector: .notice.error L947
- * @symbol selector: .empty L952
- * @symbol selector: footer L956
- * @symbol selector: footer span L966
- * @symbol selector: @media (min-width: 1550px) L969
- * @symbol selector: @media (max-width: 1100px) L977
- * @symbol selector: @media (max-width: 760px) L1015
- * @symbol selector: .private-home L1176
- * @symbol selector: .private-heading L1185
- * @symbol selector: #app.private-entry L1188
- * @symbol selector: .account-panel L1191
- * @symbol selector: #delete-form L1196
- * @symbol selector: .account-options L1201
- * @symbol selector: #seed L1209
- * @symbol selector: #account-status L1217
- * @symbol selector: #recovery-code L1222
+ * @symbol selector: :root L154
+ * @symbol selector: body L167
+ * @symbol selector: select L172
+ * @symbol selector: summary L179
+ * @symbol selector: a L183
+ * @symbol selector: button L186
+ * @symbol selector: button:disabled L189
+ * @symbol selector: p L199
+ * @symbol selector: h1 L202
+ * @symbol selector: h2 L208
+ * @symbol selector: h3 L212
+ * @symbol selector: small L219
+ * @symbol selector: textarea L232
+ * @symbol selector: label L244
+ * @symbol selector: summary:focus-visible L255
+ * @symbol selector: .skip L259
+ * @symbol selector: .skip:focus L266
+ * @symbol selector: #app L269
+ * @symbol selector: .sidebar L273
+ * @symbol selector: .brand L284
+ * @symbol selector: .brand small L293
+ * @symbol selector: .brand-mark L300
+ * @symbol selector: .sidebar-label L310
+ * @symbol selector: .scenario-label L316
+ * @symbol selector: .sidebar select L320
+ * @symbol selector: .sidebar nav L328
+ * @symbol selector: .sidebar nav button L334
+ * @symbol selector: .sidebar nav button[aria-current] L345
+ * @symbol selector: .nav-number L350
+ * @symbol selector: .sidebar-bottom L355
+ * @symbol selector: .sidebar-bottom p L360
+ * @symbol selector: .status-dot L365
+ * @symbol selector: .version L373
+ * @symbol selector: .layout L378
+ * @symbol selector: header L382
+ * @symbol selector: .breadcrumb L392
+ * @symbol selector: .breadcrumb span L396
+ * @symbol selector: .account L400
+ * @symbol selector: main L407
+ * @symbol selector: .eyebrow L413
+ * @symbol selector: .page-title L420
+ * @symbol selector: .page-title p L427
+ * @symbol selector: .pill L432
+ * @symbol selector: .hero-strip L442
+ * @symbol selector: .hero-label L452
+ * @symbol selector: .hero-strip h2 L457
+ * @symbol selector: .hero-strip p L462
+ * @symbol selector: .hero-flow L466
+ * @symbol selector: .hero-flow span L473
+ * @symbol selector: .section-heading L481
+ * @symbol selector: .section-heading > span L488
+ * @symbol selector: .search-label L492
+ * @symbol selector: .search-label input L496
+ * @symbol selector: .product-grid L500
+ * @symbol selector: .product-card L506
+ * @symbol selector: .product-code L513
+ * @symbol selector: .product-code span L520
+ * @symbol selector: .product-illustration L523
+ * @symbol selector: .device L530
+ * @symbol selector: .device span L544
+ * @symbol selector: .category L550
+ * @symbol selector: .product-card h3 L556
+ * @symbol selector: .product-card p L559
+ * @symbol selector: .product-card dl L563
+ * @symbol selector: .product-card dl div L567
+ * @symbol selector: .product-card dt L573
+ * @symbol selector: .product-card dd L577
+ * @symbol selector: .card-bottom L581
+ * @symbol selector: .card-bottom span:first-child L589
+ * @symbol selector: .card-bottom span:last-child L592
+ * @symbol selector: .panel L596
+ * @symbol selector: .panel > p L603
+ * @symbol selector: .units-panel L607
+ * @symbol selector: .units-panel p L613
+ * @symbol selector: .units-panel form L617
+ * @symbol selector: .units-panel label L623
+ * @symbol selector: .units-panel output L627
+ * @symbol selector: .quiet L637
+ * @symbol selector: .primary:hover L656
+ * @symbol selector: .quiet:hover L659
+ * @symbol selector: .metrics L662
+ * @symbol selector: .metrics > div L668
+ * @symbol selector: .metrics span L674
+ * @symbol selector: .metrics strong L678
+ * @symbol selector: .metrics small L685
+ * @symbol selector: .chart L689
+ * @symbol selector: .chart > div L696
+ * @symbol selector: .bar L706
+ * @symbol selector: .forecast L714
+ * @symbol selector: .forecast h3 L722
+ * @symbol selector: .forecast > div L726
+ * @symbol selector: .forecast strong L733
+ * @symbol selector: .forecast small L738
+ * @symbol selector: .muted L742
+ * @symbol selector: .merge-tools L750
+ * @symbol selector: .import-form label L757
+ * @symbol selector: .import-form label:first-child L761
+ * @symbol selector: .check L764
+ * @symbol selector: .check input L770
+ * @symbol selector: .library-tools label L776
+ * @symbol selector: .merge-tools label L780
+ * @symbol selector: .table-scroll L783
+ * @symbol selector: table L787
+ * @symbol selector: caption L793
+ * @symbol selector: th L799
+ * @symbol selector: td input L811
+ * @symbol selector: .tag L815
+ * @symbol selector: .link-button L821
+ * @symbol selector: .document-preview L829
+ * @symbol selector: .document-preview iframe L834
+ * @symbol selector: .warning L842
+ * @symbol selector: .warning ul L850
+ * @symbol selector: .exports L854
+ * @symbol selector: .exports a L859
+ * @symbol selector: details L862
+ * @symbol selector: .ask-row L871
+ * @symbol selector: .ask-row input L875
+ * @symbol selector: .answer L878
+ * @symbol selector: .answer p L883
+ * @symbol selector: .answer small L886
+ * @symbol selector: .config-layout L892
+ * @symbol selector: .config-layout form > label L897
+ * @symbol selector: .config-units L900
+ * @symbol selector: .config-layout h3 L906
+ * @symbol selector: pre L910
+ * @symbol selector: .login L921
+ * @symbol selector: .login h1 L925
+ * @symbol selector: .login label L928
+ * @symbol selector: .login button L931
+ * @symbol selector: .demo-note L934
+ * @symbol selector: .notice:not(:empty) L941
+ * @symbol selector: .notice.error L950
+ * @symbol selector: .empty L955
+ * @symbol selector: footer L959
+ * @symbol selector: fieldset L969
+ * @symbol selector: legend L976
+ * @symbol selector: #standard-preview-frame L982
+ * @symbol selector: footer span L988
+ * @symbol selector: @media (min-width: 1550px) L991
+ * @symbol selector: @media (max-width: 1100px) L999
+ * @symbol selector: @media (max-width: 760px) L1037
+ * @symbol selector: .private-home L1198
+ * @symbol selector: .private-heading L1207
+ * @symbol selector: #app.private-entry L1210
+ * @symbol selector: .account-panel L1213
+ * @symbol selector: #delete-form L1218
+ * @symbol selector: .account-options L1223
+ * @symbol selector: #seed L1231
+ * @symbol selector: #account-status L1239
+ * @symbol selector: #recovery-code L1244
 @index-end */
 /* Responsive design tokens, layouts and accessible controls. Section lines: docs/code-index.md. */
 :root {
@@ -962,6 +965,25 @@ footer {
   gap: 20px;
   font-size: 0.6rem;
   color: #647563;
+}
+fieldset {
+  min-width: 0;
+  border: 1px solid #ccd4ca;
+  border-radius: 8px;
+  margin: 20px 0;
+  padding: 16px;
+}
+legend {
+  font-weight: 700;
+}
+[hidden] {
+  display: none !important;
+}
+#standard-preview-frame {
+  width: 100%;
+  height: 420px;
+  background: white;
+  border: 1px solid #ccd4ca;
 }
 footer span {
   color: #536b5d;

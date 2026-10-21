@@ -1,53 +1,55 @@
 # @index-begin
-# @symbol variable/parameter: SCENARIOS L64
-# @symbol variable/parameter: password L161
-# @symbol function/class: password_hash L161
-# @symbol variable/parameter: salt L161
-# @symbol variable/parameter: digest L164
-# @symbol variable/parameter: encoded L168
-# @symbol function/class: verify_password L168
-# @symbol function/class: connect L175
-# @symbol variable/parameter: path L175
-# @symbol variable/parameter: database L177
-# @symbol variable/parameter: demo L187
-# @symbol function/class: initialize L187
-# @symbol variable/parameter: samples L187
-# @symbol variable/parameter: version L191
-# @symbol variable/parameter: scenario L195
-# @symbol variable/parameter: config L196
-# @symbol variable/parameter: role L202
-# @symbol variable/parameter: username L202
-# @symbol variable/parameter: customer L219
-# @symbol variable/parameter: description L219
-# @symbol variable/parameter: name L219
-# @symbol variable/parameter: price L219
-# @symbol variable/parameter: product_id L219
-# @symbol variable/parameter: specifications L219
-# @symbol variable/parameter: normalized L222
-# @symbol variable/parameter: month L238
-# @symbol variable/parameter: quantity L239
-# @symbol variable/parameter: suffix L251
-# @symbol variable/parameter: text L251
-# @symbol variable/parameter: visibility L251
-# @symbol variable/parameter: name_file L268
-# @symbol variable/parameter: content L269
-# @symbol variable/parameter: result L270
-# @symbol function/class: acl L288
-# @symbol variable/parameter: user L288
-# @symbol variable/parameter: workspace L288
-# @symbol function/class: documents L302
-# @symbol variable/parameter: query L306
-# @symbol variable/parameter: category L307
-# @symbol variable/parameter: sort L308
-# @symbol variable/parameter: predicate L311
-# @symbol variable/parameter: values L311
-# @symbol variable/parameter: pattern L316
-# @symbol variable/parameter: order L322
-# @symbol variable/parameter: rows L329
-# @symbol variable/parameter: row L337
-# @symbol function/class: audit L340
-# @symbol variable/parameter: detail L340
-# @symbol variable/parameter: event L340
+# @symbol variable/parameter: SCENARIOS L66
+# @symbol variable/parameter: password L163
+# @symbol function/class: password_hash L163
+# @symbol variable/parameter: salt L163
+# @symbol variable/parameter: digest L166
+# @symbol variable/parameter: encoded L170
+# @symbol function/class: verify_password L170
+# @symbol function/class: connect L177
+# @symbol variable/parameter: path L177
+# @symbol variable/parameter: database L179
+# @symbol variable/parameter: demo L189
+# @symbol function/class: initialize L189
+# @symbol variable/parameter: samples L189
+# @symbol variable/parameter: version L193
+# @symbol variable/parameter: scenario L197
+# @symbol variable/parameter: config L198
+# @symbol variable/parameter: stored L204
+# @symbol variable/parameter: snapshot L207
+# @symbol variable/parameter: role L213
+# @symbol variable/parameter: username L213
+# @symbol variable/parameter: customer L230
+# @symbol variable/parameter: description L230
+# @symbol variable/parameter: name L230
+# @symbol variable/parameter: price L230
+# @symbol variable/parameter: product_id L230
+# @symbol variable/parameter: specifications L230
+# @symbol variable/parameter: normalized L233
+# @symbol variable/parameter: month L249
+# @symbol variable/parameter: quantity L250
+# @symbol variable/parameter: suffix L262
+# @symbol variable/parameter: text L262
+# @symbol variable/parameter: visibility L262
+# @symbol variable/parameter: name_file L279
+# @symbol variable/parameter: content L280
+# @symbol variable/parameter: result L281
+# @symbol function/class: acl L299
+# @symbol variable/parameter: user L299
+# @symbol variable/parameter: workspace L299
+# @symbol function/class: documents L313
+# @symbol variable/parameter: query L317
+# @symbol variable/parameter: category L318
+# @symbol variable/parameter: sort L319
+# @symbol variable/parameter: predicate L322
+# @symbol variable/parameter: values L322
+# @symbol variable/parameter: pattern L327
+# @symbol variable/parameter: order L333
+# @symbol variable/parameter: rows L340
+# @symbol variable/parameter: row L348
+# @symbol function/class: audit L351
+# @symbol variable/parameter: detail L351
+# @symbol variable/parameter: event L351
 # @index-end
 """SQLite lifecycle, deterministic synthetic scenarios and ACL queries. Index: docs/code-index.md."""
 
@@ -197,6 +199,15 @@ def initialize(path: Path, demo: bool, samples: bool = False) -> None:
             database.execute(
                 "INSERT OR IGNORE INTO workspaces VALUES (?,?)",
                 (workspace, config.model_dump_json()),
+            )
+            # Add the actually stored configuration, not current defaults, to existing vaults.
+            stored = database.execute(
+                "SELECT config FROM workspaces WHERE id=?", (workspace,)
+            ).fetchone()[0]
+            snapshot = WorkspaceConfig.model_validate_json(stored)
+            database.execute(
+                "INSERT OR IGNORE INTO config_history(workspace,revision,config,actor) VALUES (?,?,?,?)",
+                (workspace, snapshot.revision, snapshot.model_dump_json(), "initial snapshot"),
             )
             if demo:
                 for username, role, customer in [

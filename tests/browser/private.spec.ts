@@ -1,22 +1,30 @@
 /* @index-begin
- * @symbol variable/parameter: { page } L20
- * @symbol variable/parameter: { page, } L32
- * @symbol variable/parameter: info L34
- * @symbol variable/parameter: external L35
- * @symbol variable/parameter: request L36
- * @symbol variable/parameter: { page, request, } L74
- * @symbol variable/parameter: denied L87
- * @symbol variable/parameter: release L98
- * @symbol variable/parameter: delayed L99
- * @symbol variable/parameter: resolve L99
- * @symbol variable/parameter: route L102
- * @symbol variable/parameter: releaseLibrary L118
- * @symbol variable/parameter: library L119
+ * @symbol variable/parameter: { page, } L22
+ * @symbol variable/parameter: info L24
+ * @symbol variable/parameter: { page } L28
+ * @symbol variable/parameter: external L43
+ * @symbol variable/parameter: request L44
+ * @symbol variable/parameter: { page, request, } L82
+ * @symbol variable/parameter: denied L95
+ * @symbol variable/parameter: release L106
+ * @symbol variable/parameter: delayed L107
+ * @symbol variable/parameter: resolve L107
+ * @symbol variable/parameter: route L110
+ * @symbol variable/parameter: releaseLibrary L126
+ * @symbol variable/parameter: library L127
 @index-end */
 /** Jason Stys: private website workflow, hostile origins, account isolation and responsive accessibility. */
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { createSession, documentJourney, phrase } from "./account-session";
+import { standardJourney } from "./standard-journey";
+
+test("owner publishes and restores a real standard without rewriting source evidence", async ({
+  page,
+}, info) => {
+  await createSession(page, "standard_" + info.project.name);
+  await standardJourney(page);
+});
 test.afterEach(async ({ page }) => {
   await page
     .evaluate(async () => {
