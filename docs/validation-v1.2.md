@@ -53,6 +53,15 @@ stalling native screenshot capture; Electron now retains its OS-managed size,
 while browser suites still exercise the 390-pixel layout. These failed attempts
 are not counted as successful verification.
 
+The initial macOS package attempt failed downloading the official Electron
+runtime before app launch; its retry passed with unchanged tests. An initial
+release candidate then exposed a conflict between a preinstalled Windows runner
+tool (`pipx`) and the locked application's `filelock`. All test/package/release
+Python jobs now create an isolated virtual environment. Dependency consistency
+checks remain enabled and were added to the other jobs rather than suppressing
+the unrelated global-tool conflict. Unpublished candidate binaries are not final
+release evidence; the corrected exact-source gates must pass before publication.
+
 Dependency audits prompted patched Vite, Pillow, pypdf and certifi pins. A clean
 audit is not a complete security assessment. The native application remains
 unsigned/not notarized and is not a hostile-file OS sandbox.

@@ -24,7 +24,18 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python }}
+      - name: Isolate Python from preinstalled runner tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m venv .venv
+          if [ "$RUNNER_OS" = Windows ]; then
+            cygpath -w "$PWD/.venv/Scripts" >> "$GITHUB_PATH"
+          else
+            echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+          fi
       - run: python -m pip install -r requirements.lock -e .
+      - run: python -m pip check
       - run: python -m ruff check server scripts tests/python
       - run: python -m ruff format --check server scripts tests/python
       - run: python -m pytest -q
@@ -45,7 +56,12 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.14'
+      - name: Isolate Python from preinstalled runner tools
+        run: |
+          python -m venv .venv
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
       - run: python -m pip install -r requirements.lock -e .
+      - run: python -m pip check
       - run: npm ci --ignore-scripts
       - run: npm run format:check
       - run: python scripts/code_index.py --check
