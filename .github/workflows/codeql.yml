@@ -9,6 +9,9 @@ on:
     - cron: '39 8 * * 1'
 permissions:
   contents: read
+concurrency:
+  group: analysis-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   analyze:
     strategy:

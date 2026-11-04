@@ -515,7 +515,7 @@ def create_private_app(
         return {
             "status": "ready",
             "mode": "private-local-accounts",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "author": "Jason Stys",
             "launcher_nonce": nonce,
         }
