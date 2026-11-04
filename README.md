@@ -4,7 +4,7 @@ A private, local-first **document and data standardization application** by **Ja
 
 [Source and Actions](https://github.com/JasonStys/business-knowledge-workbench) · [Downloads](https://github.com/JasonStys/business-knowledge-workbench/releases/latest) · [Contact Jason on LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/)
 
-Version **1.2.0** adds owner-controlled output standards, draft previews, schema mapping, version history/restoration, current-standard copies and standardized report downloads. Login, independent vault encryption and the existing navigation-readiness regression are preserved. See [standards guide](docs/standards.md), [requirements review](docs/requirements-review-v1.2.md) and [validation](docs/validation-v1.2.md).
+Version **1.3.0** adds a permission-scoped file library with content and field-value filters, direct standard downloads, a visual field editor, real-file draft previews and richer document layout controls. It preserves owner-controlled standards, history, original evidence and private local accounts. See the [library guide](docs/library.md), [standards guide](docs/standards.md) and [validation](docs/validation-v1.3.md).
 
 ![Installed private account website with blank credential fields](docs/screenshots/accounts.png)
 
@@ -16,11 +16,14 @@ defines canonical fields `item, width`, their displayed headings, order and a
 millimeter target. Recognized tables then share the same schema and measurements
 (`107.95 mm`, `82 mm`), even though the source files differ. Optional fields have
 explicit empty cells; missing required fields, incompatible dimensions and
-ambiguous duplicate headers are rejected. Extra columns are preserved and flagged
-or explicitly rejected, never silently discarded.
+ambiguous duplicate headers are rejected. Extra columns can be preserved with a
+warning, rejected, or explicitly omitted from standardized output. Disabled fields
+are excluded even when present in a source. Original evidence remains available;
+field exclusion is a presentation choice, **not redaction**.
 
 For documents, the selected standard controls section order and headings, font,
-heading color, Letter/A4 paper, portrait/landscape orientation and preferred
+heading color, margins, alignment, line/paragraph spacing, running headers/footers,
+DOCX/PDF page numbers, Letter/A4 paper, portrait/landscape orientation and preferred
 HTML/JSON/Markdown/CSV/DOCX/PDF delivery. An optional policy restricts document and
 report exports to that chosen type. Every conversion still goes through canonical
 HTML first. Original source bytes, pre-normalization blocks, warnings, the settings
@@ -37,8 +40,9 @@ meaning being understood. See [format and fidelity limits](docs/formats.md).
 1. Unlock your own private account and open **Configuration studio**.
 2. Set target units, document section order/headings, standard name, print layout
    and default export type. Configure optional table keys, aliases and required
-   fields; the measurement-table example is an editable starting point.
-3. Use **Preview draft standard** with a small CSV sample. This does not publish
+   fields in the visual editor; add, move, exclude or remove fields without writing
+   JSON. The measurement-table example is an editable starting point.
+3. Use **Preview draft standard** with a CSV sample or a supported source file. This does not publish
    anything, call an AI provider or alter stored documents.
 4. **Save validated configuration** publishes a new revision. A stale editor gets
    a conflict instead of overwriting someone else's newer revision.
@@ -47,6 +51,21 @@ meaning being understood. See [format and fidelity limits](docs/formats.md).
 6. For an older document, choose **Create current-standard copy**. Originals and
    sales remain unchanged. **Restore as new revision** recovers a saved standard
    without rewriting its history or prior documents.
+
+## Browse, search and download
+
+Open **Business workspace** to see permitted standardized files, source types,
+extraction warnings, timestamps and standard revisions. **Preview** shows canonical
+HTML; **Download** in each row saves that document's standard format. The detail
+view also offers original source and permitted alternate exports.
+
+Search standardized text and titles, then combine category, source format, content
+kind, measurement dimension, access scope and extraction-review filters. To locate
+a specific quantity, select a canonical **Table field** such as `width` and enter
+`107.95 mm` in **Field contains**. The value must occur in that same table column.
+Results, counts and suggestions all obey the same permissions. Twenty-five files
+appear per page, up to the 200-document profile limit. See [library examples and
+limits](docs/library.md); images are not automatically OCR-searched.
 
 ![Owner-controlled output standard in a disposable fictional business account](docs/screenshots/standards.png)
 
@@ -75,7 +94,7 @@ Create an alias and login password, privately save the once-shown login recovery
 - Fifteen supported extensions: text, Markdown, sanitized HTML, CSV/TSV, JSON, XML, DOCX, XLSX, PDF and raster images. Original evidence, semantic blocks, extraction warnings and hashes are retained.
 - Canonical **HTML first**, then HTML, JSON, Markdown, CSV tables, DOCX or PDF export. Graphs/images are preserved where supported, not universally understood; read the [format limits](docs/formats.md).
 - Decimal-based measurement normalization with dimension validation; `4.25 in → 107.95 mm`, `104 F → 40 C`. Configuration revisions preserve provenance.
-- Named, data-only standards with field aliases/order, optional/required columns, explicit measurement dimensions, draft previews, immutable revision history and controlled export types. No executable user templates or arbitrary CSS.
+- Named, data-only standards with visual field addition/removal/order/exclusion, optional/required columns, explicit measurement dimensions, real-file draft previews, immutable history and controlled export types. Bounded Word-like layout settings; no executable user templates or arbitrary CSS.
 - Product catalog, customer subset preview, business reporting and administrator configuration views. These are previews within **your own** account, not a coworker invitation or shared-tenant permission system.
 - Explicit opt-in fictional industrial equipment, renewable energy and laboratory supply scenarios. New accounts start with **no products, sales, sources or demo users**.
 - Search, filtering, sort, ordered internal-only compilations, atomic sales imports with duplicate prevention, exact-cent reports, accessible graphs and labeled baseline forecasts.
@@ -124,7 +143,7 @@ npm audit --audit-level=high
 .venv\Scripts\python.exe -m pip_audit -r requirements.lock
 ```
 
-[Current validation](docs/validation-v1.2.md), [original validation](docs/validation-v1.1.md), [standards test plan](docs/standards.md#verification) and [private API](docs/private-api.md) distinguish actual conversions/browser/native tests from provider mocks and unsupported deployments. CI retains logs; large Actions artifacts are **opt-in** through `KBW_UPLOAD_CI_ARTIFACTS=true`. Tested downloads go to Releases instead of consuming Actions artifact quota.
+[Current validation](docs/validation-v1.3.md), [prior validation](docs/validation-v1.2.md), [industry cases](examples/industry-cases.json), [standards test plan](docs/standards.md#verification) and [private API](docs/private-api.md) distinguish actual conversions/browser/native tests from provider mocks and unsupported deployments. CI retains logs; large Actions artifacts are **opt-in** through `KBW_UPLOAD_CI_ARTIFACTS=true`. Tested downloads go to Releases instead of consuming Actions artifact quota.
 
 ## File responsibilities and language choices
 
@@ -137,6 +156,7 @@ npm audit --audit-level=high
 | `server/app.py`, `models.py`, `store.py`, `schema.sql` | Preserved business API, validation, relational integrity, scoped searches and synthetic seeding. |
 | `server/conversion.py`, `worker.py`, `units.py` | Supported rich-format parsers, bounded child conversion and exact normalization. |
 | `server/standards.py`, `web/standards.ts` | Deterministic field/schema mapping, standard fingerprints and safe typed editor controls. |
+| `server/library.py`, `web/library.ts`, `web/standard-builder.ts` | ACL-first filtered searches, bounded file pages and visual field-definition editing. |
 | `server/exports.py`, `analytics.py`, `ai.py` | HTML-derived exports, explainable reporting and read-only model contracts. |
 | `desktop/main.cjs` | Electron shell with an owned frozen service, denied external navigation/popups and graceful sealing. |
 | `scripts/` | Frozen entry, licenses/checksums, fixture/benchmark and exact line/file inventories. |

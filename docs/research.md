@@ -38,3 +38,20 @@ and [pypdf changelog](https://pypdf.readthedocs.io/en/stable/meta/CHANGELOG.html
 informed dependency maintenance and browser-runtime replacement. Locked Python
 and npm dependencies are audited independently; a clean audit is point-in-time
 evidence, not proof that all vulnerabilities are absent.
+
+## Version 1.3 library and maintenance references
+
+Reviewed 2026-11-04. [SQLite JSON table functions](https://www.sqlite.org/json1.html)
+support correlated table/header/cell searches without loading every full document
+into the browser. Query values remain bound parameters; fixed paths and sort
+fragments are authored code. [Electron security guidance](https://www.electronjs.org/docs/latest/tutorial/security)
+continues to inform sandboxing, origin restrictions and denied popups.
+
+The [Electron certificate mitigation](https://github.com/advisories/GHSA-jr5w-w6x2-84p9)
+and [pypdf 6.21.4 security release](https://github.com/py-pdf/pypdf/releases/tag/6.21.4)
+informed patched dependency pins. Python audit results also prompted filelock,
+setuptools and opentelemetry patch updates. npm-compatible transitive updates fix
+fast-uri and undici findings. The remaining
+[minimatch build-tool advisory](https://github.com/advisories/GHSA-g3hv-75wg-m249)
+is documented in current validation: no unsupported major-version API replacement
+or obsolete builder downgrade is used to hide it.

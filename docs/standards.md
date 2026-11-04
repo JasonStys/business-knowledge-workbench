@@ -26,7 +26,9 @@ business membership and delegation are not implemented by this release.
   provenance or original evidence from storage.
 - `output_standard`: name; four section labels; preferred export; optional export
   restriction; Letter/A4; portrait/landscape; sans/serif/mono; 10–16 pt body font;
-  six-digit heading color; table columns and schema policy.
+  six-digit heading color; 10–40 mm margins; paragraph alignment; 1/1.15/1.5/2
+  line spacing; 0–24 pt paragraph spacing; bounded plain-text running header/footer;
+  DOCX/PDF page numbers; table columns and schema policy.
 - `data_columns`: input sales-column aliases, independent of output schema labels.
   Sales validation remains exact/nonnegative integers and known product/customer
   assignments. Reformatting a source must never insert the same sales twice.
@@ -40,19 +42,21 @@ error rather than an empty file. Choose a compatible document output type.
 
 ## Table schema example
 
-Use the owner editor's example, or enter a JSON array of at most 20 columns:
+Use the visual owner editor to add/remove/reorder/include fields, load its example,
+or expand Advanced field definitions for a JSON array of at most 20 columns:
 
 ```json
 [
   {"key":"item","label":"Component","aliases":["part"],"required":true},
   {"key":"width","label":"Width","aliases":["length"],"dimension":"length","source_unit":null,"required":true},
-  {"key":"note","label":"Note","aliases":[],"required":false}
+  {"key":"note","label":"Note","aliases":[],"required":false,"enabled":false}
 ]
 ```
 
 Recognized case-insensitive headers become stable machine keys and follow this
 order. Human HTML/CSV headings use the configured labels. Optional fields remain
-present with an empty cell; missing required headers/values fail. Aliases must
+present with an empty cell; disabled fields are excluded. Missing enabled required
+headers/values fail. Aliases must
 identify one canonical field only; duplicate or ragged source tables fail.
 `4.25 in` and `8.2 cm` become `107.95 mm` and `82 mm` for the `mm` target.
 Bare `4.25` is rejected for a measurement field unless that field explicitly
@@ -67,14 +71,20 @@ and complex Office content still need source review.
 
 `table_scope=matching` applies the schema only when a recognized header is found;
 other tables remain intact and create a review warning. `all` requires every
-table to satisfy it. An empty column list disables schema mapping. Extra columns
-are either retained after standard fields with a warning or rejected. There is
-no silent-drop setting. No type/unit/semantic inference from AI is used.
+table to satisfy it. An empty column list disables schema mapping; a nonempty
+schema must include at least one enabled field. Extra columns are retained after
+standard fields with a warning, rejected, or explicitly omitted with a warning
+using `extra_columns=omit`. Disabled fields are recognized and excluded regardless
+of extra-column policy. Their units do not require an active target. Exclusion is
+not redaction: source bytes and original blocks remain intact; unmatched tables
+and surrounding prose can still contain similar information. No type/unit/semantic
+inference from AI is used.
 
 ## Draft, publish, restore, apply
 
 Draft preview accepts an owner/admin's full configuration and a CSV sample up to
-16,000 characters. It is local, inert and non-persistent. Invalid drafts produce
+16,000 characters, or multipart configuration plus a supported file up to 4 MiB.
+It is local, inert and non-persistent. Invalid drafts produce
 validation errors, not partial saves or model requests.
 
 Publication takes the current revision and acquires a SQLite immediate write
@@ -115,6 +125,7 @@ existing cookie, per-session vault proof and mutation boundary headers.
 | --- | --- |
 | `GET /api/config` / `PUT /api/config` | Owner/admin; read or atomically publish validated settings. |
 | `POST /api/standards/preview` | Owner/admin; `{config, sample}` draft CSV, no mutation. |
+| `POST /api/standards/preview-file` | Owner/admin + CSRF; multipart `config` JSON and supported `file`; real bounded parser, no persistence or AI. |
 | `GET /api/standards/history` | Owner/admin; own profile only, newest first. |
 | `POST /api/standards/restore` | Owner/admin; `{revision, expected_revision}`; creates new revision. |
 | `POST /api/documents/{id}/standardize` | Authorized staff/owner; creates/reuses a current-standard copy, preserving source scope. |
@@ -134,3 +145,10 @@ imports mixed units, inspects PDF bytes, changes units, creates a copy, verifies
 the original and restores revision one as a new revision. It is shared with the
 actual packaged desktop test. Chromium/Firefox/WebKit cover editor accessibility
 and 390-pixel layout. No provider mocks are described as real model inference.
+
+Version 1.3 adds genuine file preview, visual field add/remove/reorder/exclusion,
+combined library filters, direct standardized bytes and independent three-industry
+oracles over eight tabular input types and six output types. See the
+[library guide](library.md) and [current validation](validation-v1.3.md). HTML shows
+header/footer once and a page-number explanation; actual DOCX/PDF exports are the
+authority for simplified print layout, not a pixel-perfect Word preview.

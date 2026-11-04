@@ -1,75 +1,78 @@
 # @index-begin
-# @symbol variable/parameter: PASSWORD L91
-# @symbol variable/parameter: KEY L92
-# @symbol variable/parameter: SALT L93
-# @symbol variable/parameter: HEADERS L94
-# @symbol function/class: client L98
-# @symbol variable/parameter: tmp_path L98
-# @symbol variable/parameter: app L100
-# @symbol variable/parameter: session L101
-# @symbol variable/parameter: alias L105
-# @symbol variable/parameter: client L105
-# @symbol function/class: register L105
-# @symbol variable/parameter: response L107
-# @symbol variable/parameter: key L112
-# @symbol function/class: unlock L112
-# @symbol function/class: test_registration_private_headers_and_zero_secret_echo L118
-# @symbol variable/parameter: invalid L133
-# @symbol variable/parameter: db L137
-# @symbol variable/parameter: row L138
-# @symbol function/class: test_standards_private_persistence_and_account_isolation L143
-# @symbol variable/parameter: config L147
-# @symbol variable/parameter: snapshot L157
-# @symbol function/class: test_current_copy_with_custom_customer_ids L182
-# @symbol variable/parameter: source L189
-# @symbol variable/parameter: copied L198
-# @symbol variable/parameter: headers L212
-# @symbol function/class: test_request_origin_host_mutation_rejected L212
-# @symbol function/class: test_recovery_logout_expiry_delete L224
-# @symbol variable/parameter: recovery L226
-# @symbol variable/parameter: body L228
-# @symbol variable/parameter: changed L229
-# @symbol function/class: test_expiry_and_human_idle L253
-# @symbol variable/parameter: manager L257
-# @symbol variable/parameter: human L258
-# @symbol variable/parameter: monkeypatch L268
-# @symbol function/class: test_recovery_save_failure_preserves_code L268
-# @symbol variable/parameter: original L275
-# @symbol variable/parameter: args L277
-# @symbol function/class: unavailable L277
-# @symbol variable/parameter: name L293
-# @symbol function/class: test_archive_paths L293
-# @symbol function/class: test_archive_authentication_before_extract L299
-# @symbol variable/parameter: root L301
-# @symbol variable/parameter: path L304
-# @symbol variable/parameter: damaged L307
-# @symbol function/class: test_single_instance_and_launcher_not_browser L315
-# @symbol variable/parameter: content L322
-# @symbol function/class: imported L322
-# @symbol function/class: test_document_encryption_export_reopen L331
-# @symbol variable/parameter: identity L335
-# @symbol variable/parameter: document L336
-# @symbol variable/parameter: fmt L339
-# @symbol function/class: test_accounts_and_session_specific_unlock L362
-# @symbol variable/parameter: suffix L389
-# @symbol function/class: test_private_rich_imports L406
-# @symbol variable/parameter: payload L410
-# @symbol variable/parameter: result L412
-# @symbol function/class: test_role_previews_and_seed_own_only L416
-# @symbol function/class: test_provider_privacy_consent_and_offline_ai L442
-# @symbol variable/parameter: offline L450
-# @symbol variable/parameter: settings L452
-# @symbol variable/parameter: saved L457
-# @symbol variable/parameter: context L469
-# @symbol variable/parameter: image L469
-# @symbol variable/parameter: question L469
-# @symbol variable/parameter: self L469
-# @symbol variable/parameter: owner L490
-# @symbol function/class: test_model_endpoint_rejections L508
-# @symbol variable/parameter: url L508
-# @symbol function/class: test_soft_quota_preserves_recovery L516
-# @symbol function/class: test_body_and_auth_limits L532
-# @symbol variable/parameter: _ L542
+# @symbol variable/parameter: PASSWORD L95
+# @symbol variable/parameter: KEY L96
+# @symbol variable/parameter: SALT L97
+# @symbol variable/parameter: HEADERS L98
+# @symbol function/class: client L102
+# @symbol variable/parameter: tmp_path L102
+# @symbol variable/parameter: app L104
+# @symbol variable/parameter: session L105
+# @symbol variable/parameter: alias L109
+# @symbol variable/parameter: client L109
+# @symbol function/class: register L109
+# @symbol variable/parameter: response L111
+# @symbol variable/parameter: key L116
+# @symbol function/class: unlock L116
+# @symbol function/class: test_private_multipart_draft_preview_retains_all_security_gates L122
+# @symbol variable/parameter: config L126
+# @symbol variable/parameter: before L127
+# @symbol variable/parameter: source L128
+# @symbol variable/parameter: path L129
+# @symbol variable/parameter: preview L130
+# @symbol variable/parameter: headers L133
+# @symbol function/class: test_registration_private_headers_and_zero_secret_echo L149
+# @symbol variable/parameter: invalid L164
+# @symbol variable/parameter: db L168
+# @symbol variable/parameter: row L169
+# @symbol function/class: test_standards_private_persistence_and_account_isolation L174
+# @symbol variable/parameter: snapshot L188
+# @symbol function/class: test_current_copy_with_custom_customer_ids L213
+# @symbol variable/parameter: copied L229
+# @symbol function/class: test_request_origin_host_mutation_rejected L243
+# @symbol function/class: test_recovery_logout_expiry_delete L255
+# @symbol variable/parameter: recovery L257
+# @symbol variable/parameter: body L259
+# @symbol variable/parameter: changed L260
+# @symbol function/class: test_expiry_and_human_idle L284
+# @symbol variable/parameter: manager L288
+# @symbol variable/parameter: human L289
+# @symbol variable/parameter: monkeypatch L299
+# @symbol function/class: test_recovery_save_failure_preserves_code L299
+# @symbol variable/parameter: original L306
+# @symbol variable/parameter: args L308
+# @symbol function/class: unavailable L308
+# @symbol variable/parameter: name L324
+# @symbol function/class: test_archive_paths L324
+# @symbol function/class: test_archive_authentication_before_extract L330
+# @symbol variable/parameter: root L332
+# @symbol variable/parameter: damaged L338
+# @symbol function/class: test_single_instance_and_launcher_not_browser L346
+# @symbol variable/parameter: content L353
+# @symbol function/class: imported L353
+# @symbol function/class: test_document_encryption_export_reopen L362
+# @symbol variable/parameter: identity L366
+# @symbol variable/parameter: document L367
+# @symbol variable/parameter: fmt L370
+# @symbol function/class: test_accounts_and_session_specific_unlock L393
+# @symbol variable/parameter: suffix L420
+# @symbol function/class: test_private_rich_imports L437
+# @symbol variable/parameter: payload L441
+# @symbol variable/parameter: result L443
+# @symbol function/class: test_role_previews_and_seed_own_only L447
+# @symbol function/class: test_provider_privacy_consent_and_offline_ai L473
+# @symbol variable/parameter: offline L481
+# @symbol variable/parameter: settings L483
+# @symbol variable/parameter: saved L488
+# @symbol variable/parameter: context L500
+# @symbol variable/parameter: image L500
+# @symbol variable/parameter: question L500
+# @symbol variable/parameter: self L500
+# @symbol variable/parameter: owner L521
+# @symbol function/class: test_model_endpoint_rejections L539
+# @symbol variable/parameter: url L539
+# @symbol function/class: test_soft_quota_preserves_recovery L547
+# @symbol function/class: test_body_and_auth_limits L563
+# @symbol variable/parameter: _ L573
 # @index-end
 """Jason Stys: actual private-account, archive, provider, ownership and blocked-execution regression tests.
 
@@ -77,6 +80,7 @@ All credentials/source are explicitly fictional and every filesystem root is dis
 """
 
 import base64
+import json
 import time
 from pathlib import Path
 
@@ -113,6 +117,33 @@ def unlock(client, key=KEY):
     """Prove a synthetic derived key through the real route."""
     response = client.post("/private/unlock", json={"key": key, "salt": SALT})
     assert response.status_code == 200, response.text
+
+
+def test_private_multipart_draft_preview_retains_all_security_gates(client):
+    """Only the new preview route accepts multipart, with own session, vault and mutation proof."""
+    register(client)
+    unlock(client)
+    config = client.get("/private/api/config").json()["config"]
+    before = client.get("/private/api/library").json()["total"]
+    source = {"file": ("draft.csv", b"part,width\nPanel,4.25 in")}
+    path = "/private/api/standards/preview-file"
+    preview = client.post(path, files=source, data={"config": json.dumps(config)})
+    assert preview.status_code == 200 and "107.95 mm" in preview.json()["html"]
+    assert client.get("/private/api/library").json()["total"] == before
+    for headers in (
+        {"Origin": "https://evil.example"},
+        {"X-KBW-Request": ""},
+        {"X-KBW-View": "employee"},
+    ):
+        assert (
+            client.post(
+                path, files=source, data={"config": json.dumps(config)}, headers=headers
+            ).status_code
+            == 403
+        )
+    assert client.post("/private/api/config", files=source).status_code == 403
+    assert client.post("/private/lock", json={}).status_code == 200
+    assert client.post(path, files=source, data={"config": json.dumps(config)}).status_code == 423
 
 
 def test_registration_private_headers_and_zero_secret_echo(client):

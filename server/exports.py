@@ -1,46 +1,58 @@
 # @index-begin
-# @symbol variable/parameter: FORMATS L63
-# @symbol function/class: export_document L73
-# @symbol variable/parameter: format_name L73
-# @symbol variable/parameter: result L73
-# @symbol variable/parameter: html L75
-# @symbol variable/parameter: standard L76
-# @symbol variable/parameter: soup L79
-# @symbol variable/parameter: body L80
-# @symbol variable/parameter: parts L90
-# @symbol variable/parameter: node L91
-# @symbol variable/parameter: prefix L92
-# @symbol variable/parameter: tables L102
-# @symbol variable/parameter: output L105
-# @symbol variable/parameter: writer L106
-# @symbol variable/parameter: table L107
-# @symbol variable/parameter: row L108
-# @symbol variable/parameter: cell L109
-# @symbol variable/parameter: cells L109
-# @symbol variable/parameter: document L121
-# @symbol variable/parameter: section L122
-# @symbol variable/parameter: height L123
-# @symbol variable/parameter: width L123
-# @symbol variable/parameter: font L127
-# @symbol variable/parameter: name L130
-# @symbol variable/parameter: text L136
-# @symbol variable/parameter: rows L138
-# @symbol variable/parameter: columns L139
-# @symbol variable/parameter: index L143
-# @symbol variable/parameter: column L144
-# @symbol variable/parameter: styles L159
-# @symbol variable/parameter: fonts L160
-# @symbol variable/parameter: bold L165
-# @symbol variable/parameter: normal L165
-# @symbol variable/parameter: heading L169
-# @symbol variable/parameter: page L172
-# @symbol variable/parameter: available L175
-# @symbol variable/parameter: flow L176
-# @symbol variable/parameter: padded L191
-# @symbol variable/parameter: start L192
-# @symbol variable/parameter: graphic L209
-# @symbol variable/parameter: ratio L210
-# @symbol variable/parameter: style L220
+# @symbol variable/parameter: FORMATS L78
+# @symbol function/class: export_document L88
+# @symbol variable/parameter: format_name L88
+# @symbol variable/parameter: result L88
+# @symbol variable/parameter: html L90
+# @symbol variable/parameter: standard L91
+# @symbol variable/parameter: soup L94
+# @symbol variable/parameter: body L95
+# @symbol variable/parameter: parts L105
+# @symbol variable/parameter: node L106
+# @symbol variable/parameter: prefix L107
+# @symbol variable/parameter: tables L117
+# @symbol variable/parameter: output L120
+# @symbol variable/parameter: writer L121
+# @symbol variable/parameter: table L122
+# @symbol variable/parameter: row L123
+# @symbol variable/parameter: cell L124
+# @symbol variable/parameter: cells L124
+# @symbol variable/parameter: document L136
+# @symbol variable/parameter: zoom L139
+# @symbol variable/parameter: section L142
+# @symbol variable/parameter: height L143
+# @symbol variable/parameter: width L143
+# @symbol variable/parameter: name L150
+# @symbol variable/parameter: footer L155
+# @symbol variable/parameter: number L159
+# @symbol variable/parameter: font L162
+# @symbol variable/parameter: paragraph L165
+# @symbol variable/parameter: text L184
+# @symbol variable/parameter: rows L186
+# @symbol variable/parameter: columns L187
+# @symbol variable/parameter: column_width L199
+# @symbol variable/parameter: column L204
+# @symbol variable/parameter: index L206
+# @symbol variable/parameter: styles L229
+# @symbol variable/parameter: fonts L230
+# @symbol variable/parameter: bold L235
+# @symbol variable/parameter: normal L235
+# @symbol variable/parameter: heading L242
+# @symbol variable/parameter: page L245
+# @symbol variable/parameter: margin L248
+# @symbol variable/parameter: available L249
+# @symbol variable/parameter: flow L250
+# @symbol variable/parameter: padded L269
+# @symbol variable/parameter: start L270
+# @symbol variable/parameter: graphic L287
+# @symbol variable/parameter: ratio L288
+# @symbol variable/parameter: style L300
+# @symbol variable/parameter: canvas L307
+# @symbol function/class: decorate L307
+# @symbol variable/parameter: furniture L310
+# @symbol variable/parameter: top L312
+# @symbol variable/parameter: item L313
+# @symbol variable/parameter: _ L314
 # @index-end
 """HTML-first export adapters with predictable, simplified document layout. Index: docs/code-index.md."""
 
@@ -52,7 +64,10 @@ from html import escape
 
 from bs4 import BeautifulSoup
 from docx import Document
-from docx.shared import Inches, Pt, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.shared import Inches, Mm, Pt, RGBColor
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape, letter
 from reportlab.lib.styles import getSampleStyleSheet
@@ -119,18 +134,51 @@ def export_document(result: dict, format_name: str) -> bytes:
         return output.getvalue().encode("utf-8-sig")
     if format_name == "docx":
         document = Document()
+        # python-docx's stock template leaves this required OOXML attribute
+        # unspecified. Emit schema-valid settings for strict document readers.
+        zoom = document.settings.element.find(qn("w:zoom"))
+        if zoom is not None:
+            zoom.set(qn("w:percent"), "100")
         section = document.sections[0]
         width, height = (595.2756, 841.8898) if standard.paper == "A4" else (612, 792)
         if standard.orientation == "landscape":
             width, height = height, width
         section.page_width, section.page_height = Pt(width), Pt(height)
+        section.top_margin = section.bottom_margin = Mm(standard.margin_mm)
+        section.left_margin = section.right_margin = Mm(standard.margin_mm)
+        section.header_distance = section.footer_distance = Mm(2)
+        for name in ("Header", "Footer"):
+            document.styles[name].font.size = Pt(8)
+            document.styles[name].paragraph_format.space_after = Pt(0)
+            document.styles[name].paragraph_format.line_spacing = 1.0
+        section.header.paragraphs[0].text = standard.header_text
+        footer = section.footer.paragraphs[0]
+        footer.text = standard.footer_text
+        if standard.page_numbers:
+            footer.add_run("  Page ")
+            number = OxmlElement("w:fldSimple")
+            number.set(qn("w:instr"), "PAGE")
+            footer._p.append(number)
         font = {"sans": "Arial", "serif": "Times New Roman", "mono": "Courier New"}[standard.font]
         document.styles["Normal"].font.name = font
         document.styles["Normal"].font.size = Pt(standard.font_size)
+        paragraph = document.styles["Normal"].paragraph_format
+        paragraph.line_spacing = standard.line_spacing
+        paragraph.space_after = Pt(standard.paragraph_after_pt)
+        paragraph.alignment = {
+            "left": WD_ALIGN_PARAGRAPH.LEFT,
+            "center": WD_ALIGN_PARAGRAPH.CENTER,
+            "right": WD_ALIGN_PARAGRAPH.RIGHT,
+            "justify": WD_ALIGN_PARAGRAPH.JUSTIFY,
+        }[standard.alignment]
         for name in ["Heading 1", "Heading 2", "Heading 3"]:
             document.styles[name].font.name = font
             document.styles[name].font.color.rgb = RGBColor.from_string(standard.accent[1:])
-        for node in body.find_all(["h1", "h2", "h3", "p", "pre", "table", "img", "figcaption"]):
+        for node in body.find_all(
+            ["h1", "h2", "h3", "p", "pre", "li", "table", "img", "figcaption"]
+        ):
+            if node.find_parent(["header", "footer"]) or "page-note" in node.get("class", []):
+                continue
             if node.find_parent("table"):
                 continue
             text = node.get_text(" ", strip=True)
@@ -140,12 +188,34 @@ def export_document(result: dict, format_name: str) -> bytes:
                 if columns:
                     table = document.add_table(rows=len(rows), cols=columns)
                     table.style = "Table Grid"
+                    table.autofit = False
+                    available = (
+                        int(section.page_width)
+                        - int(section.left_margin)
+                        - int(section.right_margin)
+                    )
+                    table._tbl.tblPr.find(qn("w:tblW")).set(qn("w:w"), str(round(available / 635)))
+                    table._tbl.tblPr.find(qn("w:tblW")).set(qn("w:type"), "dxa")
+                    column_width = (
+                        int(section.page_width)
+                        - int(section.left_margin)
+                        - int(section.right_margin)
+                    ) // columns
+                    for column in table.columns:
+                        column.width = column_width
                     for index, row in enumerate(rows):
                         for column, cell in enumerate(row.find_all(["td", "th"])):
                             table.cell(index, column).text = cell.get_text(" ", strip=True)
+                            table.cell(index, column).width = column_width
             elif node.name == "img":
                 document.add_picture(
-                    io.BytesIO(base64.b64decode(node["src"].split(",", 1)[1])), width=Inches(5)
+                    io.BytesIO(base64.b64decode(node["src"].split(",", 1)[1])),
+                    width=min(
+                        Inches(5),
+                        int(section.page_width)
+                        - int(section.left_margin)
+                        - int(section.right_margin),
+                    ),
                 )
             elif node.name.startswith("h"):
                 document.add_heading(text, int(node.name[1]))
@@ -165,16 +235,24 @@ def export_document(result: dict, format_name: str) -> bytes:
         normal, bold = fonts[standard.font]
         styles["BodyText"].fontName = normal
         styles["BodyText"].fontSize = standard.font_size
-        styles["BodyText"].leading = standard.font_size * 1.4
+        styles["BodyText"].leading = standard.font_size * standard.line_spacing
+        styles["BodyText"].alignment = {"left": 0, "center": 1, "right": 2, "justify": 4}[
+            standard.alignment
+        ]
         for heading in ["Heading1", "Heading2", "Heading3"]:
             styles[heading].fontName = bold
             styles[heading].textColor = colors.HexColor(standard.accent)
         page = A4 if standard.paper == "A4" else letter
         if standard.orientation == "landscape":
             page = landscape(page)
-        available = page[0] - 120
+        margin = standard.margin_mm * 72 / 25.4
+        available = page[0] - 2 * margin
         flow = []
-        for node in body.find_all(["h1", "h2", "h3", "p", "pre", "table", "img", "figcaption"]):
+        for node in body.find_all(
+            ["h1", "h2", "h3", "p", "pre", "li", "table", "img", "figcaption"]
+        ):
+            if node.find_parent(["header", "footer"]) or "page-note" in node.get("class", []):
+                continue
             if node.find_parent("table"):
                 continue
             if node.name == "table":
@@ -208,7 +286,7 @@ def export_document(result: dict, format_name: str) -> bytes:
             elif node.name == "img":
                 graphic = Image(io.BytesIO(base64.b64decode(node["src"].split(",", 1)[1])))
                 ratio = min(
-                    available / graphic.imageWidth, (page[1] - 120) / graphic.imageHeight, 1
+                    available / graphic.imageWidth, (page[1] - 2 * margin) / graphic.imageHeight, 1
                 )
                 graphic.drawWidth, graphic.drawHeight = (
                     graphic.imageWidth * ratio,
@@ -216,13 +294,39 @@ def export_document(result: dict, format_name: str) -> bytes:
                 )
                 flow.append(graphic)
             else:
-                text = escape(node.get_text(" ", strip=True)).replace("\n", "<br/>")
+                text = (
+                    escape(node.get_text(" ", strip=True)).replace("→", "->").replace("\n", "<br/>")
+                )
                 style = (
                     styles["Heading" + node.name[1]]
                     if node.name in {"h1", "h2", "h3"}
                     else styles["BodyText"]
                 )
-                flow.extend([Paragraph(text, style), Spacer(1, 8)])
-        SimpleDocTemplate(output, pagesize=page, rightMargin=60, leftMargin=60).build(flow)
+                flow.extend([Paragraph(text, style), Spacer(1, standard.paragraph_after_pt)])
+
+        def decorate(canvas, document):
+            """Draw bounded plain-text running furniture; never interpret markup or paths."""
+            canvas.saveState()
+            furniture = styles["BodyText"].clone("Furniture")
+            furniture.fontSize, furniture.leading, furniture.alignment = 8, 9, 0
+            for text, top in ((standard.header_text, True), (standard.footer_text, False)):
+                item = Paragraph(escape(text), furniture)
+                _, height = item.wrap(
+                    available - (70 if standard.page_numbers and not top else 0), margin
+                )
+                item.drawOn(canvas, margin, page[1] - margin + 3 if top else margin - 3 - height)
+            canvas.setFont(normal, 8)
+            if standard.page_numbers:
+                canvas.drawRightString(page[0] - margin, margin - 12, "Page " + str(document.page))
+            canvas.restoreState()
+
+        SimpleDocTemplate(
+            output,
+            pagesize=page,
+            rightMargin=margin,
+            leftMargin=margin,
+            topMargin=margin,
+            bottomMargin=margin,
+        ).build(flow, onFirstPage=decorate, onLaterPages=decorate)
         return output.getvalue()
     raise ValueError("Unknown export format")

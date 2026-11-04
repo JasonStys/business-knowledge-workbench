@@ -212,7 +212,7 @@ class Boundary:
             or headers.get("content-type", "").split(";")[0]
             not in (
                 {"application/json", "multipart/form-data"}
-                if scope["path"] == "/private/api/import"
+                if scope["path"] in {"/private/api/import", "/private/api/standards/preview-file"}
                 else {"application/json"}
             )
         ):
@@ -456,7 +456,7 @@ def create_private_app(
 
     app = FastAPI(
         title="Business Knowledge Workbench — Jason Stys",
-        version="1.2.0",
+        version="1.3.0",
         lifespan=lifespan,
         docs_url=None,
         redoc_url=None,

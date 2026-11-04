@@ -114,13 +114,13 @@ test("staff imports, HTML-first exports, selections and restricted compilation",
   await page.goto("/");
   await login(page, "employee");
   const name = `synthetic-${testInfo.project.name}.csv`;
-  await page.getByLabel("Source file").setInputFiles({
+  await page.getByLabel("Source file", { exact: true }).setInputFiles({
     name,
     mimeType: "text/csv",
     buffer: Buffer.from("part,width\nA,2 in\nB,3 cm"),
   });
   await page.getByRole("button", { name: "Import & standardize" }).click();
-  await expect(page.getByRole("status")).toContainText(
+  await expect(page.locator("#notice")).toContainText(
     /Source converted|already imported/,
   );
   await expect(
@@ -140,7 +140,7 @@ test("staff imports, HTML-first exports, selections and restricted compilation",
   await page
     .getByRole("button", { name: "Combine selected documents" })
     .click();
-  await expect(page.getByRole("status")).toContainText(
+  await expect(page.locator("#notice")).toContainText(
     "Compilation created as internal-only",
   );
   await expect(
@@ -231,7 +231,7 @@ test("sandbox blocks source scripting and app manifest is installable", async ({
   expect(body.display).toBe("standalone");
   expect((await request.get("/icon-192.png")).status()).toBe(200);
   await login(page, "employee");
-  await page.getByLabel("Source file").setInputFiles({
+  await page.getByLabel("Source file", { exact: true }).setInputFiles({
     name: `hostile-${testInfo.project.name}.html`,
     mimeType: "text/html",
     buffer: Buffer.from(
@@ -257,7 +257,7 @@ test("sandbox blocks source scripting and app manifest is installable", async ({
     select.value = option.value;
     select.dispatchEvent(new Event("change", { bubbles: true }));
   });
-  await expect(page.getByRole("status")).toHaveText(
+  await expect(page.locator("#notice")).toHaveText(
     "Unknown workspace selection.",
   );
   await expect(page.getByRole("button", { name: "Sign out" })).toBeVisible();

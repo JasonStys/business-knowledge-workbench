@@ -1,75 +1,79 @@
 # @index-begin
-# @symbol variable/parameter: MAX_BYTES L103
-# @symbol variable/parameter: MAX_TEXT L104
-# @symbol variable/parameter: SUPPORTED L105
-# @symbol variable/parameter: SAFE_TAGS L122
-# @symbol function/class: clean_html L148
-# @symbol variable/parameter: value L148
-# @symbol function/class: archive_guard L163
-# @symbol variable/parameter: data L163
-# @symbol variable/parameter: required L163
-# @symbol variable/parameter: archive L165
-# @symbol variable/parameter: items L166
-# @symbol function/class: image_block L185
-# @symbol variable/parameter: label L185
-# @symbol variable/parameter: image L187
-# @symbol variable/parameter: output L191
-# @symbol variable/parameter: rows L201
-# @symbol function/class: table_block L201
-# @symbol variable/parameter: cell L207
-# @symbol function/class: extract_docx L211
-# @symbol variable/parameter: document L214
-# @symbol variable/parameter: blocks L215
-# @symbol variable/parameter: warnings L216
-# @symbol variable/parameter: item L219
-# @symbol variable/parameter: equation L232
-# @symbol variable/parameter: drawing L241
-# @symbol variable/parameter: relation L242
-# @symbol function/class: extract_pdf L254
-# @symbol variable/parameter: reader L258
-# @symbol variable/parameter: pdf L265
-# @symbol variable/parameter: number L266
-# @symbol variable/parameter: page L266
-# @symbol variable/parameter: content L267
-# @symbol variable/parameter: figure L277
-# @symbol function/class: extract L282
-# @symbol variable/parameter: name L282
-# @symbol variable/parameter: extension L284
-# @symbol variable/parameter: workbook L299
-# @symbol variable/parameter: sheet L306
-# @symbol variable/parameter: text L317
-# @symbol variable/parameter: _ L328
-# @symbol variable/parameter: key L331
-# @symbol variable/parameter: keys L331
-# @symbol variable/parameter: root L335
-# @symbol variable/parameter: safe L340
-# @symbol variable/parameter: part L346
-# @symbol function/class: render_document L349
-# @symbol variable/parameter: title L350
-# @symbol variable/parameter: measurements L352
-# @symbol variable/parameter: provenance L353
-# @symbol variable/parameter: config L354
-# @symbol variable/parameter: standard L358
-# @symbol variable/parameter: parts L359
-# @symbol variable/parameter: section L363
-# @symbol variable/parameter: warning L369
-# @symbol variable/parameter: kind L372
-# @symbol variable/parameter: tag L377
-# @symbol variable/parameter: style L410
-# @symbol variable/parameter: fonts L411
-# @symbol function/class: ingest L416
-# @symbol function/class: assemble L430
-# @symbol variable/parameter: source_blocks L432
-# @symbol variable/parameter: block L448
-# @symbol variable/parameter: index L448
-# @symbol variable/parameter: row L450
-# @symbol variable/parameter: column L451
-# @symbol variable/parameter: records L452
-# @symbol variable/parameter: record L453
-# @symbol variable/parameter: soup L456
-# @symbol variable/parameter: node L457
-# @symbol variable/parameter: normalized L458
-# @symbol variable/parameter: html L470
+# @symbol variable/parameter: MAX_BYTES L107
+# @symbol variable/parameter: MAX_TEXT L108
+# @symbol variable/parameter: SUPPORTED L109
+# @symbol variable/parameter: SAFE_TAGS L126
+# @symbol function/class: clean_html L152
+# @symbol variable/parameter: value L152
+# @symbol function/class: archive_guard L167
+# @symbol variable/parameter: data L167
+# @symbol variable/parameter: required L167
+# @symbol variable/parameter: archive L169
+# @symbol variable/parameter: items L170
+# @symbol function/class: image_block L189
+# @symbol variable/parameter: label L189
+# @symbol variable/parameter: image L191
+# @symbol variable/parameter: output L195
+# @symbol variable/parameter: rows L205
+# @symbol function/class: table_block L205
+# @symbol variable/parameter: cell L211
+# @symbol function/class: extract_docx L215
+# @symbol variable/parameter: document L218
+# @symbol variable/parameter: blocks L219
+# @symbol variable/parameter: warnings L220
+# @symbol variable/parameter: item L223
+# @symbol variable/parameter: equation L236
+# @symbol variable/parameter: drawing L245
+# @symbol variable/parameter: relation L246
+# @symbol function/class: extract_pdf L258
+# @symbol variable/parameter: reader L262
+# @symbol variable/parameter: pdf L269
+# @symbol variable/parameter: number L270
+# @symbol variable/parameter: page L270
+# @symbol variable/parameter: content L271
+# @symbol variable/parameter: structured L274
+# @symbol variable/parameter: tables L275
+# @symbol variable/parameter: prose L279
+# @symbol variable/parameter: table L280
+# @symbol variable/parameter: figure L289
+# @symbol function/class: extract L294
+# @symbol variable/parameter: name L294
+# @symbol variable/parameter: extension L296
+# @symbol variable/parameter: workbook L311
+# @symbol variable/parameter: sheet L318
+# @symbol variable/parameter: text L329
+# @symbol variable/parameter: _ L340
+# @symbol variable/parameter: key L343
+# @symbol variable/parameter: keys L343
+# @symbol variable/parameter: root L347
+# @symbol variable/parameter: safe L352
+# @symbol variable/parameter: part L358
+# @symbol function/class: render_document L361
+# @symbol variable/parameter: title L362
+# @symbol variable/parameter: measurements L364
+# @symbol variable/parameter: provenance L365
+# @symbol variable/parameter: config L366
+# @symbol variable/parameter: standard L370
+# @symbol variable/parameter: parts L371
+# @symbol variable/parameter: section L377
+# @symbol variable/parameter: warning L383
+# @symbol variable/parameter: kind L386
+# @symbol variable/parameter: tag L391
+# @symbol variable/parameter: style L424
+# @symbol variable/parameter: fonts L425
+# @symbol function/class: ingest L434
+# @symbol function/class: assemble L448
+# @symbol variable/parameter: source_blocks L450
+# @symbol variable/parameter: block L466
+# @symbol variable/parameter: index L466
+# @symbol variable/parameter: row L468
+# @symbol variable/parameter: column L469
+# @symbol variable/parameter: records L470
+# @symbol variable/parameter: record L471
+# @symbol variable/parameter: soup L474
+# @symbol variable/parameter: node L475
+# @symbol variable/parameter: normalized L476
+# @symbol variable/parameter: html L488
 # @index-end
 """Bounded import adapters and canonical HTML generation. Symbols: docs/code-index.md.
 
@@ -267,13 +271,21 @@ def extract_pdf(data: bytes) -> tuple[list[dict], list[str]]:
             content = page.get_contents()
             if content is not None and len(content.get_data()) > 4 * 1024 * 1024:
                 raise ValueError("PDF page content stream exceeds limit")
-            text = page.extract_text() or ""
+            structured = pdf.pages[number]
+            tables = structured.find_tables()
+            # Extract prose outside detected tables. Otherwise the same cells
+            # reappear as a paragraph, defeating field exclusion and duplicating
+            # measurements. Original table cells remain in source_blocks.
+            prose = structured
+            for table in tables:
+                prose = prose.outside_bbox(table.bbox)
+            text = prose.extract_text() or ""
             blocks.append({"kind": "heading", "text": f"Page {number + 1}"})
             blocks.append({"kind": "paragraph", "text": text})
-            if not text.strip():
+            if not text.strip() and not tables:
                 warnings.append(f"Page {number + 1}: no text layer; OCR/vision adapter needed.")
-            for rows in pdf.pages[number].extract_tables():
-                blocks.append(table_block(rows))
+            for table in tables:
+                blocks.append(table_block(table.extract()))
             for figure in list(page.images)[:12]:
                 blocks.append(image_block(figure.data, f"PDF figure, page {number + 1}"))
     return blocks, warnings
@@ -360,6 +372,8 @@ def render_document(
         f"<h1>{escape(title)}</h1>",
         f"<p>{escape(standard.name)} · Revision {config.revision}</p>",
     ]
+    if standard.header_text:
+        parts.insert(0, f"<header>{escape(standard.header_text)}</header>")
     for section in config.sections:
         parts.append(f"<section><h2>{escape(standard.section_titles[section])}</h2>")
         if section == "overview":
@@ -409,7 +423,11 @@ def render_document(
         parts.append("</section>")
     style = "body{font:16px system-ui;max-width:900px;margin:auto;padding:24px;color:#18312c}table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:8px}img{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}"
     fonts = {"sans": "Arial,sans-serif", "serif": "Georgia,serif", "mono": "monospace"}
-    style += f"body{{font-family:{fonts[standard.font]};font-size:{standard.font_size}pt}}h1,h2,h3{{color:{standard.accent}}}@page{{size:{standard.paper} {standard.orientation};margin:20mm}}"
+    style += f"body{{font-family:{fonts[standard.font]};font-size:{standard.font_size}pt;line-height:{standard.line_spacing};text-align:{standard.alignment}}}p{{margin:0 0 {standard.paragraph_after_pt}pt}}h1,h2,h3{{color:{standard.accent}}}header,footer{{font-size:10pt;color:#455;overflow-wrap:anywhere}}@page{{size:{standard.paper} {standard.orientation};margin:{standard.margin_mm}mm}}"
+    if standard.footer_text:
+        parts.append(f"<footer>{escape(standard.footer_text)}</footer>")
+    if standard.page_numbers:
+        parts.append('<p class="page-note">Page numbering is applied in DOCX/PDF exports.</p>')
     return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{escape(title)}</title><style>{style}</style></head><body>{"".join(parts)}</body></html>'
 
 

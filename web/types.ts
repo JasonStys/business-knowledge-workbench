@@ -7,9 +7,9 @@
  * @symbol type: Doc L43
  * @symbol type: DocumentResult L50
  * @symbol type: OutputStandard L66
- * @symbol type: Report L87
- * @symbol type: Config L106
- * @symbol type: Answer L118
+ * @symbol type: Report L95
+ * @symbol type: Config L114
+ * @symbol type: Answer L126
 @index-end */
 /** Shared browser API shapes. Functions/variables and exact lines: docs/code-index.md. */
 export type Role = "customer" | "employee" | "admin";
@@ -73,6 +73,13 @@ export interface OutputStandard {
   font: "sans" | "serif" | "mono";
   font_size: number;
   accent: string;
+  margin_mm: number;
+  alignment: "left" | "center" | "right" | "justify";
+  line_spacing: number;
+  paragraph_after_pt: number;
+  header_text: string;
+  footer_text: string;
+  page_numbers: boolean;
   columns: {
     key: string;
     label: string;
@@ -80,8 +87,9 @@ export interface OutputStandard {
     dimension?: string | null;
     source_unit?: string | null;
     required: boolean;
+    enabled?: boolean;
   }[];
-  extra_columns: "preserve" | "reject";
+  extra_columns: "preserve" | "reject" | "omit";
   table_scope: "matching" | "all";
 }
 export interface Report {

@@ -1,75 +1,83 @@
 # @index-begin
-# @symbol variable/parameter: UNITS L83
-# @symbol function/class: StandardColumn L93
-# @symbol variable/parameter: model_config L96
-# @symbol variable/parameter: key L97
-# @symbol variable/parameter: label L98
-# @symbol variable/parameter: aliases L99
-# @symbol variable/parameter: dimension L100
-# @symbol variable/parameter: source_unit L103
-# @symbol variable/parameter: required L104
-# @symbol function/class: consistent L107
-# @symbol variable/parameter: self L107
-# @symbol function/class: OutputStandard L118
-# @symbol variable/parameter: name L122
-# @symbol variable/parameter: section_titles L123
-# @symbol variable/parameter: default_export L131
-# @symbol variable/parameter: enforce_export L132
-# @symbol variable/parameter: paper L133
-# @symbol variable/parameter: orientation L134
-# @symbol variable/parameter: font L135
-# @symbol variable/parameter: font_size L136
-# @symbol variable/parameter: accent L137
-# @symbol variable/parameter: columns L138
-# @symbol variable/parameter: extra_columns L139
-# @symbol variable/parameter: table_scope L140
-# @symbol function/class: unambiguous L143
-# @symbol variable/parameter: names L149
-# @symbol variable/parameter: column L150
-# @symbol variable/parameter: alias L151
-# @symbol variable/parameter: v L154
-# @symbol function/class: WorkspaceConfig L166
-# @symbol variable/parameter: title L170
-# @symbol variable/parameter: profile L171
-# @symbol variable/parameter: customers L172
-# @symbol variable/parameter: units L175
-# @symbol variable/parameter: sections L178
-# @symbol variable/parameter: forecasting L183
-# @symbol variable/parameter: ai_enabled L184
-# @symbol variable/parameter: data_columns L185
-# @symbol variable/parameter: revision L190
-# @symbol variable/parameter: output_standard L191
-# @symbol function/class: column_targets L194
-# @symbol variable/parameter: cls L205
-# @symbol function/class: validate_customers L205
-# @symbol function/class: validate_columns L218
-# @symbol function/class: validate_units L230
-# @symbol variable/parameter: unit L234
-# @symbol function/class: validate_sections L241
-# @symbol function/class: Login L248
-# @symbol variable/parameter: workspace L251
-# @symbol variable/parameter: username L252
-# @symbol variable/parameter: password L253
-# @symbol function/class: StandardPreview L256
-# @symbol variable/parameter: config L260
-# @symbol variable/parameter: sample L261
-# @symbol function/class: StandardRestore L264
-# @symbol variable/parameter: expected_revision L269
-# @symbol function/class: MergeRequest L272
-# @symbol variable/parameter: ids L275
-# @symbol function/class: Question L279
-# @symbol variable/parameter: question L282
-# @symbol function/class: MeasurementRequest L285
-# @symbol variable/parameter: value L288
-# @symbol variable/parameter: source L289
-# @symbol variable/parameter: target L290
-# @symbol function/class: ProductRequest L293
-# @symbol variable/parameter: id L296
-# @symbol variable/parameter: category L298
-# @symbol variable/parameter: description L299
-# @symbol variable/parameter: price_cents L300
-# @symbol variable/parameter: customer L301
-# @symbol variable/parameter: specifications L302
+# @symbol variable/parameter: UNITS L91
+# @symbol function/class: StandardColumn L101
+# @symbol variable/parameter: model_config L104
+# @symbol variable/parameter: key L105
+# @symbol variable/parameter: label L106
+# @symbol variable/parameter: aliases L107
+# @symbol variable/parameter: dimension L108
+# @symbol variable/parameter: source_unit L111
+# @symbol variable/parameter: required L112
+# @symbol variable/parameter: enabled L113
+# @symbol function/class: consistent L116
+# @symbol variable/parameter: self L116
+# @symbol function/class: OutputStandard L127
+# @symbol variable/parameter: name L131
+# @symbol variable/parameter: section_titles L132
+# @symbol variable/parameter: default_export L140
+# @symbol variable/parameter: enforce_export L141
+# @symbol variable/parameter: paper L142
+# @symbol variable/parameter: orientation L143
+# @symbol variable/parameter: font L144
+# @symbol variable/parameter: font_size L145
+# @symbol variable/parameter: accent L146
+# @symbol variable/parameter: margin_mm L147
+# @symbol variable/parameter: alignment L148
+# @symbol variable/parameter: line_spacing L149
+# @symbol variable/parameter: paragraph_after_pt L150
+# @symbol variable/parameter: header_text L151
+# @symbol variable/parameter: footer_text L152
+# @symbol variable/parameter: page_numbers L153
+# @symbol variable/parameter: columns L154
+# @symbol variable/parameter: extra_columns L155
+# @symbol variable/parameter: table_scope L156
+# @symbol function/class: unambiguous L159
+# @symbol variable/parameter: names L165
+# @symbol variable/parameter: column L166
+# @symbol variable/parameter: alias L167
+# @symbol variable/parameter: v L170
+# @symbol function/class: WorkspaceConfig L184
+# @symbol variable/parameter: title L188
+# @symbol variable/parameter: profile L189
+# @symbol variable/parameter: customers L190
+# @symbol variable/parameter: units L193
+# @symbol variable/parameter: sections L196
+# @symbol variable/parameter: forecasting L201
+# @symbol variable/parameter: ai_enabled L202
+# @symbol variable/parameter: data_columns L203
+# @symbol variable/parameter: revision L208
+# @symbol variable/parameter: output_standard L209
+# @symbol function/class: column_targets L212
+# @symbol variable/parameter: cls L223
+# @symbol function/class: validate_customers L223
+# @symbol function/class: validate_columns L236
+# @symbol function/class: validate_units L248
+# @symbol variable/parameter: unit L252
+# @symbol function/class: validate_sections L259
+# @symbol function/class: Login L266
+# @symbol variable/parameter: workspace L269
+# @symbol variable/parameter: username L270
+# @symbol variable/parameter: password L271
+# @symbol function/class: StandardPreview L274
+# @symbol variable/parameter: config L278
+# @symbol variable/parameter: sample L279
+# @symbol function/class: StandardRestore L282
+# @symbol variable/parameter: expected_revision L287
+# @symbol function/class: MergeRequest L290
+# @symbol variable/parameter: ids L293
+# @symbol function/class: Question L297
+# @symbol variable/parameter: question L300
+# @symbol function/class: MeasurementRequest L303
+# @symbol variable/parameter: value L306
+# @symbol variable/parameter: source L307
+# @symbol variable/parameter: target L308
+# @symbol function/class: ProductRequest L311
+# @symbol variable/parameter: id L314
+# @symbol variable/parameter: category L316
+# @symbol variable/parameter: description L317
+# @symbol variable/parameter: price_cents L318
+# @symbol variable/parameter: customer L319
+# @symbol variable/parameter: specifications L320
 # @index-end
 """Validated configuration and API contracts. Symbols/variables: docs/code-index.md.
 
@@ -102,6 +110,7 @@ class StandardColumn(BaseModel):
     )
     source_unit: str | None = Field(default=None, max_length=5)
     required: bool = True
+    enabled: bool = True
 
     @model_validator(mode="after")
     def consistent(self):
@@ -135,8 +144,15 @@ class OutputStandard(BaseModel):
     font: Literal["sans", "serif", "mono"] = "sans"
     font_size: int = Field(default=12, ge=10, le=16, strict=True)
     accent: str = Field(default="#18312c", pattern=r"^#[0-9a-fA-F]{6}$")
+    margin_mm: int = Field(default=20, ge=10, le=40, strict=True)
+    alignment: Literal["left", "center", "right", "justify"] = "left"
+    line_spacing: Literal[1.0, 1.15, 1.5, 2.0] = 1.15
+    paragraph_after_pt: int = Field(default=8, ge=0, le=24, strict=True)
+    header_text: str = Field(default="", max_length=120)
+    footer_text: str = Field(default="", max_length=120)
+    page_numbers: bool = False
     columns: list[StandardColumn] = Field(default_factory=list, max_length=20)
-    extra_columns: Literal["preserve", "reject"] = "preserve"
+    extra_columns: Literal["preserve", "reject", "omit"] = "preserve"
     table_scope: Literal["matching", "all"] = "matching"
 
     @model_validator(mode="after")
@@ -160,6 +176,8 @@ class OutputStandard(BaseModel):
                 names[alias] = column.key
         if len({column.key for column in self.columns}) != len(self.columns):
             raise ValueError("Output column keys must be unique")
+        if self.columns and not any(column.enabled for column in self.columns):
+            raise ValueError("Enable at least one standard field or clear the schema")
         return self
 
 
@@ -194,7 +212,7 @@ class WorkspaceConfig(BaseModel):
     def column_targets(self):
         """Typed measurement fields require explicit target units; never infer a dimension."""
         if any(
-            column.dimension and column.dimension not in self.units
+            column.enabled and column.dimension and column.dimension not in self.units
             for column in self.output_standard.columns
         ):
             raise ValueError("Each measurement column needs a configured target unit")

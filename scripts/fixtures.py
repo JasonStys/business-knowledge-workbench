@@ -11,14 +11,14 @@
 # @symbol variable/parameter: size L52
 # @symbol variable/parameter: icon L53
 # @symbol variable/parameter: pen L54
-# @symbol variable/parameter: rows L67
-# @symbol variable/parameter: output L73
-# @symbol variable/parameter: workbook L79
-# @symbol variable/parameter: sheet L80
-# @symbol variable/parameter: row L82
-# @symbol variable/parameter: styles L111
-# @symbol variable/parameter: table L112
-# @symbol variable/parameter: flow L129
+# @symbol variable/parameter: rows L73
+# @symbol variable/parameter: output L79
+# @symbol variable/parameter: workbook L85
+# @symbol variable/parameter: sheet L86
+# @symbol variable/parameter: row L88
+# @symbol variable/parameter: styles L117
+# @symbol variable/parameter: table L118
+# @symbol variable/parameter: flow L135
 # @index-end
 """Generate deterministic synthetic sources and PWA raster icons. Index: docs/code-index.md."""
 
@@ -64,6 +64,12 @@ def main():
             width=int(size * 0.07),
         )
         icon.save(ROOT / "public" / f"icon-{size}.png")
+        if size == 512:
+            icon.save(
+                ROOT / "public/icon.ico",
+                format="ICO",
+                sizes=[(16, 16), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)],
+            )
     rows = [
         ["product", "customer", "month", "quantity", "revenue_cents"],
         ["MC-240", "north", "2026-01", 32, 2396800],
