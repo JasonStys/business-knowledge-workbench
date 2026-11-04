@@ -268,15 +268,16 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `path` | 20 |
-| function/class | `write_release_checksum` | 20 |
-| variable/parameter | `stream` | 22 |
-| variable/parameter | `digest` | 23 |
-| function/class | `main` | 29 |
-| variable/parameter | `root` | 31 |
-| variable/parameter | `platform` | 32 |
-| variable/parameter | `folder` | 33 |
-| variable/parameter | `base` | 42 |
+| variable/parameter | `path` | 23 |
+| function/class | `write_release_checksum` | 23 |
+| variable/parameter | `stream` | 25 |
+| variable/parameter | `digest` | 26 |
+| function/class | `main` | 32 |
+| variable/parameter | `root` | 34 |
+| variable/parameter | `platform` | 35 |
+| variable/parameter | `folder` | 36 |
+| variable/parameter | `version` | 45 |
+| variable/parameter | `base` | 48 |
 
 ## `scripts/symbols.mjs`
 
