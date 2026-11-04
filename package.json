@@ -1,6 +1,6 @@
 {
   "name": "business-knowledge-workbench",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -25,14 +25,14 @@
   "dependencies": {},
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
-    "@playwright/test": "1.64.0",
+    "@playwright/test": "1.64.1",
     "@types/node": "26.6.2",
     "vite": "8.3.5",
     "typescript": "6.0.3",
     "prettier": "3.9.8",
     "docx": "9.5.1",
-    "electron": "44.5.0",
-    "electron-builder": "26.15.3"
+    "electron": "44.10.2",
+    "electron-builder": "26.18.0"
   },
   "author": "Jason Stys",
   "description": "Private local business documents, product evidence and reporting workspace",
@@ -70,13 +70,16 @@
       "target": [
         "nsis"
       ],
-      "signAndEditExecutable": false
+      "signExecutable": false,
+      "icon": "public/icon.ico"
     },
     "nsis": {
       "oneClick": true,
       "perMachine": false,
       "allowToChangeInstallationDirectory": false,
-      "deleteAppDataOnUninstall": false
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "shortcutName": "Business Knowledge Workbench"
     },
     "linux": {
       "target": [

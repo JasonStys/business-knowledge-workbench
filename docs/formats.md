@@ -33,6 +33,14 @@ outputs keep their saved standard; applying a new one creates a separate copy.
 
 Unit tokens are not complete natural-language understanding. An `in` token followed by another word (e.g. `2 in stock`) is kept unchanged to avoid mistaking a preposition for inches. Missing/ambiguous units require domain review rather than automatic guessing.
 
+Version 1.3 adds [visual field controls, richer layout and real-file previews](library.md).
+Detected ruled PDF tables are extracted once, separately from surrounding prose,
+so excluded table cells do not reappear in a duplicate prose block. Detection can
+still miss unruled/complex tables; this is not redaction or universal PDF semantics.
+DOCX/PDF exports include selected running furniture/page numbers; the HTML preview
+shows furniture once and does not guarantee identical pagination. Generated unit
+arrows use ASCII `->` in PDF to remain readable with the bounded base-font set.
+
 ## App portability
 
 | Surface | Implementation | Verification boundary |

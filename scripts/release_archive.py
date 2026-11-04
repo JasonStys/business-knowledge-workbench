@@ -1,17 +1,20 @@
 # @index-begin
-# @symbol variable/parameter: path L20
-# @symbol function/class: write_release_checksum L20
-# @symbol variable/parameter: stream L22
-# @symbol variable/parameter: digest L23
-# @symbol function/class: main L29
-# @symbol variable/parameter: root L31
-# @symbol variable/parameter: platform L32
-# @symbol variable/parameter: folder L33
-# @symbol variable/parameter: base L42
+# @symbol variable/parameter: path L23
+# @symbol function/class: write_release_checksum L23
+# @symbol variable/parameter: stream L25
+# @symbol variable/parameter: digest L26
+# @symbol function/class: main L32
+# @symbol variable/parameter: root L34
+# @symbol variable/parameter: platform L35
+# @symbol variable/parameter: folder L36
+# @symbol variable/parameter: version L45
+# @symbol variable/parameter: base L48
 # @index-end
 """Jason Stys: checksummed portable desktop archives, alongside tested one-click OS installers."""
 
 import hashlib
+import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -39,7 +42,10 @@ def main():
     )
     if not folder.is_dir():
         raise ValueError("Expected packaged application is absent")
-    base = root / f"BusinessKnowledgeWorkbench-1.2.0-{platform}"
+    version = json.loads((root.parents[1] / "package.json").read_text(encoding="utf-8"))["version"]
+    if not re.fullmatch(r"\d+\.\d+\.\d+", version):
+        raise ValueError("Release archives require a numeric three-part application version")
+    base = root / f"BusinessKnowledgeWorkbench-{version}-{platform}"
     shutil.make_archive(str(base), "zip" if sys.platform == "win32" else "gztar", root_dir=folder)
     for path in root.iterdir():
         if path.is_file() and path.name.endswith((".exe", ".dmg", ".AppImage", ".zip", ".tar.gz")):

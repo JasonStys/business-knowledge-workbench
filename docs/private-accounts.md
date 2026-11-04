@@ -1,6 +1,6 @@
 # Private local accounts and user guide
 
-Business Knowledge Workbench 1.1 is a local app by Jason Stys. Accounts are on this device, not on GitHub or a hosted service. Every owner gets three initially empty business profiles and its own document database/model settings. One owner can unlock the local engine at a time. Customer/employee/catalog/admin tabs preview that owner's own data; this release has no shared-user invitations or remote public catalog.
+Business Knowledge Workbench 1.3 is a local app by Jason Stys. Accounts are on this device, not on GitHub or a hosted service. Every owner gets three initially empty business profiles and its own document database/model settings. One owner can unlock the local engine at a time. Customer/employee/catalog/admin tabs preview that owner's own data; this release has no shared-user invitations or remote public catalog.
 
 ## First use
 
@@ -29,3 +29,13 @@ Default extraction/reference matching is offline and is not an LLM or universal 
 Do not import malicious files on a sensitive workstation. Parsers are bounded/timed child processes without provider credentials, but not full OS exploit sandboxes or antivirus/CDR. The OS owner, administrator, malware or compromised extensions/app can inspect active plaintext and memory. This is not zero-knowledge against the local service. JSON/HTML/report exports can contain plaintext private evidence.
 
 Help/contact: [Jason Stys GitHub](https://github.com/JasonStys), [LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/). Jason has no automatic access to local accounts or documents.
+
+The Windows per-user setup creates a **Business Knowledge Workbench** desktop
+icon. Launch it to start the bundled local service and app; Workbench → Open local
+website opens the same running application in a browser. Closing the app stops
+its service, so that browser tab then needs a fresh app launch/address. Never
+publish the loopback URL as a hosted service. Existing accounts are stored
+separately and are preserved on upgrade/uninstall.
+
+For new file-library filters, downloads, field editing and genuine draft-file
+previews, read [the library walkthrough](library.md).

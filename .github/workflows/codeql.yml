@@ -9,6 +9,9 @@ on:
     - cron: '39 8 * * 1'
 permissions:
   contents: read
+concurrency:
+  group: analysis-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   analyze:
     strategy:
@@ -16,6 +19,7 @@ jobs:
       matrix:
         language: [python, javascript-typescript]
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     permissions:
       security-events: write
       contents: read

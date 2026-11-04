@@ -1,135 +1,140 @@
 # @index-begin
-# @symbol variable/parameter: ROOT L183
-# @symbol variable/parameter: CONVERSION_SLOTS L184
-# @symbol function/class: BodyLimit L187
-# @symbol function/class: __init__ L190
-# @symbol variable/parameter: self L190
-# @symbol function/class: __call__ L194
-# @symbol variable/parameter: receive L194
-# @symbol variable/parameter: scope L194
-# @symbol variable/parameter: send L194
-# @symbol variable/parameter: chunks L198
-# @symbol variable/parameter: total L199
-# @symbol variable/parameter: message L201
-# @symbol function/class: replay L213
-# @symbol function/class: create_app L220
-# @symbol variable/parameter: demo L221
-# @symbol variable/parameter: path L221
-# @symbol variable/parameter: private_mode L221
-# @symbol variable/parameter: database_path L224
-# @symbol variable/parameter: secure L226
-# @symbol variable/parameter: ai_adapter L228
-# @symbol variable/parameter: login_attempts L229
-# @symbol variable/parameter: attempts_lock L230
-# @symbol variable/parameter: application L233
-# @symbol function/class: lifespan L233
-# @symbol variable/parameter: call_next L242
-# @symbol variable/parameter: request L242
-# @symbol function/class: security_headers L242
-# @symbol variable/parameter: origin L244
-# @symbol variable/parameter: allowed L245
-# @symbol variable/parameter: response L253
-# @symbol function/class: current L268
-# @symbol variable/parameter: required L268
-# @symbol variable/parameter: token L277
-# @symbol variable/parameter: user L283
-# @symbol function/class: authorize L288
-# @symbol variable/parameter: mutate L288
-# @symbol variable/parameter: roles L288
-# @symbol function/class: configuration L299
-# @symbol variable/parameter: workspace L299
-# @symbol variable/parameter: config L309
-# @symbol variable/parameter: database L309
-# @symbol function/class: ensure_revision L309
-# @symbol variable/parameter: active L311
-# @symbol function/class: accessible L319
-# @symbol variable/parameter: identifier L319
-# @symbol variable/parameter: predicate L325
-# @symbol variable/parameter: values L325
-# @symbol function/class: health L335
-# @symbol function/class: bootstrap L342
-# @symbol variable/parameter: configs L345
-# @symbol function/class: staff_options L368
-# @symbol function/class: add_product L374
-# @symbol variable/parameter: body L374
-# @symbol variable/parameter: text L380
-# @symbol function/class: login L420
-# @symbol variable/parameter: address L424
-# @symbol variable/parameter: now L425
-# @symbol variable/parameter: recent L429
-# @symbol variable/parameter: stamp L429
-# @symbol variable/parameter: encoded L439
-# @symbol variable/parameter: valid L440
-# @symbol variable/parameter: csrf L443
-# @symbol function/class: session L463
-# @symbol variable/parameter: key L467
-# @symbol function/class: logout L471
-# @symbol function/class: products L484
-# @symbol variable/parameter: q L485
-# @symbol function/class: list_documents L509
-# @symbol variable/parameter: category L513
-# @symbol variable/parameter: sort L514
-# @symbol function/class: document L528
-# @symbol variable/parameter: _ L530
-# @symbol function/class: document_preview L534
-# @symbol function/class: export L546
-# @symbol variable/parameter: format_name L546
-# @symbol variable/parameter: payload L552
-# @symbol function/class: source L569
-# @symbol variable/parameter: suffix L574
-# @symbol function/class: upload L582
-# @symbol variable/parameter: file L584
-# @symbol variable/parameter: visibility L585
-# @symbol variable/parameter: customer L586
-# @symbol variable/parameter: dataset L588
-# @symbol variable/parameter: name L599
-# @symbol variable/parameter: data L605
-# @symbol variable/parameter: digest L608
-# @symbol variable/parameter: scope_customer L609
-# @symbol variable/parameter: existing L611
-# @symbol variable/parameter: worker_env L635
-# @symbol variable/parameter: value L637
-# @symbol variable/parameter: command L640
-# @symbol variable/parameter: converted L645
-# @symbol variable/parameter: tables L701
-# @symbol variable/parameter: block L703
-# @symbol variable/parameter: headers L711
-# @symbol variable/parameter: alias L712
-# @symbol variable/parameter: mapped L714
-# @symbol variable/parameter: record L718
-# @symbol variable/parameter: product L728
-# @symbol function/class: merge L769
-# @symbol variable/parameter: sources L774
-# @symbol variable/parameter: source_row L777
-# @symbol variable/parameter: provenance L786
-# @symbol function/class: get_config L818
-# @symbol function/class: save_config L828
-# @symbol variable/parameter: previous L835
-# @symbol variable/parameter: used L852
-# @symbol function/class: preview_standard L877
-# @symbol function/class: standard_history L888
-# @symbol function/class: restore_standard L906
-# @symbol variable/parameter: restored L916
-# @symbol function/class: standardize_document L921
-# @symbol variable/parameter: old L929
-# @symbol variable/parameter: copied L932
-# @symbol variable/parameter: warnings L955
-# @symbol variable/parameter: new_id L970
-# @symbol function/class: sales_report L997
-# @symbol function/class: export_report L1012
-# @symbol variable/parameter: rows L1020
-# @symbol variable/parameter: blocks L1024
-# @symbol variable/parameter: result L1032
-# @symbol function/class: measurement L1053
-# @symbol function/class: audit_log L1061
-# @symbol function/class: context_for L1073
-# @symbol variable/parameter: context L1077
-# @symbol variable/parameter: budget L1078
-# @symbol variable/parameter: row L1079
-# @symbol function/class: ask L1096
-# @symbol variable/parameter: index L1108
-# @symbol function/class: vision L1108
-# @symbol variable/parameter: app L1136
+# @symbol variable/parameter: ROOT L190
+# @symbol variable/parameter: CONVERSION_SLOTS L191
+# @symbol variable/parameter: config L194
+# @symbol function/class: convert_payload L194
+# @symbol variable/parameter: data L194
+# @symbol variable/parameter: name L194
+# @symbol variable/parameter: worker_env L206
+# @symbol variable/parameter: key L208
+# @symbol variable/parameter: value L208
+# @symbol variable/parameter: command L211
+# @symbol variable/parameter: converted L216
+# @symbol variable/parameter: payload L226
+# @symbol function/class: BodyLimit L238
+# @symbol function/class: __init__ L241
+# @symbol variable/parameter: self L241
+# @symbol function/class: __call__ L245
+# @symbol variable/parameter: receive L245
+# @symbol variable/parameter: scope L245
+# @symbol variable/parameter: send L245
+# @symbol variable/parameter: chunks L249
+# @symbol variable/parameter: total L250
+# @symbol variable/parameter: message L252
+# @symbol function/class: replay L264
+# @symbol function/class: create_app L271
+# @symbol variable/parameter: demo L272
+# @symbol variable/parameter: path L272
+# @symbol variable/parameter: private_mode L272
+# @symbol variable/parameter: database_path L275
+# @symbol variable/parameter: secure L277
+# @symbol variable/parameter: ai_adapter L279
+# @symbol variable/parameter: login_attempts L280
+# @symbol variable/parameter: attempts_lock L281
+# @symbol variable/parameter: application L284
+# @symbol function/class: lifespan L284
+# @symbol variable/parameter: call_next L293
+# @symbol variable/parameter: request L293
+# @symbol function/class: security_headers L293
+# @symbol variable/parameter: origin L295
+# @symbol variable/parameter: allowed L296
+# @symbol variable/parameter: response L304
+# @symbol function/class: current L319
+# @symbol variable/parameter: required L319
+# @symbol variable/parameter: token L328
+# @symbol variable/parameter: user L334
+# @symbol function/class: authorize L339
+# @symbol variable/parameter: mutate L339
+# @symbol variable/parameter: roles L339
+# @symbol function/class: configuration L350
+# @symbol variable/parameter: workspace L350
+# @symbol variable/parameter: database L360
+# @symbol function/class: ensure_revision L360
+# @symbol variable/parameter: active L362
+# @symbol function/class: accessible L370
+# @symbol variable/parameter: identifier L370
+# @symbol variable/parameter: predicate L376
+# @symbol variable/parameter: values L376
+# @symbol function/class: health L386
+# @symbol function/class: bootstrap L393
+# @symbol variable/parameter: configs L396
+# @symbol function/class: staff_options L419
+# @symbol function/class: add_product L425
+# @symbol variable/parameter: body L425
+# @symbol variable/parameter: text L431
+# @symbol function/class: login L471
+# @symbol variable/parameter: address L475
+# @symbol variable/parameter: now L476
+# @symbol variable/parameter: recent L480
+# @symbol variable/parameter: stamp L480
+# @symbol variable/parameter: encoded L490
+# @symbol variable/parameter: valid L491
+# @symbol variable/parameter: csrf L494
+# @symbol function/class: session L514
+# @symbol function/class: logout L522
+# @symbol function/class: products L535
+# @symbol variable/parameter: q L536
+# @symbol function/class: list_documents L560
+# @symbol variable/parameter: category L564
+# @symbol variable/parameter: sort L565
+# @symbol variable/parameter: filters L579
+# @symbol function/class: library L579
+# @symbol function/class: document L587
+# @symbol variable/parameter: _ L589
+# @symbol function/class: document_preview L593
+# @symbol function/class: export L605
+# @symbol variable/parameter: format_name L605
+# @symbol function/class: source L628
+# @symbol variable/parameter: suffix L633
+# @symbol function/class: upload L641
+# @symbol variable/parameter: file L643
+# @symbol variable/parameter: visibility L644
+# @symbol variable/parameter: customer L645
+# @symbol variable/parameter: dataset L647
+# @symbol variable/parameter: digest L667
+# @symbol variable/parameter: scope_customer L668
+# @symbol variable/parameter: existing L670
+# @symbol variable/parameter: result L691
+# @symbol variable/parameter: tables L728
+# @symbol variable/parameter: block L730
+# @symbol variable/parameter: headers L738
+# @symbol variable/parameter: alias L739
+# @symbol variable/parameter: mapped L741
+# @symbol variable/parameter: record L745
+# @symbol variable/parameter: product L755
+# @symbol function/class: merge L796
+# @symbol variable/parameter: sources L801
+# @symbol variable/parameter: source_row L804
+# @symbol variable/parameter: provenance L813
+# @symbol function/class: get_config L845
+# @symbol function/class: save_config L855
+# @symbol variable/parameter: previous L862
+# @symbol variable/parameter: used L879
+# @symbol function/class: preview_standard L904
+# @symbol function/class: preview_file L915
+# @symbol variable/parameter: draft L921
+# @symbol function/class: standard_history L929
+# @symbol function/class: restore_standard L947
+# @symbol variable/parameter: restored L957
+# @symbol function/class: standardize_document L962
+# @symbol variable/parameter: old L970
+# @symbol variable/parameter: copied L973
+# @symbol variable/parameter: warnings L996
+# @symbol variable/parameter: new_id L1011
+# @symbol function/class: sales_report L1038
+# @symbol function/class: export_report L1053
+# @symbol variable/parameter: rows L1061
+# @symbol variable/parameter: blocks L1065
+# @symbol function/class: measurement L1094
+# @symbol function/class: audit_log L1102
+# @symbol function/class: context_for L1114
+# @symbol variable/parameter: context L1118
+# @symbol variable/parameter: budget L1119
+# @symbol variable/parameter: row L1120
+# @symbol function/class: ask L1137
+# @symbol variable/parameter: index L1149
+# @symbol function/class: vision L1149
+# @symbol variable/parameter: app L1177
 # @index-end
 """Same-origin application, authentication, role gates and API orchestration. Index: docs/code-index.md.
 
@@ -157,6 +162,8 @@ from .ai import adapter, validate_answer
 from .analytics import report
 from .conversion import MAX_BYTES, SUPPORTED, ingest, render_document
 from .exports import FORMATS, export_document
+from .library import LibraryQuery
+from .library import search as search_library
 from .models import (
     Login,
     MeasurementRequest,
@@ -182,6 +189,50 @@ from .units import UNITS, convert
 
 ROOT = Path(__file__).resolve().parent.parent
 CONVERSION_SLOTS = threading.BoundedSemaphore(2)
+
+
+def convert_payload(name: str, data: bytes, config: WorkspaceConfig) -> dict:
+    """Share the timed, credential-stripped worker for actual imports and unsaved file previews."""
+    if (
+        not re.fullmatch(r"[\w .()\-]{1,100}\.[A-Za-z0-9]{1,8}", name)
+        or name.rsplit(".", 1)[-1].lower() not in SUPPORTED
+    ):
+        raise HTTPException(415, "Unsupported format or unsafe filename")
+    if not data or len(data) > MAX_BYTES:
+        raise HTTPException(413, "Source must be 1 byte to 4 MiB")
+    if not CONVERSION_SLOTS.acquire(blocking=False):
+        raise HTTPException(429, "Conversion workers busy; retry later")
+    try:
+        worker_env = {
+            key: value
+            for key, value in os.environ.items()
+            if key in {"PATH", "SystemRoot", "SYSTEMROOT", "TEMP", "TMP", "LANG"}
+        }
+        command = (
+            [sys.executable, "--convert"]
+            if getattr(sys, "frozen", False)
+            else [sys.executable, "-m", "server.worker"]
+        )
+        converted = subprocess.run(
+            [*command, name, config.model_dump_json()],
+            input=data,
+            capture_output=True,
+            timeout=25,
+            cwd=ROOT,
+            env=worker_env,
+            check=False,
+            creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
+        )
+        payload = json.loads(converted.stdout)
+        if converted.returncode or "result" not in payload:
+            raise ValueError("Source rejected")
+        return payload["result"]
+    except (ValueError, subprocess.TimeoutExpired) as error:
+        raise HTTPException(
+            422, "Conversion rejected: corrupt, unsafe, unsupported or over-budget file"
+        ) from error
+    finally:
+        CONVERSION_SLOTS.release()
 
 
 class BodyLimit:
@@ -524,6 +575,14 @@ def create_app(
             for row in rows
         ]
 
+    @app.get("/api/library")
+    def library(request: Request, filters: LibraryQuery = Query()):
+        """Return authorized, paged standardized-file metadata, content matches and scoped facets."""
+        user = current(request, False)
+        workspace = user["workspace"] if user else filters.workspace
+        with connect(database_path) as database:
+            return search_library(database, user, workspace, filters)
+
     @app.get("/api/documents/{identifier}")
     def document(request: Request, identifier: str):
         """Return authorized semantic content and provenance for human or machine consumption."""
@@ -629,39 +688,7 @@ def create_app(
                 >= 200
             ):
                 raise HTTPException(409, "Workspace document limit reached")
-        if not CONVERSION_SLOTS.acquire(blocking=False):
-            raise HTTPException(429, "Conversion workers busy; retry later")
-        try:
-            worker_env = {
-                key: value
-                for key, value in os.environ.items()
-                if key in {"PATH", "SystemRoot", "SYSTEMROOT", "TEMP", "TMP", "LANG"}
-            }
-            command = (
-                [sys.executable, "--convert"]
-                if getattr(sys, "frozen", False)
-                else [sys.executable, "-m", "server.worker"]
-            )
-            converted = subprocess.run(
-                [*command, name, config.model_dump_json()],
-                input=data,
-                capture_output=True,
-                timeout=25,
-                cwd=ROOT,
-                env=worker_env,
-                check=False,
-                creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
-            )
-            payload = json.loads(converted.stdout)
-            if converted.returncode or "result" not in payload:
-                raise ValueError("Source rejected")
-            result = payload["result"]
-        except (ValueError, subprocess.TimeoutExpired) as error:
-            raise HTTPException(
-                422, "Conversion rejected: corrupt, unsafe, unsupported or over-budget file"
-            ) from error
-        finally:
-            CONVERSION_SLOTS.release()
+        result = convert_payload(name, data, config)
         identifier = str(uuid.uuid4())
         result["provenance"]["sales_import"] = bool(dataset)
         with connect(database_path) as database:
@@ -883,6 +910,20 @@ def create_app(
             return ingest("standard-preview.csv", body.sample.encode(), body.config)
         except ValueError as error:
             raise HTTPException(422, str(error)) from error
+
+    @app.post("/api/standards/preview-file")
+    def preview_file(
+        request: Request, file: UploadFile = File(), config: str = Form(max_length=64000)
+    ):
+        """Preview a supported real file with an authorized draft; never insert it or call AI."""
+        user = authorize(request, {"admin"}, mutate=True)
+        try:
+            draft = WorkspaceConfig.model_validate_json(config)
+        except ValueError as error:
+            raise HTTPException(422, "Invalid draft standard") from error
+        if draft.profile != user["workspace"]:
+            raise HTTPException(422, "Profile must match workspace")
+        return convert_payload(file.filename or "", file.file.read(MAX_BYTES + 1), draft)
 
     @app.get("/api/standards/history")
     def standard_history(request: Request):

@@ -1,6 +1,7 @@
 name: Desktop packages
 on:
   push:
+    branches: [main]
     paths:
       - "server/**"
       - "scripts/**"
@@ -9,15 +10,21 @@ on:
       - "runner/**"
       - "training/**"
       - "tests/**"
+      - "examples/**"
       - ".github/workflows/**"
       - "docs/licenses/**"
       - "package*.json"
       - "pyproject.toml"
+      - "requirements.lock"
       - "*config*"
       - "LICENSE"
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: desktop-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   package:
     strategy:
@@ -29,13 +36,13 @@ jobs:
     env:
       CSC_IDENTITY_AUTO_DISCOVERY: "false"
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
-      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
           cache: npm
@@ -55,7 +62,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: python scripts/license_bundle.py
-      - run: python -m PyInstaller --noconfirm --onefile --name business-knowledge-workbench-service --distpath release/service --paths . --add-data "server/schema.sql:server" --add-data "dist:ui" scripts/frozen_entry.py
+      - run: python -m PyInstaller --noconfirm --onefile --name business-knowledge-workbench-service --distpath release/service --paths . --collect-all docx --add-data "server/schema.sql:server" --add-data "dist:ui" scripts/frozen_entry.py
       - run: npm run test:desktop
         if: runner.os != 'Linux'
       - run: xvfb-run -a npm run test:desktop
@@ -73,7 +80,7 @@ jobs:
             export KBW_INSTALLED_APP="$PWD/release/installers/linux-unpacked/business-knowledge-workbench"
           fi
           if [ "$RUNNER_OS" = Linux ]; then xvfb-run -a npm run test:desktop; else npm run test:desktop; fi
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: always() && vars.KBW_UPLOAD_CI_ARTIFACTS == 'true'
         with:
           name: desktop-${{ matrix.os }}

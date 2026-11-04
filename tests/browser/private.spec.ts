@@ -1,23 +1,31 @@
 /* @index-begin
- * @symbol variable/parameter: { page, } L22
- * @symbol variable/parameter: info L24
- * @symbol variable/parameter: { page } L28
- * @symbol variable/parameter: external L43
- * @symbol variable/parameter: request L44
- * @symbol variable/parameter: { page, request, } L82
- * @symbol variable/parameter: denied L95
- * @symbol variable/parameter: release L106
- * @symbol variable/parameter: delayed L107
- * @symbol variable/parameter: resolve L107
- * @symbol variable/parameter: route L110
- * @symbol variable/parameter: releaseLibrary L126
- * @symbol variable/parameter: library L127
+ * @symbol variable/parameter: { page, } L23
+ * @symbol variable/parameter: info L25
+ * @symbol variable/parameter: { page } L36
+ * @symbol variable/parameter: external L51
+ * @symbol variable/parameter: request L52
+ * @symbol variable/parameter: { page, request, } L90
+ * @symbol variable/parameter: denied L103
+ * @symbol variable/parameter: release L114
+ * @symbol variable/parameter: delayed L115
+ * @symbol variable/parameter: resolve L115
+ * @symbol variable/parameter: route L118
+ * @symbol variable/parameter: releaseLibrary L134
+ * @symbol variable/parameter: library L135
 @index-end */
 /** Jason Stys: private website workflow, hostile origins, account isolation and responsive accessibility. */
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { createSession, documentJourney, phrase } from "./account-session";
 import { standardJourney } from "./standard-journey";
+import { libraryJourney } from "./library-journey";
+
+test("owner customizes fields, previews a real file, searches standardized cells and downloads", async ({
+  page,
+}, info) => {
+  await createSession(page, "library_" + info.project.name);
+  await libraryJourney(page);
+});
 
 test("owner publishes and restores a real standard without rewriting source evidence", async ({
   page,
@@ -127,7 +135,7 @@ test("delayed initial view cannot overwrite a newly selected workspace", async (
     const library = new Promise<void>((resolve) => {
       releaseLibrary = resolve;
     });
-    await page.route(/\/private\/api\/documents\?/, async (route) => {
+    await page.route(/\/private\/api\/library\?/, async (route) => {
       await library;
       await route.continue();
     });

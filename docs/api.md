@@ -14,6 +14,7 @@ Interactive OpenAPI: `/docs`; schema: `/openapi.json`. All `/api/` responses use
 | POST `/api/products` | Staff + CSRF | Validated ID/name/category/description/exact-cent price/customer/specification text. Generates public HTML-first specification. |
 | GET `/api/options` | Staff | Configured customer labels; not publicly exposed. |
 | GET `/api/documents` | Scoped | `q`, exact `category`, `sort=title|newest|category`; up to 200 results, ACL first. LIKE wildcard characters are treated literally. |
+| GET `/api/library` | Scoped | Metadata-only paginated library, total and authorized facets; see filters below. |
 | GET `/api/documents/{id}` | Scoped | Semantic blocks, HTML, warnings, measurements and provenance. |
 | GET `/api/documents/{id}/export/{html|json|md|csv|docx|pdf}` | Scoped | Attachment derived from canonical HTML. |
 | GET `/api/documents/{id}/source` | Scoped | Original bytes as octet-stream; compilations have no single original. |
@@ -48,4 +49,26 @@ Blocks may be paragraph, heading, sanitized HTML, table, figure (base64 PNG plus
 
 Sales headers default to `product,customer,month,quantity,revenue_cents`. Column aliases are admin parameters. Rows require a known product/customer assignment, YYYY-MM month and nonnegative bounded integers. Every row validates before transaction commit. The source hash is also recorded in `sales_imports`; changing template revision/visibility cannot multiply sales. Document-only imports and reporting imports have distinct idempotency semantics.
 
-Search uses bounded results rather than unbounded pagination. Add a cursor/FTS contract before lifting the 200-document scope. UTC SQLite timestamps identify persistence events; monthly sales dates are calendar periods, not instants.
+Library filters: `workspace`, literal `q` (120 chars), exact `category`,
+`source_format`, `kind`, `dimension`, `visibility`, `review_status`, canonical
+`field` and optional `value`, `sort=title|newest|category`, `offset=0..200`,
+`limit=1..200` (25 default). Unknown parameters and invalid enums/ranges return
+422; a value without a field is invalid. Field matching is exact/case-folded;
+values are literal substrings in a data row of that same table column. Response:
+`{items,total,offset,limit,facets}`. Items expose ID/title/category/access/timestamp,
+source format, standard format/revision, a 240-character standardized excerpt and
+source availability, not full HTML or source bytes. Facets cover authorized
+categories, source formats, access, canonical fields and dimensions; each list is
+capped at 200. Search is standardized-text search, not OCR or original-blob search.
+
+`POST /api/standards/preview-file` accepts multipart `file` and `config` JSON
+(64,000-character maximum), owner/admin + CSRF only. It uses the same supported
+format/signature/size checks, two-worker semaphore and 25-second worker deadline
+as imports. No configuration/document/sales write or AI call occurs. Private mode
+uses `/private/api/standards/preview-file`, requiring exact loopback origin,
+`X-KBW-Request:v1`, own cookie and per-session vault proof. Multipart is permitted
+only for import and this preview, not arbitrary mutation routes.
+
+Search remains bounded. Add a cursor/FTS contract before lifting the 200-document
+scope. UTC SQLite timestamps identify persistence events; monthly sales dates are
+calendar periods, not instants.

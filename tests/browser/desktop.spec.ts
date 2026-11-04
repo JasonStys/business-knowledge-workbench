@@ -1,21 +1,21 @@
 /* @index-begin
- * @symbol variable/parameter: temporary L28
- * @symbol variable/parameter: logs L29
- * @symbol variable/parameter: app L31
- * @symbol variable/parameter: page L42
- * @symbol variable/parameter: destination L46
- * @symbol variable/parameter: completed L47
- * @symbol variable/parameter: target L48
- * @symbol variable/parameter: { BrowserWindow } L48
- * @symbol variable/parameter: reject L50
- * @symbol variable/parameter: resolve L50
- * @symbol variable/parameter: timer L51
- * @symbol variable/parameter: _event L57
- * @symbol variable/parameter: item L57
- * @symbol variable/parameter: state L59
- * @symbol variable/parameter: data L73
- * @symbol variable/parameter: error L100
- * @symbol variable/parameter: log L101
+ * @symbol variable/parameter: temporary L29
+ * @symbol variable/parameter: logs L30
+ * @symbol variable/parameter: app L32
+ * @symbol variable/parameter: page L43
+ * @symbol variable/parameter: destination L47
+ * @symbol variable/parameter: completed L48
+ * @symbol variable/parameter: target L49
+ * @symbol variable/parameter: { BrowserWindow } L49
+ * @symbol variable/parameter: reject L51
+ * @symbol variable/parameter: resolve L51
+ * @symbol variable/parameter: timer L52
+ * @symbol variable/parameter: _event L58
+ * @symbol variable/parameter: item L58
+ * @symbol variable/parameter: state L60
+ * @symbol variable/parameter: data L74
+ * @symbol variable/parameter: error L102
+ * @symbol variable/parameter: log L103
 @index-end */
 /** Jason Stys: genuine packaged native application conversion, encrypted lock and renderer sandbox checks. */
 import { test, expect, _electron as electron } from "@playwright/test";
@@ -24,6 +24,7 @@ import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { createSession, documentJourney } from "./account-session";
 import { standardJourney } from "./standard-journey";
+import { libraryJourney } from "./library-journey";
 test("native application imports rich documents with private accounts and no renderer privileges", async () => {
   const temporary = mkdtempSync(join(tmpdir(), "kbw-native-"));
   const logs = join(temporary, "launcher");
@@ -75,6 +76,7 @@ test("native application imports rich documents with private accounts and no ren
       expect(data.provenance.conversion_path).toEqual(["docx", "html"]);
     });
     await standardJourney(page, false);
+    await libraryJourney(page, false);
     expect(
       await page.evaluate(
         () => typeof (window as unknown as { require?: unknown }).require,

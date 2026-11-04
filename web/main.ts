@@ -1,103 +1,107 @@
 /* @index-begin
- * @symbol type: View L124
- * @symbol variable/parameter: state L126
- * @symbol variable/parameter: app L140
- * @symbol variable/parameter: navigationBusy L141
- * @symbol variable/parameter: busy L144
- * @symbol function/class: navigationLock L144
- * @symbol variable/parameter: node L150
- * @symbol variable/parameter: cents L160
- * @symbol variable/parameter: money L160
- * @symbol function/class: esc L168
- * @symbol variable/parameter: value L168
- * @symbol variable/parameter: character L171
- * @symbol function/class: api L179
- * @symbol variable/parameter: init L179
- * @symbol variable/parameter: path L179
- * @symbol variable/parameter: headers L180
- * @symbol variable/parameter: [key, value] L191
- * @symbol variable/parameter: mutation L196
- * @symbol variable/parameter: separator L201
- * @symbol variable/parameter: response L202
- * @symbol variable/parameter: error L214
- * @symbol variable/parameter: message L227
- * @symbol function/class: notice L227
- * @symbol function/class: action L235
- * @symbol variable/parameter: work L235
- * @symbol function/class: shell L248
- * @symbol variable/parameter: workspace L249
- * @symbol variable/parameter: item L250
- * @symbol variable/parameter: [view, label, index] L259
- * @symbol variable/parameter: button L267
- * @symbol variable/parameter: event L280
- * @symbol variable/parameter: selected L282
- * @symbol function/class: loginView L318
- * @symbol variable/parameter: data L323
- * @symbol function/class: catalog L342
- * @symbol variable/parameter: content L343
- * @symbol variable/parameter: unit L349
- * @symbol variable/parameter: products L361
- * @symbol variable/parameter: update L364
- * @symbol variable/parameter: query L365
- * @symbol variable/parameter: filtered L368
- * @symbol variable/parameter: product L368
- * @symbol variable/parameter: spec L377
- * @symbol variable/parameter: result L388
- * @symbol function/class: chart L400
- * @symbol variable/parameter: report L400
- * @symbol variable/parameter: max L401
- * @symbol variable/parameter: point L401
- * @symbol function/class: dashboard L406
- * @symbol variable/parameter: employee L407
- * @symbol variable/parameter: format L410
- * @symbol variable/parameter: reportLink L411
- * @symbol variable/parameter: options L421
- * @symbol variable/parameter: customerOptions L422
- * @symbol variable/parameter: [id, label] L423
- * @symbol variable/parameter: form L437
- * @symbol variable/parameter: body L463
- * @symbol variable/parameter: title L492
- * @symbol variable/parameter: answer L510
- * @symbol function/class: documentList L525
- * @symbol variable/parameter: id L526
- * @symbol variable/parameter: params L528
- * @symbol variable/parameter: docs L534
- * @symbol variable/parameter: staff L535
- * @symbol variable/parameter: doc L537
- * @symbol variable/parameter: input L548
- * @symbol function/class: preview L557
- * @symbol variable/parameter: block L566
- * @symbol variable/parameter: index L566
- * @symbol variable/parameter: warning L566
- * @symbol variable/parameter: exports L571
- * @symbol variable/parameter: preferred L572
- * @symbol variable/parameter: available L573
- * @symbol variable/parameter: link L578
- * @symbol variable/parameter: suffix L579
- * @symbol variable/parameter: url L581
- * @symbol variable/parameter: note L596
- * @symbol variable/parameter: standardLink L599
- * @symbol variable/parameter: copy L614
- * @symbol function/class: download L648
- * @symbol variable/parameter: filename L648
- * @symbol variable/parameter: type L648
- * @symbol function/class: studio L658
- * @symbol variable/parameter: config L661
- * @symbol variable/parameter: history L662
- * @symbol variable/parameter: audit L666
- * @symbol variable/parameter: [dimension, units] L675
- * @symbol variable/parameter: [key, alias] L684
- * @symbol variable/parameter: readConfig L698
- * @symbol variable/parameter: key L706
- * @symbol variable/parameter: [, unit] L707
- * @symbol variable/parameter: section L711
- * @symbol variable/parameter: draft L730
- * @symbol variable/parameter: frame L737
- * @symbol variable/parameter: entry L750
- * @symbol function/class: render L790
- * @symbol variable/parameter: previous L791
- * @symbol function/class: start L817
- * @symbol variable/parameter: privateMode L836
+ * @symbol type: View L127
+ * @symbol variable/parameter: state L136
+ * @symbol variable/parameter: app L150
+ * @symbol variable/parameter: navigationBusy L151
+ * @symbol variable/parameter: disabledControls L152
+ * @symbol variable/parameter: busy L158
+ * @symbol function/class: navigationLock L158
+ * @symbol variable/parameter: node L164
+ * @symbol variable/parameter: cents L181
+ * @symbol variable/parameter: money L181
+ * @symbol function/class: esc L189
+ * @symbol variable/parameter: value L189
+ * @symbol variable/parameter: character L192
+ * @symbol function/class: api L200
+ * @symbol variable/parameter: init L200
+ * @symbol variable/parameter: path L200
+ * @symbol variable/parameter: headers L201
+ * @symbol variable/parameter: [key, value] L212
+ * @symbol variable/parameter: mutation L217
+ * @symbol variable/parameter: separator L222
+ * @symbol variable/parameter: response L223
+ * @symbol variable/parameter: error L235
+ * @symbol variable/parameter: message L248
+ * @symbol function/class: notice L248
+ * @symbol function/class: action L256
+ * @symbol variable/parameter: work L256
+ * @symbol function/class: shell L269
+ * @symbol variable/parameter: workspace L270
+ * @symbol variable/parameter: item L271
+ * @symbol variable/parameter: [view, label, index] L280
+ * @symbol variable/parameter: button L288
+ * @symbol variable/parameter: event L301
+ * @symbol variable/parameter: selected L303
+ * @symbol function/class: loginView L339
+ * @symbol variable/parameter: data L344
+ * @symbol function/class: catalog L363
+ * @symbol variable/parameter: content L364
+ * @symbol variable/parameter: unit L370
+ * @symbol variable/parameter: products L382
+ * @symbol variable/parameter: update L385
+ * @symbol variable/parameter: query L386
+ * @symbol variable/parameter: filtered L389
+ * @symbol variable/parameter: product L389
+ * @symbol variable/parameter: spec L398
+ * @symbol variable/parameter: result L409
+ * @symbol function/class: chart L421
+ * @symbol variable/parameter: report L421
+ * @symbol variable/parameter: max L422
+ * @symbol variable/parameter: point L422
+ * @symbol function/class: dashboard L427
+ * @symbol variable/parameter: employee L428
+ * @symbol variable/parameter: format L431
+ * @symbol variable/parameter: reportLink L432
+ * @symbol variable/parameter: options L442
+ * @symbol variable/parameter: customerOptions L443
+ * @symbol variable/parameter: [id, label] L444
+ * @symbol variable/parameter: form L458
+ * @symbol variable/parameter: body L484
+ * @symbol variable/parameter: title L519
+ * @symbol variable/parameter: answer L537
+ * @symbol function/class: documentList L552
+ * @symbol variable/parameter: offset L552
+ * @symbol variable/parameter: docs L556
+ * @symbol variable/parameter: staff L558
+ * @symbol variable/parameter: endpoint L559
+ * @symbol variable/parameter: id L559
+ * @symbol variable/parameter: suffix L559
+ * @symbol variable/parameter: doc L562
+ * @symbol variable/parameter: input L585
+ * @symbol function/class: preview L594
+ * @symbol variable/parameter: block L603
+ * @symbol variable/parameter: index L603
+ * @symbol variable/parameter: warning L603
+ * @symbol variable/parameter: exports L608
+ * @symbol variable/parameter: preferred L609
+ * @symbol variable/parameter: available L610
+ * @symbol variable/parameter: link L615
+ * @symbol variable/parameter: url L618
+ * @symbol variable/parameter: note L633
+ * @symbol variable/parameter: standardLink L636
+ * @symbol variable/parameter: copy L651
+ * @symbol variable/parameter: close L682
+ * @symbol function/class: download L695
+ * @symbol variable/parameter: filename L695
+ * @symbol variable/parameter: type L695
+ * @symbol function/class: studio L705
+ * @symbol variable/parameter: config L708
+ * @symbol variable/parameter: history L709
+ * @symbol variable/parameter: audit L713
+ * @symbol variable/parameter: [dimension, units] L722
+ * @symbol variable/parameter: [key, alias] L731
+ * @symbol variable/parameter: readConfig L746
+ * @symbol variable/parameter: key L754
+ * @symbol variable/parameter: [, unit] L755
+ * @symbol variable/parameter: section L759
+ * @symbol variable/parameter: source L778
+ * @symbol variable/parameter: draft L791
+ * @symbol variable/parameter: frame L795
+ * @symbol variable/parameter: entry L808
+ * @symbol function/class: render L848
+ * @symbol variable/parameter: previous L849
+ * @symbol function/class: start L875
+ * @symbol variable/parameter: privateMode L894
 @index-end */
 /** Accessible workspace UI and explicit API actions. Function/state lines: docs/code-index.md.
  * All user/source values are escaped. Canonical documents render inside scriptless sandbox frames.
@@ -114,7 +118,6 @@ import type {
   Answer,
   Bootstrap,
   Config,
-  Doc,
   DocumentResult,
   Product,
   Report,
@@ -123,6 +126,13 @@ import type {
 
 type View = "catalog" | "customer" | "employee" | "admin";
 import { standardFields, readStandard, measurementExample } from "./standards";
+import { mountFieldEditor } from "./standard-builder";
+import {
+  libraryTools,
+  libraryQuery,
+  updateFacets,
+  type LibraryResult,
+} from "./library";
 const state: {
   bootstrap?: Bootstrap;
   session: Session | null;
@@ -139,6 +149,10 @@ const state: {
 };
 const app = document.querySelector<HTMLDivElement>("#app")!;
 let navigationBusy = false;
+const disabledControls = new WeakMap<
+  HTMLButtonElement | HTMLSelectElement,
+  boolean
+>();
 
 /** Keep asynchronous views/actions from overwriting a newer navigation; the private lock remains available. */
 function navigationLock(busy: boolean): void {
@@ -148,7 +162,14 @@ function navigationLock(busy: boolean): void {
       "[data-view], #workspace, #private-tools, #sign-in, #content button",
     )
     .forEach((node) => {
-      node.disabled = busy;
+      if (busy) {
+        if (!disabledControls.has(node))
+          disabledControls.set(node, node.disabled);
+        node.disabled = true;
+      } else if (disabledControls.has(node)) {
+        node.disabled = disabledControls.get(node)!;
+        disabledControls.delete(node);
+      }
     });
 }
 // Async views insert controls before their final API read completes. Disable those
@@ -261,7 +282,7 @@ function shell(): void {
     )
     .join(
       "",
-    )}</nav><div class="sidebar-bottom"><span class="status-dot"></span> Modular by design<p>One structured source.<br>Many useful perspectives.</p><span class="version">${isPrivate ? "PRIVATE LOCAL EDITION · V1.2" : "LEGACY ROLE DEMO · V1.2"}</span></div></aside><div class="layout"><header><span class="breadcrumb">${esc(workspace?.title)} <span>/ ${esc(state.view === "admin" ? "Configuration studio" : state.view === "catalog" ? "Product catalog" : "Knowledge workspace")}</span></span><div class="account">${state.session ? `<span>${esc(state.session.username)} · ${esc(state.session.role)}</span><button id="logout" class="quiet">Sign out</button>` : '<span>Visitor access</span><button id="sign-in" class="quiet">Sign in</button>'}</div></header><main id="main" tabindex="-1"><div class="eyebrow">STRUCTURE YOUR INFORMATION. MAKE IT USEFUL.</div><div id="notice" class="notice" role="status" aria-live="polite"></div><div id="content"></div></main><footer>Business Knowledge Workbench <span>All scenario records are synthetic. No operational or financial advice.</span></footer></div>`;
+    )}</nav><div class="sidebar-bottom"><span class="status-dot"></span> Modular by design<p>One structured source.<br>Many useful perspectives.</p><span class="version">${isPrivate ? "PRIVATE LOCAL EDITION · V1.3" : "LEGACY ROLE DEMO · V1.3"}</span></div></aside><div class="layout"><header><span class="breadcrumb">${esc(workspace?.title)} <span>/ ${esc(state.view === "admin" ? "Configuration studio" : state.view === "catalog" ? "Product catalog" : "Knowledge workspace")}</span></span><div class="account">${state.session ? `<span>${esc(state.session.username)} · ${esc(state.session.role)}</span><button id="logout" class="quiet">Sign out</button>` : '<span>Visitor access</span><button id="sign-in" class="quiet">Sign in</button>'}</div></header><main id="main" tabindex="-1"><div class="eyebrow">STRUCTURE YOUR INFORMATION. MAKE IT USEFUL.</div><div id="notice" class="notice" role="status" aria-live="polite"></div><div id="content"></div></main><footer>Business Knowledge Workbench <span>All scenario records are synthetic. No operational or financial advice.</span></footer></div>`;
   document
     .querySelectorAll<HTMLButtonElement>("[data-view]")
     .forEach((button) =>
@@ -407,7 +428,7 @@ async function dashboard(): Promise<void> {
   const employee = state.session?.role !== "customer";
   const data = await api<Report>("report");
   document.querySelector("#content")!.innerHTML =
-    `<div class="page-title"><div><h1>${employee ? "Your knowledge, connected." : "Your products. Your perspective."}</h1><p>${employee ? "Organize evidence, normalize data, and turn information into something actionable." : "Sales, performance and documentation for your assigned customer account."}</p></div><span class="pill">${employee ? "STAFF WORKSPACE" : "CUSTOMER-SCOPED"}</span></div><div class="metrics"><div><span>Recorded revenue</span><strong>${money(data.revenue_cents)}</strong><small>USD · selected account scope</small></div><div><span>Units sold</span><strong>${data.quantity.toLocaleString()}</strong><small>${data.series.length} recorded months</small></div><div><span>Conversion standard</span><strong>HTML first</strong><small>Structured · traceable · portable</small></div></div><section class="panel"><div class="section-heading"><div><h2>Business performance</h2><p>Historical records, not live telemetry.</p></div><button id="report-download" class="quiet">Download report JSON</button></div>${chart(data)}${data.forecast.length ? `<div class="forecast"><h3>Three-month baseline projection</h3>${data.forecast.map((point) => `<div><span>Month +${point.month_offset}</span><strong>${money(point.revenue_cents)}</strong><small>${money(point.low_cents)} – ${money(point.high_cents)}</small></div>`).join("")}</div>` : ""}<p class="muted">${esc(data.method)}</p></section>${employee ? `<section class="panel"><h2>Bring information together</h2><p>Import supported documents or mapped sales data. Original sources and conversion evidence are retained.</p><form id="import" class="import-form"><label>Source file<input type="file" name="file" required accept="${state.bootstrap!.formats.map((format) => "." + format).join(",")}"></label><label>Visibility<select name="visibility"><option value="internal">Internal only</option><option value="customer">Customer account</option><option value="public">Public</option></select></label><label>Customer<select name="customer"><option value="north">North account</option><option value="south">South account</option></select></label><label>Category<input name="category" value="Imported" maxlength="40" required></label><label class="check"><input name="dataset" type="checkbox" value="true">Import sales rows into reporting</label><button class="primary">Import & standardize</button></form><p class="muted">4 MiB maximum. ${state.bootstrap!.formats.join(", ")}. Unsupported or uncertain content is not silently interpreted.</p></section>` : ""}<section class="panel"><div class="section-heading"><h2>Document library</h2><span>ACL enforced before search</span></div><div class="library-tools"><label>Search documents<input id="doc-search" type="search" placeholder="Part number, phrase, or title"></label><label>Category<input id="doc-category" placeholder="All categories"></label><label>Sort<select id="doc-sort"><option value="title">Title</option><option value="newest">Newest first</option><option value="category">Category</option></select></label><button id="filter" class="quiet">Apply filters</button></div>${employee ? '<div class="merge-tools"><label>Compilation title<input id="merge-title" value="Business evidence pack" maxlength="120"></label><button id="merge" class="quiet">Combine selected documents</button></div>' : ""}<div id="documents"></div><div id="preview"></div></section><section class="panel"><div class="section-heading"><div><h2>Ask your knowledge workspace</h2><p>Optional, read-only AI with authorized source citations. Disabled until an admin enables it.</p></div><span class="pill">HUMAN REVIEW REQUIRED</span></div><form id="ask"><label for="question">Question</label><div class="ask-row"><input id="question" required minlength="3" maxlength="800" placeholder="What do the controller specifications say about width?"><button class="primary">Ask sources</button></div></form><div id="answer" class="answer" aria-live="polite"></div></section>`;
+    `<div class="page-title"><div><h1>${employee ? "Your knowledge, connected." : "Your products. Your perspective."}</h1><p>${employee ? "Organize evidence, normalize data, and turn information into something actionable." : "Sales, performance and documentation for your assigned customer account."}</p></div><span class="pill">${employee ? "STAFF WORKSPACE" : "CUSTOMER-SCOPED"}</span></div><div class="metrics"><div><span>Recorded revenue</span><strong>${money(data.revenue_cents)}</strong><small>USD · selected account scope</small></div><div><span>Units sold</span><strong>${data.quantity.toLocaleString()}</strong><small>${data.series.length} recorded months</small></div><div><span>Conversion standard</span><strong>HTML first</strong><small>Structured · traceable · portable</small></div></div><section class="panel"><div class="section-heading"><div><h2>Business performance</h2><p>Historical records, not live telemetry.</p></div><button id="report-download" class="quiet">Download report JSON</button></div>${chart(data)}${data.forecast.length ? `<div class="forecast"><h3>Three-month baseline projection</h3>${data.forecast.map((point) => `<div><span>Month +${point.month_offset}</span><strong>${money(point.revenue_cents)}</strong><small>${money(point.low_cents)} – ${money(point.high_cents)}</small></div>`).join("")}</div>` : ""}<p class="muted">${esc(data.method)}</p></section>${employee ? `<section class="panel"><h2>Bring information together</h2><p>Import supported documents or mapped sales data. Original sources and conversion evidence are retained.</p><form id="import" class="import-form"><label>Source file<input type="file" name="file" required accept="${state.bootstrap!.formats.map((format) => "." + format).join(",")}"></label><label>Visibility<select name="visibility"><option value="internal">Internal only</option><option value="customer">Customer account</option><option value="public">Public</option></select></label><label>Customer<select name="customer"><option value="north">North account</option><option value="south">South account</option></select></label><label>Category<input name="category" value="Imported" maxlength="40" required></label><label class="check"><input name="dataset" type="checkbox" value="true">Import sales rows into reporting</label><button class="primary">Import & standardize</button></form><p class="muted">4 MiB maximum. ${state.bootstrap!.formats.join(", ")}. Unsupported or uncertain content is not silently interpreted.</p></section>` : ""}<section class="panel"><div class="section-heading"><h2>Document library</h2><span>ACL enforced before search</span></div>${libraryTools()}${employee ? '<div class="merge-tools"><label>Compilation title<input id="merge-title" value="Business evidence pack" maxlength="120"></label><button id="merge" class="quiet">Combine selected documents</button></div>' : ""}<div id="documents"></div><div id="preview"></div></section><section class="panel"><div class="section-heading"><div><h2>Ask your knowledge workspace</h2><p>Optional, read-only AI with authorized source citations. Disabled until an admin enables it.</p></div><span class="pill">HUMAN REVIEW REQUIRED</span></div><form id="ask"><label for="question">Question</label><div class="ask-row"><input id="question" required minlength="3" maxlength="800" placeholder="What do the controller specifications say about width?"><button class="primary">Ask sources</button></div></form><div id="answer" class="answer" aria-live="polite"></div></section>`;
   const reportLink = document.createElement("a");
   reportLink.className = "quiet";
   reportLink.download = "";
@@ -483,8 +504,14 @@ async function dashboard(): Promise<void> {
     });
   });
   document
-    .querySelector("#filter")!
-    .addEventListener("click", () => void action(documentList));
+    .querySelector("#library-search")!
+    .addEventListener("submit", (event) => {
+      event.preventDefault();
+      void action(() => documentList());
+    });
+  document.querySelector("#library-search")!.addEventListener("reset", () => {
+    window.setTimeout(() => void action(() => documentList()), 0);
+  });
   document.querySelector("#merge")?.addEventListener(
     "click",
     () =>
@@ -521,26 +548,36 @@ async function dashboard(): Promise<void> {
   await documentList();
 }
 
-/** Filter document metadata and wire previews and ordered source selections. */
-async function documentList(): Promise<void> {
-  const value = (id: string): string =>
-    (document.querySelector(id) as HTMLInputElement | null)?.value || "";
-  const params = new URLSearchParams({
-    workspace: state.workspace,
-    q: value("#doc-search"),
-    category: value("#doc-category"),
-    sort: value("#doc-sort") || "title",
-  });
-  const docs = await api<Doc[]>(`documents?${params}`);
+/** Search standardized content with scoped facets, stable pages and direct downloads. */
+async function documentList(offset = 0): Promise<void> {
+  const result = await api<LibraryResult>(
+    `library?${libraryQuery(state.workspace, offset)}`,
+  );
+  const docs = result.items;
+  updateFacets(result.facets);
   const staff = state.session && state.session.role !== "customer";
+  const endpoint = (id: string, suffix: string): string =>
+    `${isPrivate ? "/private" : ""}/api/documents/${encodeURIComponent(id)}/${suffix}?workspace=${encodeURIComponent(state.workspace)}`;
   document.querySelector("#documents")!.innerHTML =
-    `<div class="table-scroll"><table><caption>${docs.length} accessible documents</caption><thead><tr>${staff ? "<th>Select</th>" : ""}<th>Document</th><th>Category</th><th>Access</th><th>Extraction</th><th>Open</th></tr></thead><tbody>${docs.map((doc) => `<tr>${staff ? `<td><input type="checkbox" data-select="${esc(doc.id)}" aria-label="Select ${esc(doc.title)}" ${state.selected.has(doc.id) ? "checked" : ""}></td>` : ""}<td>${esc(doc.title)}</td><td>${esc(doc.category)}</td><td><span class="tag">${esc(doc.visibility)}</span></td><td>${esc(doc.review_status)}</td><td><button class="link-button" data-doc="${esc(doc.id)}" aria-label="Preview ${esc(doc.title)}">Preview ↗</button></td></tr>`).join("") || `<tr><td colspan="6">No accessible documents match these filters.</td></tr>`}</tbody></table></div>`;
+    `<p role="status">Showing ${result.total ? result.offset + 1 : 0}–${Math.min(result.offset + docs.length, result.total)} of ${result.total} permitted files</p><div class="table-scroll"><table><caption>${docs.length} accessible documents</caption><thead><tr>${staff ? "<th>Select</th>" : ""}<th>Document and content</th><th>Category / format</th><th>Access</th><th>Extraction</th><th>Open / download</th></tr></thead><tbody>${docs.map((doc) => `<tr>${staff ? `<td><input type="checkbox" data-select="${esc(doc.id)}" aria-label="Select ${esc(doc.title)}" ${state.selected.has(doc.id) ? "checked" : ""}></td>` : ""}<td>${esc(doc.title)}<details><summary>Content excerpt</summary><p>${esc(doc.excerpt)}</p></details><small>Standard revision ${esc(doc.standard_revision ?? "legacy")} · ${esc(doc.created)}</small></td><td>${esc(doc.category)} · ${esc(doc.source_format || "internal")}</td><td><span class="tag">${esc(doc.visibility)}</span></td><td>${esc(doc.review_status)}</td><td><button class="link-button" data-doc="${esc(doc.id)}" aria-label="Preview ${esc(doc.title)}">Preview ↗</button><a download href="${endpoint(doc.id, "export/" + encodeURIComponent(doc.standard_format))}" aria-label="Download standardized ${esc(doc.title)}">Download ${esc(doc.standard_format.toUpperCase())}</a></td></tr>`).join("") || '<tr><td colspan="6">No accessible documents match these filters.</td></tr>'}</tbody></table></div><div class="button-row"><button type="button" id="library-prev" class="quiet" ${offset === 0 ? "disabled" : ""}>Previous files</button><button type="button" id="library-next" class="quiet" ${offset + docs.length >= result.total ? "disabled" : ""}>Next files</button></div>`;
+  document
+    .querySelector("#library-prev")!
+    .addEventListener(
+      "click",
+      () => void action(() => documentList(Math.max(0, offset - result.limit))),
+    );
+  document
+    .querySelector("#library-next")!
+    .addEventListener(
+      "click",
+      () => void action(() => documentList(offset + result.limit)),
+    );
   document
     .querySelectorAll<HTMLButtonElement>("[data-doc]")
     .forEach((button) =>
       button.addEventListener(
         "click",
-        () => void action(async () => preview(button.dataset.doc!)),
+        () => void action(() => preview(button.dataset.doc!)),
       ),
     );
   document
@@ -642,6 +679,16 @@ async function preview(id: string): Promise<void> {
           }),
       ),
     );
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "quiet";
+  close.textContent = "Close document preview";
+  close.addEventListener("click", () => {
+    if (state.previewUrl) URL.revokeObjectURL(state.previewUrl);
+    delete state.previewUrl;
+    document.querySelector("#preview")!.replaceChildren();
+  });
+  exports.append(close);
 }
 
 /** Download a browser-generated report; revoke its temporary blob URL after activation. */
@@ -695,6 +742,7 @@ async function studio(): Promise<void> {
         `<label>Customer accounts (JSON ID-to-label map)<textarea name="customers" rows="5" required>${esc(JSON.stringify(config.customers, null, 2))}</textarea></label>`,
     );
   const form = document.querySelector<HTMLFormElement>("#config")!;
+  mountFieldEditor();
   const readConfig = (): Config => {
     const data = new FormData(form);
     return {
@@ -727,13 +775,23 @@ async function studio(): Promise<void> {
     "click",
     () =>
       void action(async () => {
-        const draft = await api<DocumentResult>("standards/preview", {
-          method: "POST",
-          body: JSON.stringify({
+        const source = document.querySelector<HTMLInputElement>(
+          "#standard-preview-file",
+        )!.files?.[0];
+        let body: FormData | string;
+        if (source) {
+          body = new FormData();
+          body.set("file", source);
+          body.set("config", JSON.stringify(readConfig()));
+        } else
+          body = JSON.stringify({
             config: readConfig(),
             sample: new FormData(form).get("std-sample"),
-          }),
-        });
+          });
+        const draft = await api<DocumentResult>(
+          source ? "standards/preview-file" : "standards/preview",
+          { method: "POST", body },
+        );
         const frame = document.querySelector<HTMLIFrameElement>(
           "#standard-preview-frame",
         )!;

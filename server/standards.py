@@ -1,41 +1,43 @@
 # @index-begin
-# @symbol variable/parameter: config L58
-# @symbol function/class: identity L58
-# @symbol variable/parameter: settings L60
-# @symbol variable/parameter: digest L65
-# @symbol variable/parameter: blocks L76
-# @symbol function/class: prepare_tables L76
-# @symbol variable/parameter: warnings L76
-# @symbol variable/parameter: prepared L78
-# @symbol variable/parameter: standard L79
-# @symbol variable/parameter: aliases L83
+# @symbol variable/parameter: config L60
+# @symbol function/class: identity L60
+# @symbol variable/parameter: settings L62
+# @symbol variable/parameter: digest L67
+# @symbol variable/parameter: blocks L78
+# @symbol function/class: prepare_tables L78
+# @symbol variable/parameter: warnings L78
+# @symbol variable/parameter: prepared L80
+# @symbol variable/parameter: standard L81
 # @symbol variable/parameter: column L85
-# @symbol variable/parameter: alias L86
-# @symbol variable/parameter: block L88
-# @symbol variable/parameter: rows L91
-# @symbol variable/parameter: headers L92
-# @symbol variable/parameter: header L93
-# @symbol variable/parameter: mapped L93
-# @symbol variable/parameter: recognized L94
-# @symbol variable/parameter: missing L104
-# @symbol variable/parameter: extras L111
-# @symbol variable/parameter: key L111
-# @symbol variable/parameter: index L116
-# @symbol variable/parameter: positions L116
-# @symbol variable/parameter: order L117
-# @symbol variable/parameter: row L119
-# @symbol variable/parameter: values L120
-# @symbol variable/parameter: value L122
-# @symbol variable/parameter: match L129
-# @symbol variable/parameter: number L131
-# @symbol variable/parameter: unit L131
-# @symbol function/class: expand_html_tables L152
-# @symbol variable/parameter: output L154
-# @symbol variable/parameter: node L156
-# @symbol function/class: walk L156
-# @symbol variable/parameter: cell L169
-# @symbol variable/parameter: soup L185
-# @symbol variable/parameter: child L186
+# @symbol variable/parameter: enabled L85
+# @symbol variable/parameter: excluded L86
+# @symbol variable/parameter: aliases L87
+# @symbol variable/parameter: alias L90
+# @symbol variable/parameter: block L92
+# @symbol variable/parameter: rows L95
+# @symbol variable/parameter: headers L96
+# @symbol variable/parameter: header L97
+# @symbol variable/parameter: mapped L97
+# @symbol variable/parameter: recognized L98
+# @symbol variable/parameter: missing L108
+# @symbol variable/parameter: extras L113
+# @symbol variable/parameter: key L113
+# @symbol variable/parameter: index L124
+# @symbol variable/parameter: positions L124
+# @symbol variable/parameter: order L125
+# @symbol variable/parameter: row L127
+# @symbol variable/parameter: values L128
+# @symbol variable/parameter: value L130
+# @symbol variable/parameter: match L137
+# @symbol variable/parameter: number L139
+# @symbol variable/parameter: unit L139
+# @symbol function/class: expand_html_tables L160
+# @symbol variable/parameter: output L162
+# @symbol variable/parameter: node L164
+# @symbol function/class: walk L164
+# @symbol variable/parameter: cell L177
+# @symbol variable/parameter: soup L193
+# @symbol variable/parameter: child L194
 # @index-end
 """Jason Stys: deterministic data-only table standards and immutable conversion identities.
 
@@ -80,6 +82,8 @@ def prepare_tables(blocks: list[dict], config: WorkspaceConfig, warnings: list[s
     if not standard.columns:
         return prepared
     prepared = expand_html_tables(prepared)
+    enabled = [column for column in standard.columns if column.enabled]
+    excluded = {column.key for column in standard.columns if not column.enabled}
     aliases = {
         alias.strip().casefold(): column.key
         for column in standard.columns
@@ -102,23 +106,27 @@ def prepare_tables(blocks: list[dict], config: WorkspaceConfig, warnings: list[s
         if any(len(row) != len(headers) for row in rows[1:]):
             raise ValueError("Table row width does not match headers")
         missing = [
-            column.key
-            for column in standard.columns
-            if column.required and column.key not in recognized
+            column.key for column in enabled if column.required and column.key not in recognized
         ]
         if missing:
             raise ValueError("Missing required standard columns: " + ", ".join(missing))
         extras = [key for key in mapped if key not in recognized]
         if extras and standard.extra_columns == "reject":
             raise ValueError("Unknown columns rejected by the active standard")
+        if excluded.intersection(mapped) or (extras and standard.extra_columns == "omit"):
+            warnings.append(
+                "Fields excluded by this standard are omitted from output; original evidence is retained."
+            )
+        if standard.extra_columns == "omit":
+            extras = []
         if extras:
             warnings.append("Additional table columns were retained after the standardized fields.")
         positions = {key: index for index, key in enumerate(mapped)}
-        order = [column.key for column in standard.columns] + extras
+        order = [column.key for column in enabled] + extras
         output = [order]
         for row in rows[1:]:
             values = {key: row[index] for key, index in positions.items()}
-            for column in standard.columns:
+            for column in enabled:
                 value = values.get(column.key, "").strip()
                 if not value:
                     if column.required:
@@ -145,7 +153,7 @@ def prepare_tables(blocks: list[dict], config: WorkspaceConfig, warnings: list[s
                     convert(number, unit, config.units[column.dimension])
             output.append([values.get(key, "") for key in order])
         block["rows"] = output
-        block["column_labels"] = {column.key: column.label for column in standard.columns}
+        block["column_labels"] = {column.key: column.label for column in enabled}
     return prepared
 
 
