@@ -95,6 +95,14 @@ intrinsically disabled pagination/editor controls. Test locator errors were fixe
 without removing assertions. Canonical HTML is still first, source evidence is
 retained, and exclusion is not redaction.
 
+The first Linux/macOS frozen-app checks caught a real missing DOCX header-template
+resource, while Windows passed because its path resolution differs. Both native
+build workflows now collect the complete small `docx` package, including physical
+package directories and header/footer templates; the same real DOCX download
+assertion must pass on all platforms. Landscape DOCX output also sets its explicit
+orientation attribute, checked independently from page width/height in all industry
+export cases. Failed candidate bundles are not release evidence.
+
 The app is local/owner-only, unsigned/not notarized, bounded to supported formats
 and six measurement dimensions. It is not a hostile-file exploit sandbox, public
 team service, universal OCR system or full Word editor. See [library](library.md),

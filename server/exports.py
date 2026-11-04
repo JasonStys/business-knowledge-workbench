@@ -1,58 +1,58 @@
 # @index-begin
-# @symbol variable/parameter: FORMATS L78
-# @symbol function/class: export_document L88
-# @symbol variable/parameter: format_name L88
-# @symbol variable/parameter: result L88
-# @symbol variable/parameter: html L90
-# @symbol variable/parameter: standard L91
-# @symbol variable/parameter: soup L94
-# @symbol variable/parameter: body L95
-# @symbol variable/parameter: parts L105
-# @symbol variable/parameter: node L106
-# @symbol variable/parameter: prefix L107
-# @symbol variable/parameter: tables L117
-# @symbol variable/parameter: output L120
-# @symbol variable/parameter: writer L121
-# @symbol variable/parameter: table L122
-# @symbol variable/parameter: row L123
-# @symbol variable/parameter: cell L124
-# @symbol variable/parameter: cells L124
-# @symbol variable/parameter: document L136
-# @symbol variable/parameter: zoom L139
-# @symbol variable/parameter: section L142
-# @symbol variable/parameter: height L143
-# @symbol variable/parameter: width L143
-# @symbol variable/parameter: name L150
-# @symbol variable/parameter: footer L155
-# @symbol variable/parameter: number L159
-# @symbol variable/parameter: font L162
-# @symbol variable/parameter: paragraph L165
-# @symbol variable/parameter: text L184
-# @symbol variable/parameter: rows L186
-# @symbol variable/parameter: columns L187
-# @symbol variable/parameter: column_width L199
-# @symbol variable/parameter: column L204
-# @symbol variable/parameter: index L206
-# @symbol variable/parameter: styles L229
-# @symbol variable/parameter: fonts L230
-# @symbol variable/parameter: bold L235
-# @symbol variable/parameter: normal L235
-# @symbol variable/parameter: heading L242
-# @symbol variable/parameter: page L245
-# @symbol variable/parameter: margin L248
-# @symbol variable/parameter: available L249
-# @symbol variable/parameter: flow L250
-# @symbol variable/parameter: padded L269
-# @symbol variable/parameter: start L270
-# @symbol variable/parameter: graphic L287
-# @symbol variable/parameter: ratio L288
-# @symbol variable/parameter: style L300
-# @symbol variable/parameter: canvas L307
-# @symbol function/class: decorate L307
-# @symbol variable/parameter: furniture L310
-# @symbol variable/parameter: top L312
-# @symbol variable/parameter: item L313
-# @symbol variable/parameter: _ L314
+# @symbol variable/parameter: FORMATS L79
+# @symbol function/class: export_document L89
+# @symbol variable/parameter: format_name L89
+# @symbol variable/parameter: result L89
+# @symbol variable/parameter: html L91
+# @symbol variable/parameter: standard L92
+# @symbol variable/parameter: soup L95
+# @symbol variable/parameter: body L96
+# @symbol variable/parameter: parts L106
+# @symbol variable/parameter: node L107
+# @symbol variable/parameter: prefix L108
+# @symbol variable/parameter: tables L118
+# @symbol variable/parameter: output L121
+# @symbol variable/parameter: writer L122
+# @symbol variable/parameter: table L123
+# @symbol variable/parameter: row L124
+# @symbol variable/parameter: cell L125
+# @symbol variable/parameter: cells L125
+# @symbol variable/parameter: document L137
+# @symbol variable/parameter: zoom L140
+# @symbol variable/parameter: section L143
+# @symbol variable/parameter: height L144
+# @symbol variable/parameter: width L144
+# @symbol variable/parameter: name L154
+# @symbol variable/parameter: footer L159
+# @symbol variable/parameter: number L163
+# @symbol variable/parameter: font L166
+# @symbol variable/parameter: paragraph L169
+# @symbol variable/parameter: text L188
+# @symbol variable/parameter: rows L190
+# @symbol variable/parameter: columns L191
+# @symbol variable/parameter: column_width L203
+# @symbol variable/parameter: column L208
+# @symbol variable/parameter: index L210
+# @symbol variable/parameter: styles L233
+# @symbol variable/parameter: fonts L234
+# @symbol variable/parameter: bold L239
+# @symbol variable/parameter: normal L239
+# @symbol variable/parameter: heading L246
+# @symbol variable/parameter: page L249
+# @symbol variable/parameter: margin L252
+# @symbol variable/parameter: available L253
+# @symbol variable/parameter: flow L254
+# @symbol variable/parameter: padded L273
+# @symbol variable/parameter: start L274
+# @symbol variable/parameter: graphic L291
+# @symbol variable/parameter: ratio L292
+# @symbol variable/parameter: style L304
+# @symbol variable/parameter: canvas L311
+# @symbol function/class: decorate L311
+# @symbol variable/parameter: furniture L314
+# @symbol variable/parameter: top L316
+# @symbol variable/parameter: item L317
+# @symbol variable/parameter: _ L318
 # @index-end
 """HTML-first export adapters with predictable, simplified document layout. Index: docs/code-index.md."""
 
@@ -64,6 +64,7 @@ from html import escape
 
 from bs4 import BeautifulSoup
 from docx import Document
+from docx.enum.section import WD_ORIENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
@@ -144,6 +145,9 @@ def export_document(result: dict, format_name: str) -> bytes:
         if standard.orientation == "landscape":
             width, height = height, width
         section.page_width, section.page_height = Pt(width), Pt(height)
+        section.orientation = (
+            WD_ORIENT.LANDSCAPE if standard.orientation == "landscape" else WD_ORIENT.PORTRAIT
+        )
         section.top_margin = section.bottom_margin = Mm(standard.margin_mm)
         section.left_margin = section.right_margin = Mm(standard.margin_mm)
         section.header_distance = section.footer_distance = Mm(2)

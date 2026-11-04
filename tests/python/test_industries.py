@@ -1,40 +1,40 @@
 # @index-begin
-# @symbol variable/parameter: ROOT L67
-# @symbol variable/parameter: CASES L68
-# @symbol variable/parameter: extension L71
-# @symbol variable/parameter: scenario L71
-# @symbol function/class: source L71
-# @symbol variable/parameter: rows L73
-# @symbol variable/parameter: output L74
-# @symbol variable/parameter: text L76
-# @symbol variable/parameter: workbook L93
-# @symbol variable/parameter: row L94
-# @symbol variable/parameter: path L100
-# @symbol variable/parameter: table L103
-# @symbol variable/parameter: case L113
-# @symbol function/class: test_real_industry_normalization_and_exports L115
-# @symbol variable/parameter: config L117
-# @symbol variable/parameter: result L134
-# @symbol variable/parameter: block L135
-# @symbol variable/parameter: tables L135
-# @symbol variable/parameter: format_name L140
-# @symbol variable/parameter: payload L141
-# @symbol variable/parameter: document L143
-# @symbol variable/parameter: actual L144
-# @symbol variable/parameter: cell L144
-# @symbol variable/parameter: pdf L149
-# @symbol variable/parameter: page L150
-# @symbol variable/parameter: target L152
-# @symbol variable/parameter: value L167
-# @symbol function/class: test_profile_publication_upload_search_download_and_staff_boundary L172
-# @symbol variable/parameter: tmp_path L172
-# @symbol variable/parameter: client L174
-# @symbol variable/parameter: profile L175
-# @symbol variable/parameter: login L176
-# @symbol variable/parameter: imported L189
-# @symbol variable/parameter: identifier L195
-# @symbol variable/parameter: persisted L196
-# @symbol variable/parameter: records L201
+# @symbol variable/parameter: ROOT L68
+# @symbol variable/parameter: CASES L69
+# @symbol variable/parameter: extension L72
+# @symbol variable/parameter: scenario L72
+# @symbol function/class: source L72
+# @symbol variable/parameter: rows L74
+# @symbol variable/parameter: output L75
+# @symbol variable/parameter: text L77
+# @symbol variable/parameter: workbook L94
+# @symbol variable/parameter: row L95
+# @symbol variable/parameter: path L101
+# @symbol variable/parameter: table L104
+# @symbol variable/parameter: case L114
+# @symbol function/class: test_real_industry_normalization_and_exports L116
+# @symbol variable/parameter: config L118
+# @symbol variable/parameter: result L135
+# @symbol variable/parameter: block L136
+# @symbol variable/parameter: tables L136
+# @symbol variable/parameter: format_name L141
+# @symbol variable/parameter: payload L142
+# @symbol variable/parameter: document L144
+# @symbol variable/parameter: actual L145
+# @symbol variable/parameter: cell L145
+# @symbol variable/parameter: pdf L153
+# @symbol variable/parameter: page L154
+# @symbol variable/parameter: target L156
+# @symbol variable/parameter: value L171
+# @symbol function/class: test_profile_publication_upload_search_download_and_staff_boundary L176
+# @symbol variable/parameter: tmp_path L176
+# @symbol variable/parameter: client L178
+# @symbol variable/parameter: profile L179
+# @symbol variable/parameter: login L180
+# @symbol variable/parameter: imported L193
+# @symbol variable/parameter: identifier L199
+# @symbol variable/parameter: persisted L200
+# @symbol variable/parameter: records L205
 # @index-end
 """Jason Stys: independent realistic industry oracles across rich source/export formats.
 
@@ -52,6 +52,7 @@ from pathlib import Path
 import pytest
 from bs4 import BeautifulSoup
 from docx import Document
+from docx.enum.section import WD_ORIENT
 from fastapi.testclient import TestClient
 from openpyxl import Workbook
 from pypdf import PdfReader
@@ -144,6 +145,9 @@ def test_real_industry_normalization_and_exports(scenario, extension):
             actual = [[cell.text for cell in row.cells] for row in document.tables[0].rows]
             assert actual[1:] == scenario["expected"][1:]
             assert abs(document.sections[0].left_margin.mm - 25) < 0.1
+            assert document.sections[0].orientation == (
+                WD_ORIENT.LANDSCAPE if scenario["profile"] == "laboratory" else WD_ORIENT.PORTRAIT
+            )
             text = " ".join(cell.text for row in document.tables[0].rows for cell in row.cells)
         elif format_name == "pdf":
             pdf = PdfReader(io.BytesIO(payload))

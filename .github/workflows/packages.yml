@@ -59,7 +59,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: python scripts/license_bundle.py
-      - run: python -m PyInstaller --noconfirm --onefile --name business-knowledge-workbench-service --distpath release/service --paths . --add-data "server/schema.sql:server" --add-data "dist:ui" scripts/frozen_entry.py
+      - run: python -m PyInstaller --noconfirm --onefile --name business-knowledge-workbench-service --distpath release/service --paths . --collect-all docx --add-data "server/schema.sql:server" --add-data "dist:ui" scripts/frozen_entry.py
       - run: npm run test:desktop
         if: runner.os != 'Linux'
       - run: xvfb-run -a npm run test:desktop
