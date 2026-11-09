@@ -1,140 +1,144 @@
 # @index-begin
-# @symbol variable/parameter: ROOT L190
-# @symbol variable/parameter: CONVERSION_SLOTS L191
-# @symbol variable/parameter: config L194
-# @symbol function/class: convert_payload L194
-# @symbol variable/parameter: data L194
-# @symbol variable/parameter: name L194
-# @symbol variable/parameter: worker_env L206
-# @symbol variable/parameter: key L208
-# @symbol variable/parameter: value L208
-# @symbol variable/parameter: command L211
-# @symbol variable/parameter: converted L216
-# @symbol variable/parameter: payload L226
-# @symbol function/class: BodyLimit L238
-# @symbol function/class: __init__ L241
-# @symbol variable/parameter: self L241
-# @symbol function/class: __call__ L245
-# @symbol variable/parameter: receive L245
-# @symbol variable/parameter: scope L245
-# @symbol variable/parameter: send L245
-# @symbol variable/parameter: chunks L249
-# @symbol variable/parameter: total L250
-# @symbol variable/parameter: message L252
-# @symbol function/class: replay L264
-# @symbol function/class: create_app L271
-# @symbol variable/parameter: demo L272
-# @symbol variable/parameter: path L272
-# @symbol variable/parameter: private_mode L272
-# @symbol variable/parameter: database_path L275
-# @symbol variable/parameter: secure L277
-# @symbol variable/parameter: ai_adapter L279
-# @symbol variable/parameter: login_attempts L280
-# @symbol variable/parameter: attempts_lock L281
-# @symbol variable/parameter: application L284
-# @symbol function/class: lifespan L284
-# @symbol variable/parameter: call_next L293
-# @symbol variable/parameter: request L293
-# @symbol function/class: security_headers L293
-# @symbol variable/parameter: origin L295
-# @symbol variable/parameter: allowed L296
-# @symbol variable/parameter: response L304
-# @symbol function/class: current L319
-# @symbol variable/parameter: required L319
-# @symbol variable/parameter: token L328
-# @symbol variable/parameter: user L334
-# @symbol function/class: authorize L339
-# @symbol variable/parameter: mutate L339
-# @symbol variable/parameter: roles L339
-# @symbol function/class: configuration L350
-# @symbol variable/parameter: workspace L350
-# @symbol variable/parameter: database L360
-# @symbol function/class: ensure_revision L360
-# @symbol variable/parameter: active L362
-# @symbol function/class: accessible L370
-# @symbol variable/parameter: identifier L370
-# @symbol variable/parameter: predicate L376
-# @symbol variable/parameter: values L376
-# @symbol function/class: health L386
-# @symbol function/class: bootstrap L393
-# @symbol variable/parameter: configs L396
-# @symbol function/class: staff_options L419
-# @symbol function/class: add_product L425
-# @symbol variable/parameter: body L425
-# @symbol variable/parameter: text L431
-# @symbol function/class: login L471
-# @symbol variable/parameter: address L475
-# @symbol variable/parameter: now L476
-# @symbol variable/parameter: recent L480
-# @symbol variable/parameter: stamp L480
-# @symbol variable/parameter: encoded L490
-# @symbol variable/parameter: valid L491
-# @symbol variable/parameter: csrf L494
-# @symbol function/class: session L514
-# @symbol function/class: logout L522
-# @symbol function/class: products L535
-# @symbol variable/parameter: q L536
-# @symbol function/class: list_documents L560
-# @symbol variable/parameter: category L564
-# @symbol variable/parameter: sort L565
-# @symbol variable/parameter: filters L579
-# @symbol function/class: library L579
-# @symbol function/class: document L587
-# @symbol variable/parameter: _ L589
-# @symbol function/class: document_preview L593
-# @symbol function/class: export L605
-# @symbol variable/parameter: format_name L605
-# @symbol function/class: source L628
-# @symbol variable/parameter: suffix L633
-# @symbol function/class: upload L641
-# @symbol variable/parameter: file L643
-# @symbol variable/parameter: visibility L644
-# @symbol variable/parameter: customer L645
-# @symbol variable/parameter: dataset L647
-# @symbol variable/parameter: digest L667
-# @symbol variable/parameter: scope_customer L668
-# @symbol variable/parameter: existing L670
-# @symbol variable/parameter: result L691
-# @symbol variable/parameter: tables L728
-# @symbol variable/parameter: block L730
-# @symbol variable/parameter: headers L738
-# @symbol variable/parameter: alias L739
-# @symbol variable/parameter: mapped L741
-# @symbol variable/parameter: record L745
-# @symbol variable/parameter: product L755
-# @symbol function/class: merge L796
-# @symbol variable/parameter: sources L801
-# @symbol variable/parameter: source_row L804
-# @symbol variable/parameter: provenance L813
-# @symbol function/class: get_config L845
-# @symbol function/class: save_config L855
-# @symbol variable/parameter: previous L862
-# @symbol variable/parameter: used L879
-# @symbol function/class: preview_standard L904
-# @symbol function/class: preview_file L915
-# @symbol variable/parameter: draft L921
-# @symbol function/class: standard_history L929
-# @symbol function/class: restore_standard L947
-# @symbol variable/parameter: restored L957
-# @symbol function/class: standardize_document L962
-# @symbol variable/parameter: old L970
-# @symbol variable/parameter: copied L973
-# @symbol variable/parameter: warnings L996
-# @symbol variable/parameter: new_id L1011
-# @symbol function/class: sales_report L1038
-# @symbol function/class: export_report L1053
-# @symbol variable/parameter: rows L1061
-# @symbol variable/parameter: blocks L1065
-# @symbol function/class: measurement L1094
-# @symbol function/class: audit_log L1102
-# @symbol function/class: context_for L1114
-# @symbol variable/parameter: context L1118
-# @symbol variable/parameter: budget L1119
-# @symbol variable/parameter: row L1120
-# @symbol function/class: ask L1137
-# @symbol variable/parameter: index L1149
-# @symbol function/class: vision L1149
-# @symbol variable/parameter: app L1177
+# @symbol variable/parameter: ROOT L196
+# @symbol variable/parameter: CONVERSION_SLOTS L197
+# @symbol variable/parameter: BUNDLE_SLOTS L198
+# @symbol variable/parameter: config L201
+# @symbol function/class: convert_payload L201
+# @symbol variable/parameter: data L201
+# @symbol variable/parameter: name L201
+# @symbol variable/parameter: worker_env L213
+# @symbol variable/parameter: key L215
+# @symbol variable/parameter: value L215
+# @symbol variable/parameter: command L218
+# @symbol variable/parameter: converted L223
+# @symbol variable/parameter: payload L233
+# @symbol function/class: BodyLimit L245
+# @symbol function/class: __init__ L248
+# @symbol variable/parameter: self L248
+# @symbol function/class: __call__ L252
+# @symbol variable/parameter: receive L252
+# @symbol variable/parameter: scope L252
+# @symbol variable/parameter: send L252
+# @symbol variable/parameter: chunks L256
+# @symbol variable/parameter: total L257
+# @symbol variable/parameter: message L259
+# @symbol function/class: replay L271
+# @symbol function/class: create_app L278
+# @symbol variable/parameter: demo L279
+# @symbol variable/parameter: path L279
+# @symbol variable/parameter: private_mode L279
+# @symbol variable/parameter: database_path L282
+# @symbol variable/parameter: secure L284
+# @symbol variable/parameter: ai_adapter L286
+# @symbol variable/parameter: login_attempts L287
+# @symbol variable/parameter: attempts_lock L288
+# @symbol variable/parameter: application L291
+# @symbol function/class: lifespan L291
+# @symbol variable/parameter: call_next L300
+# @symbol variable/parameter: request L300
+# @symbol function/class: security_headers L300
+# @symbol variable/parameter: origin L302
+# @symbol variable/parameter: allowed L303
+# @symbol variable/parameter: response L311
+# @symbol function/class: current L326
+# @symbol variable/parameter: required L326
+# @symbol variable/parameter: token L335
+# @symbol variable/parameter: user L341
+# @symbol function/class: authorize L346
+# @symbol variable/parameter: mutate L346
+# @symbol variable/parameter: roles L346
+# @symbol function/class: configuration L357
+# @symbol variable/parameter: workspace L357
+# @symbol variable/parameter: database L367
+# @symbol function/class: ensure_revision L367
+# @symbol variable/parameter: active L369
+# @symbol function/class: accessible L377
+# @symbol variable/parameter: identifier L377
+# @symbol variable/parameter: predicate L383
+# @symbol variable/parameter: values L383
+# @symbol function/class: health L393
+# @symbol function/class: bootstrap L400
+# @symbol variable/parameter: configs L403
+# @symbol function/class: staff_options L426
+# @symbol function/class: add_product L432
+# @symbol variable/parameter: body L432
+# @symbol variable/parameter: text L438
+# @symbol function/class: login L478
+# @symbol variable/parameter: address L482
+# @symbol variable/parameter: now L483
+# @symbol variable/parameter: recent L487
+# @symbol variable/parameter: stamp L487
+# @symbol variable/parameter: encoded L497
+# @symbol variable/parameter: valid L498
+# @symbol variable/parameter: csrf L501
+# @symbol function/class: session L521
+# @symbol function/class: logout L529
+# @symbol function/class: products L542
+# @symbol variable/parameter: q L543
+# @symbol function/class: list_documents L567
+# @symbol variable/parameter: category L571
+# @symbol variable/parameter: sort L572
+# @symbol variable/parameter: filters L586
+# @symbol function/class: library L586
+# @symbol function/class: document L594
+# @symbol variable/parameter: _ L596
+# @symbol function/class: bundle L600
+# @symbol variable/parameter: placeholders L605
+# @symbol variable/parameter: lookup L618
+# @symbol function/class: document_preview L633
+# @symbol function/class: export L645
+# @symbol variable/parameter: format_name L645
+# @symbol function/class: source L668
+# @symbol variable/parameter: suffix L673
+# @symbol function/class: upload L681
+# @symbol variable/parameter: file L683
+# @symbol variable/parameter: visibility L684
+# @symbol variable/parameter: customer L685
+# @symbol variable/parameter: dataset L687
+# @symbol variable/parameter: digest L707
+# @symbol variable/parameter: scope_customer L708
+# @symbol variable/parameter: existing L710
+# @symbol variable/parameter: result L731
+# @symbol variable/parameter: tables L768
+# @symbol variable/parameter: block L770
+# @symbol variable/parameter: headers L778
+# @symbol variable/parameter: alias L779
+# @symbol variable/parameter: mapped L781
+# @symbol variable/parameter: record L785
+# @symbol variable/parameter: product L795
+# @symbol function/class: merge L836
+# @symbol variable/parameter: sources L841
+# @symbol variable/parameter: source_row L844
+# @symbol variable/parameter: provenance L853
+# @symbol function/class: get_config L885
+# @symbol function/class: save_config L895
+# @symbol variable/parameter: previous L902
+# @symbol variable/parameter: used L919
+# @symbol function/class: preview_standard L944
+# @symbol function/class: preview_file L955
+# @symbol variable/parameter: draft L961
+# @symbol function/class: standard_history L969
+# @symbol function/class: restore_standard L987
+# @symbol variable/parameter: restored L997
+# @symbol function/class: standardize_document L1002
+# @symbol variable/parameter: old L1010
+# @symbol variable/parameter: copied L1013
+# @symbol variable/parameter: warnings L1036
+# @symbol variable/parameter: new_id L1051
+# @symbol function/class: sales_report L1078
+# @symbol function/class: export_report L1093
+# @symbol variable/parameter: rows L1101
+# @symbol variable/parameter: blocks L1105
+# @symbol function/class: measurement L1134
+# @symbol function/class: audit_log L1142
+# @symbol function/class: context_for L1154
+# @symbol variable/parameter: context L1158
+# @symbol variable/parameter: budget L1159
+# @symbol variable/parameter: row L1160
+# @symbol function/class: ask L1177
+# @symbol variable/parameter: index L1189
+# @symbol function/class: vision L1189
+# @symbol variable/parameter: app L1217
 # @index-end
 """Same-origin application, authentication, role gates and API orchestration. Index: docs/code-index.md.
 
@@ -160,11 +164,13 @@ from fastapi.staticfiles import StaticFiles
 
 from .ai import adapter, validate_answer
 from .analytics import report
+from .bundles import create_bundle
 from .conversion import MAX_BYTES, SUPPORTED, ingest, render_document
 from .exports import FORMATS, export_document
 from .library import LibraryQuery
 from .library import search as search_library
 from .models import (
+    BundleRequest,
     Login,
     MeasurementRequest,
     MergeRequest,
@@ -189,6 +195,7 @@ from .units import UNITS, convert
 
 ROOT = Path(__file__).resolve().parent.parent
 CONVERSION_SLOTS = threading.BoundedSemaphore(2)
+BUNDLE_SLOTS = threading.BoundedSemaphore(2)
 
 
 def convert_payload(name: str, data: bytes, config: WorkspaceConfig) -> dict:
@@ -285,7 +292,7 @@ def create_app(
         """Keep application lifecycle explicit for hosting and browser tests."""
         yield
 
-    app = FastAPI(title="Business Knowledge Workbench", version="1.0.0", lifespan=lifespan)
+    app = FastAPI(title="Business Knowledge Workbench", version="1.4.0", lifespan=lifespan)
     app.state.ai_adapter = ai_adapter
     app.add_middleware(BodyLimit)
 
@@ -588,6 +595,39 @@ def create_app(
         """Return authorized semantic content and provenance for human or machine consumption."""
         row, _ = accessible(request, identifier)
         return json.loads(row["result"])
+
+    @app.post("/api/exports/bundle")
+    def bundle(body: BundleRequest, request: Request):
+        """Authorize every selected row in one scoped snapshot before producing any file bytes."""
+        user = authorize(request, mutate=True)
+        predicate, scope = acl(user, user["workspace"])
+        with connect(database_path) as database:
+            placeholders = ",".join("?" for _ in body.ids)
+            rows = database.execute(
+                "SELECT id,title,result FROM documents WHERE id IN ("
+                + placeholders
+                + ") AND "
+                + predicate,
+                [*body.ids, *scope],
+            ).fetchall()
+        if len(rows) != len(body.ids):
+            raise HTTPException(404, "One or more selected documents are unavailable")
+        if not BUNDLE_SLOTS.acquire(blocking=False):
+            raise HTTPException(429, "Export workers busy; retry later")
+        try:
+            lookup = {row["id"]: row for row in rows}
+            payload = create_bundle([lookup[identifier] for identifier in body.ids])
+        except OverflowError as error:
+            raise HTTPException(413, str(error)) from error
+        except ValueError as error:
+            raise HTTPException(422, str(error)) from error
+        finally:
+            BUNDLE_SLOTS.release()
+        return Response(
+            payload,
+            media_type="application/zip",
+            headers={"Content-Disposition": 'attachment; filename="standardized-documents.zip"'},
+        )
 
     @app.get("/api/documents/{identifier}/preview")
     def document_preview(request: Request, identifier: str):

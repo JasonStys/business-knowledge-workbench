@@ -1,83 +1,86 @@
 # @index-begin
-# @symbol variable/parameter: UNITS L91
-# @symbol function/class: StandardColumn L101
-# @symbol variable/parameter: model_config L104
-# @symbol variable/parameter: key L105
-# @symbol variable/parameter: label L106
-# @symbol variable/parameter: aliases L107
-# @symbol variable/parameter: dimension L108
-# @symbol variable/parameter: source_unit L111
-# @symbol variable/parameter: required L112
-# @symbol variable/parameter: enabled L113
-# @symbol function/class: consistent L116
-# @symbol variable/parameter: self L116
-# @symbol function/class: OutputStandard L127
-# @symbol variable/parameter: name L131
-# @symbol variable/parameter: section_titles L132
-# @symbol variable/parameter: default_export L140
-# @symbol variable/parameter: enforce_export L141
-# @symbol variable/parameter: paper L142
-# @symbol variable/parameter: orientation L143
-# @symbol variable/parameter: font L144
-# @symbol variable/parameter: font_size L145
-# @symbol variable/parameter: accent L146
-# @symbol variable/parameter: margin_mm L147
-# @symbol variable/parameter: alignment L148
-# @symbol variable/parameter: line_spacing L149
-# @symbol variable/parameter: paragraph_after_pt L150
-# @symbol variable/parameter: header_text L151
-# @symbol variable/parameter: footer_text L152
-# @symbol variable/parameter: page_numbers L153
-# @symbol variable/parameter: columns L154
-# @symbol variable/parameter: extra_columns L155
-# @symbol variable/parameter: table_scope L156
-# @symbol function/class: unambiguous L159
-# @symbol variable/parameter: names L165
-# @symbol variable/parameter: column L166
-# @symbol variable/parameter: alias L167
-# @symbol variable/parameter: v L170
-# @symbol function/class: WorkspaceConfig L184
-# @symbol variable/parameter: title L188
-# @symbol variable/parameter: profile L189
-# @symbol variable/parameter: customers L190
-# @symbol variable/parameter: units L193
-# @symbol variable/parameter: sections L196
-# @symbol variable/parameter: forecasting L201
-# @symbol variable/parameter: ai_enabled L202
-# @symbol variable/parameter: data_columns L203
-# @symbol variable/parameter: revision L208
-# @symbol variable/parameter: output_standard L209
-# @symbol function/class: column_targets L212
-# @symbol variable/parameter: cls L223
-# @symbol function/class: validate_customers L223
-# @symbol function/class: validate_columns L236
-# @symbol function/class: validate_units L248
-# @symbol variable/parameter: unit L252
-# @symbol function/class: validate_sections L259
-# @symbol function/class: Login L266
-# @symbol variable/parameter: workspace L269
-# @symbol variable/parameter: username L270
-# @symbol variable/parameter: password L271
-# @symbol function/class: StandardPreview L274
-# @symbol variable/parameter: config L278
-# @symbol variable/parameter: sample L279
-# @symbol function/class: StandardRestore L282
-# @symbol variable/parameter: expected_revision L287
-# @symbol function/class: MergeRequest L290
-# @symbol variable/parameter: ids L293
-# @symbol function/class: Question L297
-# @symbol variable/parameter: question L300
-# @symbol function/class: MeasurementRequest L303
-# @symbol variable/parameter: value L306
-# @symbol variable/parameter: source L307
-# @symbol variable/parameter: target L308
-# @symbol function/class: ProductRequest L311
-# @symbol variable/parameter: id L314
-# @symbol variable/parameter: category L316
-# @symbol variable/parameter: description L317
-# @symbol variable/parameter: price_cents L318
-# @symbol variable/parameter: customer L319
-# @symbol variable/parameter: specifications L320
+# @symbol variable/parameter: UNITS L94
+# @symbol function/class: StandardColumn L104
+# @symbol variable/parameter: model_config L107
+# @symbol variable/parameter: key L108
+# @symbol variable/parameter: label L109
+# @symbol variable/parameter: aliases L110
+# @symbol variable/parameter: dimension L111
+# @symbol variable/parameter: source_unit L114
+# @symbol variable/parameter: required L115
+# @symbol variable/parameter: enabled L116
+# @symbol function/class: consistent L119
+# @symbol variable/parameter: self L119
+# @symbol function/class: OutputStandard L130
+# @symbol variable/parameter: name L134
+# @symbol variable/parameter: section_titles L135
+# @symbol variable/parameter: default_export L143
+# @symbol variable/parameter: enforce_export L144
+# @symbol variable/parameter: paper L145
+# @symbol variable/parameter: orientation L146
+# @symbol variable/parameter: font L147
+# @symbol variable/parameter: font_size L148
+# @symbol variable/parameter: accent L149
+# @symbol variable/parameter: margin_mm L150
+# @symbol variable/parameter: alignment L151
+# @symbol variable/parameter: line_spacing L152
+# @symbol variable/parameter: paragraph_after_pt L153
+# @symbol variable/parameter: header_text L154
+# @symbol variable/parameter: footer_text L155
+# @symbol variable/parameter: page_numbers L156
+# @symbol variable/parameter: columns L157
+# @symbol variable/parameter: extra_columns L158
+# @symbol variable/parameter: table_scope L159
+# @symbol function/class: unambiguous L162
+# @symbol variable/parameter: names L168
+# @symbol variable/parameter: column L169
+# @symbol variable/parameter: alias L170
+# @symbol variable/parameter: v L173
+# @symbol function/class: WorkspaceConfig L187
+# @symbol variable/parameter: title L191
+# @symbol variable/parameter: profile L192
+# @symbol variable/parameter: customers L193
+# @symbol variable/parameter: units L196
+# @symbol variable/parameter: sections L199
+# @symbol variable/parameter: forecasting L204
+# @symbol variable/parameter: ai_enabled L205
+# @symbol variable/parameter: data_columns L206
+# @symbol variable/parameter: revision L211
+# @symbol variable/parameter: output_standard L212
+# @symbol function/class: column_targets L215
+# @symbol variable/parameter: cls L226
+# @symbol function/class: validate_customers L226
+# @symbol function/class: validate_columns L239
+# @symbol function/class: validate_units L251
+# @symbol variable/parameter: unit L255
+# @symbol function/class: validate_sections L262
+# @symbol function/class: Login L269
+# @symbol variable/parameter: workspace L272
+# @symbol variable/parameter: username L273
+# @symbol variable/parameter: password L274
+# @symbol function/class: StandardPreview L277
+# @symbol variable/parameter: config L281
+# @symbol variable/parameter: sample L282
+# @symbol function/class: StandardRestore L285
+# @symbol variable/parameter: expected_revision L290
+# @symbol function/class: MergeRequest L293
+# @symbol variable/parameter: ids L296
+# @symbol function/class: BundleRequest L300
+# @symbol function/class: valid_ids L308
+# @symbol variable/parameter: item L310
+# @symbol function/class: Question L315
+# @symbol variable/parameter: question L318
+# @symbol function/class: MeasurementRequest L321
+# @symbol variable/parameter: value L324
+# @symbol variable/parameter: source L325
+# @symbol variable/parameter: target L326
+# @symbol function/class: ProductRequest L329
+# @symbol variable/parameter: id L332
+# @symbol variable/parameter: category L334
+# @symbol variable/parameter: description L335
+# @symbol variable/parameter: price_cents L336
+# @symbol variable/parameter: customer L337
+# @symbol variable/parameter: specifications L338
 # @index-end
 """Validated configuration and API contracts. Symbols/variables: docs/code-index.md.
 
@@ -292,6 +295,21 @@ class MergeRequest(BaseModel):
 
     ids: list[str] = Field(min_length=1, max_length=12)
     title: str = Field(min_length=2, max_length=120)
+
+
+class BundleRequest(BaseModel):
+    """A unique ordered selection; export format comes from each document's saved standard."""
+
+    model_config = ConfigDict(extra="forbid")
+    ids: list[str] = Field(min_length=1, max_length=12)
+
+    @field_validator("ids")
+    @classmethod
+    def valid_ids(cls, value):
+        """Reject oversized/repeated identifiers before any lookup or file generation."""
+        if len(set(value)) != len(value) or any(not 1 <= len(item) <= 80 for item in value):
+            raise ValueError("Choose unique document identifiers of 1–80 characters")
+        return value
 
 
 class Question(BaseModel):

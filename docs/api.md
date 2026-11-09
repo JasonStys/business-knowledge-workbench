@@ -20,6 +20,7 @@ Interactive OpenAPI: `/docs`; schema: `/openapi.json`. All `/api/` responses use
 | GET `/api/documents/{id}/source` | Scoped | Original bytes as octet-stream; compilations have no single original. |
 | POST `/api/import` | Staff + CSRF | Multipart `file`, `visibility`, `customer`, `category`, optional `dataset=true`. HTML first, then atomic mapped sales import. |
 | POST `/api/merge` | Staff + CSRF | `{ids:[...],title}`; 1–12 distinct ordered authorized sources; always internal-only. |
+| POST `/api/exports/bundle` | Signed in + CSRF | `{ids:[...]}`; 1–12 distinct IDs, one current workspace; atomic authorization then ZIP of saved-standard exports plus integrity manifest. No original attachments. |
 | GET/PUT `/api/config` | Admin; PUT + CSRF | Typed settings, current revision; PUT must match revision/profile. Invalid units/sections/customer removal rejected. |
 | GET `/api/report` | Customer/staff | Exact integer USD cents, monthly series, unit counts and optional baseline forecast. |
 | GET `/api/audit` | Admin | Latest 50 events for active workspace, no passwords/source text. |
@@ -60,6 +61,22 @@ source format, standard format/revision, a 240-character standardized excerpt an
 source availability, not full HTML or source bytes. Facets cover authorized
 categories, source formats, access, canonical fields and dimensions; each list is
 capped at 200. Search is standardized-text search, not OCR or original-blob search.
+
+Numeric filters `minimum`, `maximum` and `unit` compare a complete numeric cell
+in the selected `field`. Inclusive finite bounds are within ±10^15 with up to
+twelve decimal places; unknown units, reversed bounds and bounds without a field
+return 422. `unit` must be a supported exact symbol and requires a bound. Empty
+unit means genuinely unitless cells, without inference. Text and numeric filters
+must match the same data cell. Missing, invalid and incompatible values never
+become zero. Stored content and revisions are unchanged by search.
+
+Bundle IDs are 1–80 characters, unique and ordered. Any unavailable member returns
+generic 404 before exports begin. Worker contention returns 429; over 32 MiB of
+uncompressed output plus manifest returns 413. Successful responses are
+`application/zip` attachments, with flat indexed filenames and
+`kbw-standardized-bundle/v1` manifest entries. Saved export policies still apply.
+Private mode uses `/private/api/exports/bundle` and the same cookie/origin/vault
+proof/custom-header controls as other private endpoints.
 
 `POST /api/standards/preview-file` accepts multipart `file` and `config` JSON
 (64,000-character maximum), owner/admin + CSRF only. It uses the same supported

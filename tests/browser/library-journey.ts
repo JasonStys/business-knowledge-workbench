@@ -1,24 +1,33 @@
 /* @index-begin
- * @symbol variable/parameter: audit L21
- * @symbol function/class: libraryJourney L21
- * @symbol variable/parameter: page L21
- * @symbol variable/parameter: file L22
- * @symbol variable/parameter: preview L90
- * @symbol variable/parameter: link L143
- * @symbol variable/parameter: href L147
- * @symbol variable/parameter: output L148
- * @symbol variable/parameter: url L148
- * @symbol variable/parameter: response L149
- * @symbol variable/parameter: bytes L150
+ * @symbol function/class: libraryJourney L26
+ * @symbol variable/parameter: page L27
+ * @symbol variable/parameter: audit L28
+ * @symbol variable/parameter: downloadBundle L29
+ * @symbol variable/parameter: file L31
+ * @symbol variable/parameter: preview L99
+ * @symbol variable/parameter: link L157
+ * @symbol variable/parameter: href L161
+ * @symbol variable/parameter: output L162
+ * @symbol variable/parameter: url L162
+ * @symbol variable/parameter: response L163
+ * @symbol variable/parameter: bytes L164
+ * @symbol variable/parameter: bundle L174
+ * @symbol variable/parameter: downloaded L194
+ * @symbol variable/parameter: download L196
 @index-end */
 /** Jason Stys: visible field-edit, file-preview, import, filtered-search and download regression.
  * Functions/variables and exact lines: docs/code-index.md. All records are fictional.
  */
 import { expect, type Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { readFileSync } from "node:fs";
 
 /** Exercise the same authenticated workflow in real browsers and packaged native renderers. */
-export async function libraryJourney(page: Page, audit = true): Promise<void> {
+export async function libraryJourney(
+  page: Page,
+  audit = true,
+  downloadBundle?: () => Promise<Uint8Array>,
+): Promise<void> {
   const file = {
     name: "fictional-inspection.csv",
     mimeType: "text/csv",
@@ -128,6 +137,11 @@ export async function libraryJourney(page: Page, audit = true): Promise<void> {
     .getByRole("combobox", { name: "Table field", exact: true })
     .fill("width");
   await page.getByLabel("Field contains", { exact: true }).fill("107.95 mm");
+  await page.getByLabel("Minimum (inclusive)", { exact: true }).fill("10");
+  await page.getByLabel("Maximum (inclusive)", { exact: true }).fill("11");
+  await page
+    .getByRole("combobox", { name: "Numeric comparison unit", exact: true })
+    .selectOption("cm");
   await page
     .getByRole("button", { name: "Apply filters", exact: true })
     .click();
@@ -157,6 +171,39 @@ export async function libraryJourney(page: Page, audit = true): Promise<void> {
   expect(output.status).toBe(200);
   expect(output.prefix).toEqual([80, 75]);
   expect(output.size).toBeGreaterThan(1000);
+  const bundle = page.getByRole("button", {
+    name: "Download selected files (ZIP)",
+    exact: true,
+  });
+  await expect(bundle).toBeDisabled();
+  await page
+    .getByRole("checkbox", {
+      name: "Select fictional-inspection.csv",
+      exact: true,
+    })
+    .check();
+  await expect(bundle).toBeEnabled();
+  await expect(page.locator("#bundle-count")).toContainText("1 selected");
+  if (downloadBundle) {
+    const bytes = await downloadBundle();
+    expect([...bytes.subarray(0, 2)]).toEqual([80, 75]);
+    expect(bytes.length).toBeGreaterThan(1000);
+  } else if (audit) {
+    // Browser downloads are real files; packaged native download plumbing has its
+    // own existing will-download test rather than a simulated anchor-click stub.
+    const downloaded = page.waitForEvent("download");
+    await bundle.click();
+    const download = await downloaded;
+    expect(download.suggestedFilename()).toBe("standardized-documents.zip");
+    const bytes = readFileSync((await download.path())!);
+    expect([...bytes.subarray(0, 2)]).toEqual([80, 75]);
+    expect(bytes.length).toBeGreaterThan(1000);
+  }
+  await page
+    .getByRole("button", { name: "Clear selection", exact: true })
+    .click();
+  await expect(bundle).toBeDisabled();
+  await expect(page.locator("#bundle-count")).toContainText("0 selected");
   await page
     .getByRole("combobox", { name: "Table field", exact: true })
     .fill("item");

@@ -1,38 +1,40 @@
 # @index-begin
-# @symbol variable/parameter: EXAMPLES L55
-# @symbol variable/parameter: expected L73
-# @symbol variable/parameter: source L73
-# @symbol variable/parameter: target L73
-# @symbol function/class: test_units L73
-# @symbol variable/parameter: value L73
-# @symbol function/class: test_bad_units L91
-# @symbol function/class: test_provenance_and_ambiguity L97
-# @symbol variable/parameter: records L99
-# @symbol variable/parameter: text L99
-# @symbol variable/parameter: spaced L105
-# @symbol variable/parameter: settings L121
-# @symbol function/class: test_config_rejection L121
-# @symbol variable/parameter: filename L141
-# @symbol function/class: test_fixtures L141
-# @symbol variable/parameter: result L143
-# @symbol variable/parameter: block L152
-# @symbol variable/parameter: data L172
-# @symbol variable/parameter: name L172
-# @symbol function/class: test_text_types L172
-# @symbol function/class: test_reject_bad_files L192
-# @symbol function/class: test_zip_and_table_limits L198
-# @symbol variable/parameter: output L200
-# @symbol variable/parameter: archive L201
-# @symbol variable/parameter: format_name L211
-# @symbol function/class: test_exports L211
-# @symbol variable/parameter: payload L218
-# @symbol function/class: test_rich_exports L230
-# @symbol function/class: test_ai_contracts L243
-# @symbol variable/parameter: context L245
-# @symbol variable/parameter: adapter L246
-# @symbol variable/parameter: answer L247
-# @symbol variable/parameter: endpoint L257
-# @symbol function/class: test_large_image L268
+# @symbol variable/parameter: EXAMPLES L57
+# @symbol variable/parameter: expected L75
+# @symbol variable/parameter: source L75
+# @symbol variable/parameter: target L75
+# @symbol function/class: test_units L75
+# @symbol variable/parameter: value L75
+# @symbol variable/parameter: expected_records L92
+# @symbol function/class: test_scientific_measurements_do_not_partially_match L92
+# @symbol variable/parameter: records L94
+# @symbol function/class: test_bad_units L112
+# @symbol function/class: test_provenance_and_ambiguity L118
+# @symbol variable/parameter: text L120
+# @symbol variable/parameter: spaced L126
+# @symbol variable/parameter: settings L142
+# @symbol function/class: test_config_rejection L142
+# @symbol variable/parameter: filename L162
+# @symbol function/class: test_fixtures L162
+# @symbol variable/parameter: result L164
+# @symbol variable/parameter: block L173
+# @symbol variable/parameter: data L193
+# @symbol variable/parameter: name L193
+# @symbol function/class: test_text_types L193
+# @symbol function/class: test_reject_bad_files L213
+# @symbol function/class: test_zip_and_table_limits L219
+# @symbol variable/parameter: output L221
+# @symbol variable/parameter: archive L222
+# @symbol variable/parameter: format_name L232
+# @symbol function/class: test_exports L232
+# @symbol variable/parameter: payload L239
+# @symbol function/class: test_rich_exports L251
+# @symbol function/class: test_ai_contracts L264
+# @symbol variable/parameter: context L266
+# @symbol variable/parameter: adapter L267
+# @symbol variable/parameter: answer L268
+# @symbol variable/parameter: endpoint L278
+# @symbol function/class: test_large_image L289
 # @index-end
 """Conversion, unit, export and AI contract regression coverage. Index: docs/code-index.md."""
 
@@ -73,6 +75,25 @@ EXAMPLES = Path(__file__).resolve().parents[2] / "examples"
 def test_units(value, source, target, expected):
     """Verify offsets, factors, zero and six-decimal display precision."""
     assert convert(value, source, target) == expected
+
+
+@pytest.mark.parametrize(
+    ("source", "expected", "expected_records"),
+    [
+        ("Signal: 5e-3 V", "Signal: 5 mV", 1),
+        ("Signal: +.005 V", "Signal: 5 mV", 1),
+        ("Signal: -2E-3 V", "Signal: -2 mV", 1),
+        ("Signal: 1e+2 mV", "Signal: 100 mV", 1),
+        ("MODEL1e-3V", "MODEL1e-3V", 0),
+        ("range 10-20mV", "range 10-20mV", 0),
+        ("invalid 1e-300V", "invalid 1e-300V", 0),
+    ],
+)
+def test_scientific_measurements_do_not_partially_match(source, expected, expected_records):
+    """Convert real laboratory notation as one number; never normalize only an exponent suffix."""
+    result, records = normalize(source, {"voltage": "mV"})
+    assert result == expected
+    assert len(records) == expected_records
 
 
 @pytest.mark.parametrize(

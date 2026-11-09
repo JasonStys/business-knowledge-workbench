@@ -1,43 +1,47 @@
 # @index-begin
-# @symbol function/class: LibraryQuery L57
-# @symbol variable/parameter: model_config L60
-# @symbol variable/parameter: workspace L61
-# @symbol variable/parameter: q L62
-# @symbol variable/parameter: category L63
-# @symbol variable/parameter: source_format L64
-# @symbol variable/parameter: kind L65
-# @symbol variable/parameter: dimension L66
-# @symbol variable/parameter: visibility L67
-# @symbol variable/parameter: review_status L68
-# @symbol variable/parameter: field L69
-# @symbol variable/parameter: value L70
-# @symbol variable/parameter: sort L71
-# @symbol variable/parameter: offset L72
-# @symbol variable/parameter: limit L73
-# @symbol function/class: paired_field L76
-# @symbol variable/parameter: self L76
-# @symbol function/class: literal_pattern L83
-# @symbol function/class: search L90
-# @symbol variable/parameter: database L91
-# @symbol variable/parameter: query L91
-# @symbol variable/parameter: user L91
-# @symbol variable/parameter: predicate L99
-# @symbol variable/parameter: scope L99
-# @symbol variable/parameter: text L101
-# @symbol variable/parameter: clauses L103
-# @symbol variable/parameter: values L103
-# @symbol variable/parameter: expression L109
-# @symbol variable/parameter: selected L109
-# @symbol variable/parameter: field_clause L129
-# @symbol variable/parameter: where L138
-# @symbol variable/parameter: order L139
-# @symbol variable/parameter: total L144
-# @symbol variable/parameter: rows L145
-# @symbol variable/parameter: facets L159
-# @symbol variable/parameter: expressions L160
-# @symbol variable/parameter: name L167
-# @symbol variable/parameter: records L168
-# @symbol variable/parameter: row L176
+# @symbol function/class: LibraryQuery L64
+# @symbol variable/parameter: model_config L67
+# @symbol variable/parameter: workspace L68
+# @symbol variable/parameter: q L69
+# @symbol variable/parameter: category L70
+# @symbol variable/parameter: source_format L71
+# @symbol variable/parameter: kind L72
+# @symbol variable/parameter: dimension L73
+# @symbol variable/parameter: visibility L74
+# @symbol variable/parameter: review_status L75
+# @symbol variable/parameter: field L76
+# @symbol variable/parameter: value L77
+# @symbol variable/parameter: minimum L78
+# @symbol variable/parameter: maximum L81
+# @symbol variable/parameter: unit L84
+# @symbol variable/parameter: sort L85
+# @symbol variable/parameter: offset L86
+# @symbol variable/parameter: limit L87
+# @symbol function/class: paired_field L90
+# @symbol variable/parameter: self L90
+# @symbol variable/parameter: ranged L94
+# @symbol function/class: literal_pattern L104
+# @symbol function/class: search L111
+# @symbol variable/parameter: database L112
+# @symbol variable/parameter: query L112
+# @symbol variable/parameter: user L112
+# @symbol variable/parameter: predicate L120
+# @symbol variable/parameter: scope L120
+# @symbol variable/parameter: text L122
+# @symbol variable/parameter: clauses L125
+# @symbol variable/parameter: values L125
+# @symbol variable/parameter: expression L131
+# @symbol variable/parameter: selected L131
+# @symbol variable/parameter: field_clause L151
+# @symbol variable/parameter: where L173
+# @symbol variable/parameter: order L174
+# @symbol variable/parameter: total L179
+# @symbol variable/parameter: rows L180
+# @symbol variable/parameter: facets L194
+# @symbol variable/parameter: expressions L195
+# @symbol variable/parameter: name L202
+# @symbol variable/parameter: records L203
+# @symbol variable/parameter: row L211
 # @index-end
 """Jason Stys: bounded, ACL-first library search over standardized content only.
 
@@ -47,11 +51,14 @@ are bound SQL parameters; sort fragments and JSON paths are authored constants.
 """
 
 import sqlite3
+from decimal import Decimal
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
+from .quantitative import in_range
 from .store import acl
+from .units import DIMENSIONS
 
 
 class LibraryQuery(BaseModel):
@@ -68,6 +75,13 @@ class LibraryQuery(BaseModel):
     review_status: Literal["", "extracted", "needs-review"] = ""
     field: str = Field(default="", max_length=120)
     value: str = Field(default="", max_length=120)
+    minimum: Decimal | None = Field(
+        default=None, ge=Decimal("-1e15"), le=Decimal("1e15"), max_digits=28, decimal_places=12
+    )
+    maximum: Decimal | None = Field(
+        default=None, ge=Decimal("-1e15"), le=Decimal("1e15"), max_digits=28, decimal_places=12
+    )
+    unit: str = Field(default="", max_length=4)
     sort: Literal["title", "newest", "category"] = "title"
     offset: int = Field(default=0, ge=0, le=200)
     limit: int = Field(default=25, ge=1, le=200)
@@ -77,6 +91,13 @@ class LibraryQuery(BaseModel):
         """Never imply that an unqualified cell value is bound to a particular field."""
         if self.value and not self.field:
             raise ValueError("Choose a table field when filtering a field value")
+        ranged = self.minimum is not None or self.maximum is not None
+        if ranged and not self.field:
+            raise ValueError("Choose a table field for numeric bounds")
+        if self.minimum is not None and self.maximum is not None and self.minimum > self.maximum:
+            raise ValueError("Minimum must not exceed maximum")
+        if self.unit and (self.unit not in DIMENSIONS or not ranged):
+            raise ValueError("Choose a supported unit and at least one numeric bound")
         return self
 
 
@@ -100,6 +121,7 @@ def search(
     database.create_function(
         "kbw_casefold", 1, lambda text: str(text or "").casefold(), deterministic=True
     )
+    database.create_function("kbw_in_range", 4, in_range, deterministic=True)
     clauses, values = [predicate], list(scope)
     if query.q:
         clauses.append(
@@ -130,10 +152,23 @@ def search(
             json_each(b.value,'$.rows[0]') h WHERE json_extract(b.value,'$.kind')='table'
             AND kbw_casefold(h.value)=?"""
         values.append(query.field.casefold())
-        if query.value:
+        ranged = query.minimum is not None or query.maximum is not None
+        if query.value or ranged:
             field_clause += """ AND EXISTS(SELECT 1 FROM json_each(b.value,'$.rows') r
-                WHERE CAST(r.key AS INTEGER)>0 AND kbw_casefold(json_extract(r.value,'$[' || h.key || ']')) LIKE ? ESCAPE '\\')"""
-            values.append(literal_pattern(query.value))
+                WHERE CAST(r.key AS INTEGER)>0"""
+            if query.value:
+                field_clause += " AND kbw_casefold(json_extract(r.value,'$[' || h.key || ']')) LIKE ? ESCAPE '\\'"
+                values.append(literal_pattern(query.value))
+            if ranged:
+                field_clause += " AND json_type(r.value,'$[' || h.key || ']') IN ('text','integer','real') AND kbw_in_range(json_extract(r.value,'$[' || h.key || ']'),?,?,?)=1"
+                values.extend(
+                    [
+                        str(query.minimum) if query.minimum is not None else None,
+                        str(query.maximum) if query.maximum is not None else None,
+                        query.unit,
+                    ]
+                )
+            field_clause += ")"
         clauses.append(field_clause + ")")
     where = " AND ".join(clauses)
     order = {
