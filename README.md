@@ -4,7 +4,7 @@ A private, local-first **document and data standardization application** by **Ja
 
 [Source and Actions](https://github.com/JasonStys/business-knowledge-workbench) · [Downloads](https://github.com/JasonStys/business-knowledge-workbench/releases/latest) · [Contact Jason on LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/)
 
-Version **1.3.0** adds a permission-scoped file library with content and field-value filters, direct standard downloads, a visual field editor, real-file draft previews and richer document layout controls. It preserves owner-controlled standards, history, original evidence and private local accounts. See the [library guide](docs/library.md), [standards guide](docs/standards.md) and [validation](docs/validation-v1.3.md).
+Version **1.4.0** adds inclusive, unit-aware numeric searches and selection-based ZIP downloads with per-file integrity manifests. Search across saved standards without rewriting documents, then gather permitted standardized files using each document's saved output format. It preserves the visual field/layout editor, owner-controlled standards, original evidence and private local accounts. See the [library guide](docs/library.md), [standards guide](docs/standards.md) and [workflow validation](docs/reports/practical-workflows-2026-11-09.md).
 
 ![Installed private account website with blank credential fields](docs/screenshots/accounts.png)
 
@@ -67,6 +67,19 @@ Results, counts and suggestions all obey the same permissions. Twenty-five files
 appear per page, up to the 200-document profile limit. See [library examples and
 limits](docs/library.md); images are not automatically OCR-searched.
 
+For a range, choose `width`, **Minimum** `100`, **Maximum** `110` and comparison
+unit `mm`: both `107.95 mm` and `10.795 cm` match, including files saved under
+older standard revisions. Text and numeric conditions must hold in the same cell.
+Unitless comparison never guesses units; incompatible, unknown and absent values
+do not match. Temperature bounds convert with offsets, not just scale factors.
+
+Select up to twelve files across result pages and choose **Download selected
+files (ZIP)**. Each export uses its own saved standard, even when current settings
+have changed. `manifest.json` records selection order, file sizes, SHA-256 hashes
+and standard revisions/digests. Authorization checks every selected document
+before generating anything. The ZIP contains plaintext standardized outputs,
+excludes original attachments, and is not an encrypted or digitally signed archive.
+
 ![Owner-controlled output standard in a disposable fictional business account](docs/screenshots/standards.png)
 
 The screenshot shows a published PDF/A4/landscape standard and its saved schema;
@@ -94,6 +107,8 @@ Create an alias and login password, privately save the once-shown login recovery
 - Fifteen supported extensions: text, Markdown, sanitized HTML, CSV/TSV, JSON, XML, DOCX, XLSX, PDF and raster images. Original evidence, semantic blocks, extraction warnings and hashes are retained.
 - Canonical **HTML first**, then HTML, JSON, Markdown, CSV tables, DOCX or PDF export. Graphs/images are preserved where supported, not universally understood; read the [format limits](docs/formats.md).
 - Decimal-based measurement normalization with dimension validation; `4.25 in → 107.95 mm`, `104 F → 40 C`. Configuration revisions preserve provenance.
+- Bounded signed/scientific measurement notation is normalized as a complete number; an exponent suffix cannot be mistaken for a separate measurement (`5e-3 V → 5 mV` with a millivolt standard). Embedded identifiers and ambiguous hyphenated ranges are preserved for review.
+- Numeric table-field range search across compatible units and saved revisions, plus bounded multi-file ZIP exports with independent per-file integrity records. Customer subsets obey the same server permissions as individual downloads.
 - Named, data-only standards with visual field addition/removal/order/exclusion, optional/required columns, explicit measurement dimensions, real-file draft previews, immutable history and controlled export types. Bounded Word-like layout settings; no executable user templates or arbitrary CSS.
 - Product catalog, customer subset preview, business reporting and administrator configuration views. These are previews within **your own** account, not a coworker invitation or shared-tenant permission system.
 - Explicit opt-in fictional industrial equipment, renewable energy and laboratory supply scenarios. New accounts start with **no products, sales, sources or demo users**.

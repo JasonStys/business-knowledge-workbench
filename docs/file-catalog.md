@@ -37,8 +37,10 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/releases/v1.1.1.md](../docs/releases/v1.1.1.md) | Business Knowledge Workbench 1.1.1. |
 | [docs/releases/v1.2.0.md](../docs/releases/v1.2.0.md) | Business Knowledge Workbench 1.2.0 — governed output standards. |
 | [docs/releases/v1.3.0.md](../docs/releases/v1.3.0.md) | Business Knowledge Workbench 1.3.0 — searchable standardized library. |
+| [docs/releases/v1.4.0.md](../docs/releases/v1.4.0.md) | Business Knowledge Workbench 1.4.0 — quantitative search and evidence packs. |
 | [docs/reports/pdf-preview.png](../docs/reports/pdf-preview.png) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/performance.json](../docs/reports/performance.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
+| [docs/reports/practical-workflows-2026-11-09.md](../docs/reports/practical-workflows-2026-11-09.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation-v1.1.1.json](../docs/reports/validation-v1.1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation-v1.1.json](../docs/reports/validation-v1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation-v1.2.json](../docs/reports/validation-v1.2.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
@@ -103,6 +105,7 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [server/ai.py](../server/ai.py) | Swappable, read-only AI adapters with bounded authorized context. |
 | [server/analytics.py](../server/analytics.py) | Explainable monthly summaries and bounded baseline forecasts. |
 | [server/app.py](../server/app.py) | Same-origin application, authentication, role gates and API orchestration. |
+| [server/bundles.py](../server/bundles.py) | Jason Stys: bounded, flat ZIP exports of already-authorized standardized files. |
 | [server/conversion.py](../server/conversion.py) | Bounded import adapters and canonical HTML generation. |
 | [server/exports.py](../server/exports.py) | HTML-first export adapters with predictable, simplified document layout. |
 | [server/library.py](../server/library.py) | Jason Stys: bounded, ACL-first library search over standardized content only. |
@@ -112,6 +115,7 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [server/private_api.py](../server/private_api.py) | Jason Stys: loopback-only real accounts, session-proven vaults, private AI settings and scoped controller. |
 | [server/private_cli.py](../server/private_cli.py) | Jason Stys: token-free local account website and frozen service; never execute uploaded documents. |
 | [server/private_workspace.py](../server/private_workspace.py) | Jason Stys: exclusive account-scoped document service, encrypted documents/settings, and recoverable shutdown. |
+| [server/quantitative.py](../server/quantitative.py) | Jason Stys: finite, unit-aware comparisons for persisted table cells. |
 | [server/schema.sql](../server/schema.sql) | Relational records, scoped documents and auditable events. |
 | [server/standards.py](../server/standards.py) | Jason Stys: deterministic data-only table standards and immutable conversion identities. |
 | [server/store.py](../server/store.py) | SQLite lifecycle, deterministic synthetic scenarios and ACL queries. |

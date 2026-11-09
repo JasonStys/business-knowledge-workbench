@@ -6,16 +6,16 @@
   },
   "runtime": "3.14.6",
   "import": {
-    "median_ms": 28.007,
-    "p95_ms": 44.308
+    "median_ms": 42.914,
+    "p95_ms": 58.141
   },
   "search": {
-    "median_ms": 3.519,
-    "p95_ms": 4.871
+    "median_ms": 6.511,
+    "p95_ms": 8.017
   },
   "library_search_with_facets": {
-    "median_ms": 10.967,
-    "p95_ms": 13.421
+    "median_ms": 20.763,
+    "p95_ms": 25.948
   },
   "budgets": {
     "import_p95_ms": 2000,

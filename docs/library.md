@@ -1,6 +1,6 @@
 # Standardized file library
 
-Business Knowledge Workbench 1.3 by Jason Stys stores supported original files
+Business Knowledge Workbench 1.4 by Jason Stys stores supported original files
 alongside their standardized semantic blocks, canonical HTML, measurements,
 settings snapshots, warnings and identity hashes. The library presents these
 records without downloading every full document into the browser.
@@ -29,6 +29,9 @@ determines actual access. Counts and suggestions must not reveal hidden records.
 | Find an inspection file | Search documents `inspection`, category `Metrology`, source file type `csv`. |
 | Find standardized lengths | Data type `table`, measurement type `length`. |
 | Find a specific value in a field | Table field `width`, Field contains `107.95 mm`. A match in `mass` or an unrelated table cannot satisfy this. |
+| Manufacturing tolerances across standards | Table field `width`, Minimum `100`, Maximum `110`, numeric comparison unit `mm`. `4.25 in`, `107.95 mm` and `10.795 cm` are equivalent. |
+| Renewable asset capacity band | Table field `capacity`, Minimum `40`, Maximum `50`, unit `kWh`; `42500 Wh` is in range. |
+| Laboratory temperature range | Table field `temperature`, Minimum `0`, Maximum `40`, unit `C`; `32 F` is on the inclusive lower boundary. |
 | Review ambiguous extraction | Extraction review `needs-review`, optionally source file type `pdf`. |
 | Browse assigned customer evidence | Customer perspective with any filters; inaccessible sources, counts, categories and field names remain excluded. |
 
@@ -37,9 +40,40 @@ title and standardized text; `%`, `_`, backslashes and SQL fragments are not
 query syntax. Category/source/access/review filters are exact. Table field is an
 exact case-insensitive **canonical key**, suggested by a datalist; Field contains
 is a substring in a data row of that same column. Values require a field.
+Numeric bounds also require a field; both bounds are optional, but a comparison
+unit requires at least one. Minimum must not exceed maximum. All conditions on
+one field must match the **same cell**, not different rows. Units are explicit
+and dimension-compatible; a unitless query matches only unitless numbers. An
+unparseable or missing cell does not become zero. This is an any-matching-row
+document filter, not an aggregate, count of matching rows or certification of
+measurement accuracy. Bounds are finite, within ±10^15 and at most twelve decimal
+places. Conversions use the application's six-decimal canonical precision.
+Earlier records keep their saved values and standard; search converts comparison
+values without updating their content. Originals, excluded fields and pixels are
+not queried. Unit symbols are case-sensitive (`mV`, `kWh`, `C`).
 Clear filters resets the form. Sort supports title, newest and category, with an
 ID tie-breaker. Previous/Next navigate 25-row pages; the API permits 1–200 rows
 and offsets 0–200 within the existing 200-document profile cap.
+
+## Gather standardized files
+
+Select one to twelve permitted files across pages, then Download selected files
+(ZIP). Clear selection resets the set; switching account/profile/view clears it.
+Filtering does not clear selections, so the count may include hidden result pages.
+An inaccessible or missing member rejects the whole request before file generation;
+remove stale selections or clear and select again. Each file follows its own saved
+standard and export restriction, not the current configuration. A bundle is not a
+compilation: it preserves individual files and does not merge tables or replay sales.
+
+ZIP entries have flat indexed filenames. `manifest.json` binds each selected ID,
+title, output type, byte count, SHA-256 and saved standard revision/digest to this
+download. Verify hashes after extraction to detect accidental byte changes. They
+are integrity checks, not a publisher signature or permission grant. ZIP/DOCX time
+metadata can differ on later downloads; binary reproducibility is not promised.
+Original attachments, login data and AI keys are excluded, but standardized outputs
+are plaintext and can contain sensitive business information. Protect downloaded
+copies separately. The server allows two concurrent bundles and at most 32 MiB of
+uncompressed files plus manifest. Busy workers return 429; oversized bundles 413.
 
 Search examines saved standardized content, not original attachments, image
 pixels, OCR or semantic embeddings. Excluded fields remain in original/source

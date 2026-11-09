@@ -1,6 +1,6 @@
 {
   "name": "business-knowledge-workbench",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -40,7 +40,8 @@
   "overrides": {
     "http-cache-semantics": "4.3.0",
     "source-map-js": "1.2.2",
-    "global-agent": "4.1.3"
+    "global-agent": "4.1.3",
+    "minimatch@>=7 <11.0.1": "11.0.1"
   },
   "build": {
     "appId": "dev.jasonstys.businessknowledge",

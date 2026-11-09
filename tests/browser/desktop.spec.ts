@@ -14,8 +14,8 @@
  * @symbol variable/parameter: item L58
  * @symbol variable/parameter: state L60
  * @symbol variable/parameter: data L74
- * @symbol variable/parameter: error L102
- * @symbol variable/parameter: log L103
+ * @symbol variable/parameter: error L132
+ * @symbol variable/parameter: log L133
 @index-end */
 /** Jason Stys: genuine packaged native application conversion, encrypted lock and renderer sandbox checks. */
 import { test, expect, _electron as electron } from "@playwright/test";
@@ -76,7 +76,37 @@ test("native application imports rich documents with private accounts and no ren
       expect(data.provenance.conversion_path).toEqual(["docx", "html"]);
     });
     await standardJourney(page, false);
-    await libraryJourney(page, false);
+    await libraryJourney(page, false, async () => {
+      const destination = join(temporary, "standardized-documents.zip");
+      const completed = app.evaluate(
+        async ({ BrowserWindow }, target) =>
+          new Promise<string>((resolve, reject) => {
+            const timer = setTimeout(
+              () => reject(new Error("Native bundle did not finish")),
+              30000,
+            );
+            BrowserWindow.getAllWindows()[0]!.webContents.session.once(
+              "will-download",
+              (_event, item) => {
+                item.setSavePath(target);
+                item.once("done", (_event, state) => {
+                  clearTimeout(timer);
+                  resolve(state);
+                });
+              },
+            );
+          }),
+        destination,
+      );
+      await page
+        .getByRole("button", {
+          name: "Download selected files (ZIP)",
+          exact: true,
+        })
+        .click();
+      expect(await completed).toBe("completed");
+      return readFileSync(destination);
+    });
     expect(
       await page.evaluate(
         () => typeof (window as unknown as { require?: unknown }).require,

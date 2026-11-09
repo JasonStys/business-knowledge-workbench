@@ -49,7 +49,7 @@ FACTORS = {
 }
 DIMENSIONS = {unit: dimension for dimension, values in UNITS.items() for unit in values}
 PATTERN = re.compile(
-    r"(?<![\w.])(-?\d{1,12}(?:\.\d{1,12})?)\s*(kWh|kPa|mV|mm|cm|kg|lb|ft|in|Wh|bar|psi|Pa|m|g|V|C|F|K)\b"
+    r"(?<![\w.+-])([+-]?(?:\d{1,12}(?:\.\d{1,12})?|\.\d{1,12})(?:[eE][+-]?\d{1,2})?)\s*(kWh|kPa|mV|mm|cm|kg|lb|ft|in|Wh|bar|psi|Pa|m|g|V|C|F|K)\b"
 )
 
 

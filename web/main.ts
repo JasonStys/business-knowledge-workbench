@@ -1,107 +1,112 @@
 /* @index-begin
- * @symbol type: View L127
- * @symbol variable/parameter: state L136
- * @symbol variable/parameter: app L150
- * @symbol variable/parameter: navigationBusy L151
- * @symbol variable/parameter: disabledControls L152
- * @symbol variable/parameter: busy L158
- * @symbol function/class: navigationLock L158
- * @symbol variable/parameter: node L164
- * @symbol variable/parameter: cents L181
- * @symbol variable/parameter: money L181
- * @symbol function/class: esc L189
- * @symbol variable/parameter: value L189
- * @symbol variable/parameter: character L192
- * @symbol function/class: api L200
- * @symbol variable/parameter: init L200
- * @symbol variable/parameter: path L200
- * @symbol variable/parameter: headers L201
- * @symbol variable/parameter: [key, value] L212
- * @symbol variable/parameter: mutation L217
- * @symbol variable/parameter: separator L222
- * @symbol variable/parameter: response L223
- * @symbol variable/parameter: error L235
- * @symbol variable/parameter: message L248
- * @symbol function/class: notice L248
- * @symbol function/class: action L256
- * @symbol variable/parameter: work L256
- * @symbol function/class: shell L269
- * @symbol variable/parameter: workspace L270
- * @symbol variable/parameter: item L271
- * @symbol variable/parameter: [view, label, index] L280
- * @symbol variable/parameter: button L288
- * @symbol variable/parameter: event L301
- * @symbol variable/parameter: selected L303
- * @symbol function/class: loginView L339
- * @symbol variable/parameter: data L344
- * @symbol function/class: catalog L363
- * @symbol variable/parameter: content L364
- * @symbol variable/parameter: unit L370
- * @symbol variable/parameter: products L382
- * @symbol variable/parameter: update L385
- * @symbol variable/parameter: query L386
- * @symbol variable/parameter: filtered L389
- * @symbol variable/parameter: product L389
- * @symbol variable/parameter: spec L398
- * @symbol variable/parameter: result L409
- * @symbol function/class: chart L421
- * @symbol variable/parameter: report L421
- * @symbol variable/parameter: max L422
- * @symbol variable/parameter: point L422
- * @symbol function/class: dashboard L427
- * @symbol variable/parameter: employee L428
- * @symbol variable/parameter: format L431
- * @symbol variable/parameter: reportLink L432
- * @symbol variable/parameter: options L442
- * @symbol variable/parameter: customerOptions L443
- * @symbol variable/parameter: [id, label] L444
- * @symbol variable/parameter: form L458
- * @symbol variable/parameter: body L484
- * @symbol variable/parameter: title L519
- * @symbol variable/parameter: answer L537
- * @symbol function/class: documentList L552
- * @symbol variable/parameter: offset L552
- * @symbol variable/parameter: docs L556
- * @symbol variable/parameter: staff L558
- * @symbol variable/parameter: endpoint L559
- * @symbol variable/parameter: id L559
- * @symbol variable/parameter: suffix L559
- * @symbol variable/parameter: doc L562
- * @symbol variable/parameter: input L585
- * @symbol function/class: preview L594
- * @symbol variable/parameter: block L603
- * @symbol variable/parameter: index L603
- * @symbol variable/parameter: warning L603
- * @symbol variable/parameter: exports L608
- * @symbol variable/parameter: preferred L609
- * @symbol variable/parameter: available L610
- * @symbol variable/parameter: link L615
- * @symbol variable/parameter: url L618
- * @symbol variable/parameter: note L633
- * @symbol variable/parameter: standardLink L636
- * @symbol variable/parameter: copy L651
- * @symbol variable/parameter: close L682
- * @symbol function/class: download L695
- * @symbol variable/parameter: filename L695
- * @symbol variable/parameter: type L695
- * @symbol function/class: studio L705
- * @symbol variable/parameter: config L708
- * @symbol variable/parameter: history L709
- * @symbol variable/parameter: audit L713
- * @symbol variable/parameter: [dimension, units] L722
- * @symbol variable/parameter: [key, alias] L731
- * @symbol variable/parameter: readConfig L746
- * @symbol variable/parameter: key L754
- * @symbol variable/parameter: [, unit] L755
- * @symbol variable/parameter: section L759
- * @symbol variable/parameter: source L778
- * @symbol variable/parameter: draft L791
- * @symbol variable/parameter: frame L795
- * @symbol variable/parameter: entry L808
- * @symbol function/class: render L848
- * @symbol variable/parameter: previous L849
- * @symbol function/class: start L875
- * @symbol variable/parameter: privateMode L894
+ * @symbol type: View L132
+ * @symbol variable/parameter: state L141
+ * @symbol variable/parameter: app L155
+ * @symbol variable/parameter: navigationBusy L156
+ * @symbol variable/parameter: disabledControls L157
+ * @symbol variable/parameter: busy L163
+ * @symbol function/class: navigationLock L163
+ * @symbol variable/parameter: node L169
+ * @symbol variable/parameter: cents L186
+ * @symbol variable/parameter: money L186
+ * @symbol function/class: esc L194
+ * @symbol variable/parameter: value L194
+ * @symbol variable/parameter: character L197
+ * @symbol function/class: apiResponse L205
+ * @symbol variable/parameter: path L206
+ * @symbol variable/parameter: init L207
+ * @symbol variable/parameter: headers L209
+ * @symbol variable/parameter: [key, value] L220
+ * @symbol variable/parameter: mutation L225
+ * @symbol variable/parameter: separator L230
+ * @symbol variable/parameter: response L231
+ * @symbol variable/parameter: error L243
+ * @symbol function/class: api L256
+ * @symbol variable/parameter: message L261
+ * @symbol function/class: notice L261
+ * @symbol function/class: action L269
+ * @symbol variable/parameter: work L269
+ * @symbol function/class: shell L283
+ * @symbol variable/parameter: workspace L284
+ * @symbol variable/parameter: item L285
+ * @symbol variable/parameter: [view, label, index] L294
+ * @symbol variable/parameter: button L302
+ * @symbol variable/parameter: event L315
+ * @symbol variable/parameter: selected L317
+ * @symbol function/class: loginView L353
+ * @symbol variable/parameter: data L358
+ * @symbol function/class: catalog L377
+ * @symbol variable/parameter: content L378
+ * @symbol variable/parameter: unit L384
+ * @symbol variable/parameter: products L396
+ * @symbol variable/parameter: update L399
+ * @symbol variable/parameter: query L400
+ * @symbol variable/parameter: filtered L403
+ * @symbol variable/parameter: product L403
+ * @symbol variable/parameter: spec L412
+ * @symbol variable/parameter: result L423
+ * @symbol function/class: chart L435
+ * @symbol variable/parameter: report L435
+ * @symbol variable/parameter: max L436
+ * @symbol variable/parameter: point L436
+ * @symbol function/class: dashboard L441
+ * @symbol variable/parameter: employee L442
+ * @symbol variable/parameter: format L445
+ * @symbol variable/parameter: reportLink L446
+ * @symbol variable/parameter: tools L453
+ * @symbol variable/parameter: url L467
+ * @symbol variable/parameter: link L468
+ * @symbol variable/parameter: options L491
+ * @symbol variable/parameter: customerOptions L492
+ * @symbol variable/parameter: [id, label] L493
+ * @symbol variable/parameter: form L507
+ * @symbol variable/parameter: body L533
+ * @symbol variable/parameter: title L568
+ * @symbol variable/parameter: answer L586
+ * @symbol function/class: documentList L601
+ * @symbol variable/parameter: offset L601
+ * @symbol variable/parameter: docs L605
+ * @symbol variable/parameter: selectable L608
+ * @symbol variable/parameter: endpoint L609
+ * @symbol variable/parameter: id L609
+ * @symbol variable/parameter: suffix L609
+ * @symbol variable/parameter: doc L612
+ * @symbol variable/parameter: input L635
+ * @symbol function/class: updateSelection L651
+ * @symbol variable/parameter: count L652
+ * @symbol variable/parameter: download L654
+ * @symbol function/class: preview L660
+ * @symbol variable/parameter: block L669
+ * @symbol variable/parameter: index L669
+ * @symbol variable/parameter: warning L669
+ * @symbol variable/parameter: exports L674
+ * @symbol variable/parameter: preferred L675
+ * @symbol variable/parameter: available L676
+ * @symbol variable/parameter: note L699
+ * @symbol variable/parameter: standardLink L702
+ * @symbol variable/parameter: copy L717
+ * @symbol variable/parameter: close L748
+ * @symbol function/class: download L761
+ * @symbol variable/parameter: filename L761
+ * @symbol variable/parameter: type L761
+ * @symbol function/class: studio L771
+ * @symbol variable/parameter: config L774
+ * @symbol variable/parameter: history L775
+ * @symbol variable/parameter: audit L779
+ * @symbol variable/parameter: [dimension, units] L788
+ * @symbol variable/parameter: [key, alias] L797
+ * @symbol variable/parameter: readConfig L812
+ * @symbol variable/parameter: key L820
+ * @symbol variable/parameter: [, unit] L821
+ * @symbol variable/parameter: section L825
+ * @symbol variable/parameter: source L844
+ * @symbol variable/parameter: draft L857
+ * @symbol variable/parameter: frame L861
+ * @symbol variable/parameter: entry L874
+ * @symbol function/class: render L914
+ * @symbol variable/parameter: previous L915
+ * @symbol function/class: start L941
+ * @symbol variable/parameter: privateMode L960
 @index-end */
 /** Accessible workspace UI and explicit API actions. Function/state lines: docs/code-index.md.
  * All user/source values are escaped. Canonical documents render inside scriptless sandbox frames.
@@ -197,7 +202,10 @@ function esc(value: unknown): string {
 }
 
 /** Same-origin JSON/multipart client; CSRF is sent only to this application's API. */
-async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
+async function apiResponse(
+  path: string,
+  init: RequestInit = {},
+): Promise<Response> {
   const headers = new Headers(init.headers);
   if (isPrivate) {
     headers.set("X-KBW-Request", "v1");
@@ -241,7 +249,12 @@ async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
         : "Validation failed. Check field formats.",
     );
   }
-  return response.json() as Promise<T>;
+  return response;
+}
+
+/** Preserve the same authenticated/CSRF path for JSON and binary export callers. */
+async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
+  return (await apiResponse(path, init)).json() as Promise<T>;
 }
 
 /** Present errors and completion status without replacing the active user form. */
@@ -262,6 +275,7 @@ async function action(work: () => Promise<void>): Promise<void> {
     notice(error instanceof Error ? error.message : "Unexpected failure", true);
   } finally {
     navigationLock(false);
+    updateSelection();
   }
 }
 
@@ -282,7 +296,7 @@ function shell(): void {
     )
     .join(
       "",
-    )}</nav><div class="sidebar-bottom"><span class="status-dot"></span> Modular by design<p>One structured source.<br>Many useful perspectives.</p><span class="version">${isPrivate ? "PRIVATE LOCAL EDITION · V1.3" : "LEGACY ROLE DEMO · V1.3"}</span></div></aside><div class="layout"><header><span class="breadcrumb">${esc(workspace?.title)} <span>/ ${esc(state.view === "admin" ? "Configuration studio" : state.view === "catalog" ? "Product catalog" : "Knowledge workspace")}</span></span><div class="account">${state.session ? `<span>${esc(state.session.username)} · ${esc(state.session.role)}</span><button id="logout" class="quiet">Sign out</button>` : '<span>Visitor access</span><button id="sign-in" class="quiet">Sign in</button>'}</div></header><main id="main" tabindex="-1"><div class="eyebrow">STRUCTURE YOUR INFORMATION. MAKE IT USEFUL.</div><div id="notice" class="notice" role="status" aria-live="polite"></div><div id="content"></div></main><footer>Business Knowledge Workbench <span>All scenario records are synthetic. No operational or financial advice.</span></footer></div>`;
+    )}</nav><div class="sidebar-bottom"><span class="status-dot"></span> Modular by design<p>One structured source.<br>Many useful perspectives.</p><span class="version">${isPrivate ? "PRIVATE LOCAL EDITION Â· V1.4" : "LEGACY ROLE DEMO Â· V1.4"}</span></div></aside><div class="layout"><header><span class="breadcrumb">${esc(workspace?.title)} <span>/ ${esc(state.view === "admin" ? "Configuration studio" : state.view === "catalog" ? "Product catalog" : "Knowledge workspace")}</span></span><div class="account">${state.session ? `<span>${esc(state.session.username)} Â· ${esc(state.session.role)}</span><button id="logout" class="quiet">Sign out</button>` : '<span>Visitor access</span><button id="sign-in" class="quiet">Sign in</button>'}</div></header><main id="main" tabindex="-1"><div class="eyebrow">STRUCTURE YOUR INFORMATION. MAKE IT USEFUL.</div><div id="notice" class="notice" role="status" aria-live="polite"></div><div id="content"></div></main><footer>Business Knowledge Workbench <span>All scenario records are synthetic. No operational or financial advice.</span></footer></div>`;
   document
     .querySelectorAll<HTMLButtonElement>("[data-view]")
     .forEach((button) =>
@@ -362,7 +376,7 @@ function loginView(): void {
 /** Render product cards and normalized specifications from the real database. */
 async function catalog(): Promise<void> {
   const content = document.querySelector("#content")!;
-  content.innerHTML = `<div class="page-title"><div><h1>Find the right product.</h1><p>A clear catalog. Consistent specifications. Documentation that stays connected.</p></div><span class="pill">PUBLIC CATALOG</span></div><div class="hero-strip"><div><span class="hero-label">CONNECTED KNOWLEDGE</span><h2>From scattered files<br>to a shared understanding.</h2><p>${esc(state.bootstrap?.workspaces.find((item) => item.id === state.workspace)?.context)}</p></div><div class="hero-flow"><span>Source files</span><b>→</b><span>Canonical HTML</span><b>→</b><span>Search · Reports · AI</span></div></div><div class="section-heading"><h2>Explore products</h2><label class="search-label" for="search">Search catalog<input id="search" type="search" placeholder="Product name, ID, or capability"></label></div><div id="products" class="product-grid"></div><section class="panel units-panel"><div><h2>A common language for measurements</h2><p>Explicit units, exact decimal arithmetic and dimension checks.</p></div><form id="units"><label>Value<input name="value" type="text" inputmode="decimal" value="1" required></label><label>From<select name="source">${Object.values(
+  content.innerHTML = `<div class="page-title"><div><h1>Find the right product.</h1><p>A clear catalog. Consistent specifications. Documentation that stays connected.</p></div><span class="pill">PUBLIC CATALOG</span></div><div class="hero-strip"><div><span class="hero-label">CONNECTED KNOWLEDGE</span><h2>From scattered files<br>to a shared understanding.</h2><p>${esc(state.bootstrap?.workspaces.find((item) => item.id === state.workspace)?.context)}</p></div><div class="hero-flow"><span>Source files</span><b>â†’</b><span>Canonical HTML</span><b>â†’</b><span>Search Â· Reports Â· AI</span></div></div><div class="section-heading"><h2>Explore products</h2><label class="search-label" for="search">Search catalog<input id="search" type="search" placeholder="Product name, ID, or capability"></label></div><div id="products" class="product-grid"></div><section class="panel units-panel"><div><h2>A common language for measurements</h2><p>Explicit units, exact decimal arithmetic and dimension checks.</p></div><form id="units"><label>Value<input name="value" type="text" inputmode="decimal" value="1" required></label><label>From<select name="source">${Object.values(
     state.bootstrap!.units,
   )
     .flat()
@@ -395,7 +409,7 @@ async function catalog(): Promise<void> {
       filtered
         .map(
           (product) =>
-            `<article class="product-card"><div class="product-code">${esc(product.id)} <span>↗</span></div><div class="product-illustration" aria-hidden="true"><div class="device"><span></span><span></span><span></span><span></span></div></div><span class="category">${esc(product.category)}</span><h3>${esc(product.name)}</h3><p>${esc(product.description)}</p><dl>${product.specifications.map((spec) => `<div><dt>${esc(spec.dimension)}</dt><dd>${esc(spec.value)} ${esc(spec.unit)}</dd></div>`).join("")}</dl><div class="card-bottom"><span>${money(product.price_cents)}</span><span>USD · ${isPrivate ? "recorded list price" : "synthetic list price"}</span></div></article>`,
+            `<article class="product-card"><div class="product-code">${esc(product.id)} <span>â†—</span></div><div class="product-illustration" aria-hidden="true"><div class="device"><span></span><span></span><span></span><span></span></div></div><span class="category">${esc(product.category)}</span><h3>${esc(product.name)}</h3><p>${esc(product.description)}</p><dl>${product.specifications.map((spec) => `<div><dt>${esc(spec.dimension)}</dt><dd>${esc(spec.value)} ${esc(spec.unit)}</dd></div>`).join("")}</dl><div class="card-bottom"><span>${money(product.price_cents)}</span><span>USD Â· ${isPrivate ? "recorded list price" : "synthetic list price"}</span></div></article>`,
         )
         .join("") ||
       '<p class="empty">No matching products. Try a product ID.</p>';
@@ -428,13 +442,48 @@ async function dashboard(): Promise<void> {
   const employee = state.session?.role !== "customer";
   const data = await api<Report>("report");
   document.querySelector("#content")!.innerHTML =
-    `<div class="page-title"><div><h1>${employee ? "Your knowledge, connected." : "Your products. Your perspective."}</h1><p>${employee ? "Organize evidence, normalize data, and turn information into something actionable." : "Sales, performance and documentation for your assigned customer account."}</p></div><span class="pill">${employee ? "STAFF WORKSPACE" : "CUSTOMER-SCOPED"}</span></div><div class="metrics"><div><span>Recorded revenue</span><strong>${money(data.revenue_cents)}</strong><small>USD · selected account scope</small></div><div><span>Units sold</span><strong>${data.quantity.toLocaleString()}</strong><small>${data.series.length} recorded months</small></div><div><span>Conversion standard</span><strong>HTML first</strong><small>Structured · traceable · portable</small></div></div><section class="panel"><div class="section-heading"><div><h2>Business performance</h2><p>Historical records, not live telemetry.</p></div><button id="report-download" class="quiet">Download report JSON</button></div>${chart(data)}${data.forecast.length ? `<div class="forecast"><h3>Three-month baseline projection</h3>${data.forecast.map((point) => `<div><span>Month +${point.month_offset}</span><strong>${money(point.revenue_cents)}</strong><small>${money(point.low_cents)} – ${money(point.high_cents)}</small></div>`).join("")}</div>` : ""}<p class="muted">${esc(data.method)}</p></section>${employee ? `<section class="panel"><h2>Bring information together</h2><p>Import supported documents or mapped sales data. Original sources and conversion evidence are retained.</p><form id="import" class="import-form"><label>Source file<input type="file" name="file" required accept="${state.bootstrap!.formats.map((format) => "." + format).join(",")}"></label><label>Visibility<select name="visibility"><option value="internal">Internal only</option><option value="customer">Customer account</option><option value="public">Public</option></select></label><label>Customer<select name="customer"><option value="north">North account</option><option value="south">South account</option></select></label><label>Category<input name="category" value="Imported" maxlength="40" required></label><label class="check"><input name="dataset" type="checkbox" value="true">Import sales rows into reporting</label><button class="primary">Import & standardize</button></form><p class="muted">4 MiB maximum. ${state.bootstrap!.formats.join(", ")}. Unsupported or uncertain content is not silently interpreted.</p></section>` : ""}<section class="panel"><div class="section-heading"><h2>Document library</h2><span>ACL enforced before search</span></div>${libraryTools()}${employee ? '<div class="merge-tools"><label>Compilation title<input id="merge-title" value="Business evidence pack" maxlength="120"></label><button id="merge" class="quiet">Combine selected documents</button></div>' : ""}<div id="documents"></div><div id="preview"></div></section><section class="panel"><div class="section-heading"><div><h2>Ask your knowledge workspace</h2><p>Optional, read-only AI with authorized source citations. Disabled until an admin enables it.</p></div><span class="pill">HUMAN REVIEW REQUIRED</span></div><form id="ask"><label for="question">Question</label><div class="ask-row"><input id="question" required minlength="3" maxlength="800" placeholder="What do the controller specifications say about width?"><button class="primary">Ask sources</button></div></form><div id="answer" class="answer" aria-live="polite"></div></section>`;
+    `<div class="page-title"><div><h1>${employee ? "Your knowledge, connected." : "Your products. Your perspective."}</h1><p>${employee ? "Organize evidence, normalize data, and turn information into something actionable." : "Sales, performance and documentation for your assigned customer account."}</p></div><span class="pill">${employee ? "STAFF WORKSPACE" : "CUSTOMER-SCOPED"}</span></div><div class="metrics"><div><span>Recorded revenue</span><strong>${money(data.revenue_cents)}</strong><small>USD Â· selected account scope</small></div><div><span>Units sold</span><strong>${data.quantity.toLocaleString()}</strong><small>${data.series.length} recorded months</small></div><div><span>Conversion standard</span><strong>HTML first</strong><small>Structured Â· traceable Â· portable</small></div></div><section class="panel"><div class="section-heading"><div><h2>Business performance</h2><p>Historical records, not live telemetry.</p></div><button id="report-download" class="quiet">Download report JSON</button></div>${chart(data)}${data.forecast.length ? `<div class="forecast"><h3>Three-month baseline projection</h3>${data.forecast.map((point) => `<div><span>Month +${point.month_offset}</span><strong>${money(point.revenue_cents)}</strong><small>${money(point.low_cents)} â€“ ${money(point.high_cents)}</small></div>`).join("")}</div>` : ""}<p class="muted">${esc(data.method)}</p></section>${employee ? `<section class="panel"><h2>Bring information together</h2><p>Import supported documents or mapped sales data. Original sources and conversion evidence are retained.</p><form id="import" class="import-form"><label>Source file<input type="file" name="file" required accept="${state.bootstrap!.formats.map((format) => "." + format).join(",")}"></label><label>Visibility<select name="visibility"><option value="internal">Internal only</option><option value="customer">Customer account</option><option value="public">Public</option></select></label><label>Customer<select name="customer"><option value="north">North account</option><option value="south">South account</option></select></label><label>Category<input name="category" value="Imported" maxlength="40" required></label><label class="check"><input name="dataset" type="checkbox" value="true">Import sales rows into reporting</label><button class="primary">Import & standardize</button></form><p class="muted">4 MiB maximum. ${state.bootstrap!.formats.join(", ")}. Unsupported or uncertain content is not silently interpreted.</p></section>` : ""}<section class="panel"><div class="section-heading"><h2>Document library</h2><span>ACL enforced before search</span></div>${libraryTools()}${employee ? '<div class="merge-tools"><label>Compilation title<input id="merge-title" value="Business evidence pack" maxlength="120"></label><button id="merge" class="quiet">Combine selected documents</button></div>' : ""}<div id="documents"></div><div id="preview"></div></section><section class="panel"><div class="section-heading"><div><h2>Ask your knowledge workspace</h2><p>Optional, read-only AI with authorized source citations. Disabled until an admin enables it.</p></div><span class="pill">HUMAN REVIEW REQUIRED</span></div><form id="ask"><label for="question">Question</label><div class="ask-row"><input id="question" required minlength="3" maxlength="800" placeholder="What do the controller specifications say about width?"><button class="primary">Ask sources</button></div></form><div id="answer" class="answer" aria-live="polite"></div></section>`;
   const reportLink = document.createElement("a");
   reportLink.className = "quiet";
   reportLink.download = "";
   reportLink.href = `${isPrivate ? "/private" : ""}/api/report/export/${encodeURIComponent(data.standard.default_export)}?workspace=${encodeURIComponent(state.workspace)}`;
   reportLink.textContent = `Download standard report ${data.standard.default_export.toUpperCase()}`;
   document.querySelector("#report-download")!.after(reportLink);
+  if (state.session) {
+    const tools = document.createElement("div");
+    tools.className = "bundle-tools";
+    tools.innerHTML =
+      '<div class="button-row"><button id="bundle-download" class="quiet" disabled>Download selected files (ZIP)</button><button id="bundle-clear" class="quiet">Clear selection</button><span id="bundle-count" aria-live="polite"></span></div><p class="muted">Select up to 12 files across pages. ZIP files contain plaintext standardized exports and an integrity manifest, using each saved standard. Original attachments are excluded; protect exports before sharing.</p>';
+    document.querySelector("#documents")!.before(tools);
+    document.querySelector("#bundle-download")!.addEventListener(
+      "click",
+      () =>
+        void action(async () => {
+          notice("Building the selected standardized exportsâ€¦");
+          const response = await apiResponse("exports/bundle", {
+            method: "POST",
+            body: JSON.stringify({ ids: [...state.selected] }),
+          });
+          const url = URL.createObjectURL(await response.blob());
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "standardized-documents.zip";
+          link.click();
+          window.setTimeout(() => URL.revokeObjectURL(url), 10000);
+          notice(
+            "Standardized ZIP prepared. Selection remains available until cleared.",
+          );
+        }),
+    );
+    document.querySelector("#bundle-clear")!.addEventListener(
+      "click",
+      () =>
+        void action(async () => {
+          state.selected.clear();
+          await documentList();
+        }),
+    );
+  }
   if (data.standard.enforce_export)
     document.querySelector<HTMLButtonElement>("#report-download")!.hidden =
       true;
@@ -484,7 +533,7 @@ async function dashboard(): Promise<void> {
     const body = new FormData(form);
     const button = form.querySelector("button")!;
     button.disabled = true;
-    notice("Converting in a bounded worker. Please wait…");
+    notice("Converting in a bounded worker. Please waitâ€¦");
     void action(async () => {
       try {
         const result = await api<{ id: string; duplicate: boolean }>("import", {
@@ -542,7 +591,7 @@ async function dashboard(): Promise<void> {
         }),
       });
       document.querySelector("#answer")!.innerHTML =
-        `<p>${esc(answer.answer)}</p><small>${esc(answer.provider)} · ${esc(answer.notice)}</small><p>Source IDs: ${answer.citations.map(esc).join(", ") || "None"}</p>`;
+        `<p>${esc(answer.answer)}</p><small>${esc(answer.provider)} Â· ${esc(answer.notice)}</small><p>Source IDs: ${answer.citations.map(esc).join(", ") || "None"}</p>`;
     });
   });
   await documentList();
@@ -554,12 +603,13 @@ async function documentList(offset = 0): Promise<void> {
     `library?${libraryQuery(state.workspace, offset)}`,
   );
   const docs = result.items;
+  updateSelection();
   updateFacets(result.facets);
-  const staff = state.session && state.session.role !== "customer";
+  const selectable = Boolean(state.session && state.view !== "catalog");
   const endpoint = (id: string, suffix: string): string =>
     `${isPrivate ? "/private" : ""}/api/documents/${encodeURIComponent(id)}/${suffix}?workspace=${encodeURIComponent(state.workspace)}`;
   document.querySelector("#documents")!.innerHTML =
-    `<p role="status">Showing ${result.total ? result.offset + 1 : 0}–${Math.min(result.offset + docs.length, result.total)} of ${result.total} permitted files</p><div class="table-scroll"><table><caption>${docs.length} accessible documents</caption><thead><tr>${staff ? "<th>Select</th>" : ""}<th>Document and content</th><th>Category / format</th><th>Access</th><th>Extraction</th><th>Open / download</th></tr></thead><tbody>${docs.map((doc) => `<tr>${staff ? `<td><input type="checkbox" data-select="${esc(doc.id)}" aria-label="Select ${esc(doc.title)}" ${state.selected.has(doc.id) ? "checked" : ""}></td>` : ""}<td>${esc(doc.title)}<details><summary>Content excerpt</summary><p>${esc(doc.excerpt)}</p></details><small>Standard revision ${esc(doc.standard_revision ?? "legacy")} · ${esc(doc.created)}</small></td><td>${esc(doc.category)} · ${esc(doc.source_format || "internal")}</td><td><span class="tag">${esc(doc.visibility)}</span></td><td>${esc(doc.review_status)}</td><td><button class="link-button" data-doc="${esc(doc.id)}" aria-label="Preview ${esc(doc.title)}">Preview ↗</button><a download href="${endpoint(doc.id, "export/" + encodeURIComponent(doc.standard_format))}" aria-label="Download standardized ${esc(doc.title)}">Download ${esc(doc.standard_format.toUpperCase())}</a></td></tr>`).join("") || '<tr><td colspan="6">No accessible documents match these filters.</td></tr>'}</tbody></table></div><div class="button-row"><button type="button" id="library-prev" class="quiet" ${offset === 0 ? "disabled" : ""}>Previous files</button><button type="button" id="library-next" class="quiet" ${offset + docs.length >= result.total ? "disabled" : ""}>Next files</button></div>`;
+    `<p role="status">Showing ${result.total ? result.offset + 1 : 0}â€“${Math.min(result.offset + docs.length, result.total)} of ${result.total} permitted files</p><div class="table-scroll"><table><caption>${docs.length} accessible documents</caption><thead><tr>${selectable ? "<th>Select</th>" : ""}<th>Document and content</th><th>Category / format</th><th>Access</th><th>Extraction</th><th>Open / download</th></tr></thead><tbody>${docs.map((doc) => `<tr>${selectable ? `<td><input type="checkbox" data-select="${esc(doc.id)}" aria-label="Select ${esc(doc.title)}" ${state.selected.has(doc.id) ? "checked" : ""}></td>` : ""}<td>${esc(doc.title)}<details><summary>Content excerpt</summary><p>${esc(doc.excerpt)}</p></details><small>Standard revision ${esc(doc.standard_revision ?? "legacy")} Â· ${esc(doc.created)}</small></td><td>${esc(doc.category)} Â· ${esc(doc.source_format || "internal")}</td><td><span class="tag">${esc(doc.visibility)}</span></td><td>${esc(doc.review_status)}</td><td><button class="link-button" data-doc="${esc(doc.id)}" aria-label="Preview ${esc(doc.title)}">Preview â†—</button><a download href="${endpoint(doc.id, "export/" + encodeURIComponent(doc.standard_format))}" aria-label="Download standardized ${esc(doc.title)}">Download ${esc(doc.standard_format.toUpperCase())}</a></td></tr>`).join("") || '<tr><td colspan="6">No accessible documents match these filters.</td></tr>'}</tbody></table></div><div class="button-row"><button type="button" id="library-prev" class="quiet" ${offset === 0 ? "disabled" : ""}>Previous files</button><button type="button" id="library-next" class="quiet" ${offset + docs.length >= result.total ? "disabled" : ""}>Next files</button></div>`;
   document
     .querySelector("#library-prev")!
     .addEventListener(
@@ -584,10 +634,26 @@ async function documentList(offset = 0): Promise<void> {
     .querySelectorAll<HTMLInputElement>("[data-select]")
     .forEach((input) =>
       input.addEventListener("change", () => {
-        if (input.checked) state.selected.add(input.dataset.select!);
+        if (input.checked && state.selected.size >= 12) {
+          input.checked = false;
+          notice(
+            "Select at most 12 files; remove a selected file or clear the selection first.",
+            true,
+          );
+        } else if (input.checked) state.selected.add(input.dataset.select!);
         else state.selected.delete(input.dataset.select!);
+        updateSelection();
       }),
     );
+}
+
+/** Keep export affordances and cross-page selection count synchronized. */
+function updateSelection(): void {
+  const count = document.querySelector("#bundle-count");
+  if (count) count.textContent = `${state.selected.size} selected / 12 maximum`;
+  const download =
+    document.querySelector<HTMLButtonElement>("#bundle-download");
+  if (download) download.disabled = navigationBusy || state.selected.size === 0;
 }
 
 /** Preview canonical HTML in a sandbox, expose uncertainty, and offer HTML-first exports. */
@@ -631,7 +697,7 @@ async function preview(id: string): Promise<void> {
   }
   if (preferred) {
     const note = document.createElement("p");
-    note.textContent = `${result.standard!.name} · Revision ${result.standard!.revision} · Standard file type: ${preferred.toUpperCase()}`;
+    note.textContent = `${result.standard!.name} Â· Revision ${result.standard!.revision} Â· Standard file type: ${preferred.toUpperCase()}`;
     exports.prepend(note);
     const standardLink = document.createElement("a");
     standardLink.href = `${isPrivate ? "/private" : ""}/api/documents/${encodeURIComponent(id)}/export/${encodeURIComponent(preferred)}?workspace=${encodeURIComponent(state.workspace)}`;
@@ -715,7 +781,7 @@ async function studio(): Promise<void> {
       { actor: string; event: string; detail: string; created: string }[]
     >("audit");
   document.querySelector("#content")!.innerHTML =
-    `<div class="page-title"><div><h1>Adapt the workbench.</h1><p>Change the business profile without changing the application skeleton.</p></div><span class="pill">ADMIN / DEVELOPER</span></div><div class="config-layout"><section class="panel"><h2>Active configuration</h2><p>Revision ${config.revision} · Profile ${esc(config.profile)} · Adapter ${esc(result.ai_adapter)}</p><form id="config"><label>Workspace title<input name="title" value="${esc(config.title)}" minlength="2" maxlength="60" required></label><div class="config-units">${Object.entries(
+    `<div class="page-title"><div><h1>Adapt the workbench.</h1><p>Change the business profile without changing the application skeleton.</p></div><span class="pill">ADMIN / DEVELOPER</span></div><div class="config-layout"><section class="panel"><h2>Active configuration</h2><p>Revision ${config.revision} Â· Profile ${esc(config.profile)} Â· Adapter ${esc(result.ai_adapter)}</p><form id="config"><label>Workspace title<input name="title" value="${esc(config.title)}" minlength="2" maxlength="60" required></label><div class="config-units">${Object.entries(
       state.bootstrap!.units,
     )
       .map(
@@ -733,7 +799,7 @@ async function studio(): Promise<void> {
       )
       .join(
         "",
-      )}</div><button class="primary">Save validated configuration</button></form></section><section class="panel"><h2>Configuration in use</h2><pre>${esc(JSON.stringify(config, null, 2))}</pre><h3>Extension boundaries</h3><p>Importers → semantic blocks → canonical HTML → exports.</p><p>AI adapters receive scoped JSON evidence, never database access. Own model settings and source consent are in Account, AI &amp; help for private mode; trusted deployment settings apply only to the separate legacy engine.</p><p>Existing conversions keep their original revision. Reimport a source to apply changed normalization or templates.</p></section></div><section class="panel"><h2>Operational audit trail</h2><div class="table-scroll"><table><caption>Latest 50 configuration and import events</caption><thead><tr><th>Time</th><th>Actor</th><th>Event</th><th>Reference</th></tr></thead><tbody>${audit.map((item) => `<tr><td>${esc(item.created)}</td><td>${esc(item.actor)}</td><td>${esc(item.event)}</td><td>${esc(item.detail)}</td></tr>`).join("") || '<tr><td colspan="4">No recorded changes yet.</td></tr>'}</tbody></table></div></section>`;
+      )}</div><button class="primary">Save validated configuration</button></form></section><section class="panel"><h2>Configuration in use</h2><pre>${esc(JSON.stringify(config, null, 2))}</pre><h3>Extension boundaries</h3><p>Importers â†’ semantic blocks â†’ canonical HTML â†’ exports.</p><p>AI adapters receive scoped JSON evidence, never database access. Own model settings and source consent are in Account, AI &amp; help for private mode; trusted deployment settings apply only to the separate legacy engine.</p><p>Existing conversions keep their original revision. Reimport a source to apply changed normalization or templates.</p></section></div><section class="panel"><h2>Operational audit trail</h2><div class="table-scroll"><table><caption>Latest 50 configuration and import events</caption><thead><tr><th>Time</th><th>Actor</th><th>Event</th><th>Reference</th></tr></thead><tbody>${audit.map((item) => `<tr><td>${esc(item.created)}</td><td>${esc(item.actor)}</td><td>${esc(item.event)}</td><td>${esc(item.detail)}</td></tr>`).join("") || '<tr><td colspan="4">No recorded changes yet.</td></tr>'}</tbody></table></div></section>`;
   document
     .querySelector("#config button")!
     .insertAdjacentHTML(
@@ -798,14 +864,14 @@ async function studio(): Promise<void> {
         frame.srcdoc = draft.html;
         frame.hidden = false;
         document.querySelector("#standard-preview-status")!.textContent =
-          "Draft preview only — not saved. " + draft.warnings.join(" ");
+          "Draft preview only â€” not saved. " + draft.warnings.join(" ");
       }),
   );
   document
     .querySelector(".config-layout")!
     .insertAdjacentHTML(
       "afterend",
-      `<section class="panel"><h2>Standard revision history</h2><p>Restore creates a new revision, never rewrites a historical document. At most 250 saved revisions per business profile.</p><label>Revision to restore<select id="standard-history">${history.map((entry) => `<option value="${entry.revision}">${entry.revision} — ${esc(entry.config.output_standard.name)} — ${esc(entry.created)}</option>`).join("")}</select></label><button id="standard-restore" class="quiet">Restore as new revision</button></section>`,
+      `<section class="panel"><h2>Standard revision history</h2><p>Restore creates a new revision, never rewrites a historical document. At most 250 saved revisions per business profile.</p><label>Revision to restore<select id="standard-history">${history.map((entry) => `<option value="${entry.revision}">${entry.revision} â€” ${esc(entry.config.output_standard.name)} â€” ${esc(entry.created)}</option>`).join("")}</select></label><button id="standard-restore" class="quiet">Restore as new revision</button></section>`,
     );
   document.querySelector("#standard-restore")!.addEventListener(
     "click",
