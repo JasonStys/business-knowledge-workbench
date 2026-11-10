@@ -1,17 +1,17 @@
 # @index-begin
 # @symbol variable/parameter: ROOT L22
 # @symbol variable/parameter: DESCRIPTIONS L23
-# @symbol function/class: description L49
-# @symbol variable/parameter: path L49
-# @symbol variable/parameter: text L60
-# @symbol variable/parameter: tail L61
-# @symbol variable/parameter: line L62
-# @symbol variable/parameter: title L72
-# @symbol function/class: main L85
-# @symbol variable/parameter: output L87
-# @symbol variable/parameter: paths L95
-# @symbol variable/parameter: content L96
-# @symbol variable/parameter: target L103
+# @symbol function/class: description L53
+# @symbol variable/parameter: path L53
+# @symbol variable/parameter: text L64
+# @symbol variable/parameter: tail L65
+# @symbol variable/parameter: line L66
+# @symbol variable/parameter: title L76
+# @symbol function/class: main L89
+# @symbol variable/parameter: output L91
+# @symbol variable/parameter: paths L99
+# @symbol variable/parameter: content L100
+# @symbol variable/parameter: target L107
 # @index-end
 """Generate a one-row-per-tracked-file catalog with useful responsibility summaries. Index: docs/code-index.md."""
 
@@ -21,6 +21,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DESCRIPTIONS = {
+    "docs/reports/project-guide.docx": "Reviewed Word guide to standardization, authorized formatting, usage and practical boundaries.",
+    "docs/reports/validation-review.docx": "Reviewed Word validation edition with exact tested baselines and remaining limits.",
+    "docs/reports/validation-evidence.xlsx": "Reviewed filterable workflow/test-source Excel Tables with recalculating outcome formulas.",
+    "docs/reports/publications.json": "Office byte identities, approved page/tab scope and immutable documentation/evidence source metadata.",
     ".gitattributes": "LF text checkout and binary Office/PDF/raster preservation across operating systems.",
     ".gitignore": "Exclude runtime business data, secrets, environments and machine-specific artifacts.",
     ".dockerignore": "Limit the container build context to runtime/build inputs.",

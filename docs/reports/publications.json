@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "project": "business-knowledge-workbench",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+  "sourceUrl": "https://github.com/JasonStys/business-knowledge-workbench/tree/a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+  "functionalEvidenceBaseline": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42704664864,
+      "event": "push",
+      "headSha": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "name": "Validate workbench",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664864"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42704664364,
+      "event": "push",
+      "headSha": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "name": "Desktop packages",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664364"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42704664406,
+      "event": "push",
+      "headSha": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664406"
+    }
+  ],
+  "summary": "Search standardized numeric table values with unit-aware ranges and same-cell correlation; download authorized bounded document bundles with checksummed manifests and saved standards. Fixed scientific notation normalization.",
+  "rationale": "Makes standardized business records easier to investigate and hand off without mixing units or bypassing document access.",
+  "limitations": [
+    "Local owner-account edition; no shared hosted-business identity, invitations or managed tenant deployment is supplied.",
+    "Numeric range search covers standardized cells, not OCR or arbitrary source-blob search; unit conversion uses canonical six-place precision.",
+    "Export ZIPs are plaintext integrity records, not encrypted or digitally signed; they omit originals and account secrets.",
+    "Import and conversion support is adapter-specific; no universal file-format, image/equation understanding or AI-provider compatibility is promised."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 154583,
+      "sha256": "6666cdd2bef1cb4097133eba9b5c2adb8ef6ff2fc59527b331b11d32f6d6c5c7",
+      "sourceBaseline": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 7,
+        "renderedPageSha256": {
+          "page-1.png": "16fdb7f36ad931fed45ea3e70648597bb2fa1e095ea05e95908580555a1fb850",
+          "page-2.png": "284453b06142e479590e26a4785825f801e4386eb6782b1fd16cbb613e34b249",
+          "page-3.png": "7859d0fa0b9bd38ecf798bcc30fe43c7b899703e2988c4d35f9872f30c484ff1",
+          "page-4.png": "dd67033c4d47d65396b1b4aa8a9797111ed7dfc4455cc3197899f939b39e5eec",
+          "page-5.png": "2bd6bd809249e173ea7c3ef10e2b44c9f96529b7ba4c52243ed0ef18c54d99b5",
+          "page-6.png": "3d97dd8e5e2e69044946bbc6b7c07436a5edcbc388c7489661197598c7314c0d",
+          "page-7.png": "f961a71995f36df7779b093867b94b07c07554936f4f282a311d5518db49cb0f"
+        }
+      }
+    },
+    {
+      "filename": "validation-review.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 42385,
+      "sha256": "73370ebad9ee232de7fe6697510f724e5d8f674a8ab858f6ae62fc669c74e764",
+      "sourceBaseline": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 3,
+        "renderedPageSha256": {
+          "page-1.png": "5da9aa8887585ce198f684472530835d45d3a42f4bf7753589d383b3af3e5b30",
+          "page-2.png": "58f42b129b982cff19698e3c4ed7569d7aab5e03df29f50db783fcab33f234d3",
+          "page-3.png": "e69607fa0cfd6225860a8dffbf12fdf5ebebc8860cb3f0794e3db33686670dc6"
+        }
+      }
+    },
+    {
+      "filename": "validation-evidence.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 7466,
+      "sha256": "6f1f03ff509e2a23861e4a23c251b61f6067c7692afe7c6df6cfaee657bdf64d",
+      "sourceBaseline": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "visualReview": {
+        "approved": true,
+        "tabsReviewed": [
+          "Workflow evidence",
+          "Test sources"
+        ],
+        "previewSha256": {
+          "workflow-evidence.png": "0dc0eae4414c477f557330ff59aebbc3d697dbd17c0fc01fc906bbea293cbb77",
+          "test-sources.png": "00dd3d53e3309994bebc04d5ad5dc0d9f2e71f5c8f6bbeaae377dfdd2c6fcf1a"
+        },
+        "tables": [
+          {
+            "name": "WorkflowEvidence",
+            "range": "A7:D10",
+            "autoFilter": true
+          },
+          {
+            "name": "TestSources",
+            "range": "A7:C20",
+            "autoFilter": true
+          }
+        ],
+        "formulaCount": 4,
+        "failureSensitivityReceiptPassed": true,
+        "formulaErrors": 0
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}
