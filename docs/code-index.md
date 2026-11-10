@@ -179,17 +179,17 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | --- | --- | ---: |
 | variable/parameter | `ROOT` | 22 |
 | variable/parameter | `DESCRIPTIONS` | 23 |
-| function/class | `description` | 49 |
-| variable/parameter | `path` | 49 |
-| variable/parameter | `text` | 60 |
-| variable/parameter | `tail` | 61 |
-| variable/parameter | `line` | 62 |
-| variable/parameter | `title` | 72 |
-| function/class | `main` | 85 |
-| variable/parameter | `output` | 87 |
-| variable/parameter | `paths` | 95 |
-| variable/parameter | `content` | 96 |
-| variable/parameter | `target` | 103 |
+| function/class | `description` | 53 |
+| variable/parameter | `path` | 53 |
+| variable/parameter | `text` | 64 |
+| variable/parameter | `tail` | 65 |
+| variable/parameter | `line` | 66 |
+| variable/parameter | `title` | 76 |
+| function/class | `main` | 89 |
+| variable/parameter | `output` | 91 |
+| variable/parameter | `paths` | 99 |
+| variable/parameter | `content` | 100 |
+| variable/parameter | `target` | 107 |
 
 ## `scripts/fixtures.py`
 

@@ -26,6 +26,7 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/extensions.md](../docs/extensions.md) | Adapting the skeleton and connecting models. |
 | [docs/file-catalog.md](../docs/file-catalog.md) | This generated responsibility catalog. |
 | [docs/formats.md](../docs/formats.md) | Supported formats, fidelity and platform matrix. |
+| [docs/handbook.md](../docs/handbook.md) | Business Knowledge Workbench handbook. |
 | [docs/legacy-demo.md](../docs/legacy-demo.md) | Business Knowledge Workbench. |
 | [docs/library.md](../docs/library.md) | Standardized file library. |
 | [docs/licenses/python-3.12.txt](../docs/licenses/python-3.12.txt) | A. HISTORY OF THE SOFTWARE. |
@@ -38,9 +39,14 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/releases/v1.2.0.md](../docs/releases/v1.2.0.md) | Business Knowledge Workbench 1.2.0 — governed output standards. |
 | [docs/releases/v1.3.0.md](../docs/releases/v1.3.0.md) | Business Knowledge Workbench 1.3.0 — searchable standardized library. |
 | [docs/releases/v1.4.0.md](../docs/releases/v1.4.0.md) | Business Knowledge Workbench 1.4.0 — quantitative search and evidence packs. |
+| [docs/reports/documentation-refresh-2026-11-09.md](../docs/reports/documentation-refresh-2026-11-09.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/pdf-preview.png](../docs/reports/pdf-preview.png) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/performance.json](../docs/reports/performance.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/practical-workflows-2026-11-09.md](../docs/reports/practical-workflows-2026-11-09.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
+| [docs/reports/project-guide.docx](../docs/reports/project-guide.docx) | Reviewed Word guide to standardization, authorized formatting, usage and practical boundaries. |
+| [docs/reports/publications.json](../docs/reports/publications.json) | Office byte identities, approved page/tab scope and immutable documentation/evidence source metadata. |
+| [docs/reports/validation-evidence.xlsx](../docs/reports/validation-evidence.xlsx) | Reviewed filterable workflow/test-source Excel Tables with recalculating outcome formulas. |
+| [docs/reports/validation-review.docx](../docs/reports/validation-review.docx) | Reviewed Word validation edition with exact tested baselines and remaining limits. |
 | [docs/reports/validation-v1.1.1.json](../docs/reports/validation-v1.1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation-v1.1.json](../docs/reports/validation-v1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation-v1.2.json](../docs/reports/validation-v1.2.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
