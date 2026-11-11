@@ -162,23 +162,23 @@ npm audit --audit-level=high
 
 ## File responsibilities and language choices
 
-| Area | Responsibility |
-| --- | --- |
-| `web/main.ts`, `types.ts`, `style.css`, `index.html` | Typed document/product/reporting views, accessible HTML, responsive styling and escaped rendering. |
-| `web/private.ts` | Account forms, browser key derivation, help, own AI settings, consent and human-activity signals. |
-| `server/accounts.py`, `permissions.py`, `vault.py` | Local authentication/session/recovery hashes, dedicated OS-user permissions and streamed authenticated snapshots. |
-| `server/private_api.py`, `private_workspace.py`, `private_cli.py` | Exact-loopback boundary, account-isolated document engine, serial lifecycle/idle recovery and local launch. |
-| `server/app.py`, `models.py`, `store.py`, `schema.sql` | Preserved business API, validation, relational integrity, scoped searches and synthetic seeding. |
-| `server/conversion.py`, `worker.py`, `units.py` | Supported rich-format parsers, bounded child conversion and exact normalization. |
-| `server/standards.py`, `web/standards.ts` | Deterministic field/schema mapping, standard fingerprints and safe typed editor controls. |
-| `server/library.py`, `web/library.ts`, `web/standard-builder.ts` | ACL-first filtered searches, bounded file pages and visual field-definition editing. |
-| `server/exports.py`, `analytics.py`, `ai.py` | HTML-derived exports, explainable reporting and read-only model contracts. |
-| `desktop/main.cjs` | Electron shell with an owned frozen service, denied external navigation/popups and graceful sealing. |
-| `scripts/` | Frozen entry, licenses/checksums, fixture/benchmark and exact line/file inventories. |
-| `tests/`, `playwright*.config.ts` | Real parser/API/crypto/role regressions, browser journeys and native packaged-app tests. |
-| `public/`, `examples/` | Shell-only legacy PWA assets and clearly fictional sample evidence; no user data. |
-| `.github/workflows/`, root configuration | Reproducible dependency/build/CI/package/release gates and optional legacy container. |
-| `docs/` | Usage, limits, architecture, contracts, validation/release evidence and per-file/source maps. |
+| Area                                                              | Responsibility                                                                                                    |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `web/main.ts`, `types.ts`, `style.css`, `index.html`              | Typed document/product/reporting views, accessible HTML, responsive styling and escaped rendering.                |
+| `web/private.ts`                                                  | Account forms, browser key derivation, help, own AI settings, consent and human-activity signals.                 |
+| `server/accounts.py`, `permissions.py`, `vault.py`                | Local authentication/session/recovery hashes, dedicated OS-user permissions and streamed authenticated snapshots. |
+| `server/private_api.py`, `private_workspace.py`, `private_cli.py` | Exact-loopback boundary, account-isolated document engine, serial lifecycle/idle recovery and local launch.       |
+| `server/app.py`, `models.py`, `store.py`, `schema.sql`            | Preserved business API, validation, relational integrity, scoped searches and synthetic seeding.                  |
+| `server/conversion.py`, `worker.py`, `units.py`                   | Supported rich-format parsers, bounded child conversion and exact normalization.                                  |
+| `server/standards.py`, `web/standards.ts`                         | Deterministic field/schema mapping, standard fingerprints and safe typed editor controls.                         |
+| `server/library.py`, `web/library.ts`, `web/standard-builder.ts`  | ACL-first filtered searches, bounded file pages and visual field-definition editing.                              |
+| `server/exports.py`, `analytics.py`, `ai.py`                      | HTML-derived exports, explainable reporting and read-only model contracts.                                        |
+| `desktop/main.cjs`                                                | Electron shell with an owned frozen service, denied external navigation/popups and graceful sealing.              |
+| `scripts/`                                                        | Frozen entry, licenses/checksums, fixture/benchmark and exact line/file inventories.                              |
+| `tests/`, `playwright*.config.ts`                                 | Real parser/API/crypto/role regressions, browser journeys and native packaged-app tests.                          |
+| `public/`, `examples/`                                            | Shell-only legacy PWA assets and clearly fictional sample evidence; no user data.                                 |
+| `.github/workflows/`, root configuration                          | Reproducible dependency/build/CI/package/release gates and optional legacy container.                             |
+| `docs/`                                                           | Usage, limits, architecture, contracts, validation/release evidence and per-file/source maps.                     |
 
 Python uses its mature document ecosystem, TypeScript provides typed browser interactions, SQL provides transactional business persistence, HTML/CSS keep outputs inspectable, and JavaScript powers the isolated desktop shell. [The complete file catalog](docs/file-catalog.md) summarizes each tracked file; [the generated code index](docs/code-index.md) maps every authored code file's functions/classes/variables to exact lines. Regenerate inventories after source edits.
 
@@ -187,3 +187,18 @@ Python uses its mature document ecosystem, TypeScript provides typed browser int
 Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx) · [validation-review.docx](docs/reports/validation-review.docx) · [validation-evidence.xlsx](docs/reports/validation-evidence.xlsx).
 
 [Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
+
+## Current Windows application guide
+
+The [version 1.4.1 illustrated guide](docs/reports/windows-application-guide-1.4.1.docx) explains the actual
+installed application with two real screenshots, a worked user workflow, important
+source excerpts and observed validation. Read the [dated delivery report](docs/reports/installed-windows-2026-11-10.md)
+and [byte and page review](docs/reports/windows-application-guide-1.4.1.json) for exact scope. Historical Office
+editions remain available with their original baselines.
+
+New documentation files:
+
+- [docs/reports/windows-application-guide-1.4.1.docx](docs/reports/windows-application-guide-1.4.1.docx): Individually reviewed four-page installed application guide with actual screenshots, worked workflow, immutable source excerpts and limits.
+- [docs/reports/windows-application-guide-1.4.1.json](docs/reports/windows-application-guide-1.4.1.json): Exact Word, actual screenshot and reviewed page digests plus observed source-specific validation results.
+- [docs/screenshots/installed-1.4.1/native-workspace.png](docs/screenshots/installed-1.4.1/native-workspace.png): Actual installed application synthetic-profile screenshot: Installed standardized document library.
+- [docs/screenshots/installed-1.4.1/native-standard-preview-viewport.png](docs/screenshots/installed-1.4.1/native-standard-preview-viewport.png): Actual installed application synthetic-profile screenshot: Actual custom standard preview.

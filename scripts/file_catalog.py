@@ -1,17 +1,17 @@
 # @index-begin
 # @symbol variable/parameter: ROOT L22
 # @symbol variable/parameter: DESCRIPTIONS L23
-# @symbol function/class: description L55
-# @symbol variable/parameter: path L55
-# @symbol variable/parameter: text L66
-# @symbol variable/parameter: tail L67
-# @symbol variable/parameter: line L68
-# @symbol variable/parameter: title L78
-# @symbol function/class: main L91
-# @symbol variable/parameter: output L93
-# @symbol variable/parameter: paths L101
-# @symbol variable/parameter: content L102
-# @symbol variable/parameter: target L109
+# @symbol function/class: description L59
+# @symbol variable/parameter: path L59
+# @symbol variable/parameter: text L70
+# @symbol variable/parameter: tail L71
+# @symbol variable/parameter: line L72
+# @symbol variable/parameter: title L82
+# @symbol function/class: main L95
+# @symbol variable/parameter: output L97
+# @symbol variable/parameter: paths L105
+# @symbol variable/parameter: content L106
+# @symbol variable/parameter: target L113
 # @index-end
 """Generate a one-row-per-tracked-file catalog with useful responsibility summaries. Index: docs/code-index.md."""
 
@@ -21,6 +21,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DESCRIPTIONS = {
+    "docs/reports/windows-application-guide-1.4.1.docx": "Individually reviewed four-page installed application guide with actual screenshots, worked workflow, immutable source excerpts and limits.",
+    "docs/reports/windows-application-guide-1.4.1.json": "Exact Word, actual screenshot and reviewed page digests plus observed source-specific validation results.",
+    "docs/screenshots/installed-1.4.1/native-workspace.png": "Actual installed application synthetic-profile screenshot: Installed standardized document library.",
+    "docs/screenshots/installed-1.4.1/native-standard-preview-viewport.png": "Actual installed application synthetic-profile screenshot: Actual custom standard preview.",
     "docs/reports/project-guide.docx": "Reviewed Word guide to standardization, authorized formatting, usage and practical boundaries.",
     "docs/reports/validation-review.docx": "Reviewed Word validation edition with exact tested baselines and remaining limits.",
     "docs/reports/validation-evidence.xlsx": "Reviewed filterable workflow/test-source Excel Tables with recalculating outcome formulas.",
