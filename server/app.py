@@ -292,7 +292,7 @@ def create_app(
         """Keep application lifecycle explicit for hosting and browser tests."""
         yield
 
-    app = FastAPI(title="Business Knowledge Workbench", version="1.4.0", lifespan=lifespan)
+    app = FastAPI(title="Business Knowledge Workbench", version="1.4.1", lifespan=lifespan)
     app.state.ai_adapter = ai_adapter
     app.add_middleware(BodyLimit)
 

@@ -1,6 +1,6 @@
 {
   "name": "business-knowledge-workbench",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -22,17 +22,16 @@
     "test:private": "playwright test --config playwright.private.config.ts",
     "test:desktop": "playwright test --config playwright.desktop.config.ts"
   },
-  "dependencies": {},
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
     "@playwright/test": "1.64.1",
     "@types/node": "26.6.2",
-    "vite": "8.3.5",
-    "typescript": "6.0.3",
-    "prettier": "3.9.8",
     "docx": "9.5.1",
-    "electron": "44.10.2",
-    "electron-builder": "26.18.0"
+    "electron": "44.11.0",
+    "electron-builder": "26.18.0",
+    "prettier": "3.9.8",
+    "typescript": "6.0.3",
+    "vite": "8.3.5"
   },
   "author": "Jason Stys",
   "description": "Private local business documents, product evidence and reporting workspace",

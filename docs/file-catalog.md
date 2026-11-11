@@ -9,7 +9,7 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [.github/workflows/ci.yml](../.github/workflows/ci.yml) | Python portability, browser, dependency, schema and isolated-container validation gates. |
 | [.github/workflows/codeql.yml](../.github/workflows/codeql.yml) | Read-only Python and JavaScript/TypeScript semantic security analyses. |
 | [.github/workflows/packages.yml](../.github/workflows/packages.yml) | Three-OS frozen service, desktop packaging and actual packaged-executable workflow tests. |
-| [.github/workflows/release-native.yml](../.github/workflows/release-native.yml) | Exact-source validation/CodeQL/package gate, tested three-OS draft binaries and release publication. |
+| [.github/workflows/release-native.yml](../.github/workflows/release-native.yml) | Exact-source validation/CodeQL/package gate and tested three-OS draft assembly; publication requires independent final review. |
 | [.gitignore](../.gitignore) | Exclude runtime business data, secrets, environments and machine-specific artifacts. |
 | [CHANGELOG.md](../CHANGELOG.md) | Repository configuration/support asset. |
 | [CONTRIBUTING.md](../CONTRIBUTING.md) | Coding, test, documentation and source-safety expectations. |
@@ -39,6 +39,8 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/releases/v1.2.0.md](../docs/releases/v1.2.0.md) | Business Knowledge Workbench 1.2.0 — governed output standards. |
 | [docs/releases/v1.3.0.md](../docs/releases/v1.3.0.md) | Business Knowledge Workbench 1.3.0 — searchable standardized library. |
 | [docs/releases/v1.4.0.md](../docs/releases/v1.4.0.md) | Business Knowledge Workbench 1.4.0 — quantitative search and evidence packs. |
+| [docs/releases/v1.4.1.md](../docs/releases/v1.4.1.md) | Business Knowledge Workbench 1.4.1. |
+| [docs/reports/desktop-maintenance-2026-11-10.md](../docs/reports/desktop-maintenance-2026-11-10.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/documentation-refresh-2026-11-09.md](../docs/reports/documentation-refresh-2026-11-09.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/pdf-preview.png](../docs/reports/pdf-preview.png) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/performance.json](../docs/reports/performance.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
@@ -98,12 +100,14 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [scripts/capture.mjs](../scripts/capture.mjs) | Capture synthetic desktop/mobile UI evidence against the local preview. |
 | [scripts/code_index.py](../scripts/code_index.py) | Synchronize exact line maps in code headers and the complete file/symbol catalog. |
 | [scripts/docx-fixture.mjs](../scripts/docx-fixture.mjs) | Synthetic DOCX with a table, figure and Office Math equation. |
+| [scripts/draft_lookup.py](../scripts/draft_lookup.py) | Bounded numeric-ID lookup of the intended private draft without exposing release credentials. |
 | [scripts/file_catalog.py](../scripts/file_catalog.py) | Generate a one-row-per-tracked-file catalog with useful responsibility summaries. |
 | [scripts/fixtures.py](../scripts/fixtures.py) | Generate deterministic synthetic sources and PWA raster icons. |
 | [scripts/frozen_entry.py](../scripts/frozen_entry.py) | Jason Stys: frozen private website service and fixed-format conversion child dispatch. |
 | [scripts/industry_fixtures.mjs](../scripts/industry_fixtures.mjs) | Jason Stys: reproducible fictional industry DOCX sources, not customer records. |
 | [scripts/license_bundle.py](../scripts/license_bundle.py) | Jason Stys: bundle build-environment dependency licenses and notices without collecting user data. |
 | [scripts/release_archive.py](../scripts/release_archive.py) | Jason Stys: checksummed portable desktop archives, alongside tested one-click OS installers. |
+| [scripts/release_guard.py](../scripts/release_guard.py) | Exact-main validation, CodeQL and alert gates; draft asset identities and complete checksum verification. |
 | [scripts/symbols.mjs](../scripts/symbols.mjs) | Parse TypeScript/JavaScript symbols for documentation without executing source. |
 | [scripts/verify.sh](../scripts/verify.sh) | Reproducible local/CI verification. Requires the activated project Python environment and Node 24. |
 | [server/__init__.py](../server/__init__.py) | Business knowledge service package. Symbol/variable line locations: docs/code-index.md. |
@@ -137,9 +141,12 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [tests/python/test_adapters.py](../tests/python/test_adapters.py) | Hosted/local/custom AI adapter contracts, product creation and operator tools. |
 | [tests/python/test_api.py](../tests/python/test_api.py) | End-to-end API security, persistence and workflow regressions. |
 | [tests/python/test_core.py](../tests/python/test_core.py) | Conversion, unit, export and AI contract regression coverage. |
+| [tests/python/test_draft_lookup.py](../tests/python/test_draft_lookup.py) | Independent real-shape draft API contract fixtures by Jason Stys. |
+| [tests/python/test_frozen_runtime.py](../tests/python/test_frozen_runtime.py) | Jason Stys: frozen runtime identity and conversion-child dispatch regressions. |
 | [tests/python/test_industries.py](../tests/python/test_industries.py) | Jason Stys: independent realistic industry oracles across rich source/export formats. |
 | [tests/python/test_library.py](../tests/python/test_library.py) | Jason Stys: genuine API library, role, field-binding and draft-preview regressions. |
 | [tests/python/test_private.py](../tests/python/test_private.py) | Jason Stys: actual private-account, archive, provider, ownership and blocked-execution regression tests. |
+| [tests/python/test_release_guard.py](../tests/python/test_release_guard.py) | Jason Stys: independent source, draft, upload and actual-workflow negative release controls. |
 | [tests/python/test_standards.py](../tests/python/test_standards.py) | Jason Stys: standards schema, layout, authority, immutable history and migration regressions. |
 | [tsconfig.json](../tsconfig.json) | Strict browser/test TypeScript contracts and module resolution. |
 | [vite.config.ts](../vite.config.ts) | Frontend bundling and same-origin API development proxy. |

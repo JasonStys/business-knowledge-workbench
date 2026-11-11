@@ -1,17 +1,17 @@
 # @index-begin
 # @symbol variable/parameter: ROOT L22
 # @symbol variable/parameter: DESCRIPTIONS L23
-# @symbol function/class: description L53
-# @symbol variable/parameter: path L53
-# @symbol variable/parameter: text L64
-# @symbol variable/parameter: tail L65
-# @symbol variable/parameter: line L66
-# @symbol variable/parameter: title L76
-# @symbol function/class: main L89
-# @symbol variable/parameter: output L91
-# @symbol variable/parameter: paths L99
-# @symbol variable/parameter: content L100
-# @symbol variable/parameter: target L107
+# @symbol function/class: description L55
+# @symbol variable/parameter: path L55
+# @symbol variable/parameter: text L66
+# @symbol variable/parameter: tail L67
+# @symbol variable/parameter: line L68
+# @symbol variable/parameter: title L78
+# @symbol function/class: main L91
+# @symbol variable/parameter: output L93
+# @symbol variable/parameter: paths L101
+# @symbol variable/parameter: content L102
+# @symbol variable/parameter: target L109
 # @index-end
 """Generate a one-row-per-tracked-file catalog with useful responsibility summaries. Index: docs/code-index.md."""
 
@@ -46,7 +46,9 @@ DESCRIPTIONS = {
     ".github/workflows/ci.yml": "Python portability, browser, dependency, schema and isolated-container validation gates.",
     ".github/workflows/codeql.yml": "Read-only Python and JavaScript/TypeScript semantic security analyses.",
     ".github/workflows/packages.yml": "Three-OS frozen service, desktop packaging and actual packaged-executable workflow tests.",
-    ".github/workflows/release-native.yml": "Exact-source validation/CodeQL/package gate, tested three-OS draft binaries and release publication.",
+    ".github/workflows/release-native.yml": "Exact-source validation/CodeQL/package gate and tested three-OS draft assembly; publication requires independent final review.",
+    "scripts/release_guard.py": "Exact-main validation, CodeQL and alert gates; draft asset identities and complete checksum verification.",
+    "scripts/draft_lookup.py": "Bounded numeric-ID lookup of the intended private draft without exposing release credentials.",
 }
 
 

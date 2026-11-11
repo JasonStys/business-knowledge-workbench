@@ -1,11 +1,12 @@
 /* @index-begin
- * @symbol variable/parameter: phrase L13
- * @symbol variable/parameter: alias L15
- * @symbol function/class: createSession L15
- * @symbol variable/parameter: page L15
- * @symbol function/class: documentJourney L40
- * @symbol variable/parameter: verifyNativeDownload L42
- * @symbol variable/parameter: downloaded L63
+ * @symbol variable/parameter: phrase L14
+ * @symbol variable/parameter: alias L16
+ * @symbol function/class: createSession L16
+ * @symbol variable/parameter: page L16
+ * @symbol function/class: verifyCatalogSymbols L41
+ * @symbol function/class: documentJourney L52
+ * @symbol variable/parameter: verifyNativeDownload L54
+ * @symbol variable/parameter: downloaded L75
 @index-end */
 /** Jason Stys: reusable genuine registration, encryption and rich import journey; fictional credentials only. */
 import { expect, type Page } from "@playwright/test";
@@ -34,6 +35,17 @@ export async function createSession(page: Page, alias: string): Promise<void> {
   await expect(
     page.getByRole("button", { name: "Account, AI & help" }),
   ).toBeVisible();
+}
+
+/** Visit the actual catalog before checking its built Unicode labels. */
+export async function verifyCatalogSymbols(page: Page): Promise<void> {
+  await page
+    .getByRole("button", { name: "Product catalog", exact: true })
+    .click();
+  await expect(page.locator(".hero-flow b").first()).toHaveText("\u2192");
+  await expect(page.locator(".hero-flow span").last()).toHaveText(
+    "Search \u00b7 Reports \u00b7 AI",
+  );
 }
 
 /** Import actual DOCX with figures/table/equation, preview, export, save and test seeded reporting. */

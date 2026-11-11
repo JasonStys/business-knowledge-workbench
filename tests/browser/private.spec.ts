@@ -1,22 +1,27 @@
 /* @index-begin
- * @symbol variable/parameter: { page, } L23
- * @symbol variable/parameter: info L25
- * @symbol variable/parameter: { page } L36
- * @symbol variable/parameter: external L51
- * @symbol variable/parameter: request L52
- * @symbol variable/parameter: { page, request, } L90
- * @symbol variable/parameter: denied L103
- * @symbol variable/parameter: release L114
- * @symbol variable/parameter: delayed L115
- * @symbol variable/parameter: resolve L115
- * @symbol variable/parameter: route L118
- * @symbol variable/parameter: releaseLibrary L134
- * @symbol variable/parameter: library L135
+ * @symbol variable/parameter: { page, } L28
+ * @symbol variable/parameter: info L30
+ * @symbol variable/parameter: { page } L41
+ * @symbol variable/parameter: external L63
+ * @symbol variable/parameter: request L64
+ * @symbol variable/parameter: { page, request, } L102
+ * @symbol variable/parameter: denied L115
+ * @symbol variable/parameter: release L126
+ * @symbol variable/parameter: delayed L127
+ * @symbol variable/parameter: resolve L127
+ * @symbol variable/parameter: route L130
+ * @symbol variable/parameter: releaseLibrary L146
+ * @symbol variable/parameter: library L147
 @index-end */
 /** Jason Stys: private website workflow, hostile origins, account isolation and responsive accessibility. */
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-import { createSession, documentJourney, phrase } from "./account-session";
+import {
+  createSession,
+  documentJourney,
+  phrase,
+  verifyCatalogSymbols,
+} from "./account-session";
 import { standardJourney } from "./standard-journey";
 import { libraryJourney } from "./library-journey";
 
@@ -43,6 +48,13 @@ test.afterEach(async ({ page }) => {
       });
     })
     .catch(() => {});
+});
+
+test("catalog punctuation is intact after the real UI build", async ({
+  page,
+}, info) => {
+  await createSession(page, "unicode_" + info.project.name);
+  await verifyCatalogSymbols(page);
 });
 
 test("private documents convert, export, seal and reopen without external requests", async ({

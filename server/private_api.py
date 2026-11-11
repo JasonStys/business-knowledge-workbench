@@ -1,103 +1,103 @@
 # @index-begin
-# @symbol variable/parameter: CSP L130
-# @symbol variable/parameter: HISTORY_STOP_BYTES L131
-# @symbol function/class: Boundary L134
-# @symbol function/class: __init__ L137
-# @symbol variable/parameter: self L137
-# @symbol function/class: __call__ L143
-# @symbol variable/parameter: receive L143
-# @symbol variable/parameter: scope L143
-# @symbol variable/parameter: send L143
-# @symbol variable/parameter: raw L147
-# @symbol variable/parameter: headers L148
-# @symbol variable/parameter: k L148
-# @symbol variable/parameter: v L148
-# @symbol function/class: guarded L150
-# @symbol variable/parameter: message L150
-# @symbol function/class: deny L189
-# @symbol variable/parameter: detail L189
-# @symbol variable/parameter: status L189
-# @symbol variable/parameter: cookies L220
-# @symbol variable/parameter: token L225
-# @symbol variable/parameter: account L226
-# @symbol variable/parameter: chunks L234
-# @symbol variable/parameter: length L234
-# @symbol variable/parameter: delivered L246
-# @symbol function/class: replay L248
-# @symbol function/class: Closed L259
-# @symbol variable/parameter: model_config L262
-# @symbol function/class: Credentials L265
-# @symbol variable/parameter: alias L268
-# @symbol variable/parameter: password L269
-# @symbol function/class: Recovery L272
-# @symbol variable/parameter: recovery L275
-# @symbol function/class: Unlock L278
-# @symbol variable/parameter: key L281
-# @symbol variable/parameter: salt L282
-# @symbol function/class: Activity L285
-# @symbol variable/parameter: idle_seconds L288
-# @symbol function/class: Delete L291
-# @symbol variable/parameter: confirm L295
-# @symbol function/class: Settings L298
-# @symbol variable/parameter: endpoint L301
-# @symbol variable/parameter: model L302
-# @symbol variable/parameter: retain_key L304
-# @symbol function/class: destination L307
-# @symbol variable/parameter: parsed L310
-# @symbol variable/parameter: manager L331
-# @symbol function/class: public_settings L331
-# @symbol variable/parameter: path L333
-# @symbol variable/parameter: data L334
-# @symbol function/class: Proxy L342
-# @symbol variable/parameter: query L366
-# @symbol variable/parameter: workspace L367
-# @symbol variable/parameter: view L373
-# @symbol variable/parameter: db L378
-# @symbol variable/parameter: current L392
-# @symbol variable/parameter: forwarded L400
-# @symbol function/class: create_private_app L422
-# @symbol variable/parameter: launcher_token L423
-# @symbol variable/parameter: nonce L423
-# @symbol variable/parameter: port L423
-# @symbol variable/parameter: root L423
-# @symbol variable/parameter: ui L423
-# @symbol function/class: lifespan L430
-# @symbol function/class: idle L433
-# @symbol variable/parameter: task L447
-# @symbol variable/parameter: app L457
-# @symbol variable/parameter: error L469
-# @symbol function/class: invalid L469
-# @symbol variable/parameter: request L469
-# @symbol function/class: bad_value L474
-# @symbol function/class: bad_disk L479
-# @symbol function/class: identify L488
-# @symbol variable/parameter: owner L492
-# @symbol function/class: signed L492
-# @symbol variable/parameter: response L494
-# @symbol function/class: auth_limit L505
-# @symbol function/class: health L513
-# @symbol function/class: shutdown L524
-# @symbol variable/parameter: callback L530
-# @symbol function/class: register L537
-# @symbol function/class: login L549
-# @symbol function/class: reset L558
-# @symbol variable/parameter: row L563
-# @symbol variable/parameter: fresh L569
-# @symbol function/class: account L577
-# @symbol variable/parameter: session L579
-# @symbol function/class: unlock L587
-# @symbol function/class: activity L598
-# @symbol function/class: save L606
-# @symbol function/class: lock L613
-# @symbol function/class: logout L621
-# @symbol function/class: delete L633
-# @symbol function/class: backup L649
-# @symbol variable/parameter: _ L651
-# @symbol function/class: get_providers L662
-# @symbol function/class: seed L669
-# @symbol function/class: providers L684
-# @symbol variable/parameter: old L689
-# @symbol variable/parameter: config L695
+# @symbol variable/parameter: CSP L131
+# @symbol variable/parameter: HISTORY_STOP_BYTES L132
+# @symbol function/class: Boundary L135
+# @symbol function/class: __init__ L138
+# @symbol variable/parameter: self L138
+# @symbol function/class: __call__ L144
+# @symbol variable/parameter: receive L144
+# @symbol variable/parameter: scope L144
+# @symbol variable/parameter: send L144
+# @symbol variable/parameter: raw L148
+# @symbol variable/parameter: headers L149
+# @symbol variable/parameter: k L149
+# @symbol variable/parameter: v L149
+# @symbol function/class: guarded L151
+# @symbol variable/parameter: message L151
+# @symbol function/class: deny L190
+# @symbol variable/parameter: detail L190
+# @symbol variable/parameter: status L190
+# @symbol variable/parameter: cookies L221
+# @symbol variable/parameter: token L226
+# @symbol variable/parameter: account L227
+# @symbol variable/parameter: chunks L235
+# @symbol variable/parameter: length L235
+# @symbol variable/parameter: delivered L247
+# @symbol function/class: replay L249
+# @symbol function/class: Closed L260
+# @symbol variable/parameter: model_config L263
+# @symbol function/class: Credentials L266
+# @symbol variable/parameter: alias L269
+# @symbol variable/parameter: password L270
+# @symbol function/class: Recovery L273
+# @symbol variable/parameter: recovery L276
+# @symbol function/class: Unlock L279
+# @symbol variable/parameter: key L282
+# @symbol variable/parameter: salt L283
+# @symbol function/class: Activity L286
+# @symbol variable/parameter: idle_seconds L289
+# @symbol function/class: Delete L292
+# @symbol variable/parameter: confirm L296
+# @symbol function/class: Settings L299
+# @symbol variable/parameter: endpoint L302
+# @symbol variable/parameter: model L303
+# @symbol variable/parameter: retain_key L305
+# @symbol function/class: destination L308
+# @symbol variable/parameter: parsed L311
+# @symbol variable/parameter: manager L332
+# @symbol function/class: public_settings L332
+# @symbol variable/parameter: path L334
+# @symbol variable/parameter: data L335
+# @symbol function/class: Proxy L343
+# @symbol variable/parameter: query L367
+# @symbol variable/parameter: workspace L368
+# @symbol variable/parameter: view L374
+# @symbol variable/parameter: db L379
+# @symbol variable/parameter: current L393
+# @symbol variable/parameter: forwarded L401
+# @symbol function/class: create_private_app L423
+# @symbol variable/parameter: launcher_token L424
+# @symbol variable/parameter: nonce L424
+# @symbol variable/parameter: port L424
+# @symbol variable/parameter: root L424
+# @symbol variable/parameter: ui L424
+# @symbol function/class: lifespan L431
+# @symbol function/class: idle L434
+# @symbol variable/parameter: task L448
+# @symbol variable/parameter: app L458
+# @symbol variable/parameter: error L470
+# @symbol function/class: invalid L470
+# @symbol variable/parameter: request L470
+# @symbol function/class: bad_value L475
+# @symbol function/class: bad_disk L480
+# @symbol function/class: identify L489
+# @symbol variable/parameter: owner L493
+# @symbol function/class: signed L493
+# @symbol variable/parameter: response L495
+# @symbol function/class: auth_limit L506
+# @symbol function/class: health L514
+# @symbol function/class: shutdown L526
+# @symbol variable/parameter: callback L532
+# @symbol function/class: register L539
+# @symbol function/class: login L551
+# @symbol function/class: reset L560
+# @symbol variable/parameter: row L565
+# @symbol variable/parameter: fresh L571
+# @symbol function/class: account L579
+# @symbol variable/parameter: session L581
+# @symbol function/class: unlock L589
+# @symbol function/class: activity L600
+# @symbol function/class: save L608
+# @symbol function/class: lock L615
+# @symbol function/class: logout L623
+# @symbol function/class: delete L635
+# @symbol function/class: backup L651
+# @symbol variable/parameter: _ L653
+# @symbol function/class: get_providers L664
+# @symbol function/class: seed L671
+# @symbol function/class: providers L686
+# @symbol variable/parameter: old L691
+# @symbol variable/parameter: config L697
 # @index-end
 """Jason Stys: loopback-only real accounts, session-proven vaults, private AI settings and scoped controller.
 
@@ -109,6 +109,7 @@ import contextlib
 import json
 import secrets
 import sqlite3
+import sys
 import time
 from contextlib import asynccontextmanager
 from http.cookies import CookieError, SimpleCookie
@@ -456,7 +457,7 @@ def create_private_app(
 
     app = FastAPI(
         title="Business Knowledge Workbench — Jason Stys",
-        version="1.4.0",
+        version="1.4.1",
         lifespan=lifespan,
         docs_url=None,
         redoc_url=None,
@@ -515,7 +516,8 @@ def create_private_app(
         return {
             "status": "ready",
             "mode": "private-local-accounts",
-            "version": "1.4.0",
+            "version": "1.4.1",
+            "runtime_python": ".".join(map(str, sys.version_info[:3])),
             "author": "Jason Stys",
             "launcher_nonce": nonce,
         }

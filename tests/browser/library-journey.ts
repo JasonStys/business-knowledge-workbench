@@ -1,19 +1,20 @@
 /* @index-begin
- * @symbol function/class: libraryJourney L26
- * @symbol variable/parameter: page L27
- * @symbol variable/parameter: audit L28
- * @symbol variable/parameter: downloadBundle L29
- * @symbol variable/parameter: file L31
- * @symbol variable/parameter: preview L99
- * @symbol variable/parameter: link L157
- * @symbol variable/parameter: href L161
- * @symbol variable/parameter: output L162
- * @symbol variable/parameter: url L162
- * @symbol variable/parameter: response L163
- * @symbol variable/parameter: bytes L164
- * @symbol variable/parameter: bundle L174
- * @symbol variable/parameter: downloaded L194
- * @symbol variable/parameter: download L196
+ * @symbol function/class: libraryJourney L27
+ * @symbol variable/parameter: page L28
+ * @symbol variable/parameter: audit L29
+ * @symbol variable/parameter: downloadBundle L30
+ * @symbol variable/parameter: captureDraft L31
+ * @symbol variable/parameter: file L33
+ * @symbol variable/parameter: preview L101
+ * @symbol variable/parameter: link L160
+ * @symbol variable/parameter: href L164
+ * @symbol variable/parameter: output L165
+ * @symbol variable/parameter: url L165
+ * @symbol variable/parameter: response L166
+ * @symbol variable/parameter: bytes L167
+ * @symbol variable/parameter: bundle L177
+ * @symbol variable/parameter: downloaded L197
+ * @symbol variable/parameter: download L199
 @index-end */
 /** Jason Stys: visible field-edit, file-preview, import, filtered-search and download regression.
  * Functions/variables and exact lines: docs/code-index.md. All records are fictional.
@@ -27,6 +28,7 @@ export async function libraryJourney(
   page: Page,
   audit = true,
   downloadBundle?: () => Promise<Uint8Array>,
+  captureDraft?: () => Promise<void>,
 ): Promise<void> {
   const file = {
     name: "fictional-inspection.csv",
@@ -94,7 +96,7 @@ export async function libraryJourney(
     .getByRole("button", { name: "Preview draft standard", exact: true })
     .click();
   await expect(page.locator("#standard-preview-status")).toContainText(
-    "not saved",
+    "Draft preview only \u2014 not saved.",
   );
   const preview = page.frameLocator("#standard-preview-frame");
   await expect(preview.getByText("107.95 mm", { exact: true })).toBeVisible();
@@ -104,6 +106,7 @@ export async function libraryJourney(
   await expect(
     preview.getByText("Fictional Harbor Manufacturing", { exact: true }),
   ).toBeVisible();
+  if (captureDraft) await captureDraft();
   await page
     .getByRole("button", { name: "Save validated configuration", exact: true })
     .click();

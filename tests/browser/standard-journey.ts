@@ -62,7 +62,7 @@ export async function standardJourney(
     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await page.getByRole("button", { name: "Preview draft standard" }).click();
   await expect(page.locator("#standard-preview-status")).toContainText(
-    "not saved",
+    "Draft preview only \u2014 not saved.",
   );
   await expect(
     page
