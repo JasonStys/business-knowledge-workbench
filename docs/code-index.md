@@ -171,6 +171,44 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `value` | 36 |
 | variable/parameter | `document` | 46 |
 
+## `scripts/draft_lookup.py`
+
+[Source](../scripts/draft_lookup.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `Reader` | 45 |
+| variable/parameter | `PER_PAGE` | 46 |
+| variable/parameter | `MAX_PAGES` | 47 |
+| variable/parameter | `MAX_ID` | 48 |
+| variable/parameter | `condition` | 51 |
+| variable/parameter | `message` | 51 |
+| function/class | `require` | 51 |
+| function/class | `namespace` | 57 |
+| variable/parameter | `repository` | 57 |
+| function/class | `release_id` | 67 |
+| variable/parameter | `value` | 67 |
+| function/class | `identity` | 73 |
+| variable/parameter | `record` | 73 |
+| variable/parameter | `identifier` | 76 |
+| variable/parameter | `tag` | 77 |
+| variable/parameter | `target` | 83 |
+| variable/parameter | `read` | 93 |
+| function/class | `read_by_id` | 93 |
+| function/class | `find_release` | 112 |
+| variable/parameter | `missing` | 113 |
+| variable/parameter | `base` | 116 |
+| variable/parameter | `matches` | 123 |
+| variable/parameter | `seen` | 124 |
+| variable/parameter | `page` | 125 |
+| variable/parameter | `records` | 126 |
+| variable/parameter | `current` | 129 |
+| variable/parameter | `candidate` | 142 |
+| function/class | `require_draft` | 151 |
+| variable/parameter | `expected_id` | 152 |
+| variable/parameter | `source` | 152 |
+| variable/parameter | `version` | 152 |
+
 ## `scripts/file_catalog.py`
 
 [Source](../scripts/file_catalog.py) — descriptive module header and function contracts are in this file.
@@ -179,17 +217,17 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | --- | --- | ---: |
 | variable/parameter | `ROOT` | 22 |
 | variable/parameter | `DESCRIPTIONS` | 23 |
-| function/class | `description` | 53 |
-| variable/parameter | `path` | 53 |
-| variable/parameter | `text` | 64 |
-| variable/parameter | `tail` | 65 |
-| variable/parameter | `line` | 66 |
-| variable/parameter | `title` | 76 |
-| function/class | `main` | 89 |
-| variable/parameter | `output` | 91 |
-| variable/parameter | `paths` | 99 |
-| variable/parameter | `content` | 100 |
-| variable/parameter | `target` | 107 |
+| function/class | `description` | 55 |
+| variable/parameter | `path` | 55 |
+| variable/parameter | `text` | 66 |
+| variable/parameter | `tail` | 67 |
+| variable/parameter | `line` | 68 |
+| variable/parameter | `title` | 78 |
+| function/class | `main` | 91 |
+| variable/parameter | `output` | 93 |
+| variable/parameter | `paths` | 101 |
+| variable/parameter | `content` | 102 |
+| variable/parameter | `target` | 109 |
 
 ## `scripts/fixtures.py`
 
@@ -278,6 +316,92 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `folder` | 36 |
 | variable/parameter | `version` | 45 |
 | variable/parameter | `base` | 48 |
+
+## `scripts/release_guard.py`
+
+[Source](../scripts/release_guard.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `ROOT` | 106 |
+| variable/parameter | `REPOSITORY` | 107 |
+| variable/parameter | `BASE` | 108 |
+| variable/parameter | `VERSION` | 109 |
+| variable/parameter | `WORKFLOWS` | 110 |
+| variable/parameter | `CATEGORIES` | 111 |
+| variable/parameter | `MAX_JSON` | 115 |
+| variable/parameter | `MAX_ASSET` | 116 |
+| variable/parameter | `raw` | 119 |
+| function/class | `strict_json` | 119 |
+| variable/parameter | `items` | 122 |
+| function/class | `pairs` | 122 |
+| variable/parameter | `_` | 127 |
+| function/class | `invalid_constant` | 127 |
+| function/class | `headers` | 133 |
+| variable/parameter | `token` | 135 |
+| function/class | `api` | 145 |
+| variable/parameter | `body` | 145 |
+| variable/parameter | `endpoint` | 145 |
+| variable/parameter | `missing` | 145 |
+| variable/parameter | `connection` | 151 |
+| variable/parameter | `data` | 153 |
+| variable/parameter | `request_headers` | 154 |
+| variable/parameter | `response` | 158 |
+| function/class | `complete_list` | 172 |
+| variable/parameter | `result` | 174 |
+| variable/parameter | `page` | 175 |
+| variable/parameter | `rows` | 176 |
+| function/class | `require_source` | 184 |
+| variable/parameter | `source` | 184 |
+| variable/parameter | `workflow` | 190 |
+| variable/parameter | `value` | 191 |
+| variable/parameter | `current` | 214 |
+| variable/parameter | `row` | 223 |
+| function/class | `no_tag` | 242 |
+| function/class | `context` | 250 |
+| variable/parameter | `package` | 258 |
+| variable/parameter | `lock` | 259 |
+| variable/parameter | `python` | 260 |
+| variable/parameter | `expected` | 290 |
+| function/class | `draft` | 295 |
+| variable/parameter | `identifier` | 295 |
+| variable/parameter | `record` | 297 |
+| function/class | `names` | 309 |
+| variable/parameter | `system` | 309 |
+| variable/parameter | `payloads` | 311 |
+| variable/parameter | `item` | 326 |
+| variable/parameter | `payload` | 326 |
+| function/class | `attached` | 329 |
+| variable/parameter | `complete` | 329 |
+| variable/parameter | `identifiers` | 335 |
+| variable/parameter | `digest` | 360 |
+| variable/parameter | `name` | 360 |
+| variable/parameter | `size` | 360 |
+| variable/parameter | `stream` | 360 |
+| function/class | `upload_bytes` | 360 |
+| variable/parameter | `key` | 367 |
+| variable/parameter | `limit` | 400 |
+| function/class | `open_output` | 400 |
+| variable/parameter | `path` | 400 |
+| variable/parameter | `flags` | 403 |
+| variable/parameter | `descriptor` | 409 |
+| variable/parameter | `info` | 411 |
+| function/class | `file_hash` | 422 |
+| variable/parameter | `remaining` | 425 |
+| variable/parameter | `block` | 427 |
+| function/class | `upload` | 435 |
+| variable/parameter | `folder` | 437 |
+| variable/parameter | `planned` | 438 |
+| variable/parameter | `existing` | 439 |
+| variable/parameter | `verified` | 444 |
+| variable/parameter | `normalized` | 459 |
+| variable/parameter | `observed` | 474 |
+| function/class | `main` | 483 |
+| variable/parameter | `parser` | 485 |
+| variable/parameter | `operation` | 487 |
+| variable/parameter | `notes` | 496 |
+| variable/parameter | `created` | 501 |
+| variable/parameter | `output` | 514 |
 
 ## `scripts/symbols.mjs`
 
@@ -924,105 +1048,105 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `CSP` | 130 |
-| variable/parameter | `HISTORY_STOP_BYTES` | 131 |
-| function/class | `Boundary` | 134 |
-| function/class | `__init__` | 137 |
-| variable/parameter | `self` | 137 |
-| function/class | `__call__` | 143 |
-| variable/parameter | `receive` | 143 |
-| variable/parameter | `scope` | 143 |
-| variable/parameter | `send` | 143 |
-| variable/parameter | `raw` | 147 |
-| variable/parameter | `headers` | 148 |
-| variable/parameter | `k` | 148 |
-| variable/parameter | `v` | 148 |
-| function/class | `guarded` | 150 |
-| variable/parameter | `message` | 150 |
-| function/class | `deny` | 189 |
-| variable/parameter | `detail` | 189 |
-| variable/parameter | `status` | 189 |
-| variable/parameter | `cookies` | 220 |
-| variable/parameter | `token` | 225 |
-| variable/parameter | `account` | 226 |
-| variable/parameter | `chunks` | 234 |
-| variable/parameter | `length` | 234 |
-| variable/parameter | `delivered` | 246 |
-| function/class | `replay` | 248 |
-| function/class | `Closed` | 259 |
-| variable/parameter | `model_config` | 262 |
-| function/class | `Credentials` | 265 |
-| variable/parameter | `alias` | 268 |
-| variable/parameter | `password` | 269 |
-| function/class | `Recovery` | 272 |
-| variable/parameter | `recovery` | 275 |
-| function/class | `Unlock` | 278 |
-| variable/parameter | `key` | 281 |
-| variable/parameter | `salt` | 282 |
-| function/class | `Activity` | 285 |
-| variable/parameter | `idle_seconds` | 288 |
-| function/class | `Delete` | 291 |
-| variable/parameter | `confirm` | 295 |
-| function/class | `Settings` | 298 |
-| variable/parameter | `endpoint` | 301 |
-| variable/parameter | `model` | 302 |
-| variable/parameter | `retain_key` | 304 |
-| function/class | `destination` | 307 |
-| variable/parameter | `parsed` | 310 |
-| variable/parameter | `manager` | 331 |
-| function/class | `public_settings` | 331 |
-| variable/parameter | `path` | 333 |
-| variable/parameter | `data` | 334 |
-| function/class | `Proxy` | 342 |
-| variable/parameter | `query` | 366 |
-| variable/parameter | `workspace` | 367 |
-| variable/parameter | `view` | 373 |
-| variable/parameter | `db` | 378 |
-| variable/parameter | `current` | 392 |
-| variable/parameter | `forwarded` | 400 |
-| function/class | `create_private_app` | 422 |
-| variable/parameter | `launcher_token` | 423 |
-| variable/parameter | `nonce` | 423 |
-| variable/parameter | `port` | 423 |
-| variable/parameter | `root` | 423 |
-| variable/parameter | `ui` | 423 |
-| function/class | `lifespan` | 430 |
-| function/class | `idle` | 433 |
-| variable/parameter | `task` | 447 |
-| variable/parameter | `app` | 457 |
-| variable/parameter | `error` | 469 |
-| function/class | `invalid` | 469 |
-| variable/parameter | `request` | 469 |
-| function/class | `bad_value` | 474 |
-| function/class | `bad_disk` | 479 |
-| function/class | `identify` | 488 |
-| variable/parameter | `owner` | 492 |
-| function/class | `signed` | 492 |
-| variable/parameter | `response` | 494 |
-| function/class | `auth_limit` | 505 |
-| function/class | `health` | 513 |
-| function/class | `shutdown` | 524 |
-| variable/parameter | `callback` | 530 |
-| function/class | `register` | 537 |
-| function/class | `login` | 549 |
-| function/class | `reset` | 558 |
-| variable/parameter | `row` | 563 |
-| variable/parameter | `fresh` | 569 |
-| function/class | `account` | 577 |
-| variable/parameter | `session` | 579 |
-| function/class | `unlock` | 587 |
-| function/class | `activity` | 598 |
-| function/class | `save` | 606 |
-| function/class | `lock` | 613 |
-| function/class | `logout` | 621 |
-| function/class | `delete` | 633 |
-| function/class | `backup` | 649 |
-| variable/parameter | `_` | 651 |
-| function/class | `get_providers` | 662 |
-| function/class | `seed` | 669 |
-| function/class | `providers` | 684 |
-| variable/parameter | `old` | 689 |
-| variable/parameter | `config` | 695 |
+| variable/parameter | `CSP` | 131 |
+| variable/parameter | `HISTORY_STOP_BYTES` | 132 |
+| function/class | `Boundary` | 135 |
+| function/class | `__init__` | 138 |
+| variable/parameter | `self` | 138 |
+| function/class | `__call__` | 144 |
+| variable/parameter | `receive` | 144 |
+| variable/parameter | `scope` | 144 |
+| variable/parameter | `send` | 144 |
+| variable/parameter | `raw` | 148 |
+| variable/parameter | `headers` | 149 |
+| variable/parameter | `k` | 149 |
+| variable/parameter | `v` | 149 |
+| function/class | `guarded` | 151 |
+| variable/parameter | `message` | 151 |
+| function/class | `deny` | 190 |
+| variable/parameter | `detail` | 190 |
+| variable/parameter | `status` | 190 |
+| variable/parameter | `cookies` | 221 |
+| variable/parameter | `token` | 226 |
+| variable/parameter | `account` | 227 |
+| variable/parameter | `chunks` | 235 |
+| variable/parameter | `length` | 235 |
+| variable/parameter | `delivered` | 247 |
+| function/class | `replay` | 249 |
+| function/class | `Closed` | 260 |
+| variable/parameter | `model_config` | 263 |
+| function/class | `Credentials` | 266 |
+| variable/parameter | `alias` | 269 |
+| variable/parameter | `password` | 270 |
+| function/class | `Recovery` | 273 |
+| variable/parameter | `recovery` | 276 |
+| function/class | `Unlock` | 279 |
+| variable/parameter | `key` | 282 |
+| variable/parameter | `salt` | 283 |
+| function/class | `Activity` | 286 |
+| variable/parameter | `idle_seconds` | 289 |
+| function/class | `Delete` | 292 |
+| variable/parameter | `confirm` | 296 |
+| function/class | `Settings` | 299 |
+| variable/parameter | `endpoint` | 302 |
+| variable/parameter | `model` | 303 |
+| variable/parameter | `retain_key` | 305 |
+| function/class | `destination` | 308 |
+| variable/parameter | `parsed` | 311 |
+| variable/parameter | `manager` | 332 |
+| function/class | `public_settings` | 332 |
+| variable/parameter | `path` | 334 |
+| variable/parameter | `data` | 335 |
+| function/class | `Proxy` | 343 |
+| variable/parameter | `query` | 367 |
+| variable/parameter | `workspace` | 368 |
+| variable/parameter | `view` | 374 |
+| variable/parameter | `db` | 379 |
+| variable/parameter | `current` | 393 |
+| variable/parameter | `forwarded` | 401 |
+| function/class | `create_private_app` | 423 |
+| variable/parameter | `launcher_token` | 424 |
+| variable/parameter | `nonce` | 424 |
+| variable/parameter | `port` | 424 |
+| variable/parameter | `root` | 424 |
+| variable/parameter | `ui` | 424 |
+| function/class | `lifespan` | 431 |
+| function/class | `idle` | 434 |
+| variable/parameter | `task` | 448 |
+| variable/parameter | `app` | 458 |
+| variable/parameter | `error` | 470 |
+| function/class | `invalid` | 470 |
+| variable/parameter | `request` | 470 |
+| function/class | `bad_value` | 475 |
+| function/class | `bad_disk` | 480 |
+| function/class | `identify` | 489 |
+| variable/parameter | `owner` | 493 |
+| function/class | `signed` | 493 |
+| variable/parameter | `response` | 495 |
+| function/class | `auth_limit` | 506 |
+| function/class | `health` | 514 |
+| function/class | `shutdown` | 526 |
+| variable/parameter | `callback` | 532 |
+| function/class | `register` | 539 |
+| function/class | `login` | 551 |
+| function/class | `reset` | 560 |
+| variable/parameter | `row` | 565 |
+| variable/parameter | `fresh` | 571 |
+| function/class | `account` | 579 |
+| variable/parameter | `session` | 581 |
+| function/class | `unlock` | 589 |
+| function/class | `activity` | 600 |
+| function/class | `save` | 608 |
+| function/class | `lock` | 615 |
+| function/class | `logout` | 623 |
+| function/class | `delete` | 635 |
+| function/class | `backup` | 651 |
+| variable/parameter | `_` | 653 |
+| function/class | `get_providers` | 664 |
+| function/class | `seed` | 671 |
+| function/class | `providers` | 686 |
+| variable/parameter | `old` | 691 |
+| variable/parameter | `config` | 697 |
 
 ## `server/private_cli.py`
 
@@ -1337,13 +1461,14 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `phrase` | 13 |
-| variable/parameter | `alias` | 15 |
-| function/class | `createSession` | 15 |
-| variable/parameter | `page` | 15 |
-| function/class | `documentJourney` | 40 |
-| variable/parameter | `verifyNativeDownload` | 42 |
-| variable/parameter | `downloaded` | 63 |
+| variable/parameter | `phrase` | 14 |
+| variable/parameter | `alias` | 16 |
+| function/class | `createSession` | 16 |
+| variable/parameter | `page` | 16 |
+| function/class | `verifyCatalogSymbols` | 41 |
+| function/class | `documentJourney` | 52 |
+| variable/parameter | `verifyNativeDownload` | 54 |
+| variable/parameter | `downloaded` | 75 |
 
 ## `tests/browser/desktop.spec.ts`
 
@@ -1351,23 +1476,28 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `temporary` | 29 |
-| variable/parameter | `logs` | 30 |
-| variable/parameter | `app` | 32 |
-| variable/parameter | `page` | 43 |
-| variable/parameter | `destination` | 47 |
-| variable/parameter | `completed` | 48 |
-| variable/parameter | `target` | 49 |
-| variable/parameter | `{ BrowserWindow }` | 49 |
-| variable/parameter | `reject` | 51 |
-| variable/parameter | `resolve` | 51 |
-| variable/parameter | `timer` | 52 |
-| variable/parameter | `_event` | 58 |
-| variable/parameter | `item` | 58 |
-| variable/parameter | `state` | 60 |
-| variable/parameter | `data` | 74 |
-| variable/parameter | `error` | 132 |
-| variable/parameter | `log` | 133 |
+| variable/parameter | `temporary` | 39 |
+| variable/parameter | `logs` | 40 |
+| variable/parameter | `launch` | 42 |
+| variable/parameter | `app` | 53 |
+| variable/parameter | `retainedRows` | 54 |
+| variable/parameter | `{ app }` | 56 |
+| variable/parameter | `page` | 59 |
+| variable/parameter | `health` | 61 |
+| variable/parameter | `destination` | 66 |
+| variable/parameter | `completed` | 67 |
+| variable/parameter | `target` | 68 |
+| variable/parameter | `{ BrowserWindow }` | 68 |
+| variable/parameter | `reject` | 70 |
+| variable/parameter | `resolve` | 70 |
+| variable/parameter | `timer` | 71 |
+| variable/parameter | `_event` | 77 |
+| variable/parameter | `item` | 77 |
+| variable/parameter | `state` | 79 |
+| variable/parameter | `data` | 93 |
+| variable/parameter | `error` | 166 |
+| variable/parameter | `log` | 167 |
+| variable/parameter | `reopened` | 179 |
 
 ## `tests/browser/library-journey.ts`
 
@@ -1375,21 +1505,22 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| function/class | `libraryJourney` | 26 |
-| variable/parameter | `page` | 27 |
-| variable/parameter | `audit` | 28 |
-| variable/parameter | `downloadBundle` | 29 |
-| variable/parameter | `file` | 31 |
-| variable/parameter | `preview` | 99 |
-| variable/parameter | `link` | 157 |
-| variable/parameter | `href` | 161 |
-| variable/parameter | `output` | 162 |
-| variable/parameter | `url` | 162 |
-| variable/parameter | `response` | 163 |
-| variable/parameter | `bytes` | 164 |
-| variable/parameter | `bundle` | 174 |
-| variable/parameter | `downloaded` | 194 |
-| variable/parameter | `download` | 196 |
+| function/class | `libraryJourney` | 27 |
+| variable/parameter | `page` | 28 |
+| variable/parameter | `audit` | 29 |
+| variable/parameter | `downloadBundle` | 30 |
+| variable/parameter | `captureDraft` | 31 |
+| variable/parameter | `file` | 33 |
+| variable/parameter | `preview` | 101 |
+| variable/parameter | `link` | 160 |
+| variable/parameter | `href` | 164 |
+| variable/parameter | `output` | 165 |
+| variable/parameter | `url` | 165 |
+| variable/parameter | `response` | 166 |
+| variable/parameter | `bytes` | 167 |
+| variable/parameter | `bundle` | 177 |
+| variable/parameter | `downloaded` | 197 |
+| variable/parameter | `download` | 199 |
 
 ## `tests/browser/private.spec.ts`
 
@@ -1397,19 +1528,19 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 
 | Kind | Name | Line |
 | --- | --- | ---: |
-| variable/parameter | `{ page, }` | 23 |
-| variable/parameter | `info` | 25 |
-| variable/parameter | `{ page }` | 36 |
-| variable/parameter | `external` | 51 |
-| variable/parameter | `request` | 52 |
-| variable/parameter | `{ page, request, }` | 90 |
-| variable/parameter | `denied` | 103 |
-| variable/parameter | `release` | 114 |
-| variable/parameter | `delayed` | 115 |
-| variable/parameter | `resolve` | 115 |
-| variable/parameter | `route` | 118 |
-| variable/parameter | `releaseLibrary` | 134 |
-| variable/parameter | `library` | 135 |
+| variable/parameter | `{ page, }` | 28 |
+| variable/parameter | `info` | 30 |
+| variable/parameter | `{ page }` | 41 |
+| variable/parameter | `external` | 63 |
+| variable/parameter | `request` | 64 |
+| variable/parameter | `{ page, request, }` | 102 |
+| variable/parameter | `denied` | 115 |
+| variable/parameter | `release` | 126 |
+| variable/parameter | `delayed` | 127 |
+| variable/parameter | `resolve` | 127 |
+| variable/parameter | `route` | 130 |
+| variable/parameter | `releaseLibrary` | 146 |
+| variable/parameter | `library` | 147 |
 
 ## `tests/browser/standard-journey.ts`
 
@@ -1590,6 +1721,78 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | variable/parameter | `answer` | 268 |
 | variable/parameter | `endpoint` | 278 |
 | function/class | `test_large_image` | 289 |
+
+## `tests/python/test_draft_lookup.py`
+
+[Source](../tests/python/test_draft_lookup.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `REPO` | 61 |
+| variable/parameter | `SOURCE` | 62 |
+| variable/parameter | `BASE` | 63 |
+| variable/parameter | `changes` | 66 |
+| variable/parameter | `identifier` | 66 |
+| function/class | `row` | 66 |
+| variable/parameter | `result` | 68 |
+| function/class | `Fixtures` | 84 |
+| variable/parameter | `detail` | 87 |
+| variable/parameter | `pages` | 87 |
+| function/class | `reader` | 87 |
+| variable/parameter | `self` | 87 |
+| variable/parameter | `endpoint` | 91 |
+| function/class | `read` | 91 |
+| function/class | `test_untagged_draft_reads_numeric_id_not_public_tag` | 109 |
+| variable/parameter | `value` | 111 |
+| variable/parameter | `actual` | 112 |
+| function/class | `test_complete_empty_listing_allows_explicit_absence` | 118 |
+| function/class | `test_missing_required_release_is_error` | 122 |
+| function/class | `test_general_collision_lookup_retains_public_wrong_source` | 127 |
+| function/class | `test_later_page_exact_match` | 132 |
+| variable/parameter | `first` | 134 |
+| variable/parameter | `i` | 134 |
+| function/class | `test_all_full_pages_fail_without_false_absence` | 139 |
+| variable/parameter | `p` | 143 |
+| function/class | `test_full_cap_even_found_cannot_hide_later_duplicate` | 149 |
+| function/class | `test_duplicate_exact_tag_refuses_first_match` | 159 |
+| function/class | `test_repeated_id_pagination_refuses` | 165 |
+| variable/parameter | `page` | 167 |
+| function/class | `test_malformed_pages_fail` | 171 |
+| function/class | `test_invalid_ids_never_become_paths` | 177 |
+| function/class | `test_foreign_list_namespace_refuses_before_detail` | 184 |
+| function/class | `test_detail_identity_swap_publication_and_retarget_refuse` | 192 |
+| function/class | `test_detail_foreign_hypermedia_refuses` | 204 |
+| variable/parameter | `key` | 206 |
+| function/class | `test_lost_access_never_falls_back_to_list` | 214 |
+| function/class | `test_auth_network_errors_are_not_absence` | 219 |
+| variable/parameter | `message` | 221 |
+| variable/parameter | `_` | 223 |
+| function/class | `denied` | 223 |
+| function/class | `test_same_bad_state_in_both_snapshots_still_fails_draft_policy` | 230 |
+| function/class | `test_expected_prepared_id_is_bound` | 236 |
+| function/class | `test_invalid_namespace_tag_source_refuses_before_http` | 247 |
+| variable/parameter | `repo` | 249 |
+| variable/parameter | `source` | 249 |
+| variable/parameter | `version` | 249 |
+| variable/parameter | `read` | 254 |
+
+## `tests/python/test_frozen_runtime.py`
+
+[Source](../tests/python/test_frozen_runtime.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `monkeypatch` | 29 |
+| function/class | `test_unreviewed_frozen_runtime_refuses_before_private_setup` | 29 |
+| variable/parameter | `version` | 29 |
+| variable/parameter | `events` | 31 |
+| variable/parameter | `module_name` | 36 |
+| variable/parameter | `module` | 37 |
+| function/class | `test_reviewed_runtime_retains_private_and_conversion_dispatch` | 50 |
+| variable/parameter | `convert` | 51 |
+| variable/parameter | `frozen` | 51 |
+| variable/parameter | `service` | 59 |
+| variable/parameter | `worker` | 61 |
 
 ## `tests/python/test_industries.py`
 
@@ -1778,6 +1981,125 @@ Generated from AST/compiler declarations. Each code header repeats exact functio
 | function/class | `test_soft_quota_preserves_recovery` | 547 |
 | function/class | `test_body_and_auth_limits` | 563 |
 | variable/parameter | `_` | 573 |
+
+## `tests/python/test_release_guard.py`
+
+[Source](../tests/python/test_release_guard.py) — descriptive module header and function contracts are in this file.
+
+| Kind | Name | Line |
+| --- | --- | ---: |
+| variable/parameter | `SOURCE` | 135 |
+| variable/parameter | `IDENTIFIER` | 136 |
+| function/class | `analysis` | 139 |
+| variable/parameter | `category` | 139 |
+| variable/parameter | `changes` | 154 |
+| function/class | `release` | 154 |
+| variable/parameter | `row` | 156 |
+| variable/parameter | `name` | 172 |
+| function/class | `workflow` | 172 |
+| function/class | `GitHub` | 185 |
+| function/class | `__init__` | 188 |
+| variable/parameter | `self` | 188 |
+| variable/parameter | `body` | 199 |
+| variable/parameter | `endpoint` | 199 |
+| function/class | `read` | 199 |
+| function/class | `github` | 237 |
+| variable/parameter | `monkeypatch` | 237 |
+| variable/parameter | `fake` | 238 |
+| variable/parameter | `github` | 243 |
+| function/class | `test_actual_successful_source_requires_full_main_analyses` | 243 |
+| variable/parameter | `item` | 246 |
+| variable/parameter | `field` | 263 |
+| function/class | `test_workflow_failure_cannot_authorize_a_draft` | 263 |
+| variable/parameter | `value` | 263 |
+| function/class | `test_incomplete_wrong_ref_or_zero_rule_analysis_fails` | 286 |
+| variable/parameter | `defect` | 295 |
+| function/class | `test_source_scope_ambiguity_and_open_alert_fail_closed` | 295 |
+| function/class | `test_prepare_checks_every_read_prerequisite_before_the_only_fresh_write` | 310 |
+| variable/parameter | `tmp_path` | 311 |
+| variable/parameter | `write_index` | 321 |
+| variable/parameter | `collision` | 328 |
+| function/class | `test_prepare_never_reuses_or_changes_any_existing_version` | 328 |
+| function/class | `test_prepared_numeric_id_cannot_be_swapped_published_or_retargeted` | 351 |
+| function/class | `asset` | 357 |
+| variable/parameter | `identifier` | 357 |
+| variable/parameter | `raw` | 357 |
+| variable/parameter | `capsys` | 368 |
+| function/class | `test_complete_verify_cli_only_reads_and_leaves_twelve_assets_draft` | 368 |
+| variable/parameter | `index` | 371 |
+| variable/parameter | `system` | 372 |
+| variable/parameter | `result` | 380 |
+| function/class | `test_bad_or_partial_uploaded_sets_cannot_complete` | 388 |
+| variable/parameter | `rows` | 389 |
+| function/class | `build_outputs` | 412 |
+| variable/parameter | `folder` | 414 |
+| function/class | `test_upload_streams_exact_files_to_prepared_id_without_clobber` | 425 |
+| variable/parameter | `sent` | 428 |
+| variable/parameter | `size` | 430 |
+| variable/parameter | `stream` | 430 |
+| function/class | `transmit` | 430 |
+| variable/parameter | `n` | 437 |
+| function/class | `test_checksum_failure_prevents_all_uploads` | 453 |
+| variable/parameter | `_` | 457 |
+| function/class | `test_strict_metadata_and_complete_lookup_bounds` | 462 |
+| variable/parameter | `text` | 471 |
+| function/class | `workflow_contract` | 471 |
+| variable/parameter | `expected` | 478 |
+| variable/parameter | `job` | 478 |
+| variable/parameter | `section` | 483 |
+| variable/parameter | `maps` | 484 |
+| variable/parameter | `actual` | 486 |
+| variable/parameter | `line` | 487 |
+| variable/parameter | `match` | 491 |
+| function/class | `test_actual_workflow_retains_source_and_draft_privilege_contract` | 498 |
+| variable/parameter | `new` | 518 |
+| variable/parameter | `old` | 518 |
+| function/class | `test_actual_workflow_mutations_cannot_erase_guards` | 518 |
+| variable/parameter | `permission` | 535 |
+| function/class | `test_final_get_only_draft_verifier_still_requires_reviewed_push_visibility` | 535 |
+| variable/parameter | `before` | 539 |
+| variable/parameter | `marker` | 539 |
+| variable/parameter | `verifier` | 539 |
+| variable/parameter | `changed` | 541 |
+| function/class | `Response` | 546 |
+| variable/parameter | `accepted` | 566 |
+| variable/parameter | `missing` | 566 |
+| variable/parameter | `status` | 566 |
+| function/class | `test_only_actual_http404_means_absence` | 566 |
+| variable/parameter | `calls` | 567 |
+| function/class | `Connection` | 569 |
+| variable/parameter | `host` | 570 |
+| variable/parameter | `timeout` | 570 |
+| variable/parameter | `headers` | 573 |
+| variable/parameter | `method` | 573 |
+| function/class | `request` | 573 |
+| function/class | `getresponse` | 577 |
+| function/class | `close` | 580 |
+| function/class | `test_upload_transport_uses_fixed_host_id_and_real_stream_digest` | 593 |
+| variable/parameter | `digest` | 595 |
+| variable/parameter | `chunks` | 596 |
+| variable/parameter | `requests` | 596 |
+| function/class | `putrequest` | 602 |
+| variable/parameter | `key` | 605 |
+| function/class | `putheader` | 605 |
+| function/class | `endheaders` | 608 |
+| variable/parameter | `data` | 611 |
+| function/class | `send` | 611 |
+| function/class | `context_fixture` | 627 |
+| variable/parameter | `replies` | 640 |
+| variable/parameter | `arguments` | 642 |
+| function/class | `git` | 642 |
+| variable/parameter | `options` | 642 |
+| function/class | `test_clean_context_binds_actual_git_and_product_versions` | 656 |
+| function/class | `test_delivery_context_refuses_untrusted_or_unversioned_sources` | 664 |
+| function/class | `test_bounded_hash_checks_actual_shrink_and_growth` | 684 |
+| function/class | `test_output_descriptor_rejects_empty_oversize_and_hardlinks` | 692 |
+| variable/parameter | `path` | 693 |
+| variable/parameter | `alias` | 702 |
+| function/class | `test_changed_output_after_all_sidecar_preflight_cannot_upload` | 708 |
+| variable/parameter | `original` | 711 |
+| function/class | `changing` | 714 |
+| variable/parameter | `source` | 714 |
 
 ## `tests/python/test_standards.py`
 

@@ -1,5 +1,9 @@
 # Validation and evidence
 
+The [10 November 2026 desktop maintenance report](reports/desktop-maintenance-2026-11-10.md)
+records the 1.4.1 runtime, Unicode and same-account restart checks. The dated
+validation below remains historical evidence for its stated source revision.
+
 > Legacy business-engine/demo reference. Version 1.1 installs the private local account wrapper described in [private-accounts.md](private-accounts.md) and [private-api.md](private-api.md). Old plaintext demo data is separate and is not migrated. Legacy source serving needs explicit `KB_LEGACY_MODE=1`; never expose demo credentials to real records.
 
 
