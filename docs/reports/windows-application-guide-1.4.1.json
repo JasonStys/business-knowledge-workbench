@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "repository": "business-knowledge-workbench",
+  "runtimeVersion": "1.4.1",
+  "runtimeSource": "ba3cf3cfc6f2d443747f7350af06ca0329b1fcc4",
+  "createdAt": "2026-11-11T04:14:08.297Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide-1.4.1.docx",
+  "sha256": "c3640c54e3b794b3350f871c55d32bd1fe3483a9b027e813d9879853ea8ad0fd",
+  "screenshots": [
+    {
+      "file": "native-workspace.png",
+      "sha256": "b804c94fcad343cff7f57ba7f3f5c9182db19ed0fa701fde697b3be33772caf0",
+      "width": 2139,
+      "height": 1407,
+      "caption": "The actual installed app displays a private synthetic business workspace after rich import and library operations. Rows and standardized evidence remain within the authenticated account's unlocked vault."
+    },
+    {
+      "file": "native-standard-preview-viewport.png",
+      "sha256": "a31ccf32d088987282ce05a3cd97d43043952a051c599419c178d024f6115d78",
+      "width": 750,
+      "height": 632,
+      "caption": "The actual installed preview viewport shows the selected manufacturing report standard and normalized table values. The full unchanged native workflow passed again; only the screenshot selects the visible iframe instead of its entire long document."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "server/standards.py",
+      "first": 78,
+      "last": 96,
+      "sha256": "acba606eb5fe8867239a3c5712c0054cc4f050ec7c1024717841dcc7e7bbc8f5",
+      "url": "https://github.com/JasonStys/business-knowledge-workbench/blob/ba3cf3cfc6f2d443747f7350af06ca0329b1fcc4/server/standards.py#L78"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Native workflows",
+      "observed": "Full installed import/preview/custom-standard/library/export journey and same-account vault restart passed with synthetic rich documents.",
+      "result": "Passed"
+    },
+    {
+      "name": "Cross version upgrade",
+      "observed": "Real 1.4.0 and 1.4.1 apps reopened the same account; all 10 document metadata records and full semantic documents matched exactly.",
+      "result": "Passed"
+    },
+    {
+      "name": "Source and release",
+      "observed": "327 tests at 89.79 percent coverage,18 private browser journeys, current main/CodeQL and all 3 OSnative release builds passed. All 12 downloaded assets matched provider/sidecar hashes.",
+      "result": "Passed"
+    },
+    {
+      "name": "PC preservation",
+      "observed": "Verified opaque account/launcher backup, installer exit 0 and unchanged normal profile bytes. Existing Desktop and extra demo links were preserved; the main link targets the accepted updated EXE.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "scope": "all four pages individually inspected",
+    "ooxmlSchema": "passed",
+    "pages": [
+      {
+        "file": "page-1.png",
+        "sha256": "deaddba17af2b92106f527749f9435cff54113d81f1642274131040cbeaad781"
+      },
+      {
+        "file": "page-2.png",
+        "sha256": "8ba9e0e99c8362c94c5c301e35a88ab458861c87fe6fe81f8446e011012c3862"
+      },
+      {
+        "file": "page-3.png",
+        "sha256": "efd2e584319d1a1c6cdcadbdfd85c153c1b6ef75995e36d5f0e6e1b9da4e6d39"
+      },
+      {
+        "file": "page-4.png",
+        "sha256": "d3a6eb8aa21b8433e4f7854717d906bf2bb989717e2cf8c8dd6dae45cc92bc83"
+      }
+    ],
+    "reviewedUtc": "2026-11-11T04:31:36.885026+00:00"
+  }
+}

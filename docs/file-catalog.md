@@ -42,6 +42,7 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/releases/v1.4.1.md](../docs/releases/v1.4.1.md) | Business Knowledge Workbench 1.4.1. |
 | [docs/reports/desktop-maintenance-2026-11-10.md](../docs/reports/desktop-maintenance-2026-11-10.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/documentation-refresh-2026-11-09.md](../docs/reports/documentation-refresh-2026-11-09.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
+| [docs/reports/installed-windows-2026-11-10.md](../docs/reports/installed-windows-2026-11-10.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/pdf-preview.png](../docs/reports/pdf-preview.png) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/performance.json](../docs/reports/performance.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/practical-workflows-2026-11-09.md](../docs/reports/practical-workflows-2026-11-09.md) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
@@ -53,11 +54,15 @@ Generated from tracked repository paths. Code declarations/parameters and exact 
 | [docs/reports/validation-v1.1.json](../docs/reports/validation-v1.1.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation-v1.2.json](../docs/reports/validation-v1.2.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
 | [docs/reports/validation.json](../docs/reports/validation.json) | Recorded local validation/performance or rendered synthetic PDF evidence; see validation.md for scope. |
+| [docs/reports/windows-application-guide-1.4.1.docx](../docs/reports/windows-application-guide-1.4.1.docx) | Individually reviewed four-page installed application guide with actual screenshots, worked workflow, immutable source excerpts and limits. |
+| [docs/reports/windows-application-guide-1.4.1.json](../docs/reports/windows-application-guide-1.4.1.json) | Exact Word, actual screenshot and reviewed page digests plus observed source-specific validation results. |
 | [docs/requirements-review-v1.2.md](../docs/requirements-review-v1.2.md) | Original-purpose review — version 1.2. |
 | [docs/research.md](../docs/research.md) | Research and coding decisions. |
 | [docs/scenarios.md](../docs/scenarios.md) | Synthetic business scenarios and acceptance walkthroughs. |
 | [docs/screenshots/accounts.png](../docs/screenshots/accounts.png) | Visually inspected synthetic responsive UI evidence. |
 | [docs/screenshots/catalog.png](../docs/screenshots/catalog.png) | Visually inspected synthetic responsive UI evidence. |
+| [docs/screenshots/installed-1.4.1/native-standard-preview-viewport.png](../docs/screenshots/installed-1.4.1/native-standard-preview-viewport.png) | Actual installed application synthetic-profile screenshot: Actual custom standard preview. |
+| [docs/screenshots/installed-1.4.1/native-workspace.png](../docs/screenshots/installed-1.4.1/native-workspace.png) | Actual installed application synthetic-profile screenshot: Installed standardized document library. |
 | [docs/screenshots/mobile.png](../docs/screenshots/mobile.png) | Visually inspected synthetic responsive UI evidence. |
 | [docs/screenshots/standards.png](../docs/screenshots/standards.png) | Visually inspected synthetic responsive UI evidence. |
 | [docs/screenshots/workspace.png](../docs/screenshots/workspace.png) | Visually inspected synthetic responsive UI evidence. |
